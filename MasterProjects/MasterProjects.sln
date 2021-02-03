@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmoaebaGridTools", "Amoaeba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{f321e4f8-92cc-2a1b-57c7-76213458a93b}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer", "Sirenix.OdinInspector.CompatibilityLayer.csproj", "{04ee6aed-d595-fa0e-0905-cb9b322b86c6}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InControl.Editor", "InControl.Editor.csproj", "{932985e5-16cc-13a4-1fce-45867a39f094}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleSheetsToUnity", "GoogleSheetsToUnity.csproj", "{821230ea-b784-b554-57f2-e44f180bd047}"
@@ -44,6 +46,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleExporter", "GoogleExporter.csproj", "{4ea81400-df35-1f3e-062f-600a4a9c3fc4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptableObjectUtilsEditor", "ScriptableObjectUtilsEditor.csproj", "{a5ab7832-d0d8-18cf-4c32-51ae329d6390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer.Editor", "Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj", "{5b005099-c24f-9f7b-f932-a2404df47ed8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +78,8 @@ Global
 		{d91662b8-6e7a-1431-966d-65dcaa5cfe50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{f321e4f8-92cc-2a1b-57c7-76213458a93b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{f321e4f8-92cc-2a1b-57c7-76213458a93b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04ee6aed-d595-fa0e-0905-cb9b322b86c6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04ee6aed-d595-fa0e-0905-cb9b322b86c6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{932985e5-16cc-13a4-1fce-45867a39f094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{932985e5-16cc-13a4-1fce-45867a39f094}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{821230ea-b784-b554-57f2-e44f180bd047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -94,6 +100,8 @@ Global
 		{4ea81400-df35-1f3e-062f-600a4a9c3fc4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{a5ab7832-d0d8-18cf-4c32-51ae329d6390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{a5ab7832-d0d8-18cf-4c32-51ae329d6390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5b005099-c24f-9f7b-f932-a2404df47ed8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5b005099-c24f-9f7b-f932-a2404df47ed8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

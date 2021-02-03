@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{f321e4f8-92cc-2a1b-57c7-76213458a93b}</ProjectGuid>
+    <ProjectGuid>{04ee6aed-d595-fa0e-0905-cb9b322b86c6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Sirenix.OdinInspector.CompatibilityLayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -26,7 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -36,27 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Gameplay\CharacterMovement.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\GrandmaController.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\GrandmaScriptVar.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\RegisterGrandmaScriptVar.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\CharacterState.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\CharacterStateVar.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\GameConstants.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\TargetMover.cs" />
-     <Compile Include="Assets\Scripts\Input\IInputController.cs" />
-     <Compile Include="Assets\Scripts\Input\WindowsInputController.cs" />
-     <Compile Include="Assets\Scripts\World\TilemapUtils.cs" />
-     <Compile Include="Assets\Scripts\World\WorldEntityPlacer.cs" />
-     <Compile Include="Assets\Scripts\World\EntityController.cs" />
-     <Compile Include="Assets\Scripts\World\ComputedWorld.cs" />
-     <Compile Include="Assets\Scripts\World\RegisterTileMapArrayVar.cs" />
-     <Compile Include="Assets\Scripts\World\WorldController.cs" />
-     <Compile Include="Assets\Scripts\World\Vector3IntVarArr.cs" />
-     <Compile Include="Assets\Scripts\World\MapHighlight.cs" />
-     <Compile Include="Assets\Scripts\World\WorldPathfindingAdapter.cs" />
-     <Compile Include="Assets\Scripts\World\MapScriptable.cs" />
-     <Compile Include="Assets\Scripts\World\TileMapsArrayVar.cs" />
+     <Compile Include="Assets\Plugins\Sirenix\Odin Inspector\Scripts\SerializedNetworkBehaviour.cs" />
+     <Compile Include="Assets\Plugins\Sirenix\Odin Inspector\Scripts\VectorIntFormatters.cs" />
+     <None Include="Assets\Plugins\Sirenix\Odin Inspector\Scripts\Sirenix.OdinInspector.CompatibilityLayer.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -245,6 +227,12 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+        <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+        <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Client">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll</HintPath>
@@ -642,162 +630,14 @@
     <Reference Include="System.Xml.Serialization">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEngineBridge.001">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Persistance.csproj">
-      <Project>{55f7643b-b627-fc39-2df8-09edb8aee4b5}</Project>
-      <Name>Persistance</Name>
-    </ProjectReference>
-    <ProjectReference Include="AmoaebaUtils.Pathfinding.csproj">
-      <Project>{891a2a49-5103-e888-4020-afff463c78bf}</Project>
-      <Name>AmoaebaUtils.Pathfinding</Name>
-    </ProjectReference>
-    <ProjectReference Include="GoogleSheetsToUnity.csproj">
-      <Project>{821230ea-b784-b554-57f2-e44f180bd047}</Project>
-      <Name>GoogleSheetsToUnity</Name>
-    </ProjectReference>
-    <ProjectReference Include="AmoaebaLockSystem.csproj">
-      <Project>{93c29439-5a63-06c3-a03b-388b42dc0778}</Project>
-      <Name>AmoaebaLockSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="AmoaebaUtils.CommandsEditor.csproj">
-      <Project>{67b7a5bc-868b-a535-b2c4-471309145d87}</Project>
-      <Name>AmoaebaUtils.CommandsEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="GoogleExporter.csproj">
-      <Project>{4ea81400-df35-1f3e-062f-600a4a9c3fc4}</Project>
-      <Name>GoogleExporter</Name>
-    </ProjectReference>
-    <ProjectReference Include="ActionCommandsTests.csproj">
-      <Project>{0f24711a-47e4-9254-bbd6-f0dd81029646}</Project>
-      <Name>ActionCommandsTests</Name>
-    </ProjectReference>
-    <ProjectReference Include="PathfindingEditor.csproj">
-      <Project>{db0b0119-048a-2590-9b49-9e6e7fdd340e}</Project>
-      <Name>PathfindingEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="WalletTests.csproj">
-      <Project>{48b85f0b-c664-c14e-8560-31f3d9a07c67}</Project>
-      <Name>WalletTests</Name>
-    </ProjectReference>
-    <ProjectReference Include="AmoaebaUtils.csproj">
-      <Project>{439bcc43-9ec9-d394-a742-b14903d5ca25}</Project>
-      <Name>AmoaebaUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="InControl.Examples.csproj">
-      <Project>{895f85c3-65cd-3a9c-5832-50437c8da52c}</Project>
-      <Name>InControl.Examples</Name>
-    </ProjectReference>
-    <ProjectReference Include="AmoaebaWallet.csproj">
-      <Project>{f16c82cd-0aba-ecd3-6c4d-487521d9f685}</Project>
-      <Name>AmoaebaWallet</Name>
-    </ProjectReference>
-    <ProjectReference Include="InControl.csproj">
-      <Project>{e2f746b3-61ad-dc54-13df-ebe5835f4704}</Project>
-      <Name>InControl</Name>
-    </ProjectReference>
-    <ProjectReference Include="InControl.Editor.csproj">
-      <Project>{932985e5-16cc-13a4-1fce-45867a39f094}</Project>
-      <Name>InControl.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="AmoaebaCommands.csproj">
-      <Project>{66d310ec-b12d-907d-6af6-f1b7de526098}</Project>
-      <Name>AmoaebaCommands</Name>
-    </ProjectReference>
-    <ProjectReference Include="ScriptableObjectUtilsEditor.csproj">
-      <Project>{a5ab7832-d0d8-18cf-4c32-51ae329d6390}</Project>
-      <Name>ScriptableObjectUtilsEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="ActionCommands.csproj">
-      <Project>{fe912172-c8a7-98aa-6b06-f744d493fb9e}</Project>
-      <Name>ActionCommands</Name>
-    </ProjectReference>
-    <ProjectReference Include="AmoaebaUtilsEditor.csproj">
-      <Project>{c7cc44c1-2237-8d95-8709-a15f16ec42be}</Project>
-      <Name>AmoaebaUtilsEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MessagePack.csproj">
-      <Project>{c9a87ff8-3381-ad72-e7e7-3157aaa06e6b}</Project>
-      <Name>MessagePack</Name>
-    </ProjectReference>
-    <ProjectReference Include="AmoaebaGridTools.csproj">
-      <Project>{d91662b8-6e7a-1431-966d-65dcaa5cfe50}</Project>
-      <Name>AmoaebaGridTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
-      <Project>{5b005099-c24f-9f7b-f932-a2404df47ed8}</Project>
-      <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj">
-      <Project>{04ee6aed-d595-fa0e-0905-cb9b322b86c6}</Project>
-      <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
