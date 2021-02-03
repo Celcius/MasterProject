@@ -23,8 +23,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmoaebaLockSystem", "Amoaeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmoaebaGridTools", "AmoaebaGridTools.csproj", "{d91662b8-6e7a-1431-966d-65dcaa5cfe50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{f321e4f8-92cc-2a1b-57c7-76213458a93b}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InControl.Editor", "InControl.Editor.csproj", "{932985e5-16cc-13a4-1fce-45867a39f094}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleSheetsToUnity", "GoogleSheetsToUnity.csproj", "{821230ea-b784-b554-57f2-e44f180bd047}"
@@ -72,8 +70,6 @@ Global
 		{93c29439-5a63-06c3-a03b-388b42dc0778}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{d91662b8-6e7a-1431-966d-65dcaa5cfe50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{d91662b8-6e7a-1431-966d-65dcaa5cfe50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{f321e4f8-92cc-2a1b-57c7-76213458a93b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{f321e4f8-92cc-2a1b-57c7-76213458a93b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{932985e5-16cc-13a4-1fce-45867a39f094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{932985e5-16cc-13a4-1fce-45867a39f094}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{821230ea-b784-b554-57f2-e44f180bd047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
