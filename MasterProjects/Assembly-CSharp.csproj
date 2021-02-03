@@ -268,15 +268,6 @@
     <Reference Include="System.Threading.Tasks.Extensions">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization.Config">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
-    </Reference>
     <Reference Include="Sirenix.Serialization">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
     </Reference>
@@ -285,6 +276,15 @@
     </Reference>
     <Reference Include="Sirenix.Utilities.Editor">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Editor">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -711,10 +711,6 @@
       <Project>{821230ea-b784-b554-57f2-e44f180bd047}</Project>
       <Name>GoogleSheetsToUnity</Name>
     </ProjectReference>
-    <ProjectReference Include="AmoaebaGridTools.csproj">
-      <Project>{d91662b8-6e7a-1431-966d-65dcaa5cfe50}</Project>
-      <Name>AmoaebaGridTools</Name>
-    </ProjectReference>
     <ProjectReference Include="AmoaebaLockSystem.csproj">
       <Project>{93c29439-5a63-06c3-a03b-388b42dc0778}</Project>
       <Name>AmoaebaLockSystem</Name>
@@ -727,17 +723,9 @@
       <Project>{4ea81400-df35-1f3e-062f-600a4a9c3fc4}</Project>
       <Name>GoogleExporter</Name>
     </ProjectReference>
-    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
-      <Project>{5b005099-c24f-9f7b-f932-a2404df47ed8}</Project>
-      <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="ActionCommandsTests.csproj">
       <Project>{0f24711a-47e4-9254-bbd6-f0dd81029646}</Project>
       <Name>ActionCommandsTests</Name>
-    </ProjectReference>
-    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj">
-      <Project>{04ee6aed-d595-fa0e-0905-cb9b322b86c6}</Project>
-      <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>
     </ProjectReference>
     <ProjectReference Include="PathfindingEditor.csproj">
       <Project>{db0b0119-048a-2590-9b49-9e6e7fdd340e}</Project>
@@ -790,6 +778,18 @@
     <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj">
       <Project>{9da45050-947f-e33a-2921-a0cf5083033d}</Project>
       <Name>Sirenix.OdinInspector.Modules.UnityMathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
+      <Project>{5b005099-c24f-9f7b-f932-a2404df47ed8}</Project>
+      <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj">
+      <Project>{04ee6aed-d595-fa0e-0905-cb9b322b86c6}</Project>
+      <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="AmoaebaGridTools.csproj">
+      <Project>{d91662b8-6e7a-1431-966d-65dcaa5cfe50}</Project>
+      <Name>AmoaebaGridTools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

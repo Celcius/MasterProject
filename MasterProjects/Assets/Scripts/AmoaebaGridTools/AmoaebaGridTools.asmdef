@@ -1,0 +1,18 @@
+{
+    "name": "AmoaebaGridTools",
+    "references": [
+        "GUID:476f7c6c6dfeed041b063446a926e656",
+        "GUID:10314cd94b731a74abd9221d57211e4d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "tvOS"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

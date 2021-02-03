@@ -36,21 +36,20 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Packages\AmoaebaGridTools\CameraMover.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\GridUtils.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\GridMonoBehaviourVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\GridMonoBehaviour.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\GenericScriptables.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\GridPos.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\GridRegistry.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\RegisterCameraMoverVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\RegisterGridMonoBehaviourVarArr.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\RegisterGridMonoBehaviourVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\CameraMonobehaviour.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\RoomHandler.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\CameraMoverVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaGridTools\GridMonoBehaviourArrVar.cs" />
-     <None Include="Assets\Packages\AmoaebaGridTools\AmoaebaGridTools.asmdef" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\CameraMover.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\GridUtils.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\GridEntityVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\GridEntity.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\GenericScriptables.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\GridRegistry.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\RegisterCameraMoverVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\RegisterGridEntityVarArr.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\RegisterGridEntityVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\RoomHandler.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\CameraMoverVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\GridEntityArrVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaGridTools\CameraTargetGridEntity.cs" />
+     <None Include="Assets\Scripts\AmoaebaGridTools\AmoaebaGridTools.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -279,15 +278,6 @@
     <Reference Include="System.Threading.Tasks.Extensions">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization.Config">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
-    </Reference>
     <Reference Include="Sirenix.Serialization">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
     </Reference>
@@ -296,6 +286,15 @@
     </Reference>
     <Reference Include="Sirenix.Utilities.Editor">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Editor">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
