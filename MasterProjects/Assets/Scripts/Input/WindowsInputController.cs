@@ -21,7 +21,7 @@ public class WindowsInputController : IInputController
 
     public override bool IsCryingRelease()
     {
-        return Input.GetKeyDown(KeyCode.Q);
+        return Input.GetKeyUp(KeyCode.Q);
     }
 
     public override Vector3 GetMovementAxis()

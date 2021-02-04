@@ -27,6 +27,9 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private IInputController input;
 
+    [SerializeField]
+    private TransformVar grandmotherTargetVar;
+
     private Vector2 movingDir = Vector2.down;
     private Vector2 FacingDir => stateVar.Value == CharacterState.Walking ? movingDir : Vector2.down;
 
@@ -51,6 +54,21 @@ public class CharacterMovement : MonoBehaviour
             return;
         }
 
+        if(stateVar.Value == CharacterState.Crying)
+        {
+            if(input.IsCryingRelease())
+            {
+                OnCryCancel();
+            }
+            return;
+        }
+
+        if(input.IsCryingDown())
+        {
+            OnCry();
+            return;
+        }
+
         bool canGrab = input.IsGrabDown() 
                        && stateVar.Value != CharacterState.Throwing 
                        && grandmaScriptVar.Value.IsOnGrandma;
@@ -59,6 +77,7 @@ public class CharacterMovement : MonoBehaviour
             OnGrab();
             return;
         }
+
 
         Vector3 dir = input.GetMovementAxis();
         if(!Mathf.Approximately(dir.magnitude, 0))
@@ -93,6 +112,8 @@ public class CharacterMovement : MonoBehaviour
     private void OnCry()
     {
         stateVar.Value = CharacterState.Crying;
+        
+        grandmotherTargetVar.Value.transform.position = transform.position;
     }
 
     private void OnCryCancel()

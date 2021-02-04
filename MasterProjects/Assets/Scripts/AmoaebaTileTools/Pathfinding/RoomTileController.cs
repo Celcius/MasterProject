@@ -103,7 +103,20 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         return IsFloorPos(gridPos) && GridRegistry.Instance.GetEntityAtPos((Vector3Int)gridPos) == null;
     }
 
-    
+    public Vector2Int[] GetUnoccupiedNeighbours(Vector2Int pos)
+    {
+        Vector2Int[] neighbours = GetNeighbours(pos);
+        List<Vector2Int> ret = new List<Vector2Int>();
+        foreach(Vector2Int neighbour in neighbours)
+        {
+            if(IsEmptyPos(neighbour))
+            {
+                ret.Add(neighbour);
+            }
+        }
+        return ret.ToArray();
+    }
+
     public Vector2Int[] GetNeighbours(Vector2Int pos)
     {
         List<Vector2Int> retPos = new List<Vector2Int>();

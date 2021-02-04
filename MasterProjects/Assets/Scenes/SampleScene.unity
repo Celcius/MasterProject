@@ -165,7 +165,7 @@ Transform:
   m_Children:
   - {fileID: 1031719120}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -302,7 +302,7 @@ GameObject:
   m_Layer: 0
   m_Name: GrandmaMoveTarget
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -318,7 +318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &962231881
 MonoBehaviour:
@@ -2092,6 +2092,7 @@ MonoBehaviour:
   grandmaScriptVar: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   stateVar: {fileID: 11400000, guid: 1dcd4964f0725b84e91c7749553cc9ef, type: 2}
   input: {fileID: 11400000, guid: a62c1bc6975118a46ab8a03840e85200, type: 2}
+  grandmotherTargetVar: {fileID: 11400000, guid: 818af81053fa77040ab4a76e110d0f1d, type: 2}
 --- !u!61 &1530733998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2291,11 +2292,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOnGrandmaVar: {fileID: 11400000, guid: a01dcbdc5741dcd4a9adec501673eb2b, type: 2}
   characterStateVar: {fileID: 11400000, guid: 1dcd4964f0725b84e91c7749553cc9ef, type: 2}
+  characterVar: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
   targetPosVar: {fileID: 11400000, guid: 6c3eb35a0815ff44bb6038f7c65aeb44, type: 2}
   grandmaMoveTarget: {fileID: 11400000, guid: 818af81053fa77040ab4a76e110d0f1d, type: 2}
   throwAnchor: {fileID: 950155726}
   representation: {fileID: 1928184083}
   moveSpeed: 5
+  canWalk: {fileID: 11400000, guid: ff96b724749a7ad4f86740d8558d7418, type: 2}
+  respondToCry: {fileID: 11400000, guid: 5d5639508147cf24ab6d571bc8bd96d7, type: 2}
   controller: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
 --- !u!114 &1853208789
 MonoBehaviour:
@@ -2340,7 +2344,7 @@ Transform:
   m_Children:
   - {fileID: 1453850034}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1900098289
 MonoBehaviour:
@@ -2403,7 +2407,7 @@ Transform:
   m_Children:
   - {fileID: 1484191011}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1902006662
 BoxCollider2D:

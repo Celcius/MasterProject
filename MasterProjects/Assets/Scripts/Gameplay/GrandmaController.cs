@@ -14,6 +14,9 @@ public class GrandmaController : GridEntity
     private CharacterStateVar characterStateVar;
 
     [SerializeField]
+    private GridEntityVar characterVar;
+
+    [SerializeField]
     private Vector2Var targetPosVar;
 
     
@@ -32,11 +35,45 @@ public class GrandmaController : GridEntity
 
     [SerializeField]
     private float moveSpeed = 5.0f;
+
+    private bool movingToCry = false;
+
+    [SerializeField]
+    private BoolVar canWalk;
+
+    [SerializeField]
+    private BoolVar respondToCry;
     
     protected override void Start()
     {
+        characterStateVar.OnChange += OnCharacterChange;
+        canWalk.OnChange += CanWalkChange;
         base.Start();
     }
+
+    private void CanWalkChange(bool oldValue, bool newValue)
+    {
+        if(!newValue)
+        {
+            StopWalking();
+        }
+    }
+
+    private void OnCharacterChange(CharacterState oldState, CharacterState newState)
+    {
+        if(newState == CharacterState.Crying && respondToCry.Value)
+        {
+            movingToCry = true;
+            grandmaMoveTarget.Value.transform.position = CameraMover.WorldPosForGridPos(characterVar.Value.GridPos, 0);
+        }
+
+        if(oldState == CharacterState.Crying && respondToCry.Value && movingToCry)
+        {
+            grandmaMoveTarget.Value.transform.position = transform.position;
+            StopWalking();
+        }
+    }
+
     private void Update()
     {
         if(isOnGrandmaVar.Value && characterStateVar.Value == CharacterState.Throwing)
@@ -48,7 +85,7 @@ public class GrandmaController : GridEntity
             representation.transform.right = Vector2.right;
         }
 
-        if(walkRoutine == null && !OnTarget())
+        if(canWalk.Value && walkRoutine == null && !OnTarget())
         {
             MoveToGoal((Vector2Int)CameraMover.GridPosForWorldPos(grandmaMoveTarget.Value.transform.position));
         }
@@ -107,7 +144,10 @@ public class GrandmaController : GridEntity
             return;
         }
 
+        bool isMoveToCry = movingToCry;
         StopWalking();
+        movingToCry = isMoveToCry;
+
         walkRoutine = WalkRoutine(path);
         StartCoroutine(walkRoutine);
                                       
@@ -142,6 +182,7 @@ public class GrandmaController : GridEntity
 
     private void StopWalking()
     {
+        movingToCry = false;
         if(walkRoutine != null)
         {
             StopCoroutine(walkRoutine);
