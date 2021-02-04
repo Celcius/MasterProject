@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 using System;
+using AmoaebaUtils;
+
 
 [RequireComponent(typeof(PixelPerfectCamera))]
 public class CameraMover : MonoBehaviour
@@ -16,9 +18,18 @@ public class CameraMover : MonoBehaviour
     [SerializeField]
     private AnimationCurve moveCurve;
 
+    [SerializeField]
+    private Grid grid;
+
+    public Vector2Int currentRoomPos;
+    public Vector2Int CurrentRoomPos => currentRoomPos;
+
     private IEnumerator cameraShake;
 
     private static CameraMover moverSingleton;
+
+    private Vector3 cellSize;
+    public Vector3 CellSize => cellSize;
 
     private int currentIndex = 0;
 
@@ -29,7 +40,7 @@ public class CameraMover : MonoBehaviour
     public Action<Vector2Int, Vector2Int> OnCameraMoveStart;
     
     public Action<Vector2Int, Vector2Int> OnCameraMoveEnd;
-    private PixelPerfectCamera PixelCamera;
+    private PixelPerfectCamera pixelCamera;
 
     private Vector2Int playerRoom;
 
@@ -42,26 +53,42 @@ public class CameraMover : MonoBehaviour
     
     public Vector2 RefResolution 
     {
-        get { return new Vector2(PixelCamera.refResolutionX, PixelCamera.refResolutionY);}
+        get { return new Vector2(pixelCamera.refResolutionX, pixelCamera.refResolutionY);}
     }
 
-    public float PixelsPerUnit => PixelCamera.assetsPPU;
+    public float PixelsPerUnit => pixelCamera.assetsPPU;
 
-    public Vector2 ScreenSize {get; private set;}
+    public Vector2 RoomSize {get; private set;}
 
     private bool moving = false;
     private bool isFirstUpdate = true;
     private void Awake()
     {   
-        if(moverSingleton != null)
+        if(moverSingleton != null && moverSingleton != this)
         {
             Debug.LogError($"There should only be one Camera Mover ({moverSingleton} VS {this})");
         }
+        
         moverSingleton = this;
-        PixelCamera = GetComponent<PixelPerfectCamera>();
-        ScreenSize = new Vector2(
-            (int)(PixelCamera.refResolutionX / PixelCamera.assetsPPU),
-            (int)(PixelCamera.refResolutionY / PixelCamera.assetsPPU));
+        
+        pixelCamera = GetComponent<PixelPerfectCamera>();
+        RoomSize = new Vector2(
+            (int)(pixelCamera.refResolutionX / pixelCamera.assetsPPU),
+            (int)(pixelCamera.refResolutionY / pixelCamera.assetsPPU));
+        currentRoomPos = CameraMover.RoomPosForWorldPos(lookAtGridEntity.Value == null? 
+                                                        transform.position : 
+                                                        lookAtGridEntity.Value.transform.position);
+        cellSize = grid.cellSize;
+    }
+
+    private void OnEnable()
+    {
+        if(moverSingleton != null && moverSingleton != this)
+        {
+            Debug.LogError($"There should only be one Camera Mover ({moverSingleton} VS {this})");
+        }
+        
+        moverSingleton = this;
     }
 
     private void OnDestroy() 
@@ -69,13 +96,18 @@ public class CameraMover : MonoBehaviour
         moverSingleton = null;    
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        if(!UnityEngineUtils.IsInPlayModeOrAboutToPlay())
+        {
+            return;
+        }
+
         if(isFirstUpdate)
         {
-            Vector2Int roomPos = GridUtils.RoomPosForWorldPos(LookAtGridEntity.transform.position, this.ScreenSize);
+            Vector2Int roomPos = GridUtils.RoomPosForWorldPos(LookAtGridEntity.transform.position, this.RoomSize, (Vector2)moverSingleton.CellSize);
             playerRoom = roomPos;
-            transform.position =  GridUtils.WorldPosForRoomPos(roomPos, this.ScreenSize, transform.position.z);
+            transform.position =  GridUtils.WorldPosForRoomPos(roomPos, this.RoomSize, (Vector2)moverSingleton.CellSize, transform.position.z);
             isFirstUpdate = false;
             OnCameraMoveEnd?.Invoke(new Vector2Int(0,0), roomPos);
         }
@@ -123,10 +155,10 @@ public class CameraMover : MonoBehaviour
             StopCoroutine(cameraShake);
         }
         cameraShake = null;
-        Vector2Int camRoom = GridUtils.RoomPosForWorldPos(transform.position, this.ScreenSize);
+        Vector2Int camRoom = GridUtils.RoomPosForWorldPos(transform.position, this.RoomSize, (Vector2)moverSingleton.CellSize);
         if(instant)
         {
-            transform.position = GridUtils.WorldPosForRoomPos(camRoom, this.ScreenSize, transform.position.z);    
+            transform.position = GridUtils.WorldPosForRoomPos(camRoom, this.RoomSize, (Vector2)moverSingleton.CellSize, transform.position.z);    
         }
         else
         {
@@ -153,8 +185,8 @@ public class CameraMover : MonoBehaviour
         GridRegistry.Instance.ReorderRoomGridObject(LookAtGridEntity, 
                                                     startRoomPos);
 
-        Vector3 startPosition = GridUtils.WorldPosForRoomPos(startRoomPos, this.ScreenSize, transform.position.z);
-        Vector3 targetPosition = GridUtils.WorldPosForRoomPos(endRoomPos, this.ScreenSize, transform.position.z);
+        Vector3 startPosition = GridUtils.WorldPosForRoomPos(startRoomPos, this.RoomSize, (Vector2)moverSingleton.CellSize, transform.position.z);
+        Vector3 targetPosition = GridUtils.WorldPosForRoomPos(endRoomPos, this.RoomSize, (Vector2)moverSingleton.CellSize, transform.position.z);
  
         float time = moveTime;
         float instant = 0.0f;
@@ -179,7 +211,7 @@ public class CameraMover : MonoBehaviour
     public Vector3 GetTargetCameraPosition()
     {
         Vector2Int targetRoom = LookAtGridEntity.RoomGridPos;
-        return GridUtils.WorldPosForRoomPos(targetRoom, this.ScreenSize, transform.position.z);
+        return GridUtils.WorldPosForRoomPos(targetRoom, this.RoomSize,(Vector2)moverSingleton.CellSize, transform.position.z);
     }
 
     public void ShakeCamera(float intensity)
@@ -212,11 +244,21 @@ public class CameraMover : MonoBehaviour
 
     public static Vector2Int RoomPosForWorldPos(Vector3 worldPos)
     {
-        return GridUtils.RoomPosForWorldPos(worldPos, moverSingleton.ScreenSize);
+        return GridUtils.RoomPosForWorldPos(worldPos, moverSingleton.RoomSize, (Vector2)moverSingleton.CellSize);
+    } 
+
+    public static Vector2Int RoomPosForGridPos(Vector3Int gridPos)
+    {
+        return GridUtils.RoomPosForGridPos(gridPos, (Vector2)moverSingleton.CellSize, moverSingleton.RoomSize);
     } 
 
     public static Vector3Int GridPosForWorldPos(Vector3 worldPos)
     {
-        return GridUtils.GridPosForWorldPos(worldPos, moverSingleton.ScreenSize);
+        return GridUtils.GridPosForWorldPos(worldPos, (Vector2)moverSingleton.CellSize);
+    }
+
+    public static Vector3 WorldPosForGridPos(Vector3Int gridPos, float zPos)
+    {
+        return GridUtils.WorldPosForGridPos(gridPos, zPos, (Vector2)moverSingleton.CellSize);
     }
 }

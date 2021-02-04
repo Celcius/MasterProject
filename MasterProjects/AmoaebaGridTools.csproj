@@ -36,20 +36,31 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\CameraMover.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\GridUtils.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\GridEntityVar.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\GridEntity.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\GenericScriptables.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\GridRegistry.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\RegisterCameraMoverVar.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\RegisterGridEntityVarArr.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\RegisterGridEntityVar.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\RoomHandler.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\CameraMoverVar.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\GridEntityArrVar.cs" />
-     <Compile Include="Assets\Scripts\AmoaebaGridTools\CameraTargetGridEntity.cs" />
-     <None Include="Assets\Scripts\AmoaebaGridTools\AmoaebaGridTools.asmdef" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\CameraMover.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\TilemapUtils.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\CameraTargetGridEntity.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\GridUtils.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\GridEntityPlacer.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\GridEntityVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\Pathfinding\ComputedWorld.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\GridEntity.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\RegisterTileMapArrayVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\GenericScriptables.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\Pathfinding\VerticalWorldController.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\GridRegistry.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\Pathfinding\VerticalWorldPathfindingAdapter.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\RegisterCameraMoverVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\RegisterGridEntityVarArr.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\RegisterGridEntityVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\Pathfinding\MapScriptable.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\RoomHandler.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\TilemapArrayVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\CameraMoverVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\GridEntityArrVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\Pathfinding\RoomTileController.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\RegisterTileMapVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\TilemapVar.cs" />
+     <None Include="Assets\Scripts\AmoaebaTileTools\AmoaebaGridTools.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -278,6 +289,15 @@
     <Reference Include="System.Threading.Tasks.Extensions">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Editor">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+    </Reference>
     <Reference Include="Sirenix.Serialization">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
     </Reference>
@@ -286,15 +306,6 @@
     </Reference>
     <Reference Include="Sirenix.Utilities.Editor">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization.Config">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -655,6 +666,10 @@
     <ProjectReference Include="AmoaebaUtils.csproj">
       <Project>{439bcc43-9ec9-d394-a742-b14903d5ca25}</Project>
       <Name>AmoaebaUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="AmoaebaUtils.Pathfinding.csproj">
+      <Project>{891a2a49-5103-e888-4020-afff463c78bf}</Project>
+      <Name>AmoaebaUtils.Pathfinding</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

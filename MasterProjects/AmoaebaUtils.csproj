@@ -140,6 +140,8 @@
      <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterComponentVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\Core\SceneTransitionHandler.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\TransformMovement.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Vector3IntVarArr.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Vector2IntVarArr.cs" />
      <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -369,15 +371,6 @@
     <Reference Include="System.Threading.Tasks.Extensions">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Editor">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization.Config">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
-    </Reference>
     <Reference Include="Sirenix.Serialization">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
     </Reference>
@@ -386,6 +379,15 @@
     </Reference>
     <Reference Include="Sirenix.Utilities.Editor">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Editor">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

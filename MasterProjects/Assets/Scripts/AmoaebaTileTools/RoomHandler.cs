@@ -29,7 +29,7 @@ public class RoomHandler : MonoBehaviour
     }
     private void EnableCurrentRoom()
     {
-        Vector2Int room = GridUtils.RoomPosForWorldPos(mover.LookAtGridEntity.transform.position, mover.ScreenSize);
+        Vector2Int room = CameraMover.RoomPosForWorldPos(mover.LookAtGridEntity.transform.position);
         OnRoomEnter(true, room);
     }
 
@@ -57,7 +57,7 @@ public class RoomHandler : MonoBehaviour
 
     private void RespawnRoom()
     {
-        Vector2Int pos = GridUtils.RoomPosForWorldPos(mover.LookAtGridEntity.transform.position, mover.ScreenSize);
+        Vector2Int pos = CameraMover.RoomPosForWorldPos(mover.LookAtGridEntity.transform.position);
         OnRoomEnter(false, pos);
         EnableCurrentRoom();
     }

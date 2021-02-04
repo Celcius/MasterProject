@@ -16,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Floor
   - 
   - 
   - 
@@ -43,4 +43,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BG1
+    uniqueID: 211470725
+    locked: 0
+  - name: BG2
+    uniqueID: 613401569
+    locked: 0
+  - name: Objects
+    uniqueID: 1786817933
+    locked: 0
+  - name: Characters
+    uniqueID: 2236202729
+    locked: 0
+  - name: FG1
+    uniqueID: 1745359139
+    locked: 0
+  - name: FG2
+    uniqueID: 1649446539
+    locked: 0
+  - name: FloorUI
+    uniqueID: 2029417143
     locked: 0
