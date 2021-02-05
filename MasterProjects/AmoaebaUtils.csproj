@@ -144,6 +144,8 @@
      <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\TransformMovement.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\Core\SwapSpriteOnScriptVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\Core\SwapSpriteOnBoolVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\Core\RandomSelectionScriptable.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\Core\RandomSelectionString.cs" />
      <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

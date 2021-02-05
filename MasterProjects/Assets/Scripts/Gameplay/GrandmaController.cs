@@ -43,6 +43,15 @@ public class GrandmaController : GridEntity
 
     [SerializeField]
     private BoolVar respondToCry;
+
+    [SerializeField]
+    private TextBalloon balloon;
+
+    [SerializeField]
+    private RandomSelectionTextBalloonString grabStrings;
+
+    [SerializeField]
+    private RandomSelectionTextBalloonString throwStrings;
     
     protected override void Start()
     {
@@ -119,6 +128,8 @@ public class GrandmaController : GridEntity
         StopWalking();
         character.transform.parent = representation.transform;
         character.transform.position = throwAnchor.position;
+
+        balloon.ShowText(grabStrings.GetRandomSelection());
     }
 
     public void ReleaseCharacter(CharacterMovement character)
@@ -126,13 +137,14 @@ public class GrandmaController : GridEntity
         character.transform.parent = null;
         character.transform.right = Vector2.right;
         character.transform.position  = (Vector3)targetPosVar.Value + character.transform.position.z * Vector3.up;
+        
+        balloon.ShowText(throwStrings.GetRandomSelection());
     }
 
     
     [SerializeField]
     private RoomTileController controller;
 
-    
     public void MoveToGoal(Vector2Int goal)
     {
         Vector2Int[] path = grannyPath.PerformSearch((Vector2Int)this.GridPos, 
