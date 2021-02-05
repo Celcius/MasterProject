@@ -7,6 +7,7 @@ public static class GameConstants
     public const string PLAYER_TAG = "Character";
     public const string GRANDMOTHER_TAG = "Grandmother";
     public const string PUSHABLE_TAG = "Pushable";
+    public const string TILEMAP_TAG = "Tilemap";
 
     public enum BalloonSpeedEnum
     {
@@ -16,7 +17,6 @@ public static class GameConstants
         Slow,
         VerySlow
     }
-
     public const float BALLOON_SPEED_VERY_FAST = 0.01f;
     public const float BALLOON_SPEED_FAST = 0.025f;
     public const float BALLOON_SPEED_NORMAL = 0.08f;

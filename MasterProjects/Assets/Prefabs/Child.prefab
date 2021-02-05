@@ -90,6 +90,7 @@ MonoBehaviour:
   stateVar: {fileID: 11400000, guid: 1dcd4964f0725b84e91c7749553cc9ef, type: 2}
   input: {fileID: 11400000, guid: a62c1bc6975118a46ab8a03840e85200, type: 2}
   grandmotherTargetVar: {fileID: 11400000, guid: 818af81053fa77040ab4a76e110d0f1d, type: 2}
+  roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
 --- !u!114 &5451419466169418069
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,3 +15,5 @@ MonoBehaviour:
   CamMoverVar: {fileID: 11400000, guid: 1b103e906b3f0824fa3f9450fac8fa4d, type: 2}
   referenceMap: {fileID: 11400000, guid: 2cbbc9603db1f8243b30186231ab330a, type: 2}
   isReferenceMapWalls: 1
+  tilesToIgnore:
+  - {fileID: 11400000, guid: 9527b82e759fa2043a7d3a3e59788cc5, type: 2}

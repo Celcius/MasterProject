@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AmoaebaUtils;
+using  UnityEngine.Tilemaps;
 
 public class TargetMover : MonoBehaviour
 {
@@ -25,8 +26,17 @@ public class TargetMover : MonoBehaviour
     [SerializeField]
     private RoomTileController controller;
 
+    [SerializeField]
+    private TileBase[] validTiles;
+    private HashSet<System.Type> validTypes = new HashSet<System.Type>();
+
     private void Start() 
     {
+        foreach(TileBase tile in validTiles)
+        {
+            validTypes.Add(tile.GetType());
+        }
+
         stateVar.OnChange += OnStateChange;
         OnStateChange(CharacterState.Idle, stateVar.Value);
         validThrow.Value = false;
@@ -67,7 +77,6 @@ public class TargetMover : MonoBehaviour
         {
             return false;
         }
-
         
         Vector2 targetSize = CameraMover.Instance.CellSize * 0.95f;
         for(float x = -0.5f; x <= 0.5f; x++)
@@ -86,6 +95,8 @@ public class TargetMover : MonoBehaviour
             }
         }
 
-        return true;
+        TileBase tile = controller.GetTileForWorldPos(transform.position);
+        
+        return tile != null && validTypes.Contains(tile.GetType());
     }
 }

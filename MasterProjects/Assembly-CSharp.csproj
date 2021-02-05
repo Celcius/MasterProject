@@ -49,6 +49,9 @@
      <Compile Include="Assets\Scripts\UI\TextBalloon.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
      <Compile Include="Assets\Scripts\UI\RandomSelectionTextBalloonString.cs" />
+     <Compile Include="Assets\Scripts\Map\LedgeTile.cs" />
+     <Compile Include="Assets\Scripts\Map\LedgeScript.cs" />
+     <Compile Include="Assets\Scripts\Map\LandingTile.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using AmoaebaUtils;
 
 namespace AmoaebaUtils
@@ -20,10 +21,20 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
     [SerializeField]
     private bool isReferenceMapWalls = true;
 
+    [SerializeField]
+    private TileBase[] tilesToIgnore;
+    private HashSet<System.Type> tilesToIgnoreHash = new HashSet<System.Type>();
+
     private HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
 
     private void OnEnable()
     {
+        tilesToIgnoreHash.Clear();
+        foreach(TileBase tileBase in tilesToIgnore)
+        {
+            tilesToIgnoreHash.Add(tileBase.GetType());
+        }
+
         CamMoverVar.OnChange += OnCameraChanged;
     }
 
@@ -81,7 +92,9 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
                 Vector2Int attemptPos = new Vector2Int(x,y);
                 Vector3 worldPos = CameraMover.WorldPosForGridPos((Vector3Int)attemptPos, 0);
 
-                bool hasTile = GridUtils.GetTileForWorldPos(referenceMap.Value, worldPos) != null;
+                TileBase tile = GridUtils.GetTileForWorldPos(referenceMap.Value, worldPos);
+
+                bool hasTile = (tile != null && !tilesToIgnoreHash.Contains(tile.GetType()));
 
                 if(isReferenceMapWalls != hasTile)
                 {
@@ -91,10 +104,32 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         }
     }
 
+    public TileBase GetTileForWorldPos(Vector3 worldPos)
+    {
+        return GridUtils.GetTileForWorldPos(referenceMap.Value, worldPos);
+    }
+
     public bool IsInCurrentRoom(Vector2Int gridPos)
     {
         bool containsPos = roomGridPosBounds.Contains((Vector3Int)gridPos);
         return containsPos;
+    }
+
+    public Vector3Int FindEmptyPosInDir(Vector3Int searchPos, Vector2Int dir)
+    {
+        Vector3Int searchBelow = searchPos;
+        Tilemap map = referenceMap.Value;
+        while(roomGridPosBounds.Contains(searchBelow))
+        {
+            searchBelow += (Vector3Int)dir;
+            Vector3 worldPos = CameraMover.WorldPosForGridPos(searchBelow, 0);
+            TileBase tile = GetTileForWorldPos(worldPos);
+            if(tile == null)
+            {
+                return searchBelow;
+            }
+        }
+        return searchPos;
     }
 
     public Vector3 ClampWorldPosToRoom(Vector3 worldPos, bool clampToGridBounds = true)

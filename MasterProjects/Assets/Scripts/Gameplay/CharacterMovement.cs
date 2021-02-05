@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using AmoaebaUtils;
 
 public class CharacterMovement : MonoBehaviour
@@ -36,7 +37,12 @@ public class CharacterMovement : MonoBehaviour
     private TransformVar grandmotherTargetVar;
 
     private Vector2 movingDir = Vector2.down;
-    private Vector2 FacingDir => stateVar.Value == CharacterState.Walking ? movingDir : Vector2.down;
+    public Vector2 MovingDir => movingDir;
+    private Vector2 facingDir = Vector2.down;
+    private Vector2 FacingDir => stateVar.Value == CharacterState.Walking ? facingDir : Vector2.down;
+
+    [SerializeField]
+    private RoomTileController roomController;
 
 
     private void Start()
@@ -89,23 +95,30 @@ public class CharacterMovement : MonoBehaviour
         if(!Mathf.Approximately(dir.magnitude, 0))
         {
             Vector3 goalPos = transform.position + moveSpeed*dir * Time.deltaTime;
-            movingDir = movingDir = (Vector2)dir;
+            facingDir = movingDir = (Vector2)dir;
             this.stateVar.Value = CharacterState.Walking;
 
             body2D.MovePosition(goalPos);
         }
         else
         {
-            movingDir = movingDir = Vector2.down;
+            movingDir = Vector2.zero;
+            facingDir = Vector2.down;
             this.stateVar.Value = CharacterState.Idle;
         }
     }
+
     private void OnGrab()
     {
         movingDir = movingDir = Vector2.down;
         grandmaScriptVar.Value.GrabCharacter(this);
         DisableColliders();
         stateVar.Value = CharacterState.Throwing;
+    }
+
+    public void JumpTo(Vector3 worldPosition)
+    {
+        transform.position = worldPosition;
     }
 
     private void OnRelease()
