@@ -76,7 +76,7 @@ public class GrandmaController : GridEntity
 
     private void Update()
     {
-        if(isOnGrandmaVar.Value && characterStateVar.Value == CharacterState.Throwing)
+        if(characterStateVar.Value == CharacterState.Throwing)
         {
             representation.transform.right = (targetPosVar.Value - (Vector2)transform.position).normalized;
         }

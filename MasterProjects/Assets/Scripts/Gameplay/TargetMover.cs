@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AmoaebaUtils;
 
 public class TargetMover : MonoBehaviour
 {
@@ -16,12 +17,19 @@ public class TargetMover : MonoBehaviour
     private Vector2Var targetPosVar;
 
     [SerializeField]
+    private BoolVar validThrow;
+
+    [SerializeField]
     private GrandmaScriptVar grandmaVar;
+
+    [SerializeField]
+    private RoomTileController controller;
 
     private void Start() 
     {
         stateVar.OnChange += OnStateChange;
         OnStateChange(CharacterState.Idle, stateVar.Value);
+        validThrow.Value = false;
     }
 
     private void OnDestroy() 
@@ -43,8 +51,41 @@ public class TargetMover : MonoBehaviour
         Vector3 dir = input.GetMovementAxis();
         if(!Mathf.Approximately(dir.magnitude, 0))
         {
-            transform.position = transform.position + moveSpeed*dir * Time.deltaTime;
-            targetPosVar.Value  = transform.position;
+            Vector3 goalPos = transform.position + moveSpeed*dir * Time.deltaTime;
+            transform.position = controller.ClampWorldPosToRoom(goalPos);
+            targetPosVar.Value  = transform.position - CameraMover.Instance.CellSize/2.0f;
         }
+
+        validThrow.Value = IsPositionValidThrow();
+    }
+
+
+    private bool IsPositionValidThrow()
+    {
+        Vector3Int gridPos = CameraMover.GridPosForWorldPos(transform.position);
+        if(!controller.IsEmptyPos((Vector2Int)gridPos))
+        {
+            return false;
+        }
+
+        
+        Vector2 targetSize = CameraMover.Instance.CellSize * 0.95f;
+        for(float x = -0.5f; x <= 0.5f; x++)
+        {
+            for(float y = -0.5f; y <= 0.5f; y++)
+            {
+                Vector3 checkWorldPos = new Vector3(transform.position.x + x*targetSize.x,
+                                               transform.position.y + y*targetSize.y,
+                                               transform.position.z);
+                Vector3Int checkPos = CameraMover.GridPosForWorldPos(checkWorldPos);
+                
+                if(!controller.IsEmptyPos((Vector2Int)checkPos))
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }

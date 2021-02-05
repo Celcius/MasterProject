@@ -11,11 +11,16 @@ public class CharacterMovement : MonoBehaviour
     private float moveSpeed = 1.0f;
 
     private Rigidbody2D body2D;
+    private Collider2D col2D;
 
     [SerializeField]
     private CameraMoverVar cameraVar;
 
+    [SerializeField]
     private TransformVar throwTarget;
+
+    [SerializeField]
+    private BoolVar validThrow;
 
     [SerializeField]
     private GrandmaScriptVar grandmaScriptVar;
@@ -36,14 +41,15 @@ public class CharacterMovement : MonoBehaviour
 
     private void Start()
     {
-        body2D = GetComponent<Rigidbody2D>();
+       body2D = GetComponent<Rigidbody2D>();
+       col2D = GetComponent<Collider2D>();
     }
 
     void Update()
     {
         if(stateVar.Value == CharacterState.Throwing)
         {
-            if(!input.IsGrabUp())
+            if(!input.IsGrabUp() || !validThrow.Value)
             {
                 return;
             }
@@ -98,6 +104,7 @@ public class CharacterMovement : MonoBehaviour
     {
         movingDir = movingDir = Vector2.down;
         grandmaScriptVar.Value.GrabCharacter(this);
+        DisableColliders();
         stateVar.Value = CharacterState.Throwing;
     }
 
@@ -106,6 +113,7 @@ public class CharacterMovement : MonoBehaviour
         
         movingDir = movingDir = Vector2.down;
         grandmaScriptVar.Value.ReleaseCharacter(this);
+        EnableColliders();
         stateVar.Value = CharacterState.Idle;
     }
 
@@ -119,6 +127,16 @@ public class CharacterMovement : MonoBehaviour
     private void OnCryCancel()
     {
         stateVar.Value = CharacterState.Idle;
+    }
+
+    private void DisableColliders()
+    {
+        col2D.enabled = false;
+    }
+
+    private void EnableColliders()
+    {
+        col2D.enabled = true;
     }
 }
 

@@ -12,6 +12,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
 
     private Vector2Int roomGridPos;
     private BoundsInt roomGridPosBounds;
+    private Bounds roomBounds;
 
     [SerializeField]
     private TilemapVar referenceMap;
@@ -24,10 +25,6 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
     private void OnEnable()
     {
         CamMoverVar.OnChange += OnCameraChanged;
-        if(CamMoverVar.Value != null)
-        {
-            OnNewRoom(Vector2Int.zero, CamMoverVar.Value.CurrentRoomPos);
-        }
     }
 
     private void OnDisable() 
@@ -63,6 +60,13 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         Vector3Int pos = new Vector3Int(roomSize.x * roomGridPos.x, roomSize.y * roomGridPos.y, 0);
         this.roomGridPosBounds = new BoundsInt(pos, roomSize);
         
+        Vector3 cellSize = CamMoverVar.Value.CellSize;
+        cellSize.z = 1.0f;
+
+        Vector3 size = Vector3.Scale(((Vector3)roomSize), cellSize);
+        Vector3 boundsPos = Vector3.Scale(((Vector3)pos), cellSize) + size /2.0f;
+        roomBounds = new Bounds(boundsPos, size);
+        
         floorPositions.Clear();
 
         if(referenceMap.Value == null)
@@ -91,6 +95,16 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
     {
         bool containsPos = roomGridPosBounds.Contains((Vector3Int)gridPos);
         return containsPos;
+    }
+
+    public Vector3 ClampWorldPosToRoom(Vector3 worldPos, bool clampToGridBounds = true)
+    {
+        Vector3 min = roomBounds.min + (clampToGridBounds? CamMoverVar.Value.CellSize/2.0f : Vector3.zero);
+        Vector3 max = roomBounds.max - (clampToGridBounds? CamMoverVar.Value.CellSize/2.0f : Vector3.zero);
+        Vector3 clampedPos = new Vector3(Mathf.Clamp(worldPos.x, min.x, max.x),
+                                         Mathf.Clamp(worldPos.y, min.y, max.y),
+                                        worldPos.z);
+        return clampedPos;
     }
 
     public bool IsFloorPos(Vector2Int gridPos)

@@ -27,6 +27,7 @@ public class CameraMover : MonoBehaviour
     private IEnumerator cameraShake;
 
     private static CameraMover moverSingleton;
+    public static CameraMover Instance => moverSingleton;
 
     private Vector3 cellSize;
     public Vector3 CellSize => cellSize;
