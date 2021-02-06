@@ -5007,10 +5007,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4558548733758745857, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
-      propertyPath: serializationData.Prefab
-      value: 
-      objectReference: {fileID: 4558548733758745857, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
     - target: {fileID: 4558548733758745859, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
       propertyPath: m_RootOrder
       value: 3
