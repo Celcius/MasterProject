@@ -52,6 +52,9 @@ public class GrandmaController : GridEntity
 
     [SerializeField]
     private RandomSelectionTextBalloonString throwStrings;
+
+    [SerializeField]
+    private RandomSelectionTextBalloonString cancelThrowStrings;
     
     protected override void Start()
     {
@@ -132,13 +135,24 @@ public class GrandmaController : GridEntity
         balloon.ShowText(grabStrings.GetRandomSelection());
     }
 
-    public void ReleaseCharacter(CharacterMovement character)
+    public void ReleaseCharacter(CharacterMovement character, bool throwChar)
     {
         character.transform.parent = null;
         character.transform.right = Vector2.right;
-        character.transform.position  = (Vector3)targetPosVar.Value + character.transform.position.z * Vector3.up;
-        
-        balloon.ShowText(throwStrings.GetRandomSelection());
+        if(throwChar)
+        {
+            character.transform.position  = (Vector3)targetPosVar.Value + character.transform.position.z * Vector3.up;
+            balloon.ShowText(throwStrings.GetRandomSelection());
+        }
+        else
+        {
+            float angle = MathUtils.NegMod(representation.transform.rotation.eulerAngles.z, 360);
+            Vector3 offset = angle > 270 || angle < 90? new Vector3(-0.5f, -0.5f, 0) : new Vector3(0.5f, -0.5f,0.5f);
+
+            character.transform.position  = representation.transform.position + offset; 
+
+            balloon.ShowText(cancelThrowStrings.GetRandomSelection());
+        }
     }
 
     

@@ -131,6 +131,7 @@ MonoBehaviour:
   balloon: {fileID: 4558548733492882139}
   grabStrings: {fileID: 11400000, guid: 4990f8b272906ac48b797533b63de011, type: 2}
   throwStrings: {fileID: 11400000, guid: 5597a5615c1d29a47ac899f3cef55166, type: 2}
+  cancelThrowStrings: {fileID: 11400000, guid: 84e2a1f802922194aa2ca3901033ad36, type: 2}
   controller: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
 --- !u!114 &4558548733758745861
 MonoBehaviour:

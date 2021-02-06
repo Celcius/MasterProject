@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5681831361879564136}
   - component: {fileID: 5681831361879564138}
   - component: {fileID: 5681831361879564139}
+  - component: {fileID: 189406720077829109}
   m_Layer: 0
   m_Name: Pushable
   m_TagString: Untagged
@@ -93,8 +94,22 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  cellPosition: {x: 6, y: 7, z: 0}
+  cellPosition: {x: 16, y: 12, z: 0}
   gridToAdjust: {fileID: 0}
+--- !u!114 &189406720077829109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5681831361879564143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d51980089a32b438a20e4f5170bb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushTime: 0.5
+  controller: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
 --- !u!1 &5681831362301656014
 GameObject:
   m_ObjectHideFlags: 0

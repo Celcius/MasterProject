@@ -37,21 +37,23 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Gameplay\GrandmaController.cs" />
+     <Compile Include="Assets\Scripts\Map\LedgeScript.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterState.cs" />
+     <Compile Include="Assets\Scripts\UI\TextBalloon.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterStateVar.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GameConstants.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GrandmaScriptVar.cs" />
      <Compile Include="Assets\Scripts\Input\WindowsInputController.cs" />
+     <Compile Include="Assets\Scripts\Map\LandingTile.cs" />
      <Compile Include="Assets\Scripts\Gameplay\TargetMover.cs" />
      <Compile Include="Assets\Scripts\Input\IInputController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterMovement.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\RegisterGrandmaScriptVar.cs" />
-     <Compile Include="Assets\Scripts\UI\TextBalloon.cs" />
-     <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
      <Compile Include="Assets\Scripts\UI\RandomSelectionTextBalloonString.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\RegisterGrandmaScriptVar.cs" />
      <Compile Include="Assets\Scripts\Map\LedgeTile.cs" />
-     <Compile Include="Assets\Scripts\Map\LedgeScript.cs" />
-     <Compile Include="Assets\Scripts\Map\LandingTile.cs" />
+     <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
+     <Compile Include="Assets\Pushable.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\PlayerCollideable.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

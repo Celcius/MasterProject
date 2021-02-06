@@ -55,12 +55,14 @@ public class CharacterMovement : MonoBehaviour
     {
         if(stateVar.Value == CharacterState.Throwing)
         {
-            if(!input.IsGrabUp() || !validThrow.Value)
+            if(!input.IsGrabUp())
             {
                 return;
             }
+
+            bool isThrow = validThrow.Value;
             
-            OnRelease();
+            OnRelease(isThrow);
             this.stateVar.Value = CharacterState.Idle;
 
             return;
@@ -121,11 +123,11 @@ public class CharacterMovement : MonoBehaviour
         transform.position = worldPosition;
     }
 
-    private void OnRelease()
+    private void OnRelease(bool isThrow)
     {
         
         movingDir = movingDir = Vector2.down;
-        grandmaScriptVar.Value.ReleaseCharacter(this);
+        grandmaScriptVar.Value.ReleaseCharacter(this, isThrow);
         EnableColliders();
         stateVar.Value = CharacterState.Idle;
     }

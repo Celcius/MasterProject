@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using AmoaebaUtils;
 
-public class LedgeScript : MonoBehaviour
+public class LedgeScript : PlayerCollideable
 {
     [SerializeField]
     private RoomTileController roomController;
@@ -20,7 +20,7 @@ public class LedgeScript : MonoBehaviour
         posBelow = roomController.FindEmptyPosInDir(myPos, searchDir);
     }
 
-    private void OnCollisionEnter2D(Collision2D other) 
+    protected override void PlayerCollisionEnter(CharacterMovement movement)
     {
         if(myPos == posBelow)
         {
@@ -28,27 +28,23 @@ public class LedgeScript : MonoBehaviour
             return;
         }
 
-        if(other.collider.tag == GameConstants.PLAYER_TAG)
+        if((searchDir.x != 0 && Mathf.Sign(movement.MovingDir.x) != Mathf.Sign(searchDir.x))
+            || (searchDir.y != 0 && Mathf.Sign(movement.MovingDir.y) != Mathf.Sign(searchDir.y)))
         {
-            CharacterMovement movement = other.collider.GetComponent<CharacterMovement>();
-            if(movement == null
-               || (searchDir.x != 0 && Mathf.Sign(movement.MovingDir.x) != Mathf.Sign(searchDir.x))
-               || (searchDir.y != 0 && Mathf.Sign(movement.MovingDir.y) != Mathf.Sign(searchDir.y)))
-            {
-                return;
-            }
-
-            Vector3 pos = CameraMover.WorldPosForGridPos(posBelow, movement.transform.position.z);
-            if(searchDir.x == 0)
-            {
-                pos.x = movement.transform.position.x;
-            }
-            else if(searchDir.y == 0)
-            {
-                pos.y = movement.transform.position.y;
-            }
-            
-            movement.JumpTo(pos);
+            return;
         }
+
+        Vector3 pos = CameraMover.WorldPosForGridPos(posBelow, movement.transform.position.z);
+        if(searchDir.x == 0)
+        {
+            pos.x = movement.transform.position.x;
+        }
+        else if(searchDir.y == 0)
+        {
+            pos.y = movement.transform.position.y;
+        }
+        
+        movement.JumpTo(pos);
     }
+    
 }
