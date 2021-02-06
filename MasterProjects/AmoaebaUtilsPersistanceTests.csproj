@@ -36,11 +36,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\Tests\Generated\MessagePack_Resolvers_GeneratedResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\Tests\AmoaebaPersistanceTestSuite.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\Tests\InitMessagePackTests.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\Tests\Generated\MessagePack_Formatters_AmoaebaUtils_TestStructFormatter.cs" />
-     <None Include="Assets\Packages\AmoaebaUtils\Persistance\Tests\AmoaebaUtilsPersistanceTests.asmdef" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\Tests\Generated\MessagePack_Resolvers_GeneratedResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\Tests\AmoaebaPersistanceTestSuite.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\Tests\InitMessagePackTests.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\Tests\Generated\MessagePack_Formatters_AmoaebaUtils_TestStructFormatter.cs" />
+     <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\Tests\AmoaebaUtilsPersistanceTests.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -240,7 +240,7 @@
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Memory.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

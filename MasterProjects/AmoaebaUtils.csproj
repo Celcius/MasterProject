@@ -36,117 +36,117 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\FileUtils.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\Parallax\ParallaxableSprite.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterAnimatorVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\SceneTransitionDefinition.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\MenuUtils\FloatVarToFillImage.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ArrayVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\IntEvent.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\LinearTransformMovement.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\UpdateTextOnIntVarChange.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\QuaternionVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimateTextOnChange.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\MenuUtils\Menu.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\InstantiateTimerOnScreen.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ICollectionVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\StateMachine\ScriptableState.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\Parallax\ParallaxController.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\FloatEvent.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\MathUtils.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ScriptableEvent.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\IndexableStack.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ScriptableObjectUtility.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterTransformArrVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\UpdateTextOnTimeVarChange.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\IntVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimationUtils\CurveAnim.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\GeometryUtils.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ScriptableArgumentEvent.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimationUtils\RotateAnim.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\UnityEngineUtils.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\UpdateTextOnStringVarChange.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\StringEvent.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\SoundSystem\PlaySoundOnCollision.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Vector2IntVarArr.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\ApplyOnCollision.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ApplyToFloatVarOnCollision.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\SoundSystem\SoundSystem.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimationUtils\ScaleAnim.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\Parallax\ParallaxFromWindowBounds.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\BoolVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\PreloadedScriptablesBooter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\SceneVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\Singleton.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\BoolEvent.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\SceneTransitionOperation.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ScriptVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterCameraVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimateFramesAndDestroy.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\UpdateTextOnFloatVarChange.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\ReflectionUtils.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\CoroutineRunner.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\Parallax\AnimateParallax.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\MenuUtils\FloatVarToSlider.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\ChangeFollowOffsetOnScreenSize.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\IntArrVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Rigidbody2DVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\BootScriptableObject.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\Parallax\Parallaxable.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\MenuUtils\BoolVarToggle.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\SoundSystem\PlaySoundOnEnable.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimateFramesDestroyInstantiate.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\UpdateTextOnVarChange.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\VoidEvent.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterRigidbody2D.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\UnityMainThreadDispatcher\UnityMainThreadDispatcher.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\SingletonScriptableObject.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\DestroyOnCollision.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\InstantiateTimer.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimateTextOnStringVarChange.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Vector3Var.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Vector2Var.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\RemoveChildrenOnStart.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Vector3IntVarArr.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\CurveTransformMove.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\CalculateOrtographicWindowBounds.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimateFrames.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimationUtils\FadeInFadeOutAnim.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\AnimatorVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\PhysicsAnimationCurve.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\DisableOnBoolVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\StructUtils.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\LayerMaskVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ApplyForceToBody2DOnCollision.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\InstantiateOnCollision.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\DisableOnCollision.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\FloatVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\UndrawableGraphic.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\BillboardPlane.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ApplyToVarOnCollision.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterArrayComponentVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ApplyToIntVarOnCollision.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\Parallax\ParallaxFollowTransform.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\FadeDestroyAfter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\StateMachine\ScriptableStateMachine.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\StringVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ArrayVarIndexObserver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimateTextOnIntVarChange.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\DestroyAfter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\FollowTransform.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\TransformVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\AnimateTextOnFloatVarChange.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterTransform.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\TransformArrVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\CameraVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterComponentVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\SceneTransitionHandler.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GameplayUtils\TransformMovement.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\SwapSpriteOnScriptVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\SwapSpriteOnBoolVar.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\RandomSelectionScriptable.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Core\RandomSelectionString.cs" />
-     <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils.asmdef" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\FileUtils.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\Parallax\ParallaxableSprite.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterAnimatorVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SceneTransitionDefinition.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\MenuUtils\FloatVarToFillImage.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\RandomSelectionString.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ArrayVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\IntEvent.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\LinearTransformMovement.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\UpdateTextOnIntVarChange.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\QuaternionVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimateTextOnChange.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\MenuUtils\Menu.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\InstantiateTimerOnScreen.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ICollectionVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\StateMachine\ScriptableState.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\Parallax\ParallaxController.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\FloatEvent.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\MathUtils.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ScriptableEvent.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\RandomSelectionScriptable.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\IndexableStack.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ScriptableObjectUtility.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterTransformArrVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\UpdateTextOnTimeVarChange.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\IntVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimationUtils\CurveAnim.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\GeometryUtils.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ScriptableArgumentEvent.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimationUtils\RotateAnim.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\UnityEngineUtils.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\UpdateTextOnStringVarChange.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\StringEvent.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SoundSystem\PlaySoundOnCollision.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Vector2IntVarArr.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\ApplyOnCollision.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ApplyToFloatVarOnCollision.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SoundSystem\SoundSystem.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimationUtils\ScaleAnim.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\Parallax\ParallaxFromWindowBounds.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\BoolVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\PreloadedScriptablesBooter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\SceneVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\Singleton.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\BoolEvent.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SceneTransitionOperation.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ScriptVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterCameraVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimateFramesAndDestroy.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\UpdateTextOnFloatVarChange.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\ReflectionUtils.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\CoroutineRunner.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\Parallax\AnimateParallax.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\MenuUtils\FloatVarToSlider.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\ChangeFollowOffsetOnScreenSize.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\IntArrVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Rigidbody2DVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\BootScriptableObject.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\Parallax\Parallaxable.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\MenuUtils\BoolVarToggle.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SoundSystem\PlaySoundOnEnable.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimateFramesDestroyInstantiate.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\UpdateTextOnVarChange.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\VoidEvent.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterRigidbody2D.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\UnityMainThreadDispatcher\UnityMainThreadDispatcher.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\SingletonScriptableObject.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\DestroyOnCollision.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\InstantiateTimer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimateTextOnStringVarChange.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Vector3Var.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Vector2Var.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\RemoveChildrenOnStart.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\Vector3IntVarArr.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\CurveTransformMove.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\CalculateOrtographicWindowBounds.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimateFrames.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimationUtils\FadeInFadeOutAnim.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\AnimatorVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\PhysicsAnimationCurve.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\DisableOnBoolVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\StructUtils.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\LayerMaskVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ApplyForceToBody2DOnCollision.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\InstantiateOnCollision.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\DisableOnCollision.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\FloatVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\UndrawableGraphic.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\BillboardPlane.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ApplyToVarOnCollision.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterArrayComponentVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ApplyToIntVarOnCollision.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\Parallax\ParallaxFollowTransform.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\FadeDestroyAfter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\StateMachine\ScriptableStateMachine.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\StringVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ArrayVarIndexObserver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimateTextOnIntVarChange.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SwapSpriteOnBoolVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\DestroyAfter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\FollowTransform.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\TransformVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimateTextOnFloatVarChange.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SwapSpriteOnScriptVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterTransform.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\TransformArrVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\CameraVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterComponentVar.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SceneTransitionHandler.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\TransformMovement.cs" />
+     <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\AmoaebaUtils.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -343,37 +343,37 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.AccessControl">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL</HintPath>
     </Reference>
     <Reference Include="Google.GData.Client">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Documents">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Extensions">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Spreadsheets">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Newtonsoft.Json.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="TinyJSON">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Buffers.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Memory.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.OdinInspector.Attributes">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>

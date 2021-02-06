@@ -36,25 +36,25 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Utils\GoogleSheetsToUnityConfig.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v3\SpreadSheetManager.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v4\Spreadsheet.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Animal Example\Scripts\AnimalManager.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Utils\SecondaryKeyDictionary.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Animal Example\Scripts\Scriptable Objects\Animal.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Utils\EditorCoroutineRunner.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Utils\Task.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v4\GoogleAuthrisationHelper.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v3\SecurityPolicy.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v4\Public\SpreadsheetManager.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Animal Example\Scripts\AnimalObject.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Utils\GoogleSheetsToUnityUtilities.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v3\OAuth2.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Editor\GoogleSheetsToUnityEditorWindow.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Animal Example\Scripts\Scriptable Objects\AnimalContainer.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v3\PublicSpreadSheetManager.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v4\Private\SpreadsheetManager.cs" />
-     <None Include="Assets\Packages\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\GoogleSheetsToUnity.asmdef" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Utils\GoogleSheetsToUnityConfig.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v3\SpreadSheetManager.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v4\Spreadsheet.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Animal Example\Scripts\AnimalManager.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Utils\SecondaryKeyDictionary.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Animal Example\Scripts\Scriptable Objects\Animal.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Utils\EditorCoroutineRunner.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Utils\Task.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v4\GoogleAuthrisationHelper.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v3\SecurityPolicy.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v4\Public\SpreadsheetManager.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Animal Example\Scripts\AnimalObject.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Utils\GoogleSheetsToUnityUtilities.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v3\OAuth2.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\Editor\GoogleSheetsToUnityEditorWindow.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Animal Example\Scripts\Scriptable Objects\AnimalContainer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v3\PublicSpreadSheetManager.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\Scripts\v4\Private\SpreadsheetManager.cs" />
+     <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GoogleExporter\Google Sheets to Unity\GoogleSheetsToUnity.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -251,37 +251,37 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.AccessControl">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL</HintPath>
     </Reference>
     <Reference Include="Google.GData.Client">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Documents">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Extensions">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Spreadsheets">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Newtonsoft.Json.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="TinyJSON">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Buffers.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Memory.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.OdinInspector.Attributes">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>

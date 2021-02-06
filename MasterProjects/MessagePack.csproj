@@ -36,104 +36,104 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\ExpressionUtility.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\MultiDimensionalArrayFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackStreamReader.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\IFormatterResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\TinyJsonReader.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackSerializer.NonGeneric.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\NativeDecimalResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Unsafe.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\IgnoreFormatter`1.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\ContractlessReflectionObjectResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\CompositeResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\ExtensionResult.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\DynamicEnumAsStringResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\TypelessObjectResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\DateTimeFormatters.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackWriter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackReader.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\GuidBits.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Utilities.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\ThreadsafeTypeKeyHashTable.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\TypelessFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\Sequence`1.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\CachingFormatterResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\ExtensionHeader.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\T4\TupleFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Unity\Formatters.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\TypelessContractlessStandardResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\CodeGenHelpers.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\AutomataDictionary.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\NullableFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Safe64.Dirty.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackSecurity.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\PrimitiveObjectFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Annotations\Attributes.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\IMessagePackFormatter`1.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\DynamicObjectResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\StreamPolyfillExtensions.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\UnsafeMemory.Low.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Safe32.Dirty.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Unity\MessagePackWindow.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\BitOperations.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\NilFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\StandardResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackSerializer.Json.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\DynamicObjectTypeFallbackFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\NativeGuidResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\BufferWriter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\BuiltinResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\CollectionFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\ReflectionExtensions.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Helper.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\T4\ValueTupleFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\StaticCompositeResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Unsafe64.Dirty.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\DynamicEnumResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\T4\UnsafeMemory.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\CollectionHelpers`2.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Nil.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\SequenceReader.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\PrimitiveObjectResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\SequenceReaderExtensions.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\AsymmetricKeyHashTable.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\DynamicGenericResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\T4\ForceSizePrimitiveFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\UnsafeBinaryFormatters.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\T4\PrimitiveFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Unsafe32.Dirty.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackSerializerOptions.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\DictionaryFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\ByteArrayStringHashTable.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackCode.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\StringEncoding.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\T4\MessagePackReader.Integers.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackSerializer.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Unity\Extension\UnsafeBlitFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Unity\Extension\UnityBlitResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\GenericEnumFormatter`1.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\DynamicAssembly.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\ThisLibraryExtensionTypeCodes.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\ILGeneratorExtensions.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\HashCode.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\SafeBitConverter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\DateTimeConstants.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Annotations\IMessagePackSerializationCallbackReceiver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\RuntimeTypeHandleEqualityComparer.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Internal\FarmHash.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\NativeDateTimeResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\SequencePool.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Unity\UnityResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\DynamicUnionResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackSerializationException.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\StandardClassLibraryFormatter.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Safe.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Formatters\EnumAsStringFormatter`1.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\Resolvers\AttributeFormatterResolver.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePackCompression.cs" />
-     <None Include="Assets\Packages\AmoaebaUtils\Persistance\MessagePack\MessagePack.asmdef" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\ExpressionUtility.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\MultiDimensionalArrayFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackStreamReader.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\IFormatterResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\TinyJsonReader.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackSerializer.NonGeneric.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\NativeDecimalResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Unsafe.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\IgnoreFormatter`1.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\ContractlessReflectionObjectResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\CompositeResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\ExtensionResult.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\DynamicEnumAsStringResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\TypelessObjectResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\DateTimeFormatters.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackWriter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackReader.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\GuidBits.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Utilities.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\ThreadsafeTypeKeyHashTable.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\TypelessFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\Sequence`1.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\CachingFormatterResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\ExtensionHeader.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\T4\TupleFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Unity\Formatters.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\TypelessContractlessStandardResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\CodeGenHelpers.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\AutomataDictionary.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\NullableFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Safe64.Dirty.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackSecurity.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\PrimitiveObjectFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Annotations\Attributes.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\IMessagePackFormatter`1.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\DynamicObjectResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\StreamPolyfillExtensions.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\UnsafeMemory.Low.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Safe32.Dirty.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Unity\MessagePackWindow.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\BitOperations.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\NilFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\StandardResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackSerializer.Json.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\DynamicObjectTypeFallbackFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\NativeGuidResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\BufferWriter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\BuiltinResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\CollectionFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\ReflectionExtensions.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Helper.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\T4\ValueTupleFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\StaticCompositeResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Unsafe64.Dirty.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\DynamicEnumResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\T4\UnsafeMemory.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\CollectionHelpers`2.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Nil.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\SequenceReader.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\PrimitiveObjectResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\SequenceReaderExtensions.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\AsymmetricKeyHashTable.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\DynamicGenericResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\T4\ForceSizePrimitiveFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\UnsafeBinaryFormatters.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\T4\PrimitiveFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Unsafe32.Dirty.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackSerializerOptions.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\DictionaryFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\ByteArrayStringHashTable.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackCode.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\StringEncoding.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\T4\MessagePackReader.Integers.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackSerializer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Unity\Extension\UnsafeBlitFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Unity\Extension\UnityBlitResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\GenericEnumFormatter`1.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\DynamicAssembly.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\ThisLibraryExtensionTypeCodes.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\ILGeneratorExtensions.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\HashCode.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\SafeBitConverter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\DateTimeConstants.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Annotations\IMessagePackSerializationCallbackReceiver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\RuntimeTypeHandleEqualityComparer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Internal\FarmHash.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\NativeDateTimeResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\SequencePool.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Unity\UnityResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\DynamicUnionResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackSerializationException.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\StandardClassLibraryFormatter.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\LZ4\LZ4Codec.Safe.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Formatters\EnumAsStringFormatter`1.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\Resolvers\AttributeFormatterResolver.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePackCompression.cs" />
+     <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Persistance\MessagePack\MessagePack.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -330,37 +330,37 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.AccessControl">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL</HintPath>
     </Reference>
     <Reference Include="Google.GData.Client">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Documents">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Extensions">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Spreadsheets">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Newtonsoft.Json.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="TinyJSON">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Buffers.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Memory.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.OdinInspector.Attributes">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>

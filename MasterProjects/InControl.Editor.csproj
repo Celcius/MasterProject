@@ -36,31 +36,31 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Packages\InControl\Editor\OptionalTypes\OptionalInt16PropertyDrawer.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\Touch\TouchBuilder.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\InControlBuilder.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\OptionalTypes\OptionalInt32PropertyDrawer.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\Touch\TouchControlEditor.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\InputControlSourcePropertyDrawer.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\EditorUtility.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\InControlManagerEditor.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\EditorTextures.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\OptionalTypes\OptionalInputDeviceDriverTypePropertyDrawer.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\NativeProfileListGenerator.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\OptionalTypes\OptionalInputDeviceTransportTypePropertyDrawer.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\OptionalTypes\OptionalUInt32PropertyDrawer.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\InputControlMappingPropertyDrawer.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\Touch\Controls\TouchSwipeControlEditor.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\OptionalTypes\OptionalUInt16PropertyDrawer.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\Touch\TouchManagerEditor.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\OptionalTypes\OptionalFloatPropertyDrawer.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\Touch\Controls\TouchTrackControlEditor.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\Touch\Controls\TouchStickControlEditor.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\InControlInputModuleEditor.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\InputManagerAssetGenerator.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\UnityProfileListGenerator.cs" />
-     <Compile Include="Assets\Packages\InControl\Editor\Touch\Controls\TouchButtonControlEditor.cs" />
-     <None Include="Assets\Packages\InControl\Editor\InControl.Editor.asmdef" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\OptionalTypes\OptionalInt16PropertyDrawer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\Touch\TouchBuilder.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\InControlBuilder.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\OptionalTypes\OptionalInt32PropertyDrawer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\Touch\TouchControlEditor.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\InputControlSourcePropertyDrawer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\EditorUtility.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\InControlManagerEditor.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\EditorTextures.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\OptionalTypes\OptionalInputDeviceDriverTypePropertyDrawer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\NativeProfileListGenerator.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\OptionalTypes\OptionalInputDeviceTransportTypePropertyDrawer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\OptionalTypes\OptionalUInt32PropertyDrawer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\InputControlMappingPropertyDrawer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\Touch\Controls\TouchSwipeControlEditor.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\OptionalTypes\OptionalUInt16PropertyDrawer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\Touch\TouchManagerEditor.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\OptionalTypes\OptionalFloatPropertyDrawer.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\Touch\Controls\TouchTrackControlEditor.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\Touch\Controls\TouchStickControlEditor.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\InControlInputModuleEditor.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\InputManagerAssetGenerator.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\UnityProfileListGenerator.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\InControl\Editor\Touch\Controls\TouchButtonControlEditor.cs" />
+     <None Include="Assets\Packages\AmoaebaUtils\InControl\Editor\InControl.Editor.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -257,37 +257,37 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.AccessControl">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL</HintPath>
     </Reference>
     <Reference Include="Google.GData.Client">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Documents">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Extensions">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Spreadsheets">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Newtonsoft.Json.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="TinyJSON">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/GoogleExporter/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Buffers.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Memory.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions">
-        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
+        <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Packages/AmoaebaUtils/AmoaebaUtils/Persistance/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.OdinInspector.Attributes">
         <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
