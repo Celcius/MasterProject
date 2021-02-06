@@ -38,17 +38,28 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector2 movingDir = Vector2.down;
     public Vector2 MovingDir => movingDir;
-    private Vector2 facingDir = Vector2.down;
-    private Vector2 FacingDir => stateVar.Value == CharacterState.Walking ? facingDir : Vector2.down;
+    [SerializeField]
+    private Vector2Var facingDir;
 
     [SerializeField]
     private RoomTileController roomController;
 
+    [SerializeField]
+    private PushableArrVar pushing;
+
+    private GridEntity gridEntity;
+
+    [SerializeField]
+    private Transform representationParent;
 
     private void Start()
     {
+       gridEntity = GetComponent<GridEntity>();
+
        body2D = GetComponent<Rigidbody2D>();
        col2D = GetComponent<Collider2D>();
+       facingDir.Value = Vector2.down;
+       roomController.AddEntityToIgnore(this.transform);
     }
 
     void Update()
@@ -94,18 +105,30 @@ public class CharacterMovement : MonoBehaviour
 
 
         Vector3 dir = input.GetMovementAxis();
+        
         if(!Mathf.Approximately(dir.magnitude, 0))
         {
             Vector3 goalPos = transform.position + moveSpeed*dir * Time.deltaTime;
-            facingDir = movingDir = (Vector2)dir;
-            this.stateVar.Value = CharacterState.Walking;
+            movingDir = (Vector2)dir;
+            facingDir.Value = GeometryUtils.NormalizedMaxValueVector(movingDir, false);
+            
+            Vector3 representationGoal = goalPos 
+                                        + representationParent.localPosition 
+                                        + Vector3.Scale(col2D.bounds.size, facingDir.Value)/2.0f;
+            Debug.DrawLine(representationParent.position,representationGoal, Color.cyan);
+            Vector3Int toCheckPos = CameraMover.GridPosForWorldPos(representationGoal);
+            
+            Transform[] toIgnore = new Transform[]{ grandmaScriptVar.Value.transform };
+            bool isEmpty = roomController.IsEmptyPos((Vector2Int)toCheckPos, toIgnore);
+
+            this.stateVar.Value = !isEmpty? CharacterState.Pushing : CharacterState.Walking;
 
             body2D.MovePosition(goalPos);
         }
         else
         {
             movingDir = Vector2.zero;
-            facingDir = Vector2.down;
+            facingDir.Value = Vector2.down;
             this.stateVar.Value = CharacterState.Idle;
         }
     }
@@ -136,7 +159,7 @@ public class CharacterMovement : MonoBehaviour
     {
         stateVar.Value = CharacterState.Crying;
         
-        grandmotherTargetVar.Value.transform.position = transform.position;
+        grandmotherTargetVar.Value.transform.position = representationParent.transform.position;
     }
 
     private void OnCryCancel()

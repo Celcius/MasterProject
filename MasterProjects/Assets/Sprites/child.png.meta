@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: fef4058a81831854481a299435fea9bb
+guid: e386367f093990044aacbcb434c3252b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3083089168873209362
-    second: characters_0
+      213: -4741930550087496029
+    second: child_0
   - first:
-      213: -517894308114096243
-    second: characters_1
+      213: -4151558163365030028
+    second: child_1
+  - first:
+      213: -6156604154753531317
+    second: child_2
+  - first:
+      213: 4640739381463574488
+    second: child_0
+  - first:
+      213: 6139334137001184173
+    second: child_1
+  - first:
+      213: 8269583025630705038
+    second: child_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
-    sRGBTexture: 1
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -69,7 +81,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -81,7 +93,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -95,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: characters_0
+      name: child_0
       rect:
         serializedVersion: 2
         x: 0
@@ -109,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21eba81a34559ca20800000000000000
-      internalID: 3083089168873209362
+      spriteID: 3ae467cd947413eb0800000000000000
+      internalID: -4741930550087496029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characters_1
+      name: child_1
       rect:
         serializedVersion: 2
         x: 8
@@ -130,8 +142,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8f99a5eed110d8f0800000000000000
-      internalID: -517894308114096243
+      spriteID: 4771148a8d3b266c0800000000000000
+      internalID: -4151558163365030028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: child_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b42c83de3295f8aa0800000000000000
+      internalID: -6156604154753531317
       vertices: []
       indices: 
       edges: []
@@ -139,7 +172,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 7924f502e4434cc4d9fdb885fd141e81
     internalID: 0
     vertices: []
     indices: 

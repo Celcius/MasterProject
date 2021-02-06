@@ -27,8 +27,11 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
 
     private HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
 
+    private List<Transform> entitiesToIgnore = new List<Transform>();
+
     private void OnEnable()
     {
+        entitiesToIgnore.Clear();
         tilesToIgnoreHash.Clear();
         foreach(TileBase tileBase in tilesToIgnore)
         {
@@ -147,9 +150,42 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         return floorPositions.Contains(gridPos); 
     }
 
-    public bool IsEmptyPos(Vector2Int gridPos)
+    public bool IsEmptyPos(Vector2Int gridPos, Transform[] toIgnore = null)
     {
-        return IsFloorPos(gridPos) && GridRegistry.Instance.GetEntityAtPos((Vector3Int)gridPos) == null;
+        if(!IsFloorPos(gridPos))
+        {
+            return false;
+        }
+        
+        GridEntity foundEntity = GridRegistry.Instance.GetEntityAtPos((Vector3Int)gridPos);
+        if(foundEntity == null)
+        {
+            return true;
+        }
+
+        if(entitiesToIgnore != null && entitiesToIgnore.Count > 0)
+        {
+            foreach(Transform entity in entitiesToIgnore)
+            {
+                if(foundEntity.transform == entity)
+                {
+                    return true;
+                }
+            }
+        }
+        
+        if(toIgnore != null && toIgnore.Length > 0)
+        {
+            foreach(Transform entity in toIgnore)
+            {
+                if(foundEntity.transform == entity)
+                {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
     }
 
     public Vector2Int[] GetUnoccupiedNeighbours(Vector2Int pos)
@@ -202,6 +238,16 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
     public bool SameNode(Vector2Int node1, Vector2Int node2)
     {
         return node1 == node2;
+    }
+
+    public void AddEntityToIgnore(Transform entity)
+    {
+        entitiesToIgnore.Add(entity);
+    }
+
+    public void RemoveEntityToIgnore(Transform entity)
+    {
+        entitiesToIgnore.Remove(entity);
     }
 }
 }

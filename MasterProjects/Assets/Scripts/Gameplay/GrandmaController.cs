@@ -183,6 +183,10 @@ public class GrandmaController : GridEntity
     {   
         foreach(Vector2Int nextPos in path)
         {
+            if(nextPos == path[0])
+            {
+                continue;
+            }
             Vector3 nextWorldPos = CameraMover.WorldPosForGridPos((Vector3Int) nextPos, transform.position.z);
             float distance = Vector3.Distance(nextWorldPos, transform.position);
             Vector3 dir = (nextWorldPos - transform.position).normalized;

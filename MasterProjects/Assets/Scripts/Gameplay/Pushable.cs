@@ -12,15 +12,19 @@ public class Pushable : PlayerCollideable
     [SerializeField]
     private RoomTileController controller;
 
+    [SerializeField]
+    private PushableArrVar pushing;
+
     private IEnumerator pushRoutine;
     Vector2Int pushMainDir;
 
     protected override void PlayerCollisionEnter(CharacterMovement character)
     {
-        pushMainDir = SimplifyToDirAxis(character.MovingDir);
+        pushMainDir = GeometryUtils.NormalizedMaxValueVector(character.MovingDir);
 
         if(pushMainDir.magnitude == 0)
         {
+            StopPush();
             return;
         }
 
@@ -34,8 +38,7 @@ public class Pushable : PlayerCollideable
 
     protected override void PlayerCollisionStay(CharacterMovement character) 
     {
-        Vector2Int newDir = pushMainDir = SimplifyToDirAxis(character.MovingDir);
-        Debug.Log("" + character.MovingDir +" -> " +newDir);
+        Vector2Int newDir = pushMainDir = GeometryUtils.NormalizedMaxValueVector(character.MovingDir);
         
         if(Mathf.Approximately(newDir.magnitude,0))
         {
@@ -54,6 +57,11 @@ public class Pushable : PlayerCollideable
         
         if(pushRoutine == null)
         {
+            if(!pushing.Contains(this))
+            {
+                pushing.Add(this);
+            }
+
             pushRoutine = PushRoutine();
             StartCoroutine(pushRoutine);
         }
@@ -66,6 +74,11 @@ public class Pushable : PlayerCollideable
             StopCoroutine(pushRoutine);
         }
         pushRoutine = null;
+
+        if(pushing.Contains(this))
+        {
+            pushing.Remove(this);
+        }
     }
 
     private IEnumerator PushRoutine()
@@ -76,27 +89,21 @@ public class Pushable : PlayerCollideable
             elapsed += Time.deltaTime;
         }
         PushObject();
+        pushRoutine = null;
     }
 
     private void PushObject()
     {
+        if(pushing.Contains(this))
+        {
+            pushing.Remove(this);
+        }
+
         Vector3Int goalPos = CameraMover.GridPosForWorldPos(transform.position) + (Vector3Int)pushMainDir;
         if(controller.IsEmptyPos((Vector2Int)goalPos))
         {
             transform.position =  CameraMover.WorldPosForGridPos(goalPos, transform.position.z);
         }
-    }
-
-    private Vector2Int SimplifyToDirAxis(Vector2 dir)
-    {
-        if(dir.x == dir.y)
-        {
-            return Vector2Int.zero;
-        }
-
-        return Mathf.Abs(dir.x) > Mathf.Abs(dir.y)? 
-                            Mathf.RoundToInt(Mathf.Sign(dir.x)) * Vector2Int.right 
-                            : Mathf.RoundToInt(Mathf.Sign(dir.y)) * Vector2Int.up;
     }
 
 }

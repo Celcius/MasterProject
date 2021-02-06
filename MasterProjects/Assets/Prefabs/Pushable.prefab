@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushTime: 0.5
   controller: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
+  pushing: {fileID: 11400000, guid: 9063b6ec2f3cbae438a07bf1906fd0bb, type: 2}
 --- !u!1 &5681831362301656014
 GameObject:
   m_ObjectHideFlags: 0

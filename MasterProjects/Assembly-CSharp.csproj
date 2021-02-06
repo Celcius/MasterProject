@@ -52,8 +52,10 @@
      <Compile Include="Assets\Scripts\Gameplay\RegisterGrandmaScriptVar.cs" />
      <Compile Include="Assets\Scripts\Map\LedgeTile.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Pushable.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Pushable.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerCollideable.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\PushableArrVar.cs" />
+     <Compile Include="Assets\Scripts\UI\CharacterRepresentation.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

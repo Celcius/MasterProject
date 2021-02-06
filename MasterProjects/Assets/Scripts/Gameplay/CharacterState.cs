@@ -8,4 +8,5 @@ public enum CharacterState
     Walking,
     Throwing,
     Crying,
+    Pushing
 }
