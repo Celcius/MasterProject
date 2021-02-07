@@ -36,7 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Gameplay\GrandmaController.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Pushable.cs" />
      <Compile Include="Assets\Scripts\Map\LedgeScript.cs" />
      <Compile Include="Assets\Scripts\UI\CharacterRepresentation.cs" />
@@ -44,7 +44,7 @@
      <Compile Include="Assets\Scripts\UI\TextBalloon.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterStateVar.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GameConstants.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\GrandmaScriptVar.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaScriptVar.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerCollideable.cs" />
      <Compile Include="Assets\Scripts\Input\WindowsInputController.cs" />
      <Compile Include="Assets\Scripts\Map\LandingTile.cs" />
@@ -56,6 +56,12 @@
      <Compile Include="Assets\Scripts\Map\LedgeTile.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PushableArrVar.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaState.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateIdle.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCall.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCry.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateReturn.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCryRandom.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

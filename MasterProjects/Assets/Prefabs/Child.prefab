@@ -4946,6 +4946,7 @@ GameObject:
   - component: {fileID: 5451419466350408574}
   - component: {fileID: 5451419466350408572}
   - component: {fileID: 3613890630266489466}
+  - component: {fileID: 4904126416638611623}
   m_Layer: 0
   m_Name: Representation
   m_TagString: Untagged
@@ -5037,6 +5038,19 @@ MonoBehaviour:
   - {fileID: -4151558163365030028, guid: e386367f093990044aacbcb434c3252b, type: 3}
   - {fileID: -6156604154753531317, guid: e386367f093990044aacbcb434c3252b, type: 3}
   cryingParticles: {fileID: 4601280361905222157}
+--- !u!114 &4904126416638611623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451419466350408577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff6193f40f2904459f50929f71c883c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScriptVar: {fileID: 11400000, guid: c7e25452e9f2403418b58acf1db67081, type: 2}
 --- !u!1 &5731183751174171040
 GameObject:
   m_ObjectHideFlags: 0

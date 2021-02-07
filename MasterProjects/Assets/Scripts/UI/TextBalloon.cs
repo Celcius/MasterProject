@@ -91,12 +91,13 @@ public class TextBalloon : MonoBehaviour
 
     public void ShowText(TextBalloonString ballonString)
     {
-        currentBalloonSpeed.Value = GameConstants.BallonSpeedFromEnum(ballonString.speedEnum);
-        stringVar.Value = ballonString.textString;
+        ShowText(ballonString.textString, GameConstants.BallonSpeedFromEnum(ballonString.speedEnum));
     }
 
     public void ShowText(string textToShow, float textSpeed)
     {
+        rectTransform.sizeDelta = minSize;
+
         currentBalloonSpeed.Value = textSpeed;
         stringVar.Value = textToShow;
     }

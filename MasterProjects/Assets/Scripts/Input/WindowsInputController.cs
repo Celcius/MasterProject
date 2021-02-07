@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WindowsInputController : IInputController
 {
-    public override bool IsGrabDown()
+    public override bool IsGrab()
     {
-        return Input.GetKeyDown(KeyCode.E);
+        return Input.GetKeyDown(KeyCode.E) || Input.GetKey(KeyCode.E);
     }
 
     public override bool IsGrabUp()

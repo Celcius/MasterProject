@@ -20,8 +20,8 @@ public static class GameConstants
     public const float BALLOON_SPEED_VERY_FAST = 0.01f;
     public const float BALLOON_SPEED_FAST = 0.025f;
     public const float BALLOON_SPEED_NORMAL = 0.08f;
-    public const float BALLOON_SPEED_SLOW = 0.15f;
-    public const float BALLOON_SPEED_VERY_SLOW = 0.2f;
+    public const float BALLOON_SPEED_SLOW = 0.1f;
+    public const float BALLOON_SPEED_VERY_SLOW = 0.12f;
 
     public static float BallonSpeedFromEnum(BalloonSpeedEnum speedEnum)
     {

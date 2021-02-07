@@ -409,8 +409,8 @@ MonoBehaviour:
   charactersToMaxSize: 16
   minCharactersToIncrease: 3
   label: {fileID: 5351744947141443643}
-  remainTimePerLetter: 0.5
-  minTimeInScreen: 3
+  remainTimePerLetter: 0.3
+  minTimeInScreen: 1.5
   stringVar: {fileID: 11400000, guid: 187010a611234644b9674407f95e4293, type: 2}
   currentBalloonSpeed: {fileID: 11400000, guid: 07ddea2a9167cab4fa3f3c78719006f5, type: 2}
 --- !u!114 &5351744948044554628

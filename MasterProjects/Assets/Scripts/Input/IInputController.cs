@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class IInputController : ScriptableObject
 {
-    public abstract bool IsGrabDown();
+    public abstract bool IsGrab();
     public abstract bool IsGrabUp();
     public abstract bool IsCryingDown();
 

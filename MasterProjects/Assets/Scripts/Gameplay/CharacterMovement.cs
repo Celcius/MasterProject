@@ -52,6 +52,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private Transform representationParent;
 
+    private bool canGrab = true;
+
     private void Start()
     {
        gridEntity = GetComponent<GridEntity>();
@@ -64,46 +66,98 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        if(CheckThrowing())
+        {
+            return;
+        }
+
+        if(CheckCrying())
+        {
+            return;
+        }
+
+        if(CheckGrab())
+        {
+            return;
+        }
+    
+        HandleMove();
+    }
+
+    private bool CheckThrowing()
+    {
         if(stateVar.Value == CharacterState.Throwing)
         {
             if(!input.IsGrabUp())
             {
-                return;
+                return true;
             }
 
             bool isThrow = validThrow.Value;
             
             OnRelease(isThrow);
-            this.stateVar.Value = CharacterState.Idle;
+            SetCharacterState(CharacterState.Idle);
 
-            return;
+            return true;
         }
+        return false;
+    }
 
+    private bool CheckCrying()
+    {
         if(stateVar.Value == CharacterState.Crying)
         {
             if(input.IsCryingRelease())
             {
                 OnCryCancel();
             }
-            return;
+            return true;
         }
 
         if(input.IsCryingDown())
         {
             OnCry();
-            return;
+            return true;
         }
+        return false;
+    }
 
-        bool canGrab = input.IsGrabDown() 
-                       && stateVar.Value != CharacterState.Throwing 
-                       && grandmaScriptVar.Value.IsOnGrandma;
-        if(canGrab)
+    private bool CheckGrab()
+    {
+        /*
+        if(stateVar.Value == CharacterState.Calling && !(input.IsGrab() || input.IsGrabDown()))
         {
-            OnGrab();
-            return;
+            OnCallCancel();
+        }
+        */
+        if(!canGrab)
+        {
+            canGrab |= input.IsGrabUp();
         }
 
 
+        if(canGrab && input.IsGrab())
+        {
+            if(grandmaScriptVar.Value.IsOnGrandma && grandmaScriptVar.Value.CanGrab)
+            {
+                if(stateVar.Value != CharacterState.Throwing)
+                {
+                    OnGrab();
+                }
+                return true;
+            }
+            else if(!grandmaScriptVar.Value.IsOnGrandma 
+                    && stateVar.Value != CharacterState.Calling
+                    && stateVar.Value != CharacterState.Throwing)
+            {
+                OnCallGrandmother();
+            }
+        }
+        return false;
+    }
+
+    private void HandleMove()
+    {        
         Vector3 dir = input.GetMovementAxis();
         
         if(!Mathf.Approximately(dir.magnitude, 0))
@@ -121,7 +175,9 @@ public class CharacterMovement : MonoBehaviour
             Transform[] toIgnore = new Transform[]{ grandmaScriptVar.Value.transform };
             bool isEmpty = roomController.IsEmptyPos((Vector2Int)toCheckPos, toIgnore);
 
-            this.stateVar.Value = !isEmpty? CharacterState.Pushing : CharacterState.Walking;
+            SetCharacterState(!isEmpty? CharacterState.Pushing : 
+                                  input.IsGrab() && canGrab? CharacterState.Calling
+                                  : CharacterState.Walking);
 
             body2D.MovePosition(goalPos);
         }
@@ -129,8 +185,8 @@ public class CharacterMovement : MonoBehaviour
         {
             movingDir = Vector2.zero;
             facingDir.Value = Vector2.down;
-            this.stateVar.Value = CharacterState.Idle;
-        }
+            SetCharacterState(input.IsGrab()? CharacterState.Calling : CharacterState.Idle);
+        }      
     }
 
     private void OnGrab()
@@ -138,7 +194,7 @@ public class CharacterMovement : MonoBehaviour
         movingDir = movingDir = Vector2.down;
         grandmaScriptVar.Value.GrabCharacter(this);
         DisableColliders();
-        stateVar.Value = CharacterState.Throwing;
+        SetCharacterState(CharacterState.Throwing);
     }
 
     public void JumpTo(Vector3 worldPosition)
@@ -148,23 +204,31 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnRelease(bool isThrow)
     {
-        
+        canGrab = false;
         movingDir = movingDir = Vector2.down;
         grandmaScriptVar.Value.ReleaseCharacter(this, isThrow);
         EnableColliders();
-        stateVar.Value = CharacterState.Idle;
+        SetCharacterState(CharacterState.Idle);
     }
 
     private void OnCry()
     {
-        stateVar.Value = CharacterState.Crying;
-        
-        grandmotherTargetVar.Value.transform.position = representationParent.transform.position;
+        SetCharacterState(CharacterState.Crying);
     }
 
     private void OnCryCancel()
     {
-        stateVar.Value = CharacterState.Idle;
+        SetCharacterState(CharacterState.Idle);
+    }
+
+    private void OnCallGrandmother()
+    {
+        SetCharacterState(CharacterState.Calling);
+    }
+
+    private void OnCallCancel()
+    {
+        SetCharacterState(CharacterState.Idle);
     }
 
     private void DisableColliders()
@@ -175,6 +239,11 @@ public class CharacterMovement : MonoBehaviour
     private void EnableColliders()
     {
         col2D.enabled = true;
+    }
+
+    private void SetCharacterState(CharacterState state)
+    {
+        stateVar.Value = state;
     }
 }
 
