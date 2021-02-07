@@ -16,9 +16,6 @@ public class GrandmaStateMoveToCryRandom : GrandmaState
     [SerializeField]
     private TransformVar characterRepresentation;
 
-    [SerializeField]
-    private FloatVar timeSinceCry;
-
     
     [SerializeField]
     private RandomSelectionTextBalloonString moveToCryStrings;
@@ -52,20 +49,16 @@ public class GrandmaStateMoveToCryRandom : GrandmaState
     {
         reached = false;
         SetNextRandomPos();
-        timeSinceCry.Value = 0;
         controller.Balloon.ShowText(moveToCryStrings.GetRandomSelection());
     }
 
     protected override void EndBehaviour()
     {
-        timeSinceCry.Value = 0;
         controller.Balloon.ShowText(cancelCryStrings.GetRandomSelection());
     }
 
     private void Update() 
     {
-        timeSinceCry.Value += Time.deltaTime;
-
         if(reached)
         {
             return;
@@ -78,8 +71,6 @@ public class GrandmaStateMoveToCryRandom : GrandmaState
             SetNextRandomPos();
             return;
         }
-
-        timeSinceCry.Value = 0;
         
         Vector2 dir = (nextRandomPos - GranPos).normalized;
         controller.transform.position += (Vector3)dir * moveSpeed * Time.deltaTime;

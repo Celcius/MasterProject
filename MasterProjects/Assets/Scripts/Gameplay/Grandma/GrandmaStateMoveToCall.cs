@@ -83,9 +83,7 @@ public class GrandmaStateMoveToCall : GrandmaState
 
     public void MoveToGoal(Vector2Int goal)
     {
-        Vector2 halfCell = CameraMover.Instance.CellSize/2.0f;
-        Vector2Int startPos = new Vector2Int(Mathf.RoundToInt(GranGridPos.x + halfCell.x),
-                                             Mathf.RoundToInt(GranGridPos.y + halfCell.y));
+        Vector2Int startPos = GranGridPos;
         Vector2Int[] path = GetPath(startPos, goal);
 
         if(path == null || path.Length == 0)
