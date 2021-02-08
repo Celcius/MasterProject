@@ -9,6 +9,10 @@ public class GridEntity : MonoBehaviour
     
     protected Vector3 originalPosition;
 
+    [SerializeField]
+    private bool isBlocking = true;
+    public bool IsBlocking => isBlocking;
+
     protected virtual void Start()
     {
         GridRegistry.Instance.AddRoomGridObject(this);

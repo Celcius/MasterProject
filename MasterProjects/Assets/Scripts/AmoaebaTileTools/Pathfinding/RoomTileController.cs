@@ -96,7 +96,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
                 Vector3 worldPos = CameraMover.WorldPosForGridPos((Vector3Int)attemptPos, 0);
 
                 TileBase tile = GridUtils.GetTileForWorldPos(referenceMap.Value, worldPos);
-
+                
                 bool hasTile = (tile != null && !tilesToIgnoreHash.Contains(tile.GetType()));
 
                 if(isReferenceMapWalls != hasTile)
@@ -157,10 +157,28 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
             return false;
         }
         
-        GridEntity foundEntity = GridRegistry.Instance.GetEntityAtPos((Vector3Int)gridPos);
-        if(foundEntity == null)
+        GridEntity[] foundEntities = GridRegistry.Instance.GetEntitiesAtPos((Vector3Int)gridPos);
+        if(foundEntities == null || foundEntities.Length == 0)
         {
             return true;
+        }
+        
+        foreach(GridEntity entity in foundEntities)
+        {
+            if(IsBlockingEntity(entity, toIgnore))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private bool IsBlockingEntity(GridEntity foundEntity, Transform[] toIgnore)
+    {
+        if(foundEntity == null || !foundEntity.IsBlocking)
+        {
+            return false;
         }
 
         if(entitiesToIgnore != null && entitiesToIgnore.Count > 0)
@@ -169,7 +187,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
             {
                 if(foundEntity.transform == entity)
                 {
-                    return true;
+                    return false;
                 }
             }
         }
@@ -180,12 +198,12 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
             {
                 if(foundEntity.transform == entity)
                 {
-                    return true;
+                    return false;
                 }
             }
         }
         
-        return false;
+        return true;
     }
 
     public Vector2Int[] GetUnoccupiedNeighbours(Vector2Int pos)

@@ -44,13 +44,20 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private RoomTileController roomController;
 
-    [SerializeField]
-    private PushableArrVar pushing;
-
     private GridEntity gridEntity;
+    public Vector2Int GridPos 
+    {
+        get 
+        {
+            return (Vector2Int)CameraMover.GridPosForWorldPos(representationParent.transform.position);
+        }
+    }
 
     [SerializeField]
     private Transform representationParent;
+
+    [SerializeField]
+    private Vector2Var respawnPosition;
 
     private bool canGrab = true;
 
@@ -60,8 +67,19 @@ public class CharacterMovement : MonoBehaviour
 
        body2D = GetComponent<Rigidbody2D>();
        col2D = GetComponent<Collider2D>();
-       facingDir.Value = Vector2.down;
        roomController.AddEntityToIgnore(this.transform);
+       ResetCharacter(false);
+    }
+
+    public void ResetCharacter(bool isRespawn)
+    {
+        facingDir.Value = Vector2.down;
+        movingDir = Vector2.down;
+        SetCharacterState(CharacterState.Idle);
+        if(isRespawn)
+        {
+            transform.position = respawnPosition.Value;
+        }
     }
 
     void Update()

@@ -19,8 +19,8 @@ public static class GridUtils
 
     public static Vector3Int GridPosForWorldPos(Vector3 pos, Vector2 gridUnitSize)
     {
-        return new Vector3Int(Mathf.RoundToInt(pos.x/gridUnitSize.x), 
-                              Mathf.RoundToInt(pos.y/gridUnitSize.y), 
+        return new Vector3Int((int)(pos.x/gridUnitSize.x), 
+                              (int)(pos.y/gridUnitSize.y), 
                               Mathf.RoundToInt(pos.z));
     }
 

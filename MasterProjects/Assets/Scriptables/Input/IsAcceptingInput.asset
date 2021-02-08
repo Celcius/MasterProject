@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4fb5b2664c3cdb479f001ed9076eab3, type: 3}
-  m_Name: WindowsInput
+  m_Script: {fileID: 11500000, guid: c45833a4c35fbf740ada647bac6d1542, type: 3}
+  m_Name: IsAcceptingInput
   m_EditorClassIdentifier: 
-  isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}
+  setupValue: 1
+  value: 1

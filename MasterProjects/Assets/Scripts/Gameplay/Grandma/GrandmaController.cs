@@ -55,7 +55,10 @@ public class GrandmaController : GridEntity
     public bool CanGrab => !isReturning;
     
     private Dictionary<GrandmaStateEnum, GrandmaState> states = new Dictionary<GrandmaStateEnum, GrandmaState>();
-    private GrandmaState currentState;
+    private  GrandmaState currentState;
+    
+    [SerializeField]
+    private Vector2Var respawnPosition;
     
     protected override void Start()
     {
@@ -73,6 +76,15 @@ public class GrandmaController : GridEntity
         SetState(GrandmaStateEnum.Idle);
         canWalk.OnChange += CanWalkChange;
         base.Start();
+    }
+
+    public void ResetGrandma(bool isRespawn)
+    {
+        SetState(GrandmaStateEnum.Idle);
+        if(isRespawn)
+        {
+            transform.position = respawnPosition.Value;
+        }
     }
 
     private void CanWalkChange(bool oldValue, bool newValue)

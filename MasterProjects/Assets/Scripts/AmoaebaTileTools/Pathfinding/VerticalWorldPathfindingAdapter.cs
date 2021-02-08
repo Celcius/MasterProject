@@ -58,8 +58,19 @@ public class VerticalWorldPathfindingAdapter : AStarMapFeeder<Vector3Int>
 
     private bool IsOccupied(Vector3Int pos)
     {
-        GridEntity entity = GridRegistry.Instance.GetEntityAtPos(pos);
-        return entity != null;
+        GridEntity[] entities = GridRegistry.Instance.GetEntitiesAtPos(pos);
+        if(entities == null)
+        {
+            return false;
+        }
+        foreach(GridEntity entity in entities)
+        {
+            if(entity.IsBlocking)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public float GetMoveCost(Vector3Int origin, Vector3Int dest)

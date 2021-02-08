@@ -7,7 +7,7 @@ public class RoomHandler : MonoBehaviour
 {
     private CameraMover mover;
     
-    private void Start()
+    protected virtual void Start()
     {
         mover = GetComponent<CameraMover>();
         mover.OnCameraMoveStart += HandleCameraMoveStart;
@@ -16,7 +16,7 @@ public class RoomHandler : MonoBehaviour
         DisableAll();
         EnableCurrentRoom();
     }
-    private void DisableAll()
+    protected virtual void DisableAll()
     {
         List<GridEntity> gridElements =  GridRegistry.Instance.AllGridObjects;
         if(gridElements != null)
@@ -27,13 +27,13 @@ public class RoomHandler : MonoBehaviour
             }
         }
     }
-    private void EnableCurrentRoom()
+    protected virtual void EnableCurrentRoom()
     {
         Vector2Int room = CameraMover.RoomPosForWorldPos(mover.LookAtGridEntity.transform.position);
         OnRoomEnter(true, room);
     }
 
-    private void HandleCameraMoveStart(Vector2Int roomPos, Vector2Int newRoomPos)
+    protected virtual void HandleCameraMoveStart(Vector2Int roomPos, Vector2Int newRoomPos)
     {
         List<GridEntity> gridElements =  GridRegistry.Instance.GetRoomObjects<GridEntity>(roomPos);
         
@@ -55,14 +55,14 @@ public class RoomHandler : MonoBehaviour
         }
     }
 
-    private void RespawnRoom()
+    public virtual void RespawnRoom()
     {
         Vector2Int pos = CameraMover.RoomPosForWorldPos(mover.LookAtGridEntity.transform.position);
         OnRoomEnter(false, pos);
         EnableCurrentRoom();
     }
 
-    private void HandleCameraMoveEnd(Vector2Int startPos, Vector2Int endPos)
+    protected virtual void HandleCameraMoveEnd(Vector2Int startPos, Vector2Int endPos)
     {
         OnRoomEnter(false, startPos);
         OnRoomEnter(true, endPos);
@@ -70,7 +70,7 @@ public class RoomHandler : MonoBehaviour
         mover.LookAtGridEntity.OnRoomEnter();
     }
 
-    private void OnRoomEnter(bool isEntering, Vector2Int roomPos)
+    protected virtual void OnRoomEnter(bool isEntering, Vector2Int roomPos)
     {
         List<GridEntity> gridElements =  GridRegistry.Instance.GetRoomObjects<GridEntity>(roomPos);
         if(gridElements != null)

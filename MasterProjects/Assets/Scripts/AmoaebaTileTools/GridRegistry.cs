@@ -40,7 +40,7 @@ public class GridRegistry : Singleton<GridRegistry>
         allObjects.Add(entity);
     }
 
-    public GridEntity GetEntityAtPos(Vector3Int gridPos)
+    public GridEntity[] GetEntitiesAtPos(Vector3Int gridPos)
     {
         Vector2Int roomPos = CameraMover.RoomPosForGridPos(gridPos);
         if(!gridObjects.ContainsKey(roomPos))
@@ -48,16 +48,17 @@ public class GridRegistry : Singleton<GridRegistry>
             return null;
         }
 
+        List<GridEntity> entitiesInPos = new List<GridEntity>();
         List<GridEntity> entities = gridObjects[roomPos];
         foreach(GridEntity entity in entities)
         {
             if(entity.Occupies(gridPos))
             {
-                return entity;
+                entitiesInPos.Add(entity);
             }
         }
 
-        return null;
+        return entitiesInPos.ToArray();
     }
 
     public void RemoveRoomGridObject(GridEntity entity)

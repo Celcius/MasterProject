@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4007621154695231744}
   - component: {fileID: 4007621154695231750}
   - component: {fileID: 4007621154695231746}
-  - component: {fileID: 4007621154695231747}
   - component: {fileID: 4007621154695231757}
+  - component: {fileID: 8332511192900756494}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -151,18 +151,6 @@ MonoBehaviour:
   shakeDuration: 0.5
   shakeMagnitude: 0.5
   shakeDampingSpeed: 0.1
---- !u!114 &4007621154695231747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007621154695231748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c14e6ce09524ec428708b871e9e48ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4007621154695231757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +164,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptVar: {fileID: 11400000, guid: 1b103e906b3f0824fa3f9450fac8fa4d, type: 2}
+--- !u!114 &8332511192900756494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007621154695231748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c3ea41e508fdc48a93b353fa9f05ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerEntity: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
+  grandmaEntity: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}

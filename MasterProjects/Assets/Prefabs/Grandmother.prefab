@@ -48,7 +48,6 @@ MonoBehaviour:
   moveSpeed: 3
   stopDistance: 0.5
   characterRepresentation: {fileID: 11400000, guid: c7e25452e9f2403418b58acf1db67081, type: 2}
-  timeSinceCry: {fileID: 11400000, guid: 575a290ab8e8b5643a03fa62bb66c936, type: 2}
   moveToCryStrings: {fileID: 11400000, guid: 567101ec78e4e6847a6ba67f59e8112a, type: 2}
   cancelCryStrings: {fileID: 11400000, guid: e0c403b80bbfab44489297ee76e13495, type: 2}
 --- !u!114 &76602823795137829
@@ -67,7 +66,6 @@ MonoBehaviour:
   moveSpeed: 7
   stopDistance: 0.01
   characterRepresentation: {fileID: 11400000, guid: c7e25452e9f2403418b58acf1db67081, type: 2}
-  timeSinceCry: {fileID: 11400000, guid: 575a290ab8e8b5643a03fa62bb66c936, type: 2}
   moveToCryStrings: {fileID: 11400000, guid: 567101ec78e4e6847a6ba67f59e8112a, type: 2}
   cancelCryStrings: {fileID: 11400000, guid: e0c403b80bbfab44489297ee76e13495, type: 2}
   onReachCryStrings: {fileID: 11400000, guid: 252cc1728bfef4f4b876045c7ec76973, type: 2}
@@ -306,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032557706906efa4185909a985f13add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBlocking: 1
   isOnGrandmaVar: {fileID: 11400000, guid: a01dcbdc5741dcd4a9adec501673eb2b, type: 2}
   characterStateVar: {fileID: 11400000, guid: 1dcd4964f0725b84e91c7749553cc9ef, type: 2}
   characterVar: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
@@ -319,6 +318,7 @@ MonoBehaviour:
   grabStrings: {fileID: 11400000, guid: 4990f8b272906ac48b797533b63de011, type: 2}
   throwStrings: {fileID: 11400000, guid: 5597a5615c1d29a47ac899f3cef55166, type: 2}
   cancelThrowStrings: {fileID: 11400000, guid: 84e2a1f802922194aa2ca3901033ad36, type: 2}
+  respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
 --- !u!114 &4558548733758745861
 MonoBehaviour:
   m_ObjectHideFlags: 0

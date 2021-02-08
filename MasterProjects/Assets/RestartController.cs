@@ -24,6 +24,14 @@ public class RestartController : MonoBehaviour
 
     private IEnumerator fadeRoutine = null;
 
+    [SerializeField]
+    private BoolVar isAcceptingInput;
+
+    [SerializeField]
+    private float activateInputRatio = 0.5f;
+
+    private bool waitOnInput = false;
+
     private void Start()
     {
         image = GetComponent<Image>();
@@ -80,8 +88,10 @@ public class RestartController : MonoBehaviour
 
         color.a = 1.0f;
         image.color = color;
-        Debug.Log("RESET");
+        RespawnRoom();
         fadeRoutine = null;
+        waitOnInput = true;
+        isAcceptingInput.Value = false;
     }
 
     private IEnumerator FadeIn()
@@ -92,6 +102,12 @@ public class RestartController : MonoBehaviour
         {
             yield return new WaitForEndOfFrame();
             ratio = Mathf.Max(0, ratio - returnSpeed * Time.deltaTime);
+
+            if(waitOnInput && ratio <= activateInputRatio)
+            {
+                waitOnInput = false;
+            isAcceptingInput.Value = true;
+            }
             color.a = ratio;
             image.color = color;
         }
@@ -100,4 +116,11 @@ public class RestartController : MonoBehaviour
         fadeRoutine = null;
         
     }
+
+    private void RespawnRoom()
+    {
+        RoomHandler room = CameraMover.Instance.GetComponent<RoomHandler>();
+        room.RespawnRoom();
+    }
+
 }

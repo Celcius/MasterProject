@@ -10,7 +10,7 @@ public class CallAnim : MonoBehaviour
     private void Start() 
     {
         characterStateVar.OnChange += OnChange;
-        OnChange(CharacterState.Idle, characterStateVar.Value);
+        gameObject.SetActive(false);
     }
 
     private void OnDestroy() 
@@ -20,7 +20,11 @@ public class CallAnim : MonoBehaviour
 
     private void OnChange(CharacterState oldState, CharacterState newState)
     {
-        if(oldState != CharacterState.Calling)
+        if(oldState == newState || (oldState != CharacterState.Calling && newState != CharacterState.Calling))
+        {
+            return;
+        }
+        if(oldState == CharacterState.Calling)
         {
             gameObject.SetActive(false);
         }

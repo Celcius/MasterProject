@@ -31,6 +31,8 @@ public class GrandmaStateMoveToCall : GrandmaState
     [SerializeField]
     private RandomSelectionTextBalloonString cantReachStrings;
 
+    Vector2Int currentGoal;
+
 
     protected override void OnStateChange(CharacterState oldState, CharacterState newState) 
     {
@@ -38,6 +40,19 @@ public class GrandmaStateMoveToCall : GrandmaState
         {
             controller.SetState(GrandmaStateEnum.Idle);
         }
+    }
+
+    private void FixedUpdate() 
+    {
+        if(walkRoutine == null)
+        {
+            controller.SetMoveTarget(characterRepresentationVar.Value.position);
+            Vector2Int curGoal = GetMoveGoal();
+            if(currentGoal != curGoal)
+            {
+                MoveToGoal(curGoal);
+            }
+        }    
     }
 
     protected override void StartBehaviour()
@@ -85,6 +100,7 @@ public class GrandmaStateMoveToCall : GrandmaState
     {
         Vector2Int startPos = GranGridPos;
         Vector2Int[] path = GetPath(startPos, goal);
+        currentGoal = goal;
 
         if(path == null || path.Length == 0)
         {
@@ -121,6 +137,16 @@ public class GrandmaStateMoveToCall : GrandmaState
                 }
                 
                 yield return new WaitForEndOfFrame();
+            }
+
+            controller.SetMoveTarget(characterRepresentationVar.Value.position);
+            Vector2Int curGoal = GetMoveGoal();
+            if(curGoal != currentGoal)
+            {
+                StopCoroutine(walkRoutine);
+                walkRoutine = null;
+                MoveToGoal(curGoal);
+                yield break;
             }
         }
         
