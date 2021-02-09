@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBlocking: 1
+  cutInstance: {fileID: 9197651568614300920, guid: 211e29c4fa0f72945917e8e1d49f08fe, type: 3}
 --- !u!61 &4051769527255197116
 BoxCollider2D:
   m_ObjectHideFlags: 0
