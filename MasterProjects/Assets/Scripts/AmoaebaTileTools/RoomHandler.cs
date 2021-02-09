@@ -18,7 +18,7 @@ public class RoomHandler : MonoBehaviour
     }
     protected virtual void DisableAll()
     {
-        List<GridEntity> gridElements =  GridRegistry.Instance.AllGridObjects;
+        List<GridEntity> gridElements =  new List<GridEntity>(GridRegistry.Instance.AllGridObjects);
         if(gridElements != null)
         {
             foreach(GridEntity behaviour in gridElements)

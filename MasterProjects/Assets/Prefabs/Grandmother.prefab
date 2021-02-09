@@ -146,6 +146,7 @@ Transform:
   - {fileID: 693318880133434726}
   - {fileID: 6033061866483000230}
   - {fileID: 5329021425121180010}
+  - {fileID: 8151631648010334175}
   m_Father: {fileID: 4558548733758745859}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -193,7 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enumState: 2
-  roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   moveSpeed: 4
   characterRepresentationVar: {fileID: 11400000, guid: c7e25452e9f2403418b58acf1db67081, type: 2}
   moveToCallStrings: {fileID: 11400000, guid: 3f900b1a6e5f32745872de7b81666dcf, type: 2}
@@ -313,11 +313,13 @@ MonoBehaviour:
   throwAnchor: {fileID: 4558548732838718494}
   representation: {fileID: 4558548733815903427}
   canWalk: {fileID: 11400000, guid: ff96b724749a7ad4f86740d8558d7418, type: 2}
-  respondToCry: {fileID: 11400000, guid: 5d5639508147cf24ab6d571bc8bd96d7, type: 2}
   balloon: {fileID: 4558548733492882139}
   grabStrings: {fileID: 11400000, guid: 4990f8b272906ac48b797533b63de011, type: 2}
   throwStrings: {fileID: 11400000, guid: 5597a5615c1d29a47ac899f3cef55166, type: 2}
   cancelThrowStrings: {fileID: 11400000, guid: 84e2a1f802922194aa2ca3901033ad36, type: 2}
+  failLeaveStrings: {fileID: 11400000, guid: 4fbc645942b6d2144986b5c30cf52f1c, type: 2}
+  successLeaveStrings: {fileID: 11400000, guid: 9aadad09292a5114e8b869e997e5e910, type: 2}
+  roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
 --- !u!114 &4558548733758745861
 MonoBehaviour:
@@ -460,6 +462,56 @@ MonoBehaviour:
   enumState: 3
   returnSpeed: 1
   roomTileController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
+--- !u!1 &8839250171635183934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8151631648010334175}
+  - component: {fileID: 5186417466180238978}
+  m_Layer: 0
+  m_Name: MoveToNextRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8151631648010334175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8839250171635183934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8073622339177441079}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5186417466180238978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8839250171635183934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6445266cad5f5243a104f8bf5ef27d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enumState: 4
+  moveSpeed: 5
+  characterRepresentationVar: {fileID: 11400000, guid: c7e25452e9f2403418b58acf1db67081, type: 2}
+  moveToCallStrings: {fileID: 11400000, guid: 3f900b1a6e5f32745872de7b81666dcf, type: 2}
+  cancelCallStrings: {fileID: 11400000, guid: de4cb39bc201c2e4e9c897a2b8292465, type: 2}
+  cantReachStrings: {fileID: 11400000, guid: e31e185612d21514dbfc9ea3a0d0420a, type: 2}
+  isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}
 --- !u!1001 &8432427658642033496
 PrefabInstance:
   m_ObjectHideFlags: 0

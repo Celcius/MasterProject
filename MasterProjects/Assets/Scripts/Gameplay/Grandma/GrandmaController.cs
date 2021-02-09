@@ -33,9 +33,6 @@ public class GrandmaController : GridEntity
     private BoolVar canWalk;
 
     [SerializeField]
-    private BoolVar respondToCry;
-
-    [SerializeField]
     private TextBalloon balloon;
     public TextBalloon Balloon => balloon;
 
@@ -48,6 +45,15 @@ public class GrandmaController : GridEntity
     [SerializeField]
     private RandomSelectionTextBalloonString cancelThrowStrings;
 
+    [SerializeField]
+    private RandomSelectionTextBalloonString failLeaveStrings;
+
+    [SerializeField]
+    private RandomSelectionTextBalloonString successLeaveStrings;
+ 
+    [SerializeField]
+    private RoomTileController roomController;
+
     private Vector3 returnPos;
     public Vector3 ReturnPos => CameraMover.WorldPosForGridPos(CameraMover.GridPosForWorldPos(returnPos), 0);
     private bool isReturning = false;
@@ -59,7 +65,10 @@ public class GrandmaController : GridEntity
     
     [SerializeField]
     private Vector2Var respawnPosition;
-    
+
+    private AStarSearch<Vector2Int> grannyPath = new AStarSearch<Vector2Int>();
+    private Action onNewRoomCallback;
+
     protected override void Start()
     {
         GrandmaState[] grandmaStates = GetComponentsInChildren<GrandmaState>(true);
@@ -157,6 +166,28 @@ public class GrandmaController : GridEntity
         grandmaMoveTarget.Value.transform.position = position;
     }
 
+    public Vector2Int[] GetPath(Vector3 worldGoalPos, bool ignoreSelf = false)
+    {
+        Vector3Int targetGridPos = CameraMover.GridPosForWorldPos(worldGoalPos);
+        return GetPath((Vector2Int)GridPos, (Vector2Int)targetGridPos, ignoreSelf);
+    }
+
+    public Vector2Int[] GetPath(Vector2Int pos, Vector2Int goal, bool ignoreSelf = false)
+    {
+        if(ignoreSelf)
+        {
+            roomController.AddEntityToIgnore(transform);
+        }
+        
+        Vector2Int[] path = grannyPath.PerformSearch(pos,  goal, roomController);
+
+        if(ignoreSelf)
+        {
+            roomController.RemoveEntityToIgnore(transform);
+        }
+
+        return path;
+    }
 
     public void SetState(GrandmaStateEnum state)
     {
@@ -215,5 +246,56 @@ public class GrandmaController : GridEntity
             return null;
         }
         return states[state];
+    }
+
+    public override void OnRoomEnter()
+    {
+        base.OnRoomEnter();
+        ResetGrandma(false);
+    }
+
+    public override void OnRoomLeave() 
+    {
+        Vector3Int oldPos = GridPos;        
+        Vector2Int oldRoom = CameraMover.RoomPosForGridPos(oldPos);
+        Vector2Int newRoom = CameraMover.RoomPosForGridPos(characterVar.Value.GridPos);
+        if(oldRoom == newRoom)
+        {
+            return;
+        }
+
+        this.transform.position = CameraMover.WorldPosForGridPos(characterVar.Value.GridPos, 0);
+        this.originalPosition = transform.position;
+        GridRegistry.Instance.ReorderRoomGridObject(this, oldRoom);
+    }
+
+    public void CheckLeaveRoom(Vector3 goalPos, Action callback)
+    {
+        Vector3Int gridGoalPos = CameraMover.GridPosForWorldPos(goalPos);
+        Vector3 clampedworldPos = CameraMover.WorldPosForGridPos(gridGoalPos, 0);
+
+        Vector2Int[] path = GetPath(clampedworldPos, true);
+
+        if(gridGoalPos == GridPos || path != null && path.Length > 0)
+        {
+            SetMoveTarget(clampedworldPos);
+            balloon.ShowText(successLeaveStrings.GetRandomSelection());
+            onNewRoomCallback = callback;
+            SetState(GrandmaStateEnum.MovingToNext);
+        }
+        else
+        {
+            if(!balloon.IsShowing)
+            {
+                balloon.ShowText(failLeaveStrings.GetRandomSelection());
+            }
+        }
+    }
+    
+    public void OnReachedNewRoom()
+    {
+        this.originalPosition = transform.position;
+        onNewRoomCallback?.Invoke();
+        onNewRoomCallback = null;   
     }
 }

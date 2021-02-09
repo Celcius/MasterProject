@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GridEntity : MonoBehaviour
 {
-    public Vector3Int GridPos => CameraMover.GridPosForWorldPos(transform.position);
-    public Vector2Int RoomGridPos => CameraMover.RoomPosForWorldPos(transform.position);
+    public virtual Vector3Int GridPos => CameraMover.GridPosForWorldPos(transform.position);
+    public virtual  Vector2Int RoomGridPos => CameraMover.RoomPosForWorldPos(transform.position);
     
     protected Vector3 originalPosition;
 

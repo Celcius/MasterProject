@@ -126,6 +126,7 @@ public class CameraMover : MonoBehaviour
         {
             return;
         }
+
         if((int)playerRoom.x != (int)newPlayerPos.x || 
            (int)playerRoom.y != (int)newPlayerPos.y)
            {

@@ -7,7 +7,8 @@ public enum GrandmaStateEnum
     Idle,
     MoveToCry,
     MoveToCall,
-    Returning
+    Returning,
+    MovingToNext,
 }
 
 public abstract class GrandmaState : MonoBehaviour

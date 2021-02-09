@@ -5,10 +5,6 @@ using AmoaebaUtils;
 
 public class GrandmaStateMoveToCall : GrandmaState
 {
-    private AStarSearch<Vector2Int> grannyPath = new AStarSearch<Vector2Int>();
-
-    [SerializeField]
-    private RoomTileController roomController;
 
     private Vector2Int[] path;
 
@@ -17,9 +13,9 @@ public class GrandmaStateMoveToCall : GrandmaState
 
 
     [SerializeField]
-    private TransformVar characterRepresentationVar;
+    protected TransformVar characterRepresentationVar;
 
-    private IEnumerator walkRoutine;
+    protected IEnumerator walkRoutine;
 
         
     [SerializeField]
@@ -32,6 +28,8 @@ public class GrandmaStateMoveToCall : GrandmaState
     private RandomSelectionTextBalloonString cantReachStrings;
 
     Vector2Int currentGoal;
+
+    protected bool updateToCharacter = true;
 
 
     protected override void OnStateChange(CharacterState oldState, CharacterState newState) 
@@ -91,15 +89,11 @@ public class GrandmaStateMoveToCall : GrandmaState
     {
         return (Vector2Int)CameraMover.GridPosForWorldPos(TargetPos);
     }
-    public Vector2Int[] GetPath(Vector2Int pos, Vector2Int goal)
-    {
-        return grannyPath.PerformSearch(pos,  goal, roomController);
-    }
 
     public void MoveToGoal(Vector2Int goal)
     {
         Vector2Int startPos = GranGridPos;
-        Vector2Int[] path = GetPath(startPos, goal);
+        Vector2Int[] path = controller.GetPath(startPos, goal);
         currentGoal = goal;
 
         if(path == null || path.Length == 0)
@@ -112,14 +106,20 @@ public class GrandmaStateMoveToCall : GrandmaState
         StartCoroutine(walkRoutine);
     }
 
+    protected virtual void OnFinishReached()
+    {
+
+    }
+
     private IEnumerator WalkRoutine(Vector2Int[] path)
     {   
         foreach(Vector2Int nextPos in path)
         {
-            if(nextPos == path[0])
+            if(nextPos == path[0] || GranGridPos == nextPos)
             {
                 continue;
             }
+
             Vector3 nextWorldPos = CameraMover.WorldPosForGridPos((Vector3Int) nextPos, controller.transform.position.z);
             float distance = Vector3.Distance(nextWorldPos, controller.transform.position);
             Vector3 dir = (nextWorldPos - controller.transform.position).normalized;
@@ -139,7 +139,11 @@ public class GrandmaStateMoveToCall : GrandmaState
                 yield return new WaitForEndOfFrame();
             }
 
-            controller.SetMoveTarget(characterRepresentationVar.Value.position);
+            if(updateToCharacter)
+            {
+                controller.SetMoveTarget(characterRepresentationVar.Value.position);
+            }
+
             Vector2Int curGoal = GetMoveGoal();
             if(curGoal != currentGoal)
             {
@@ -149,8 +153,9 @@ public class GrandmaStateMoveToCall : GrandmaState
                 yield break;
             }
         }
-        
+
         walkRoutine = null;
+        OnFinishReached();
         controller.SetState(GrandmaStateEnum.Idle);
     }
 }

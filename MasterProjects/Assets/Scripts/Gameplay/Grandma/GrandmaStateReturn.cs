@@ -28,18 +28,16 @@ public class GrandmaStateReturn : GrandmaState
 
         if(newState == CharacterState.Calling)
         {
-            GrandmaStateMoveToCall moveState = (GrandmaStateMoveToCall)controller.GetStateForEnum(GrandmaStateEnum.MoveToCall);
-
             Vector2 halfCell = CameraMover.Instance.CellSize/2.0f;
             Vector2Int startPos = new Vector2Int(Mathf.RoundToInt(GranGridPos.x + halfCell.x),
                                              Mathf.RoundToInt(GranGridPos.y + halfCell.y));
 
             roomTileController.AddEntityToIgnore(controller.transform);
             Vector2Int returnGridPos = (Vector2Int)CameraMover.GridPosForWorldPos(controller.ReturnPos);
-            Vector2Int[] pathToOrigin = moveState.GetPath(returnGridPos, startPos);
+            Vector2Int[] pathToOrigin = controller.GetPath(returnGridPos, startPos);
 
             Vector2Int goalPos = (Vector2Int)CameraMover.GridPosForWorldPos(controller.GetTargetPos()+(Vector3)halfCell);
-            Vector2Int[] pathToCharacter = moveState.GetPath(startPos, goalPos);
+            Vector2Int[] pathToCharacter = controller.GetPath(startPos, goalPos);
             roomTileController.RemoveEntityToIgnore(controller.transform);
 
             bool hasPaths = (pathToOrigin != null && 

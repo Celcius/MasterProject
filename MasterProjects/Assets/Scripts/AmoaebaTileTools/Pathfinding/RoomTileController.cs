@@ -152,7 +152,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
 
     public bool IsEmptyPos(Vector2Int gridPos, Transform[] toIgnore = null)
     {
-        if(!IsFloorPos(gridPos))
+        if(!IsFloorPos(gridPos) && IsInCurrentRoom(gridPos))
         {
             return false;
         }
@@ -232,7 +232,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
                     continue;
                 }
                 Vector2Int attemptPos = new Vector2Int(pos.x + x, pos.y + y);
-                if(IsInCurrentRoom(attemptPos) && IsEmptyPos(attemptPos))
+                if(IsEmptyPos(attemptPos))
                 {
                     retPos.Add(attemptPos);
                 }

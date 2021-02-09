@@ -44,11 +44,15 @@ public class TextBalloon : MonoBehaviour
     [SerializeField]
     private FloatVar currentBalloonSpeed;
 
+    private bool isShowing;
+    public bool IsShowing => isShowing;
+
     private void Start() 
     {
         rectTransform = GetComponent<RectTransform>();
         animationController = GetComponent<Animator>();
         animateText = GetComponent<AnimateTextOnStringVarChange>();
+        isShowing = false;
 
         if(stringVar == null)
         {
@@ -164,12 +168,14 @@ public class TextBalloon : MonoBehaviour
 
     public void BaloonLeft()
     {
+        isShowing = false;
         stringVar.Value = "";
     }
 
     private void ShowBalloon()
     {
         HideBalloon();
+        isShowing = true;
         animationController.SetBool("IsVisible", true);
         
         leaveRoutine = StopAfterDelay();

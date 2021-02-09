@@ -60,6 +60,11 @@ public class CharacterMovement : MonoBehaviour
     private Vector2Var respawnPosition;
 
     private bool canGrab = true;
+    
+    [SerializeField]
+    private BoolVar isAcceptingInput;
+
+    private Vector2Int curRoom;
 
     private void Start()
     {
@@ -69,6 +74,20 @@ public class CharacterMovement : MonoBehaviour
        col2D = GetComponent<Collider2D>();
        roomController.AddEntityToIgnore(this.transform);
        ResetCharacter(false);
+
+       CameraMover.Instance.OnCameraMoveStart += OnCamStart;
+       CameraMover.Instance.OnCameraMoveEnd += OnCamEnd;
+    }
+
+    private void OnCamStart(Vector2Int oldPos, Vector2Int newPos)
+    {
+        isAcceptingInput.Value = false;
+    }
+
+    private void OnCamEnd(Vector2Int oldPos, Vector2Int newPos)
+    {
+        isAcceptingInput.Value = true;
+        curRoom = newPos;
     }
 
     public void ResetCharacter(bool isRespawn)
@@ -196,8 +215,20 @@ public class CharacterMovement : MonoBehaviour
             SetCharacterState(!isEmpty? CharacterState.Pushing : 
                                   input.IsGrab() && canGrab? CharacterState.Calling
                                   : CharacterState.Walking);
-
-            body2D.MovePosition(goalPos);
+            if(IsOutOfRoom(goalPos + representationParent.localPosition))
+            {
+                grandmaScriptVar.Value.CheckLeaveRoom(goalPos + representationParent.localPosition, () => 
+                {
+                    Vector3Int goalGridPos = CameraMover.GridPosForWorldPos(goalPos+ representationParent.localPosition);
+                    Vector3 nextRoomPos = CameraMover.WorldPosForGridPos(goalGridPos,0);
+                    body2D.MovePosition(nextRoomPos);
+                });                    
+            }
+            else
+            {
+                body2D.MovePosition(goalPos);
+            }
+            
         }
         else
         {
@@ -205,6 +236,12 @@ public class CharacterMovement : MonoBehaviour
             facingDir.Value = Vector2.down;
             SetCharacterState(input.IsGrab()? CharacterState.Calling : CharacterState.Idle);
         }      
+    }
+
+    public bool IsOutOfRoom(Vector3 pos)
+    {
+        Vector2Int nextRoomPos = CameraMover.RoomPosForWorldPos(pos);
+        return curRoom != nextRoomPos;
     }
 
     private void OnGrab()

@@ -4965,10 +4965,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5451419466169418068}
   - component: {fileID: 5451419466169418071}
-  - component: {fileID: 5451419466169418066}
   - component: {fileID: 5451419466169418067}
-  - component: {fileID: 5451419466169418069}
   - component: {fileID: 1071111346617289370}
+  - component: {fileID: 6716408582655814483}
+  - component: {fileID: 3895272161399563751}
   m_Layer: 0
   m_Name: Child
   m_TagString: Character
@@ -5012,19 +5012,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &5451419466169418066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5451419466169418070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a28d52e19a8d144bb2e1641b7750654, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScriptVar: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
 --- !u!114 &5451419466169418067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5049,20 +5036,7 @@ MonoBehaviour:
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   representationParent: {fileID: 4084711936496854058}
   respawnPosition: {fileID: 11400000, guid: 37057af1616b67a439df59dcf0248af1, type: 2}
---- !u!114 &5451419466169418069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5451419466169418070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d17e9f1aa98530498c7d1ce16b3596a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isBlocking: 1
-  targetVar: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
+  isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}
 --- !u!58 &1071111346617289370
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5079,6 +5053,34 @@ CircleCollider2D:
   m_Offset: {x: 0.5, y: 0.5}
   serializedVersion: 2
   m_Radius: 0.375
+--- !u!114 &6716408582655814483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451419466169418070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e763b8ec1c910c64b90e46f361f0fa04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBlocking: 0
+  targetVar: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
+  representationAnchor: {fileID: 4084711936496854058}
+--- !u!114 &3895272161399563751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451419466169418070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a28d52e19a8d144bb2e1641b7750654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScriptVar: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
 --- !u!1 &5451419466350408577
 GameObject:
   m_ObjectHideFlags: 0
