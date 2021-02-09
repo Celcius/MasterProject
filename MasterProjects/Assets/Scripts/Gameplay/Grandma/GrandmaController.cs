@@ -69,6 +69,8 @@ public class GrandmaController : GridEntity
     private AStarSearch<Vector2Int> grannyPath = new AStarSearch<Vector2Int>();
     private Action onNewRoomCallback;
 
+    private Vector2Int currentRoom;
+
     protected override void Start()
     {
         GrandmaState[] grandmaStates = GetComponentsInChildren<GrandmaState>(true);
@@ -152,13 +154,27 @@ public class GrandmaController : GridEntity
         }
         else
         {
-            float angle = MathUtils.NegMod(representation.transform.rotation.eulerAngles.z, 360);
-            Vector3 offset = angle > 270 || angle < 90? new Vector3(-0.5f, -0.5f, 0) : new Vector3(0.5f, -0.5f,0.5f);
-
-            character.transform.position  = representation.transform.position + offset; 
+            character.transform.position  = GetEmptyAdjacentPos();
 
             balloon.ShowText(cancelThrowStrings.GetRandomSelection());
         }
+    }
+
+    private Vector3 GetEmptyAdjacentPos()
+    {
+        Vector3 pos;
+        Vector2Int gridPos;
+        Vector2 cellSize = CameraMover.Instance.CellSize;
+        Transform[] toIgnore = new Transform[]{transform};
+        do
+        {
+            pos = transform.position 
+                  + (Vector3)GeometryUtils.PointInCircle(cellSize.x/2.0f, UnityEngine.Random.Range(0,360));
+            gridPos = (Vector2Int)CameraMover.GridPosForWorldPos(pos);
+        }
+        while(roomController.IsInCurrentRoom(gridPos) && !roomController.IsEmptyPos(gridPos, toIgnore));
+
+        return pos;
     }
 
     public void SetMoveTarget(Vector3 position)
@@ -252,29 +268,30 @@ public class GrandmaController : GridEntity
     {
         base.OnRoomEnter();
         ResetGrandma(false);
+        currentRoom = CameraMover.RoomPosForGridPos(GridPos);
     }
 
     public override void OnRoomLeave() 
     {
-        Vector3Int oldPos = GridPos;        
-        Vector2Int oldRoom = CameraMover.RoomPosForGridPos(oldPos);
         Vector2Int newRoom = CameraMover.RoomPosForGridPos(characterVar.Value.GridPos);
-        if(oldRoom == newRoom)
+        if(currentRoom == newRoom)
         {
             return;
         }
 
         this.transform.position = CameraMover.WorldPosForGridPos(characterVar.Value.GridPos, 0);
         this.originalPosition = transform.position;
-        GridRegistry.Instance.ReorderRoomGridObject(this, oldRoom);
+        GridRegistry.Instance.ReorderRoomGridObject(this, currentRoom);
     }
 
     public void CheckLeaveRoom(Vector3 goalPos, Action callback)
     {
         Vector3Int gridGoalPos = CameraMover.GridPosForWorldPos(goalPos);
         Vector3 clampedworldPos = CameraMover.WorldPosForGridPos(gridGoalPos, 0);
-
+        
+        roomController.IgnoreOtherRoom = false;
         Vector2Int[] path = GetPath(clampedworldPos, true);
+        roomController.IgnoreOtherRoom = true;
 
         if(gridGoalPos == GridPos || path != null && path.Length > 0)
         {

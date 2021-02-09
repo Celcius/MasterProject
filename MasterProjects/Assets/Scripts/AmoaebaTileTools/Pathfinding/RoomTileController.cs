@@ -29,8 +29,11 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
 
     private List<Transform> entitiesToIgnore = new List<Transform>();
 
+    public bool IgnoreOtherRoom {get; set;}
+
     private void OnEnable()
     {
+        IgnoreOtherRoom = true;
         entitiesToIgnore.Clear();
         tilesToIgnoreHash.Clear();
         foreach(TileBase tileBase in tilesToIgnore)
@@ -152,10 +155,11 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
 
     public bool IsEmptyPos(Vector2Int gridPos, Transform[] toIgnore = null)
     {
-        if(!IsFloorPos(gridPos) && IsInCurrentRoom(gridPos))
+        if(!IsFloorPos(gridPos) && (IsInCurrentRoom(gridPos) || IgnoreOtherRoom))
         {
             return false;
         }
+        
         
         GridEntity[] foundEntities = GridRegistry.Instance.GetEntitiesAtPos((Vector3Int)gridPos);
         if(foundEntities == null || foundEntities.Length == 0)

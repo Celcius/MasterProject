@@ -9,6 +9,9 @@ public class GrandmaStateMoveToNextRoom : GrandmaStateMoveToCall
     [SerializeField]
     private BoolVar isAcceptingInput;
 
+    [SerializeField]
+    private RoomTileController roomTileController;
+
     protected override void OnStateChange(CharacterState oldState, CharacterState newState) 
     {
     }
@@ -31,7 +34,9 @@ public class GrandmaStateMoveToNextRoom : GrandmaStateMoveToCall
         else
         {
             isAcceptingInput.Value = false;
+            roomTileController.IgnoreOtherRoom = false;
             MoveToGoal(GetMoveGoal());
+            roomTileController.IgnoreOtherRoom = true;
         }
     }
     

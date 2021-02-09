@@ -512,6 +512,7 @@ MonoBehaviour:
   cancelCallStrings: {fileID: 11400000, guid: de4cb39bc201c2e4e9c897a2b8292465, type: 2}
   cantReachStrings: {fileID: 11400000, guid: e31e185612d21514dbfc9ea3a0d0420a, type: 2}
   isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}
+  roomTileController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
 --- !u!1001 &8432427658642033496
 PrefabInstance:
   m_ObjectHideFlags: 0

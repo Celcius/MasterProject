@@ -12,11 +12,12 @@ public class InvisibleEntitySpawnTile : Tile
 {
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {
-        Color c = tileData.color;
+  /*      Color c = tileData.color;
         c.a = 0;
         tileData.color = c;
         tileData.sprite = null;
-
+*/
+        tileData.sprite = null;
         base.GetTileData(position, tilemap, ref tileData);
     }
 

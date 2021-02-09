@@ -44,6 +44,6 @@ public class GridEntity : MonoBehaviour
 
     public virtual bool Occupies(Vector3Int gridPos)
     {
-        return this.GridPos == gridPos;
+        return gameObject.activeInHierarchy && this.GridPos == gridPos;
     }
 }

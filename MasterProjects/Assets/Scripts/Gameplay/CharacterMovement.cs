@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using AmoaebaUtils;
+using System;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -66,6 +67,14 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector2Int curRoom;
 
+    private bool canCall;
+
+    [SerializeField]
+    private Transform cutPrefab;
+
+    [SerializeField]
+    private float cutDuration = 0.5f;
+
     private void Start()
     {
        gridEntity = GetComponent<GridEntity>();
@@ -103,7 +112,17 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        if(!canCall && input.IsGrabUp())
+        {
+            canCall = true;
+        }
+
         if(CheckThrowing())
+        {
+            return;
+        }
+
+        if(CheckCut())
         {
             return;
         }
@@ -138,6 +157,31 @@ public class CharacterMovement : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    private bool CheckCut()
+    {
+        if(!input.IsCutDown())
+        {
+            return false;
+        }
+        
+        isAcceptingInput.Value = false;
+        Transform cut = Instantiate<Transform>(cutPrefab, 
+                                               representationParent.transform.position,
+                                               Quaternion.identity);
+        cut.right = facingDir.Value;
+        StartCoroutine(StopMoveForTime(cutDuration));
+        return true;
+    }
+
+    private IEnumerator StopMoveForTime(float time)
+    {
+        if(time > 0)
+        {
+            yield return new WaitForSeconds(time);
+        }
+        isAcceptingInput.Value = true;
     }
 
     private bool CheckCrying()
@@ -213,7 +257,7 @@ public class CharacterMovement : MonoBehaviour
             bool isEmpty = roomController.IsEmptyPos((Vector2Int)toCheckPos, toIgnore);
 
             SetCharacterState(!isEmpty? CharacterState.Pushing : 
-                                  input.IsGrab() && canGrab? CharacterState.Calling
+                                  input.IsGrab() && (canGrab && canCall)? CharacterState.Calling
                                   : CharacterState.Walking);
             if(IsOutOfRoom(goalPos + representationParent.localPosition))
             {
@@ -234,7 +278,7 @@ public class CharacterMovement : MonoBehaviour
         {
             movingDir = Vector2.zero;
             facingDir.Value = Vector2.down;
-            SetCharacterState(input.IsGrab()? CharacterState.Calling : CharacterState.Idle);
+            SetCharacterState(input.IsGrab() && canCall? CharacterState.Calling : CharacterState.Idle);
         }      
     }
 
@@ -259,6 +303,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnRelease(bool isThrow)
     {
+        canCall = false;
         canGrab = false;
         movingDir = movingDir = Vector2.down;
         grandmaScriptVar.Value.ReleaseCharacter(this, isThrow);

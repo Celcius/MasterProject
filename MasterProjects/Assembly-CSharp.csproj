@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Gameplay\PlayerCollideable.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaState.cs" />
      <Compile Include="Assets\Scripts\Input\WindowsInputController.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToNextRoom.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateIdle.cs" />
      <Compile Include="Assets\Scripts\Map\LandingTile.cs" />
      <Compile Include="Assets\Scripts\Gameplay\TargetMover.cs" />
@@ -63,13 +64,14 @@
      <Compile Include="Assets\Scripts\Map\LedgeTile.cs" />
      <Compile Include="Assets\RestartController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCryRandom.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\ChildGridEntity.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PushableArrVar.cs" />
      <Compile Include="Assets\InvisiblePosSetterGridEntity.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCall.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\ChildGridEntity.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToNextRoom.cs" />
+     <Compile Include="Assets\Cuteable.cs" />
+     <Compile Include="Assets\Cut.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

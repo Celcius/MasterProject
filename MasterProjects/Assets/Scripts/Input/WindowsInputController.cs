@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WindowsInputController : IInputController
 {
+    private const KeyCode grabKey = KeyCode.Q;
+    private const KeyCode cutKey = KeyCode.E;
+    private const KeyCode cryKey = KeyCode.R;
+
     [SerializeField]
     private BoolVar isAcceptingInput;
     public override bool IsGrab()
@@ -12,7 +16,7 @@ public class WindowsInputController : IInputController
         {
             return false;
         }
-        return Input.GetKeyDown(KeyCode.E) || Input.GetKey(KeyCode.E);
+        return Input.GetKeyDown(grabKey) || Input.GetKey(grabKey);
     }
 
     public override bool IsGrabUp()
@@ -21,8 +25,19 @@ public class WindowsInputController : IInputController
         {
             return false;
         }
-        return Input.GetKeyDown(KeyCode.E);
+        return Input.GetKeyDown(grabKey);
     }
+
+    public override bool IsCutDown()
+    {
+        if(!isAcceptingInput.Value)
+        {
+            return false;
+        }
+
+        return Input.GetKeyDown(cutKey);
+    }
+
 
     public override bool IsCryingDown()
     {
@@ -30,7 +45,7 @@ public class WindowsInputController : IInputController
         {
             return false;
         }
-        return Input.GetKeyDown(KeyCode.Q);
+        return Input.GetKeyDown(cryKey);
     }
 
     public override bool IsCryingRelease()
@@ -39,7 +54,7 @@ public class WindowsInputController : IInputController
         {
             return false;
         }
-        return Input.GetKeyUp(KeyCode.Q);
+        return Input.GetKeyUp(cryKey);
     }
 
     public override Vector3 GetMovementAxis()

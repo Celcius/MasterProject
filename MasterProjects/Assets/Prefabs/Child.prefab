@@ -5037,6 +5037,8 @@ MonoBehaviour:
   representationParent: {fileID: 4084711936496854058}
   respawnPosition: {fileID: 11400000, guid: 37057af1616b67a439df59dcf0248af1, type: 2}
   isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}
+  cutPrefab: {fileID: 6438446487370547711, guid: fb94f3a8e5d6fc7408fe1633311ea98e, type: 3}
+  cutDuration: 0.3
 --- !u!58 &1071111346617289370
 CircleCollider2D:
   m_ObjectHideFlags: 0
