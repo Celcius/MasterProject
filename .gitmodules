@@ -1,3 +1,6 @@
 [submodule "MasterProjects/Assets/Packages/AmoaebaUtils"]
 	path = MasterProjects/Assets/Packages/AmoaebaUtils
 	url = https://github.com/Celcius/AmoaebaUtils.git
+[submodule "MasterProjects/Assets/Packages/2dExtras"]
+	path = MasterProjects/Assets/Packages/2dExtras
+	url = https://github.com/Unity-Technologies/2d-extras.git
