@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84068fdb50d02e4498d05b6295b41945, type: 3}
-  m_Name: LedgeTileLeft
+  m_Name: LedgeTileAbove 2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -8806013498148123679, guid: f0f77edbb515f554da1cb1ce7f048b75, type: 3}
+  m_Sprite: {fileID: -4328626879840159427, guid: 4ec54901af1c9b54db2ef8b500a306b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -31,6 +31,6 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 2590209699349453712, guid: 27dd699867ff062469a411fdf9d95f1e, type: 3}
+  m_InstancedGameObject: {fileID: 2590209699349453712, guid: 440b1e19a847e814290f0ce1341b0b05, type: 3}
   m_Flags: 1
   m_ColliderType: 0

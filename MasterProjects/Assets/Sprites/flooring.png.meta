@@ -1,0 +1,2449 @@
+fileFormatVersion: 2
+guid: 35d668ee47ed2be4895818dac38b7bcc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1991730676756332257
+    second: flooring_0
+  - first:
+      213: 8421159493870743371
+    second: flooring_1
+  - first:
+      213: 5696321779909192661
+    second: flooring_2
+  - first:
+      213: -8811517612223851526
+    second: flooring_3
+  - first:
+      213: -6814947616532871460
+    second: flooring_4
+  - first:
+      213: -3931033019191867325
+    second: flooring_5
+  - first:
+      213: -7644940569752995588
+    second: flooring_6
+  - first:
+      213: -5802336779007319690
+    second: flooring_7
+  - first:
+      213: 5393208506374143518
+    second: flooring_8
+  - first:
+      213: 3347037489789121045
+    second: flooring_9
+  - first:
+      213: -2736219441957299843
+    second: flooring_10
+  - first:
+      213: -1478079164815579
+    second: flooring_11
+  - first:
+      213: -3999201442793969270
+    second: flooring_12
+  - first:
+      213: 4884311248923462913
+    second: flooring_13
+  - first:
+      213: -1918717849148437060
+    second: flooring_14
+  - first:
+      213: -4193198218131268356
+    second: flooring_15
+  - first:
+      213: -6751370352110443133
+    second: flooring_16
+  - first:
+      213: -297649016364466527
+    second: flooring_17
+  - first:
+      213: 6742654040267810497
+    second: flooring_18
+  - first:
+      213: -301519994924396696
+    second: flooring_19
+  - first:
+      213: 9061464861091383939
+    second: flooring_20
+  - first:
+      213: -4154799607578155254
+    second: flooring_21
+  - first:
+      213: 5304194672634357290
+    second: flooring_22
+  - first:
+      213: -4375133942298297601
+    second: flooring_23
+  - first:
+      213: -175674704582153978
+    second: flooring_24
+  - first:
+      213: 6575737238429503015
+    second: flooring_25
+  - first:
+      213: -4511106655977518518
+    second: flooring_26
+  - first:
+      213: 2531645123905354948
+    second: flooring_27
+  - first:
+      213: 5316915571720013930
+    second: flooring_28
+  - first:
+      213: 1209829160797429021
+    second: flooring_29
+  - first:
+      213: 1738517133789774866
+    second: flooring_30
+  - first:
+      213: -3373951834817069701
+    second: flooring_31
+  - first:
+      213: -2816999114941271699
+    second: flooring_32
+  - first:
+      213: -4304149977172040868
+    second: flooring_33
+  - first:
+      213: 3863184014278565783
+    second: flooring_34
+  - first:
+      213: -5446522348875487972
+    second: flooring_35
+  - first:
+      213: 5715611256384089005
+    second: flooring_36
+  - first:
+      213: -629722989448866577
+    second: flooring_37
+  - first:
+      213: -2201549417693298971
+    second: flooring_38
+  - first:
+      213: -5773799823536390631
+    second: flooring_39
+  - first:
+      213: -4705886606657312155
+    second: flooring_40
+  - first:
+      213: 1323953353387406132
+    second: flooring_41
+  - first:
+      213: -3005392497469807277
+    second: flooring_42
+  - first:
+      213: 7198545924242319690
+    second: flooring_43
+  - first:
+      213: 3357537071118369044
+    second: flooring_44
+  - first:
+      213: -3885345787816563751
+    second: flooring_45
+  - first:
+      213: 6180525874880604808
+    second: flooring_46
+  - first:
+      213: -4155454334634021070
+    second: flooring_47
+  - first:
+      213: 2136684588214274272
+    second: flooring_48
+  - first:
+      213: 5862877794814428618
+    second: flooring_49
+  - first:
+      213: 8432494881508372328
+    second: flooring_50
+  - first:
+      213: -8826449005654853056
+    second: flooring_51
+  - first:
+      213: -5797993146335744098
+    second: flooring_52
+  - first:
+      213: -3502110213809247622
+    second: flooring_53
+  - first:
+      213: 2268329431319905175
+    second: flooring_54
+  - first:
+      213: -1971561522529178726
+    second: flooring_55
+  - first:
+      213: -7876242077751739191
+    second: flooring_56
+  - first:
+      213: 5594606886246653302
+    second: flooring_57
+  - first:
+      213: -4313158110838357498
+    second: flooring_58
+  - first:
+      213: -1630280784052558561
+    second: flooring_59
+  - first:
+      213: -7024698222420083796
+    second: flooring_60
+  - first:
+      213: 3649410078032205740
+    second: flooring_61
+  - first:
+      213: 1395935928946702807
+    second: flooring_62
+  - first:
+      213: -4054049194094502276
+    second: flooring_63
+  - first:
+      213: 7564707269733978305
+    second: flooring_64
+  - first:
+      213: 6669344877750762304
+    second: flooring_65
+  - first:
+      213: 4181327382278489015
+    second: flooring_66
+  - first:
+      213: 4423811422784796606
+    second: flooring_67
+  - first:
+      213: 154609998562932532
+    second: flooring_68
+  - first:
+      213: -519700080434071715
+    second: flooring_69
+  - first:
+      213: 2996518864306233203
+    second: flooring_70
+  - first:
+      213: 4217765384841603628
+    second: flooring_71
+  - first:
+      213: 2023005402875545246
+    second: flooring_72
+  - first:
+      213: 3555428819349059452
+    second: flooring_73
+  - first:
+      213: 5155161342546218818
+    second: flooring_74
+  - first:
+      213: 3526234079521309698
+    second: flooring_75
+  - first:
+      213: 3017923851831968406
+    second: flooring_76
+  - first:
+      213: -6030970058448130047
+    second: flooring_77
+  - first:
+      213: -1774466929162904409
+    second: flooring_78
+  - first:
+      213: -6043223911261678447
+    second: flooring_79
+  - first:
+      213: 1644639160693281628
+    second: flooring_80
+  - first:
+      213: -5714469666649445191
+    second: flooring_81
+  - first:
+      213: 7108192244954356524
+    second: flooring_82
+  - first:
+      213: -8807664768283648537
+    second: flooring_83
+  - first:
+      213: 8043917678995963507
+    second: flooring_84
+  - first:
+      213: 8042381451293417932
+    second: flooring_85
+  - first:
+      213: -6018132674914321972
+    second: flooring_86
+  - first:
+      213: 3926167189101069149
+    second: flooring_87
+  - first:
+      213: -5542274999954504024
+    second: flooring_88
+  - first:
+      213: 5486208094977124279
+    second: flooring_89
+  - first:
+      213: 2222239051906782506
+    second: flooring_90
+  - first:
+      213: -2984825751146898471
+    second: flooring_91
+  - first:
+      213: -4016398223189653794
+    second: flooring_92
+  - first:
+      213: -695671846840158993
+    second: flooring_93
+  - first:
+      213: 7120033376652678535
+    second: flooring_94
+  - first:
+      213: 6949669078469348360
+    second: flooring_95
+  - first:
+      213: 7852875565673822064
+    second: flooring_96
+  - first:
+      213: -6807132561547244194
+    second: flooring_0
+  - first:
+      213: -1461773114430065237
+    second: flooring_1
+  - first:
+      213: 8139191561651788434
+    second: flooring_2
+  - first:
+      213: -7966013113580585380
+    second: flooring_3
+  - first:
+      213: -4661524093064995325
+    second: flooring_4
+  - first:
+      213: 6044378122137385382
+    second: flooring_5
+  - first:
+      213: -3162344768454814072
+    second: flooring_6
+  - first:
+      213: 981659316135671050
+    second: flooring_7
+  - first:
+      213: -1851861569141171227
+    second: flooring_8
+  - first:
+      213: -846945865929709776
+    second: flooring_9
+  - first:
+      213: -2134349077704806417
+    second: flooring_10
+  - first:
+      213: -8973528921145220704
+    second: flooring_11
+  - first:
+      213: -4054403846486600913
+    second: flooring_12
+  - first:
+      213: 3379463153145447437
+    second: flooring_13
+  - first:
+      213: 271601212791352878
+    second: flooring_14
+  - first:
+      213: 54255188693215666
+    second: flooring_15
+  - first:
+      213: 6283205781891333085
+    second: flooring_18
+  - first:
+      213: -961897374788222100
+    second: flooring_19
+  - first:
+      213: 8539581047094894513
+    second: flooring_20
+  - first:
+      213: -3529266051730432318
+    second: flooring_21
+  - first:
+      213: -5640372661580234283
+    second: flooring_22
+  - first:
+      213: 7839811663142207240
+    second: flooring_23
+  - first:
+      213: -257143147313898510
+    second: flooring_24
+  - first:
+      213: -6810195226900357689
+    second: flooring_25
+  - first:
+      213: 5351578307615933193
+    second: flooring_26
+  - first:
+      213: 7885227063771237517
+    second: flooring_27
+  - first:
+      213: 9080145004499914839
+    second: flooring_28
+  - first:
+      213: 3597112795939456081
+    second: flooring_32
+  - first:
+      213: -1632417879424144882
+    second: flooring_33
+  - first:
+      213: 833339833575574487
+    second: flooring_34
+  - first:
+      213: 2745803468627413867
+    second: flooring_35
+  - first:
+      213: -7743284674025799082
+    second: flooring_36
+  - first:
+      213: -6959603968886746646
+    second: flooring_37
+  - first:
+      213: 3021749020788507611
+    second: flooring_38
+  - first:
+      213: -2897242712011298871
+    second: flooring_39
+  - first:
+      213: -4006527332666125958
+    second: flooring_40
+  - first:
+      213: -4134791647990987661
+    second: flooring_41
+  - first:
+      213: 5874319300581998975
+    second: flooring_42
+  - first:
+      213: -6807015505246277899
+    second: flooring_48
+  - first:
+      213: -1145195646027685156
+    second: flooring_49
+  - first:
+      213: -729164430212974907
+    second: flooring_50
+  - first:
+      213: -3646589403497409940
+    second: flooring_51
+  - first:
+      213: 4020158608309313000
+    second: flooring_52
+  - first:
+      213: -6194692923277590136
+    second: flooring_53
+  - first:
+      213: 9079876517035291269
+    second: flooring_54
+  - first:
+      213: 8493403201680232284
+    second: flooring_55
+  - first:
+      213: 279963099538031537
+    second: flooring_56
+  - first:
+      213: 1095295690735502931
+    second: flooring_57
+  - first:
+      213: 1442032407379723511
+    second: flooring_58
+  - first:
+      213: 5364131622038059444
+    second: flooring_64
+  - first:
+      213: 4598435113965307264
+    second: flooring_65
+  - first:
+      213: 8895615599316665794
+    second: flooring_66
+  - first:
+      213: -3511188974855226604
+    second: flooring_67
+  - first:
+      213: 1490676671694522567
+    second: flooring_68
+  - first:
+      213: -1260638276052515640
+    second: flooring_69
+  - first:
+      213: 7714503705990604438
+    second: flooring_70
+  - first:
+      213: -900595925075466970
+    second: flooring_71
+  - first:
+      213: -3471595702265025961
+    second: flooring_72
+  - first:
+      213: -2318404053976934685
+    second: flooring_73
+  - first:
+      213: 2468943651186988673
+    second: flooring_74
+  - first:
+      213: 7919688475524375725
+    second: flooring_78
+  - first:
+      213: -3115879971021257319
+    second: flooring_79
+  - first:
+      213: 3260208280810546063
+    second: flooring_80
+  - first:
+      213: -7061289927288685905
+    second: flooring_81
+  - first:
+      213: 8961534875216237426
+    second: flooring_82
+  - first:
+      213: 3474029499112713634
+    second: flooring_83
+  - first:
+      213: 4763033641337317687
+    second: flooring_84
+  - first:
+      213: -5550741578702172545
+    second: flooring_85
+  - first:
+      213: 5716369366315190416
+    second: flooring_88
+  - first:
+      213: -5310385650700103786
+    second: flooring_89
+  - first:
+      213: -9144279980589134382
+    second: flooring_90
+  - first:
+      213: 2122887965465932741
+    second: flooring_91
+  - first:
+      213: 1121256186050345402
+    second: flooring_92
+  - first:
+      213: -5836119796424952663
+    second: flooring_93
+  - first:
+      213: -3373795561953196259
+    second: flooring_94
+  - first:
+      213: 8529311770098570019
+    second: flooring_95
+  - first:
+      213: 3913160567949168356
+    second: flooring_16
+  - first:
+      213: 5807532433473612153
+    second: flooring_17
+  - first:
+      213: 8692911656239326088
+    second: flooring_29
+  - first:
+      213: -2819970546170315024
+    second: flooring_30
+  - first:
+      213: -7394416235387565348
+    second: flooring_31
+  - first:
+      213: 246641962279737624
+    second: flooring_43
+  - first:
+      213: -5759897363881466094
+    second: flooring_44
+  - first:
+      213: 8214232650435291408
+    second: flooring_45
+  - first:
+      213: -8810822991772182672
+    second: flooring_46
+  - first:
+      213: -8543780190549535236
+    second: flooring_47
+  - first:
+      213: 6915022186264942550
+    second: flooring_59
+  - first:
+      213: 1840750727063952984
+    second: flooring_60
+  - first:
+      213: -2500879889209863256
+    second: flooring_61
+  - first:
+      213: -8750559928442455386
+    second: flooring_62
+  - first:
+      213: -1997804004448832228
+    second: flooring_63
+  - first:
+      213: 6226722295264199629
+    second: flooring_75
+  - first:
+      213: 1617358129949035683
+    second: flooring_76
+  - first:
+      213: -1679782670724122547
+    second: flooring_77
+  - first:
+      213: 5113416889448015816
+    second: flooring_86
+  - first:
+      213: 3945731819763310450
+    second: flooring_87
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flooring_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d4bf140053881a0800000000000000
+      internalID: -6807132561547244194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5fd24e81db6bbe0800000000000000
+      internalID: -1461773114430065237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a9c1f1a9734f070800000000000000
+      internalID: 8139191561651788434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5efce86749037190800000000000000
+      internalID: -7966013113580585380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e9fe00980fe4fb0800000000000000
+      internalID: -4661524093064995325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9342aa0e1f1e350800000000000000
+      internalID: 6044378122137385382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8869fea10381d14d0800000000000000
+      internalID: -3162344768454814072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0538bc62fd8f9d00800000000000000
+      internalID: 981659316135671050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb9426e6bddc46e0800000000000000
+      internalID: -1851861569141171227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0372645e83b0f34f0800000000000000
+      internalID: -846945865929709776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_10
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fefe8b472d44162e0800000000000000
+      internalID: -2134349077704806417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_11
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1e1717dfe977380800000000000000
+      internalID: -8973528921145220704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23503ace2ddbb7c0800000000000000
+      internalID: -4054403846486600913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_13
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0481c625d346ee20800000000000000
+      internalID: 3379463153145447437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e6ef03ddbe4c300800000000000000
+      internalID: 271601212791352878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_15
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 248
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9e7418ec0c0c000800000000000000
+      internalID: 54255188693215666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_18
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb30586e5e623750800000000000000
+      internalID: 6283205781891333085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 240
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c630e591f67a6a2f0800000000000000
+      internalID: -961897374788222100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 240
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bfdfbab7bfa28670800000000000000
+      internalID: 8539581047094894513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_21
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 240
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce13cc8937850fc0800000000000000
+      internalID: -3529266051730432318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_22
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d18fa1c2fe59b1b0800000000000000
+      internalID: -5640372661580234283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_23
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 240
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f3e87ab2b9ccc60800000000000000
+      internalID: 7839811663142207240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fbddef7ba17e6cf0800000000000000
+      internalID: -257143147313898510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_25
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd1b89e5835d71a0800000000000000
+      internalID: -6810195226900357689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_26
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903422ded10a44a40800000000000000
+      internalID: 5351578307615933193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_27
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c816d9c34fd6d60800000000000000
+      internalID: 7885227063771237517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750514ed5c7230e70800000000000000
+      internalID: 9080145004499914839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 154cbf297038be130800000000000000
+      internalID: 3597112795939456081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_33
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a6deb669c7859e0800000000000000
+      internalID: -1632417879424144882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_34
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db8475d92e909b00800000000000000
+      internalID: 833339833575574487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_35
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b8292f4bd0b1620800000000000000
+      internalID: 2745803468627413867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_36
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65247f95d935a8490800000000000000
+      internalID: -7743284674025799082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_37
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae15b1950158a6f90800000000000000
+      internalID: -6959603968886746646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_38
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3cb7879b86fe920800000000000000
+      internalID: 3021749020788507611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_39
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c72a7a8a1deac7d0800000000000000
+      internalID: -2897242712011298871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71da815e94f568c0800000000000000
+      internalID: -4006527332666125958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_41
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374ce3937e44e96c0800000000000000
+      internalID: -4134791647990987661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_42
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f714968c746c58150800000000000000
+      internalID: 5874319300581998975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_48
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 216
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe283d867f9881a0800000000000000
+      internalID: -6807015505246277899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_49
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 216
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd22230a0a27b10f0800000000000000
+      internalID: -1145195646027685156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_50
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 216
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c63e4260dc71e5f0800000000000000
+      internalID: -729164430212974907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_51
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 216
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6255da0246b46dc0800000000000000
+      internalID: -3646589403497409940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_52
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 216
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed510d54f87ac730800000000000000
+      internalID: 4020158608309313000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_53
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 216
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881c96f6b97080aa0800000000000000
+      internalID: -6194692923277590136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_54
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 216
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 582bc42c593320e70800000000000000
+      internalID: 9079876517035291269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_55
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 216
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5fc0524631aed570800000000000000
+      internalID: 8493403201680232284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_56
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 208
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b38e2aa4f0a2e300800000000000000
+      internalID: 279963099538031537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_57
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 208
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3564e4aa0a5433f00800000000000000
+      internalID: 1095295690735502931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_58
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 208
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4487495d0230410800000000000000
+      internalID: 1442032407379723511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_64
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9b4043a49317a40800000000000000
+      internalID: 5364131622038059444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_65
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 192
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085c5926f5ce0df30800000000000000
+      internalID: 4598435113965307264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_66
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c581bfa143937b70800000000000000
+      internalID: 8895615599316665794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_67
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 192
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b7c7efa30c54fc0800000000000000
+      internalID: -3511188974855226604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_68
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c84053f882ffa410800000000000000
+      internalID: 1490676671694522567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_69
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 192
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c401a5ca20518ee0800000000000000
+      internalID: -1260638276052515640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_70
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 192
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69621065f3c6f0b60800000000000000
+      internalID: 7714503705990604438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_71
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 192
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62566b717c07083f0800000000000000
+      internalID: -900595925075466970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 240
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee0da1cdc65e4630800000000000000
+      internalID: 3913160567949168356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_17
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 240
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97921c68aff789050800000000000000
+      internalID: 5807532433473612153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_29
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8836ff5281d63a870800000000000000
+      internalID: 8692911656239326088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_30
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe3476aab37dd8d0800000000000000
+      internalID: -2819970546170315024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_31
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdac7587c91c16990800000000000000
+      internalID: -7394416235387565348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_43
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8199364de8f3c6300800000000000000
+      internalID: 246641962279737624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_44
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217e2236ddbb010b0800000000000000
+      internalID: -5759897363881466094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_45
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0196c9f1311def170800000000000000
+      internalID: 8214232650435291408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_46
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0771394bb2ba9b580800000000000000
+      internalID: -8810822991772182672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_47
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 224
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5964ffe256e6980800000000000000
+      internalID: -8543780190549535236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_59
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 208
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d754428a0817ff50800000000000000
+      internalID: 6915022186264942550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 208
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e50b69809ab8910800000000000000
+      internalID: 1840750727063952984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_61
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 208
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a35ab1bdf61b4dd0800000000000000
+      internalID: -2500879889209863256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_62
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 208
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa7b678b14cf8680800000000000000
+      internalID: -8750559928442455386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_63
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 208
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1579ffb7df5644e0800000000000000
+      internalID: -1997804004448832228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_72
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 176
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a68b22a1a62dfc0800000000000000
+      internalID: -3471595702265025961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_73
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 176
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e611ecdbcf53dfd0800000000000000
+      internalID: -2318404053976934685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_74
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 176
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 186d4737b23734220800000000000000
+      internalID: 2468943651186988673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_75
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 176
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc34a3cdfe2c96650800000000000000
+      internalID: 6226722295264199629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_76
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6928f9be0c1d1e920800000000000000
+      internalID: 3017923851831968406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_77
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 160
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100be2f6fa0bd4ca0800000000000000
+      internalID: -6030970058448130047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_78
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac119dbab3df57e0800000000000000
+      internalID: -1774466929162904409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_79
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 160
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194d91ffed7222ca0800000000000000
+      internalID: -6043223911261678447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_80
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 152
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53d1dc5a9ee2d610800000000000000
+      internalID: 1644639160693281628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_81
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 152
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc6d9f5d1022b0b0800000000000000
+      internalID: -5714469666649445191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_82
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 152
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2bd0bb9f2f55a260800000000000000
+      internalID: 7108192244954356524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flooring_83
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 152
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eddab9ee83e4c580800000000000000
+      internalID: -8807664768283648537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
