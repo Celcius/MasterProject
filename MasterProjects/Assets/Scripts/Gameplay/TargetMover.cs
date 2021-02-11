@@ -30,6 +30,9 @@ public class TargetMover : MonoBehaviour
     private TileBase[] validTiles;
     private HashSet<System.Type> validTypes = new HashSet<System.Type>();
 
+    [SerializeField]
+    private float range = 4;
+
     private void Start() 
     {
         foreach(TileBase tile in validTiles)
@@ -62,7 +65,13 @@ public class TargetMover : MonoBehaviour
         if(!Mathf.Approximately(dir.magnitude, 0))
         {
             Vector3 goalPos = transform.position + moveSpeed*dir * Time.deltaTime;
-            transform.position = controller.ClampWorldPosToRoom(goalPos);
+            if(Vector2.Distance(goalPos,grandmaVar.Value.RepresentationPos) > range)
+            {
+                Vector2 offsetDir = ((Vector2)goalPos - (Vector2)grandmaVar.Value.RepresentationPos).normalized;
+                goalPos = grandmaVar.Value.RepresentationPos + (Vector3)offsetDir * range;
+            }
+            goalPos = controller.ClampWorldPosToRoom(goalPos);
+            transform.position = goalPos;
             targetPosVar.Value  = transform.position - CameraMover.Instance.CellSize/2.0f;
         }
 
@@ -78,7 +87,7 @@ public class TargetMover : MonoBehaviour
             return false;
         }
         
-        Vector2 targetSize = CameraMover.Instance.CellSize * 0.95f;
+        Vector2 targetSize = CameraMover.Instance.CellSize * 0.15f;
         for(float x = -0.5f; x <= 0.5f; x++)
         {
             for(float y = -0.5f; y <= 0.5f; y++)

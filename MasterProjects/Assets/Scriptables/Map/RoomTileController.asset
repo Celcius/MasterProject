@@ -16,7 +16,7 @@ MonoBehaviour:
   referenceMap: {fileID: 11400000, guid: 2cbbc9603db1f8243b30186231ab330a, type: 2}
   isReferenceMapWalls: 1
   tilesToIgnore:
-  - {fileID: 11400000, guid: 9527b82e759fa2043a7d3a3e59788cc5, type: 2}
+  - {fileID: 11400000, guid: e116e62de45a5e64e9ed44fadaac1933, type: 2}
   - {fileID: 11400000, guid: f7266f87384197b41982c3e31f83eda2, type: 2}
   - {fileID: 11400000, guid: a48ee533c1fb0c442955a0144a323012, type: 2}
   - {fileID: 11400000, guid: 89c6b42a798a0b045a9e89b2b1b76673, type: 2}

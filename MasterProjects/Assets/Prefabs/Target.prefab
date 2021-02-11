@@ -53,7 +53,8 @@ MonoBehaviour:
   grandmaVar: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   controller: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   validTiles:
-  - {fileID: 11400000, guid: 9527b82e759fa2043a7d3a3e59788cc5, type: 2}
+  - {fileID: 0}
+  range: 5.5
 --- !u!114 &9051094772968033373
 MonoBehaviour:
   m_ObjectHideFlags: 0

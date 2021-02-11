@@ -28,6 +28,7 @@ public class GrandmaController : GridEntity
 
     [SerializeField]
     public SpriteRenderer representation;
+    public Vector3 RepresentationPos => representation.transform.position;
 
     [SerializeField]
     private BoolVar canWalk;

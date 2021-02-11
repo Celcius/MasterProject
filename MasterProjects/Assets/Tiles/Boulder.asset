@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84068fdb50d02e4498d05b6295b41945, type: 3}
-  m_Name: LedgeTileLeft 3
+  m_Script: {fileID: 11500000, guid: e3e1dde2bf8e6fc4fbe5a21da1d28c3b, type: 3}
+  m_Name: Boulder
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -91121015654551751, guid: 4ec54901af1c9b54db2ef8b500a306b8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 3682734787062045483, guid: c918840dedcb24e439c4ce77c8ecf115, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_Transform:
     e00: 1
     e01: 0
@@ -31,6 +31,6 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 5256599191641627690, guid: e4c5e74054aa5b94e96d7c51ae09241c, type: 3}
-  m_Flags: 1
+  m_InstancedGameObject: {fileID: 5681831361879564143, guid: 105536cc18a921541989a0e58e359259, type: 3}
+  m_Flags: 2
   m_ColliderType: 0

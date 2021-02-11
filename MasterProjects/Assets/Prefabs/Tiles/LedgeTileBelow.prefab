@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7206771065483251993}
   - component: {fileID: 1791889020149750323}
   m_Layer: 0
-  m_Name: LedgeTile
+  m_Name: LedgeTileBelow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.75}
+  m_Size: {x: 1, y: 0.4}
   m_EdgeRadius: 0
 --- !u!114 &1791889020149750323
 MonoBehaviour:
@@ -85,3 +85,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b53eb5569efc484d9b587defbb4b4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBlocking: 1
+  allowsStand: 1

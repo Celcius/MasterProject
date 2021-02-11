@@ -19,11 +19,17 @@ public class Boulder : Pushable
 
         float[] startRotations = new float[]{0, 90,180,270};
         spriteRenderer.transform.rotation = Quaternion.Euler(0,0,startRotations[Random.Range(0,startRotations.Length)]);    
+        //spriteRenderer.transform.localPosition = (Vector3)CameraMover.Instance.CellSize /2.0f;
     }
 
     protected override void OnPushToPos(Vector3 pos, Vector2Int pushMainDir)
     {
-        base.OnPushToPos(pos, pushMainDir);
+        base.OnPushToPos(pos + CameraMover.Instance.CellSize/2.0f, pushMainDir);
+       
+        if(!UnityEngineUtils.IsInPlayModeOrAboutToPlay())
+        {
+            return;
+        }
 
         if(Mathf.Abs(pushMainDir.x) > 0)
         {

@@ -6,7 +6,7 @@ public class WindowsInputController : IInputController
 {
     private const KeyCode grabKey = KeyCode.Q;
     private const KeyCode cutKey = KeyCode.E;
-    private const KeyCode cryKey = KeyCode.R;
+    private const KeyCode cryKey = KeyCode.Escape;
 
     [SerializeField]
     private BoolVar isAcceptingInput;
