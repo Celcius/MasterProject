@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1325794038008064097}
   - component: {fileID: 2607915046611741671}
+  - component: {fileID: 2505743733260063364}
   m_Layer: 0
   m_Name: GrandmaSpawnTile
   m_TagString: Untagged
@@ -44,5 +45,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBlocking: 0
+  allowsStand: 1
   var: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
   setGridPos: 0
+--- !u!114 &2505743733260063364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151694155810886424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5cbfcb3664ba2b498e699fc64e5a0a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapVar: {fileID: 11400000, guid: 2cbbc9603db1f8243b30186231ab330a, type: 2}

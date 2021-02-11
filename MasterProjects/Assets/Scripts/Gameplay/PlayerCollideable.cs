@@ -4,45 +4,76 @@ using UnityEngine;
 
 public abstract class PlayerCollideable : MonoBehaviour
 {
-    protected bool IsCollisionPlayer(Collision2D other, out CharacterMovement character)
+    protected bool IsCollisionPlayer(Collider2D other, out CharacterMovement character)
     {
-        if(other.collider.tag == GameConstants.PLAYER_TAG)
+        if(other.tag == GameConstants.PLAYER_TAG)
         {
-            character = other.collider.GetComponent<CharacterMovement>();
+            character = other.GetComponent<CharacterMovement>();
             return character != null;
         }
         character = null;
         return false;
     }
 
-    private void OnCollisionEnter2D(Collision2D other) 
+    protected virtual void OnCollisionEnter2D(Collision2D other) 
     {
         CharacterMovement character;
-        if(IsCollisionPlayer(other, out character))
+        if(IsCollisionPlayer(other.collider, out character))
         {
            PlayerCollisionEnter(character);
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other) 
+    protected virtual void OnCollisionExit2D(Collision2D other) 
     {
         CharacterMovement character;
-        if(IsCollisionPlayer(other, out character))
+        if(IsCollisionPlayer(other.collider, out character))
         {
             PlayerCollisionExit(character);
         }
     }
 
-    private void OnCollisionStay2D(Collision2D other) 
+    protected void OnCollisionStay2D(Collision2D other) 
     {
         CharacterMovement character;
-        if(IsCollisionPlayer(other, out character))
+        if(IsCollisionPlayer(other.collider, out character))
         {
            PlayerCollisionStay(character);
         }
     }
     
+    protected virtual void OnTriggerEnter2D(Collider2D other) 
+    {
+        CharacterMovement character;
+        if(IsCollisionPlayer(other, out character))
+        {
+           PlayerTriggerEnter(character);
+        }
+    }
+
+    protected virtual void OnTriggerExit2D(Collider2D other)
+    {
+        CharacterMovement character;
+        if(IsCollisionPlayer(other, out character))
+        {
+            PlayerTriggerExit(character);
+        }
+    }
+
+    protected virtual void OnTriggerStay2D(Collider2D other) 
+    {
+        CharacterMovement character;
+        if(IsCollisionPlayer(other, out character))
+        {
+           PlayerTriggerStay(character);
+        }
+    }
+
     protected virtual void PlayerCollisionEnter(CharacterMovement character) {}
     protected virtual void PlayerCollisionExit(CharacterMovement character) {}
     protected virtual void PlayerCollisionStay(CharacterMovement character) {}
+
+    protected virtual void PlayerTriggerEnter(CharacterMovement character) {}
+    protected virtual void PlayerTriggerExit(CharacterMovement character) {}
+    protected virtual void PlayerTriggerStay(CharacterMovement character) {}
 }

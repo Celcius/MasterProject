@@ -16,7 +16,14 @@ public class Pushable : PlayerCollideable
     private PushableArrVar pushing;
 
     private IEnumerator pushRoutine;
-    Vector2Int pushMainDir;
+    protected Vector2Int pushMainDir;
+
+    public bool canBePushed = true;
+
+    private void OnEnable()
+    {
+        canBePushed = true;
+    }
 
     protected override void PlayerCollisionEnter(CharacterMovement character)
     {
@@ -40,7 +47,7 @@ public class Pushable : PlayerCollideable
     {
         Vector2Int newDir = pushMainDir = GeometryUtils.NormalizedMaxValueVector(character.MovingDir);
         
-        if(Mathf.Approximately(newDir.magnitude,0) || !IsValidPushDir(character))
+        if(Mathf.Approximately(newDir.magnitude,0) || !IsValidPushDir(character) || !canBePushed)
         {
             StopPush();
         } 
@@ -54,6 +61,11 @@ public class Pushable : PlayerCollideable
 
     private void RestartPush()
     {
+        if(!canBePushed)
+        {
+            return;
+        }
+        
         elapsed = 0.0f;
         
         if(pushRoutine == null)
@@ -103,8 +115,13 @@ public class Pushable : PlayerCollideable
         Vector3Int goalPos = CameraMover.GridPosForWorldPos(transform.position) + (Vector3Int)pushMainDir;
         if(controller.IsEmptyPos((Vector2Int)goalPos))
         {
-            transform.position =  CameraMover.WorldPosForGridPos(goalPos, transform.position.z);
+            OnPushToPos(CameraMover.WorldPosForGridPos(goalPos, transform.position.z), pushMainDir);
         }
+    }
+
+    protected virtual void OnPushToPos(Vector3 pos, Vector2Int pushMainDir)
+    {
+        transform.position = pos;
     }
 
     private bool IsValidPushDir(CharacterMovement character)

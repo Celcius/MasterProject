@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class InvisiblePosSetterGridEntity : GridEntity
 {
@@ -9,6 +10,7 @@ public class InvisiblePosSetterGridEntity : GridEntity
 
     [SerializeField]
     private bool setGridPos = false;
+    
     private void OnEnable() 
     {
         if(setGridPos)

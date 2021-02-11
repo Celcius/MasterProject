@@ -178,6 +178,25 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         return true;
     }
 
+    public bool IsStandablePos(Vector2Int gridPos, Transform[] toIgnore = null)
+    {
+        bool isEmpty = IsEmptyPos(gridPos, toIgnore);
+        if(!isEmpty)
+        {
+            return false;
+        }
+
+        GridEntity[] foundEntities = GridRegistry.Instance.GetEntitiesAtPos((Vector3Int)gridPos);
+        foreach(GridEntity entity in foundEntities)
+        {
+            if(!entity.AllowsStand)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private bool IsBlockingEntity(GridEntity foundEntity, Transform[] toIgnore)
     {
         if(foundEntity == null || !foundEntity.IsBlocking)

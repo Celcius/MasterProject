@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4051769527255197116}
   - component: {fileID: 6107429364165701473}
   - component: {fileID: 1154763172395257438}
+  - component: {fileID: 6235753990202291176}
   m_Layer: 9
   m_Name: Tree
   m_TagString: Untagged
@@ -146,3 +147,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &6235753990202291176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7744255812793736856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5cbfcb3664ba2b498e699fc64e5a0a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapVar: {fileID: 11400000, guid: 2cbbc9603db1f8243b30186231ab330a, type: 2}

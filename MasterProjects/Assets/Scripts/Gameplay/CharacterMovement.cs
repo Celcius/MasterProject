@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
 
     private Rigidbody2D body2D;
     private Collider2D col2D;
+    public Bounds ColliderBounds => col2D.bounds;
 
     [SerializeField]
     private CameraMoverVar cameraVar;
@@ -41,6 +42,9 @@ public class CharacterMovement : MonoBehaviour
     public Vector2 MovingDir => movingDir;
     [SerializeField]
     private Vector2Var facingDir;
+
+    private Vector2Int prevSafePos;
+    public Vector2Int PrevSafePos => prevSafePos;
 
     [SerializeField]
     private RoomTileController roomController;
@@ -108,6 +112,7 @@ public class CharacterMovement : MonoBehaviour
         {
             transform.position = respawnPosition.Value;
         }
+        Show();
     }
 
     void Update()
@@ -259,6 +264,14 @@ public class CharacterMovement : MonoBehaviour
             SetCharacterState(!isEmpty? CharacterState.Pushing : 
                                   input.IsGrab() && (canGrab && canCall)? CharacterState.Calling
                                   : CharacterState.Walking);
+            
+
+            if(roomController.IsStandablePos(GridPos, new Transform[]{grandmaScriptVar.Value.transform}))
+            {
+                prevSafePos = GridPos;
+            }
+       
+
             if(IsOutOfRoom(goalPos + representationParent.localPosition))
             {
                 grandmaScriptVar.Value.CheckLeaveRoom(goalPos + representationParent.localPosition, () => 
@@ -344,6 +357,17 @@ public class CharacterMovement : MonoBehaviour
     private void SetCharacterState(CharacterState state)
     {
         stateVar.Value = state;
+    }
+
+    public void Hide()
+    {
+        representationParent.gameObject.SetActive(false);
+    }
+
+    public void Show()
+    {
+        representationParent.gameObject.SetActive(true);
+        SetCharacterState(CharacterState.Idle);
     }
 }
 

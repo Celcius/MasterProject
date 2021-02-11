@@ -13,6 +13,10 @@ public class GridEntity : MonoBehaviour
     private bool isBlocking = true;
     public bool IsBlocking => isBlocking;
 
+    [SerializeField]
+    private bool allowsStand = true;
+    public bool AllowsStand => allowsStand;
+
     protected virtual void Start()
     {
         GridRegistry.Instance.AddRoomGridObject(this);
