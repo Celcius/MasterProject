@@ -17,11 +17,11 @@ public class LedgeScript : PlayerCollideable
     private void Start()
     {
         myPos = CameraMover.GridPosForWorldPos(transform.position);
-        posBelow = roomController.FindEmptyPosInDir(myPos, searchDir);
     }
 
     protected override void PlayerCollisionEnter(CharacterMovement movement)
     {
+        posBelow = roomController.FindEmptyPosInDir(myPos, searchDir);
         if(myPos == posBelow)
         {
             Debug.LogError("Ledge without position below");
