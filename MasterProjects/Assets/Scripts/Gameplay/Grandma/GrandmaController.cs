@@ -150,7 +150,7 @@ public class GrandmaController : GridEntity
         character.transform.right = Vector2.right;
         if(throwChar)
         {
-            character.transform.position  = (Vector3)targetPosVar.Value + character.transform.position.z * Vector3.up;
+            character.JumpTo((Vector3)targetPosVar.Value + character.transform.position.z * Vector3.up);
             balloon.ShowText(throwStrings.GetRandomSelection());
         }
         else

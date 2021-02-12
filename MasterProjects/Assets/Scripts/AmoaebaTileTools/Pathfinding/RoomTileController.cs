@@ -121,16 +121,26 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         return containsPos;
     }
 
-    public Vector3Int FindEmptyPosInDir(Vector3Int searchPos, Vector2Int dir)
+    public Vector3Int FindEmptyPosInDir(Vector3Int searchPos, Vector2Int dir, TileBase[] toIgnore = null)
     {
         Vector3Int searchBelow = searchPos;
         Tilemap map = referenceMap.Value;
+        HashSet<System.Type> ignoreHash = new HashSet<System.Type>();
+       
+        if(toIgnore != null)
+        {
+            foreach(TileBase tile in toIgnore)
+            {
+                ignoreHash.Add(tile.GetType());
+            }
+        }
+
         while(roomGridPosBounds.Contains(searchBelow))
         {
             searchBelow += (Vector3Int)dir;
             Vector3 worldPos = CameraMover.WorldPosForGridPos(searchBelow, 0);
             TileBase tile = GetTileForWorldPos(worldPos);
-            if(tile == null)
+            if(tile == null || ignoreHash.Contains(tile.GetType()))
             {
                 return searchBelow;
             }
@@ -189,6 +199,10 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         GridEntity[] foundEntities = GridRegistry.Instance.GetEntitiesAtPos((Vector3Int)gridPos);
         foreach(GridEntity entity in foundEntities)
         {
+            if(entity == null)
+            {
+                continue;
+            }
             if(!entity.AllowsStand)
             {
                 return false;

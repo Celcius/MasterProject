@@ -63,6 +63,7 @@ public class WindowsInputController : IInputController
         {
             return Vector3.zero;
         }
+        
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
         return new Vector3(hor == 0? hor : Mathf.Sign(hor) * 1.0f,

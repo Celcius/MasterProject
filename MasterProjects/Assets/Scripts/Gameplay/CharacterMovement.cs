@@ -49,6 +49,12 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private RoomTileController roomController;
 
+    [SerializeField]
+    private JumpController throwJumpController;
+
+    [SerializeField]
+    private JumpController dropdownJumpController;
+
     private GridEntity gridEntity;
     public Vector2Int GridPos 
     {
@@ -78,6 +84,14 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField]
     private float cutDuration = 0.5f;
+    
+    [SerializeField]
+    private ParticleSystem landParticles;
+
+    [SerializeField]
+    private ParticleSystem leafParticles;
+    
+    private ParticleSystem.EmissionModule leafEmission;
 
     private void Start()
     {
@@ -90,6 +104,10 @@ public class CharacterMovement : MonoBehaviour
 
        CameraMover.Instance.OnCameraMoveStart += OnCamStart;
        CameraMover.Instance.OnCameraMoveEnd += OnCamEnd;
+       leafEmission = leafParticles.emission;
+       leafEmission.enabled = false;
+       
+       landParticles.Stop();
     }
 
     private void OnCamStart(Vector2Int oldPos, Vector2Int newPos)
@@ -117,6 +135,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        leafEmission.enabled = false;
         if(!canCall && input.IsGrabUp())
         {
             canCall = true;
@@ -243,7 +262,7 @@ public class CharacterMovement : MonoBehaviour
     }
 
     private void HandleMove()
-    {        
+    {    
         Vector3 dir = input.GetMovementAxis();
         
         if(!Mathf.Approximately(dir.magnitude, 0))
@@ -284,13 +303,14 @@ public class CharacterMovement : MonoBehaviour
             else
             {
                 body2D.MovePosition(goalPos);
+                TileBase tile =  roomController.GetTileForWorldPos(representationGoal);
+                OnStepTile(tile);
             }
             
         }
         else
         {
             movingDir = Vector2.zero;
-            facingDir.Value = Vector2.down;
             SetCharacterState(input.IsGrab() && canCall? CharacterState.Calling : CharacterState.Idle);
         }      
     }
@@ -309,21 +329,28 @@ public class CharacterMovement : MonoBehaviour
         SetCharacterState(CharacterState.Throwing);
     }
 
-    public void JumpTo(Vector3 worldPosition)
-    {
-        transform.position = worldPosition;
-    }
-
     private void OnRelease(bool isThrow)
     {
         canCall = false;
         canGrab = false;
         movingDir = movingDir = Vector2.down;
         grandmaScriptVar.Value.ReleaseCharacter(this, isThrow);
+        
         EnableColliders();
         SetCharacterState(CharacterState.Idle);
     }
 
+    private void OnStepTile(TileBase tile)
+    {
+        if(IsLandingTile(tile))
+        {
+            leafEmission.enabled = true;
+        }
+        else
+        {
+            leafEmission.enabled = false;
+        }
+    }
     private void OnCry()
     {
         SetCharacterState(CharacterState.Crying);
@@ -368,6 +395,53 @@ public class CharacterMovement : MonoBehaviour
     {
         representationParent.gameObject.SetActive(true);
         SetCharacterState(CharacterState.Idle);
+    }
+
+    public void JumpTo(Vector3 pos)
+    {
+        PerformJump(throwJumpController, 
+                    pos,
+                    ()=> 
+                    {
+                        landParticles.Play();  
+                    });
+    }
+
+    public void DropdownTo(Vector3 pos)
+    {
+        PerformJump(dropdownJumpController, 
+                    pos,
+                    ()=> 
+                    {
+                        TileBase tile = roomController.GetTileForWorldPos(pos);
+                        if(IsLandingTile(tile))
+                        {
+                            landParticles.Play();
+                        }
+                    });
+    }
+
+    private void PerformJump(JumpController controller, Vector3 pos, Action callback = null)
+    {
+        isAcceptingInput.Value = false;
+        col2D.enabled = false;
+        body2D.isKinematic = true;
+        controller.JumpTo(pos, () => 
+            { 
+                col2D.enabled = true;
+                body2D.isKinematic = false;
+                isAcceptingInput.Value = true; 
+                callback?.Invoke();
+            });
+    }
+
+    private bool IsLandingTile(TileBase tile)
+    {
+        return tile != null && 
+                    (tile.GetType() == typeof(LandingTile) ||
+                    tile.GetType().IsSubclassOf(typeof(LandingTile)) || 
+                    tile.GetType() == typeof(LandingRuleTile) ||
+                    tile.GetType().IsSubclassOf(typeof(LandingRuleTile)));
     }
 }
 

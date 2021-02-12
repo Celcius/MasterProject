@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AmoaebaUtils;
+using UnityEngine.Tilemaps;
 
 public class LedgeScript : PlayerCollideable
 {
@@ -10,6 +11,9 @@ public class LedgeScript : PlayerCollideable
 
     [SerializeField]
     private Vector2Int searchDir = new Vector2Int(0,-1);
+
+    [SerializeField]
+    private TileBase[] tilesToIgnore;
 
     Vector3Int myPos;
     Vector3Int posBelow;
@@ -21,7 +25,7 @@ public class LedgeScript : PlayerCollideable
 
     protected override void PlayerCollisionEnter(CharacterMovement movement)
     {
-        posBelow = roomController.FindEmptyPosInDir(myPos, searchDir);
+        posBelow = roomController.FindEmptyPosInDir(myPos, searchDir, tilesToIgnore);
         if(myPos == posBelow)
         {
             Debug.LogError("Ledge without position below");
@@ -44,7 +48,7 @@ public class LedgeScript : PlayerCollideable
             pos.y = movement.transform.position.y;
         }
         
-        movement.JumpTo(pos);
+        movement.DropdownTo(pos);
     }
     
 }

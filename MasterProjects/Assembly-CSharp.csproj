@@ -70,12 +70,13 @@
      <Compile Include="Assets\Scripts\Gameplay\ChildGridEntity.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PushableArrVar.cs" />
      <Compile Include="Assets\Scripts\Map\InvisiblePosSetterGridEntity.cs" />
+     <Compile Include="Assets\Scripts\Map\LandingRuleTile.cs" />
      <Compile Include="Assets\Scripts\Input\Cut.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Boulder.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCall.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\Map\LandingRuleTile.cs" />
+     <Compile Include="Assets\JumpController.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

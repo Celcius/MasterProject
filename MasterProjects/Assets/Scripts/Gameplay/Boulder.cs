@@ -41,7 +41,6 @@ public class Boulder : Pushable
         if(Mathf.Abs(pushMainDir.y) > 0)
         {
             spriteIndex = MathUtils.NegMod((spriteIndex + pushMainDir.y), sprites.Length);
-            Debug.Log(spriteIndex);
             spriteRenderer.sprite = sprites[spriteIndex];
         }
     }

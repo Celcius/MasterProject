@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   searchDir: {x: 0, y: -1}
+  tilesToIgnore:
+  - {fileID: 11400000, guid: e116e62de45a5e64e9ed44fadaac1933, type: 2}
 --- !u!61 &7206771065483251993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -85,5 +87,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b53eb5569efc484d9b587defbb4b4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBlocking: 1
+  isBlocking: 0
   allowsStand: 1
