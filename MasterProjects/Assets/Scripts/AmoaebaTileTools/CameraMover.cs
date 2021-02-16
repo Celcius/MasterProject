@@ -29,8 +29,7 @@ public class CameraMover : MonoBehaviour
     private static CameraMover moverSingleton;
     public static CameraMover Instance => moverSingleton;
 
-    private Vector3 cellSize;
-    public Vector3 CellSize => cellSize;
+    public Vector3 CellSize => grid.cellSize;
 
     private int currentIndex = 0;
 
@@ -41,6 +40,7 @@ public class CameraMover : MonoBehaviour
     public Action<Vector2Int, Vector2Int> OnCameraMoveStart;
     
     public Action<Vector2Int, Vector2Int> OnCameraMoveEnd;
+    [SerializeField]
     private PixelPerfectCamera pixelCamera;
 
     private Vector2Int playerRoom;
@@ -59,7 +59,9 @@ public class CameraMover : MonoBehaviour
 
     public float PixelsPerUnit => pixelCamera.assetsPPU;
 
-    public Vector2 RoomSize {get; private set;}
+    public Vector2 RoomSize => new Vector2(
+            (int)(pixelCamera.refResolutionX / pixelCamera.assetsPPU),
+            (int)(pixelCamera.refResolutionY / pixelCamera.assetsPPU));
 
     private bool moving = false;
     private bool isFirstUpdate = true;
@@ -72,14 +74,9 @@ public class CameraMover : MonoBehaviour
         
         moverSingleton = this;
         
-        pixelCamera = GetComponent<PixelPerfectCamera>();
-        RoomSize = new Vector2(
-            (int)(pixelCamera.refResolutionX / pixelCamera.assetsPPU),
-            (int)(pixelCamera.refResolutionY / pixelCamera.assetsPPU));
         currentRoomPos = CameraMover.RoomPosForWorldPos(lookAtGridEntity.Value == null? 
                                                         transform.position : 
                                                         lookAtGridEntity.Value.transform.position);
-        cellSize = grid.cellSize;
     }
 
     private void OnEnable()
