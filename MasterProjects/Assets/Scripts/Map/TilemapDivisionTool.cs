@@ -12,6 +12,40 @@ public class TilemapDivisionTool : MonoBehaviour
     [SerializeField]
     private Tilemap emptyTilemap;
 
+    [SerializeField]
+    private Vector2Int offset;
+
+    [Button]
+    public void ApplyOffsetForTileMap()
+    {
+        Tilemap[] offsetTargets = GetComponentsInChildren<Tilemap>();
+        
+        if(offsetTargets == null || offsetTargets.Length == 0)
+        {
+            return;
+        }
+
+        for(int i = offsetTargets.Length-1; i >= 0; i--)
+        {
+            ApplyOffsetForTileMap(offsetTargets[i]);
+        }
+    }
+
+    public void ApplyOffsetForTileMap(Tilemap map)
+    {
+        Tilemap newMap = CreateNewMap(map.gameObject.name);
+
+        System.Action<Tilemap, Vector3Int> iterateCallback = (Tilemap itMap, Vector3Int gridPos) =>
+        {
+            TileBase tile = itMap.GetTile(gridPos);
+            newMap.SetTile(gridPos + (Vector3Int)offset, tile);
+            newMap.SetTileFlags(gridPos, itMap.GetTileFlags(gridPos));
+        };
+        
+        IterateMap(map, iterateCallback);
+        DestroyMap(map);
+    }
+
     [Button]
     public void DivideMap()
     {
