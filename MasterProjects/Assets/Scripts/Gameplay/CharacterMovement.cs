@@ -421,17 +421,16 @@ public class CharacterMovement : MonoBehaviour
                     });
     }
 
-    private void PerformJump(JumpController controller, Vector3 pos, Action callback = null)
+    private void PerformJump(JumpController controller, Vector3 pos, Action reachCallback = null)
     {
         isAcceptingInput.Value = false;
         col2D.enabled = false;
         body2D.isKinematic = true;
-        controller.JumpTo(pos, () => 
+        controller.JumpTo(pos, reachCallback, () => 
             { 
                 col2D.enabled = true;
                 body2D.isKinematic = false;
                 isAcceptingInput.Value = true; 
-                callback?.Invoke();
             });
     }
 

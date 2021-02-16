@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: ef2f9241e0a6e7c4ba815fab9a23030f, type: 3}
+    - {fileID: 2800000, guid: 07bc8b3b75929344586faf6562253828, type: 3}
+    - {fileID: 2800000, guid: 707dc938e706c014aa3e531a31d3120a, type: 3}
+    - {fileID: 2800000, guid: 4ec54901af1c9b54db2ef8b500a306b8, type: 3}
+    - {fileID: 2800000, guid: c49a71f9379bde04396e9dc544e1a9f0, type: 3}
+    - {fileID: 2800000, guid: 59e3ff34319e51d49b0548ac48f0f329, type: 3}
+    - {fileID: 2800000, guid: 35d668ee47ed2be4895818dac38b7bcc, type: 3}
+    - {fileID: 2800000, guid: 20cc6ed9313372c44bbee4974b8fc45d, type: 3}
+    - {fileID: 2800000, guid: c3375d23f94f97f499d45706840947c6, type: 3}
+    - {fileID: 2800000, guid: a3e5cd4d2437aca4f9150bc044df6701, type: 3}
+    - {fileID: 2800000, guid: f0f77edbb515f554da1cb1ce7f048b75, type: 3}
+    - {fileID: 2800000, guid: e386367f093990044aacbcb434c3252b, type: 3}
+    - {fileID: 2800000, guid: fef4058a81831854481a299435fea9bb, type: 3}
+    - {fileID: 2800000, guid: 729414d8172e7d8499a31e587a577b90, type: 3}
+    - {fileID: 2800000, guid: c918840dedcb24e439c4ce77c8ecf115, type: 3}
+    - {fileID: 2800000, guid: 025c1e1b6eb70cd4cb532c928dfdaf32, type: 3}
+    - {fileID: 2800000, guid: 4013fa513c18c264a8fc7cdc59b25a45, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites: []
+  m_PackedSpriteNamesToIndex: []
+  m_Tag: SpriteAtlas
+  m_IsVariant: 0

@@ -5069,6 +5069,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5451419466350408572}
   jumpLayer: FG1
   jumpSortOrder: 1
+  endDelay: 0.1
 --- !u!1 &3979912106156707209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,28 +5113,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06e38d794a8fbc42961a4dd1e00889a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpDuration: 2
+  jumpDuration: 1
   jumpScale:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 1.2306463
-      outSlope: 1.2306463
+      inSlope: 0.6950349
+      outSlope: 0.6950349
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.056583244
+      outWeight: 0.08342401
     - serializedVersion: 3
       time: 0.5
-      value: 1.5
-      inSlope: 0.022753894
-      outSlope: 0.008719387
+      value: 1.3
+      inSlope: -0.0091979625
+      outSlope: 0
       tangentMode: 1
       weightedMode: 0
-      inWeight: 0.1077258
-      outWeight: 0.09031558
+      inWeight: 0.105549514
+      outWeight: 0.105549455
     - serializedVersion: 3
       time: 1
       value: 1
@@ -5152,29 +5153,29 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2.9741101
-      outSlope: 2.9741101
+      inSlope: 1.9667501
+      outSlope: 1.9667501
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.047878128
+      outWeight: 0.067464635
     - serializedVersion: 3
       time: 0.5
       value: 0.5
-      inSlope: 0.15020765
-      outSlope: 0.15020765
+      inSlope: 0.43828923
+      outSlope: 0.43828923
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.10772574
+      outWeight: 0.10337329
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 2.336798
-      outSlope: 2.336798
+      value: 1.0032387
+      inSlope: 2.1387184
+      outSlope: 2.1387184
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.060935855
+      inWeight: 0.08487487
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -5183,6 +5184,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5451419466350408572}
   jumpLayer: FG2
   jumpSortOrder: 2
+  endDelay: 0.5
 --- !u!1 &5451419466169418070
 GameObject:
   m_ObjectHideFlags: 0
@@ -5549,7 +5551,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10274,7 +10276,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2058764567
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -10450,7 +10452,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -11303,10 +11305,68 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 1
+    m_BurstCount: 4
     m_Bursts:
     - serializedVersion: 2
       time: 0
+      countCurve:
+        serializedVersion: 2
+        minMaxState: 0
+        scalar: 20
+        minScalar: 30
+        maxCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        minCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      cycleCount: 1
+      repeatInterval: 0.01
+      probability: 1
+    - serializedVersion: 2
+      time: 0.05
       countCurve:
         serializedVersion: 2
         minMaxState: 0
@@ -11360,8 +11420,124 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-      cycleCount: 5
+      cycleCount: 1
       repeatInterval: 0.05
+      probability: 1
+    - serializedVersion: 2
+      time: 0.1
+      countCurve:
+        serializedVersion: 2
+        minMaxState: 0
+        scalar: 5
+        minScalar: 30
+        maxCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        minCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      cycleCount: 1
+      repeatInterval: 0.01
+      probability: 1
+    - serializedVersion: 2
+      time: 0.15
+      countCurve:
+        serializedVersion: 2
+        minMaxState: 0
+        scalar: 2
+        minScalar: 30
+        maxCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        minCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      cycleCount: 1
+      repeatInterval: 0.01
       probability: 1
   SizeModule:
     enabled: 1
@@ -15179,7 +15355,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2058764567
   m_SortingLayer: 4
-  m_SortingOrder: 15
+  m_SortingOrder: 10
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

@@ -26,12 +26,15 @@ public class JumpController : MonoBehaviour
     [SerializeField]
     private int jumpSortOrder;
 
-    public void JumpTo(Vector3 pos, Action callback)
+    [SerializeField]
+    private float endDelay = 0;
+
+    public void JumpTo(Vector3 pos, Action reachCallback, Action endCallback)
     {
-        StartCoroutine(Jump(pos, callback));
+        StartCoroutine(Jump(pos, reachCallback, endCallback));
     }
 
-    private IEnumerator Jump(Vector3 pos, Action callback)
+    private IEnumerator Jump(Vector3 pos, Action reachCallback, Action endCallback)
     {
         int startLayer = spriteRenderer.sortingLayerID;
         int startSortOrder = spriteRenderer.sortingOrder;
@@ -59,6 +62,12 @@ public class JumpController : MonoBehaviour
         targetTransform.position = pos;
         spriteRenderer.sortingLayerID = startLayer;
         spriteRenderer.sortingOrder = startSortOrder;
-        callback?.Invoke();
+        reachCallback?.Invoke();
+
+        if(endDelay > 0)
+        {
+            yield return new WaitForSeconds(endDelay);
+        }
+        endCallback?.Invoke();
     }
 }

@@ -34,9 +34,9 @@ public class GrandmaStateMoveToNextRoom : GrandmaStateMoveToCall
         else
         {
             isAcceptingInput.Value = false;
-            roomTileController.IgnoreOtherRoom = false;
+            roomTileController.GenerateBorderNeighbours = true;
             MoveToGoal(GetMoveGoal());
-            roomTileController.IgnoreOtherRoom = true;
+            roomTileController.GenerateBorderNeighbours = false;
         }
     }
     

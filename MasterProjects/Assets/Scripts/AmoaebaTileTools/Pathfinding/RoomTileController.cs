@@ -30,10 +30,12 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
     private List<Transform> entitiesToIgnore = new List<Transform>();
 
     public bool IgnoreOtherRoom {get; set;}
+    public bool GenerateBorderNeighbours {get; set;}
 
     private void OnEnable()
     {
         IgnoreOtherRoom = true;
+        GenerateBorderNeighbours = false;
         entitiesToIgnore.Clear();
         tilesToIgnoreHash.Clear();
         foreach(TileBase tileBase in tilesToIgnore)
@@ -96,18 +98,37 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
             for(int y = roomGridPosBounds.yMin; y <= roomGridPosBounds.yMax; y++)
             {
                 Vector2Int attemptPos = new Vector2Int(x,y);
-                Vector3 worldPos = CameraMover.WorldPosForGridPos((Vector3Int)attemptPos, 0);
-
-                TileBase tile = GridUtils.GetTileForWorldPos(referenceMap.Value, worldPos);
-                
-                bool hasTile = (tile != null && !tilesToIgnoreHash.Contains(tile.GetType()));
-
-                if(isReferenceMapWalls != hasTile)
-                {
-                    floorPositions.Add(attemptPos);
-                }
+                CheckForEmptyFloorPos((Vector3Int) attemptPos);
             }
         }
+    }
+
+    public void CheckForEmptyFloorPos(Vector3Int attemptPos)
+    {
+        if(attemptPos.x == 30 && attemptPos.y == 12)
+        {
+            Debug.Log("HERE");
+        }
+        Vector3 worldPos = CameraMover.WorldPosForGridPos(attemptPos, 0);
+
+        TileBase tile = GridUtils.GetTileForWorldPos(referenceMap.Value, worldPos);
+        
+        bool hasTile = (tile != null && !tilesToIgnoreHash.Contains(tile.GetType()));
+
+        if(isReferenceMapWalls != hasTile)
+        {
+            floorPositions.Add((Vector2Int)attemptPos);
+        }
+    }
+
+    public void AddFloorPos(Vector2Int floorPos)
+    {
+        floorPositions.Add(floorPos);
+    }
+
+    public void RemoveFloorPos(Vector2Int floorPos)
+    {
+        floorPositions.Remove(floorPos);
     }
 
     public TileBase GetTileForWorldPos(Vector3 worldPos)
@@ -165,9 +186,19 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
 
     public bool IsEmptyPos(Vector2Int gridPos, Transform[] toIgnore = null)
     {
-        if(!IsFloorPos(gridPos) && (IsInCurrentRoom(gridPos) || IgnoreOtherRoom))
+        bool isFloorPos = IsFloorPos(gridPos);
+        bool inCurrentRoom = IsInCurrentRoom(gridPos);
+
+        if(!isFloorPos)
         {
-            return false;
+            if(inCurrentRoom || (IgnoreOtherRoom && !GenerateBorderNeighbours))
+            {
+                return false;    
+            }
+            else if(GenerateBorderNeighbours && !IsBorderNeighbour(gridPos))
+            {
+                return false;
+            }
         }
         
         
@@ -186,6 +217,19 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         }
 
         return true;
+    }
+
+    public bool IsBorderNeighbour(Vector2Int grid)
+    {
+        bool horNeighbour = 
+        (roomBounds.min.y <= grid.y && roomBounds.max.y >= grid.y) &&
+        ((roomBounds.min.x - grid.x == 1) || (grid.x - roomBounds.max.x == 1));
+
+        bool vertNeighbour = 
+        (roomBounds.min.x <= grid.x && roomBounds.max.x >= grid.x) &&
+        ((roomBounds.min.y - grid.y == 1) || (grid.y - roomBounds.max.y == 1));
+        
+        return horNeighbour || vertNeighbour;
     }
 
     public bool IsStandablePos(Vector2Int gridPos, Transform[] toIgnore = null)
@@ -260,6 +304,12 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
     public Vector2Int[] GetNeighbours(Vector2Int pos)
     {
         List<Vector2Int> retPos = new List<Vector2Int>();
+        
+        if(!IsInCurrentRoom(pos) && IgnoreOtherRoom)
+        {
+            return retPos.ToArray();
+        }
+
         for(int x = -1; x <= 1; x++)
         {
             for(int y = -1; y <= 1; y++)

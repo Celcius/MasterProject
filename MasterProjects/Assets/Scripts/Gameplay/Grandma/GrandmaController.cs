@@ -290,9 +290,9 @@ public class GrandmaController : GridEntity
         Vector3Int gridGoalPos = CameraMover.GridPosForWorldPos(goalPos);
         Vector3 clampedworldPos = CameraMover.WorldPosForGridPos(gridGoalPos, 0);
         
-        roomController.IgnoreOtherRoom = false;
+        roomController.GenerateBorderNeighbours = true;
         Vector2Int[] path = GetPath(clampedworldPos, true);
-        roomController.IgnoreOtherRoom = true;
+        roomController.GenerateBorderNeighbours = false;
 
         if(gridGoalPos == GridPos || path != null && path.Length > 0)
         {
