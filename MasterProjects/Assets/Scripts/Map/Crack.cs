@@ -15,6 +15,9 @@ public class Crack : PlayerCollideable
     [SerializeField]
     private GameObject crackRepresentation;
 
+    [SerializeField]
+    private RoomTileController roomTileController;
+
     [SerializeField, Range(0,0.5f), GUIColor(0,1.0f,0.0f,1.0f)]
     private float insideRadius;
 
@@ -41,12 +44,23 @@ public class Crack : PlayerCollideable
 
     private static Crack currentlyPulling = null;
 
+    private bool started = false;
+
     private void OnEnable() 
     {
-        holeRepresentation.gameObject.SetActive(startAsHole);
-        crackRepresentation.gameObject.SetActive(!startAsHole);
-        isHole = startAsHole;
+        roomTileController.OnRoomProcessed += UpdateHoleState;
+        SetHoleState(startAsHole);
         holeCollider = GetComponent<Collider2D>();
+    }
+
+    private void OnDisable() 
+    {
+        roomTileController.OnRoomProcessed -= UpdateHoleState;    
+    }
+
+    private void UpdateHoleState()
+    {
+        SetHoleState(isHole);
     }
 
     protected override void PlayerTriggerEnter(CharacterMovement character)
@@ -61,11 +75,40 @@ public class Crack : PlayerCollideable
         {
             return;
         }
-
+        SetHoleState(true);
         timeSinceStart = 0;
-        holeRepresentation.gameObject.SetActive(true);
-        crackRepresentation.gameObject.SetActive(false);        
-        isHole = true;
+
+    }
+
+    private void SetHoleState(bool isHole)
+    {
+        holeRepresentation.gameObject.SetActive(isHole);
+        crackRepresentation.gameObject.SetActive(!isHole);    
+        
+        this.isHole = isHole;    
+        
+        if(transform.position == Vector3.zero)
+        {
+            return;
+        }
+        Vector2Int gridPos = (Vector2Int)CameraMover.GridPosForWorldPos(transform.position);
+        if(isHole)
+        {
+            roomTileController.RemoveFloorPos(gridPos);
+        }
+        else
+        {
+            roomTileController.AddFloorPos(gridPos);
+        }
+    }
+
+    private void LateUpdate() 
+    {
+        if(!started)
+        {
+            SetHoleState(isHole);
+            started = true;
+        }
     }
 
     protected override void PlayerTriggerStay(CharacterMovement character)
@@ -118,6 +161,21 @@ public class Crack : PlayerCollideable
         }
     }   
 
+    protected override void OnTriggerExit2D(Collider2D other) 
+    {
+        if(other.tag == GameConstants.GRANDMOTHER_TAG)
+        {
+            if(!isHole)
+            {
+                SetHoleState(true);
+            }
+        }
+        else
+        {
+            base.OnTriggerExit2D(other);
+        }
+    }
+
     protected override void OnTriggerEnter2D(Collider2D other) 
     {
         Boulder isBoulder = other.GetComponent<Boulder>();
@@ -125,6 +183,8 @@ public class Crack : PlayerCollideable
         {
             isBoulder.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
+              Vector2Int gridPos = (Vector2Int)CameraMover.GridPosForWorldPos(holeRepresentation.transform.position);
+            roomTileController.AddFloorPos(gridPos);
         }
         else
         {

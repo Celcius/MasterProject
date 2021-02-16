@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using AmoaebaUtils;
-
+using Sirenix.OdinInspector;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace AmoaebaUtils
 {
 public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
@@ -31,6 +34,9 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
 
     public bool IgnoreOtherRoom {get; set;}
     public bool GenerateBorderNeighbours {get; set;}
+
+    public System.Action OnRoomProcessed;
+
 
     private void OnEnable()
     {
@@ -101,6 +107,8 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
                 CheckForEmptyFloorPos((Vector3Int) attemptPos);
             }
         }
+
+        OnRoomProcessed?.Invoke();
     }
 
     public void CheckForEmptyFloorPos(Vector3Int attemptPos)
@@ -196,23 +204,26 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
                 return false;
             }
         }
-        
-        
-        GridEntity[] foundEntities = GridRegistry.Instance.GetEntitiesAtPos((Vector3Int)gridPos);
+
+        return !HasEntity((Vector3Int)gridPos, toIgnore);
+    }
+
+    public bool HasEntity(Vector3Int gridPos, Transform[] toIgnore = null)
+    {
+        GridEntity[] foundEntities = GridRegistry.Instance.GetEntitiesAtPos(gridPos);
         if(foundEntities == null || foundEntities.Length == 0)
         {
-            return true;
+            return false;
         }
         
         foreach(GridEntity entity in foundEntities)
         {
             if(IsBlockingEntity(entity, toIgnore))
             {
-                return false;
+                return true;
             }
         }
-
-        return true;
+        return false;
     }
 
     public bool IsBorderNeighbour(Vector2Int grid)
@@ -354,5 +365,70 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
     {
         entitiesToIgnore.Remove(entity);
     }
+
+#if UNITY_EDITOR
+    [Button, GUIColor(1,0.0f,0.0f,1.0f)]
+    private void ShowOccupied()
+    {
+        System.Predicate<Vector2Int> predicate = (Vector2Int gridPos) =>
+        {
+            return !IsEmptyPos(gridPos);
+        };
+
+        DrawPosList(predicate, Color.red);
+    }
+
+    [Button, GUIColor(0,0.0f,1.0f,1.0f)]
+    private void ShowFloor()
+    {
+        System.Predicate<Vector2Int> predicate = (Vector2Int gridPos) =>
+        {
+            return IsFloorPos(gridPos);
+        };
+
+        DrawPosList(predicate, Color.blue);
+    }
+
+    [Button, GUIColor(0,1.0f,0.0f,1.0f)]
+    private void ShowEntities()
+    {
+        System.Predicate<Vector2Int> predicate = (Vector2Int gridPos) =>
+        {
+            return HasEntity((Vector3Int)gridPos);
+        };
+
+        DrawPosList(predicate, Color.green);
+    }
+
+    private void DrawPosList(System.Predicate<Vector2Int> predicate, Color color)
+    {
+        if(!Application.isPlaying)
+        {
+            return;
+        }
+        Vector3 cellSize = CameraMover.Instance.CellSize;
+        cellSize.z = 0;
+
+        for(int x = roomGridPosBounds.min.x; x <= roomGridPosBounds.max.x; x++)
+        {
+            for(int y = roomGridPosBounds.min.y; y <= roomGridPosBounds.max.y; y++)
+            {
+                Vector2Int gridPos = new Vector2Int(x,y);
+                if(predicate(gridPos))
+                {
+                    Vector3 worldPos = CameraMover.WorldPosForGridPos((Vector3Int)gridPos,0);
+                    Debug.DrawLine(worldPos, worldPos + cellSize, color, 5.0f);
+                    Debug.DrawLine(worldPos+ cellSize.y * Vector3.up, worldPos + cellSize.x* Vector3.right, color, 5.0f);
+                }
+            }
+        }
+    }
+    
+   [MenuItem("Tilemap/TileController")]
+   private static void SelectWorld()
+   {
+       UnityEngineUtils.SelectFirstObjectOfType<RoomTileController>();
+   }
+#endif
 }
 }

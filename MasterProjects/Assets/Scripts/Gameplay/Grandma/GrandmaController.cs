@@ -14,6 +14,9 @@ public class GrandmaController : GridEntity
     private CharacterStateVar characterStateVar;
 
     [SerializeField]
+    private Collider2D physicalCollider;
+
+    [SerializeField]
     private GridEntityVar characterVar;
 
     [SerializeField]
@@ -137,6 +140,7 @@ public class GrandmaController : GridEntity
 
     public void GrabCharacter(CharacterMovement character)
     {
+        physicalCollider.enabled = false;
         SetState(GrandmaStateEnum.Idle);
         character.transform.parent = representation.transform;
         character.transform.position = throwAnchor.position;
@@ -159,6 +163,7 @@ public class GrandmaController : GridEntity
 
             balloon.ShowText(cancelThrowStrings.GetRandomSelection());
         }
+        physicalCollider.enabled = true;
     }
 
     private Vector3 GetEmptyAdjacentPos()

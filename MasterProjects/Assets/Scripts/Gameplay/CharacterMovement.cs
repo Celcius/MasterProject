@@ -298,7 +298,6 @@ public class CharacterMovement : MonoBehaviour
                     Vector3Int goalGridPos = CameraMover.GridPosForWorldPos(goalPos+ representationParent.localPosition);
                     Vector3 nextRoomPos = CameraMover.WorldPosForGridPos(goalGridPos,0);
                     body2D.MovePosition(nextRoomPos);
-                    Debug.Log(goalGridPos);
                 });                    
             }
             else
