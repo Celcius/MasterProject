@@ -18,11 +18,5 @@ public class Cuteable : GridEntity
            Instantiate(cutInstance, transform.position, Quaternion.identity); 
         }
         gameObject.SetActive(false);
-        controller.AddFloorPos((Vector2Int)CameraMover.GridPosForWorldPos(transform.position));
-    }
-
-    private void OnEnable() 
-    {
-        controller.RemoveFloorPos((Vector2Int)CameraMover.GridPosForWorldPos(transform.position));
     }
 }

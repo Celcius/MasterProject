@@ -105,10 +105,6 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
 
     public void CheckForEmptyFloorPos(Vector3Int attemptPos)
     {
-        if(attemptPos.x == 30 && attemptPos.y == 12)
-        {
-            Debug.Log("HERE");
-        }
         Vector3 worldPos = CameraMover.WorldPosForGridPos(attemptPos, 0);
 
         TileBase tile = GridUtils.GetTileForWorldPos(referenceMap.Value, worldPos);
@@ -241,6 +237,10 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         }
 
         GridEntity[] foundEntities = GridRegistry.Instance.GetEntitiesAtPos((Vector3Int)gridPos);
+        if(foundEntities == null || foundEntities.Length <= 0)
+        {
+            return true;
+        }
         foreach(GridEntity entity in foundEntities)
         {
             if(entity == null)
