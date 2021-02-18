@@ -45,6 +45,7 @@
      <Compile Include="Assets\Scripts\AmoaebaTileTools\Pathfinding\RoomTileController.cs" />
      <Compile Include="Assets\Scripts\AmoaebaTileTools\Pathfinding\ComputedWorld.cs" />
      <Compile Include="Assets\Scripts\AmoaebaTileTools\GridEntity.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\MultiTileEntity.cs" />
      <Compile Include="Assets\Scripts\AmoaebaTileTools\RegisterTilemapArrayVar.cs" />
      <Compile Include="Assets\Scripts\AmoaebaTileTools\RegisterTilemapVar.cs" />
      <Compile Include="Assets\Scripts\AmoaebaTileTools\GenericScriptables.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Scripts\AmoaebaTileTools\TilemapArrayVar.cs" />
      <Compile Include="Assets\Scripts\AmoaebaTileTools\CameraMoverVar.cs" />
      <Compile Include="Assets\Scripts\AmoaebaTileTools\GridEntityArrVar.cs" />
+     <Compile Include="Assets\Scripts\AmoaebaTileTools\SpawnRuleTile.cs" />
      <None Include="Assets\Scripts\AmoaebaTileTools\AmoaebaGridTools.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -670,6 +672,10 @@
     <ProjectReference Include="AmoaebaUtils.Pathfinding.csproj">
       <Project>{891a2a49-5103-e888-4020-afff463c78bf}</Project>
       <Name>AmoaebaUtils.Pathfinding</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{a1465f24-80f5-13c6-4cb9-351f007b39bb}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -53,7 +53,9 @@ MonoBehaviour:
   grandmaVar: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   controller: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   validTiles:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e116e62de45a5e64e9ed44fadaac1933, type: 2}
+  - {fileID: 11400000, guid: f3f820b20cd4ed140a6d25e2db115cdc, type: 2}
+  - {fileID: 11400000, guid: cdc701eba8951cb42a9ad512c59e8f55, type: 2}
   range: 5.5
 --- !u!114 &9051094772968033373
 MonoBehaviour:

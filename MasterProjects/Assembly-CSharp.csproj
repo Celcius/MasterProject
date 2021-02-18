@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Map\Crack.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaScriptVar.cs" />
      <Compile Include="Assets\Scripts\Map\InvisibleTileSpawn.cs" />
+     <Compile Include="Assets\Scripts\Map\TilemapDivisionTool.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerCollideable.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaState.cs" />
      <Compile Include="Assets\Scripts\Map\SpawnCrack.cs" />
@@ -69,6 +70,7 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCry.cs" />
      <Compile Include="Assets\Scripts\Map\LedgeTile.cs" />
      <Compile Include="Assets\Scripts\UI\RestartController.cs" />
+     <Compile Include="Assets\Scripts\Map\TilemapRegister.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCryRandom.cs" />
      <Compile Include="Assets\Scripts\Gameplay\ChildGridEntity.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PushableArrVar.cs" />
@@ -80,8 +82,6 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCall.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\Map\TilemapDivisionTool.cs" />
-     <Compile Include="Assets\Scripts\Map\TilemapRegister.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
