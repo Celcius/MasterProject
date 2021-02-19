@@ -335,8 +335,12 @@ public class CharacterMovement : MonoBehaviour
         canGrab = false;
         movingDir = movingDir = Vector2.down;
         grandmaScriptVar.Value.ReleaseCharacter(this, isThrow);
+
+        if(!isThrow)
+        {
+            EnableColliders();
+        }
         
-        EnableColliders();
         SetCharacterState(CharacterState.Idle);
     }
 
@@ -403,6 +407,7 @@ public class CharacterMovement : MonoBehaviour
                     pos,
                     ()=> 
                     {
+                        EnableColliders();
                         landParticles.Play();  
                     });
     }
