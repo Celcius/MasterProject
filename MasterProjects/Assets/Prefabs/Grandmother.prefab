@@ -239,6 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4558548733758745859}
   - component: {fileID: 4558548733758745860}
+  - component: {fileID: 3980850368515856613}
   - component: {fileID: 4558548733758745861}
   - component: {fileID: 4664785345715783127}
   m_Layer: 0
@@ -297,6 +298,19 @@ MonoBehaviour:
   successLeaveStrings: {fileID: 11400000, guid: 9aadad09292a5114e8b869e997e5e910, type: 2}
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
+--- !u!114 &3980850368515856613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558548733758745887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a018f6a2918ad843ac995748e00255f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
 --- !u!114 &4558548733758745861
 MonoBehaviour:
   m_ObjectHideFlags: 0

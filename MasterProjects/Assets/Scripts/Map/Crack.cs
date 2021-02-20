@@ -4,6 +4,7 @@ using UnityEngine;
 using AmoaebaUtils;
 using Sirenix.OdinInspector;
 
+[RequireComponent(typeof(GridEntity))]
 public class Crack : PlayerCollideable
 {
     [SerializeField, OnValueChanged("OnEnable")]
@@ -30,6 +31,7 @@ public class Crack : PlayerCollideable
     private float timeSinceStart = 0;
 
     private bool isHole = false;
+    public bool IsHole => isHole;
 
     private Rigidbody2D characterBody;
 

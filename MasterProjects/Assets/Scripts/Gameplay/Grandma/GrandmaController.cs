@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using AmoaebaUtils;
 
+[RequireComponent(typeof(GrandmaPathFeeder))]
 public class GrandmaController : GridEntity
 {
     [SerializeField]
@@ -58,6 +59,8 @@ public class GrandmaController : GridEntity
     [SerializeField]
     private RoomTileController roomController;
 
+    private GrandmaPathFeeder grandmaPathFeeder;
+
     private Vector3 returnPos;
     public Vector3 ReturnPos => CameraMover.WorldPosForGridPos(CameraMover.GridPosForWorldPos(returnPos), 0);
     private bool isReturning = false;
@@ -77,6 +80,8 @@ public class GrandmaController : GridEntity
 
     protected override void Start()
     {
+        grandmaPathFeeder = GetComponent<GrandmaPathFeeder>();
+
         GrandmaState[] grandmaStates = GetComponentsInChildren<GrandmaState>(true);
         foreach(GrandmaState state in grandmaStates)
         {
@@ -171,14 +176,17 @@ public class GrandmaController : GridEntity
         Vector3 pos;
         Vector2Int gridPos;
         Vector2 cellSize = CameraMover.Instance.CellSize;
-        Transform[] toIgnore = new Transform[]{transform};
+
+        Predicate<GridEntity> ignoreself = (GridEntity entity) 
+                => { return entity.transform == transform; };
+
         do
         {
             pos = transform.position 
                   + (Vector3)GeometryUtils.PointInCircle(cellSize.x/2.0f, UnityEngine.Random.Range(0,360));
             gridPos = (Vector2Int)CameraMover.GridPosForWorldPos(pos);
         }
-        while(roomController.IsInCurrentRoom(gridPos) && !roomController.IsEmptyPos(gridPos, toIgnore));
+        while(roomController.IsInCurrentRoom(gridPos) && !roomController.IsEmptyPos(gridPos, ignoreself));
 
         return pos;
     }
@@ -201,7 +209,7 @@ public class GrandmaController : GridEntity
             roomController.AddEntityToIgnore(transform);
         }
         
-        Vector2Int[] path = grannyPath.PerformSearch(pos,  goal, roomController);
+        Vector2Int[] path = grannyPath.PerformSearch(pos, goal, grandmaPathFeeder);
 
         if(ignoreSelf)
         {

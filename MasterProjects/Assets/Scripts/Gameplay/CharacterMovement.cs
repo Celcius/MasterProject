@@ -277,15 +277,16 @@ public class CharacterMovement : MonoBehaviour
             Debug.DrawLine(representationParent.position,representationGoal, Color.cyan);
             Vector3Int toCheckPos = CameraMover.GridPosForWorldPos(representationGoal);
             
-            Transform[] toIgnore = new Transform[]{ grandmaScriptVar.Value.transform };
-            bool isEmpty = roomController.IsEmptyPos((Vector2Int)toCheckPos, toIgnore);
+            Predicate<GridEntity> ignoreGrandma = (GridEntity entity) 
+                => { return entity.transform == grandmaScriptVar.Value.transform; };
+            bool isEmpty = roomController.IsEmptyPos((Vector2Int)toCheckPos, ignoreGrandma);
 
             SetCharacterState(!isEmpty? CharacterState.Pushing : 
                                   input.IsGrab() && (canGrab && canCall)? CharacterState.Calling
                                   : CharacterState.Walking);
             
 
-            if(roomController.IsStandablePos(GridPos, new Transform[]{grandmaScriptVar.Value.transform}))
+            if(roomController.IsStandablePos(GridPos, ignoreGrandma))
             {
                 prevSafePos = GridPos;
             }

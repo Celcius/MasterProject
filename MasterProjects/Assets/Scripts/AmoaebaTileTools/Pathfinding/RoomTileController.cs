@@ -182,7 +182,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         return floorPositions.Contains(gridPos); 
     }
 
-    public bool IsEmptyPos(Vector2Int gridPos, Transform[] toIgnore = null)
+    public bool IsEmptyPos(Vector2Int gridPos, Predicate<GridEntity> shouldIgnorePredicate = null)
     {
         bool isFloorPos = IsFloorPos(gridPos);
         bool inCurrentRoom = IsInCurrentRoom(gridPos);
@@ -199,10 +199,10 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
             }
         }
 
-        return !HasEntity((Vector3Int)gridPos, toIgnore);
+        return !HasEntity((Vector3Int)gridPos, shouldIgnorePredicate);
     }
 
-    public bool HasEntity(Vector3Int gridPos, Transform[] toIgnore = null)
+    public bool HasEntity(Vector3Int gridPos, Predicate<GridEntity> shouldIgnorePredicate = null)
     {
         GridEntity[] foundEntities = GridRegistry.Instance.GetEntitiesAtPos(gridPos);
         if(foundEntities == null || foundEntities.Length == 0)
@@ -212,7 +212,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         
         foreach(GridEntity entity in foundEntities)
         {
-            if(IsBlockingEntity(entity, toIgnore))
+            if(IsBlockingEntity(entity, shouldIgnorePredicate))
             {
                 return true;
             }
@@ -233,9 +233,9 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         return horNeighbour || vertNeighbour;
     }
 
-    public bool IsStandablePos(Vector2Int gridPos, Transform[] toIgnore = null)
+    public bool IsStandablePos(Vector2Int gridPos, Predicate<GridEntity> shouldIgnorePredicate = null)
     {
-        bool isEmpty = IsEmptyPos(gridPos, toIgnore);
+        bool isEmpty = IsEmptyPos(gridPos, shouldIgnorePredicate);
         if(!isEmpty)
         {
             return false;
@@ -260,7 +260,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         return true;
     }
 
-    private bool IsBlockingEntity(GridEntity foundEntity, Transform[] toIgnore)
+    private bool IsBlockingEntity(GridEntity foundEntity, Predicate<GridEntity> shouldIgnorePredicate)
     {
         if(foundEntity == null || !foundEntity.IsBlocking)
         {
@@ -277,28 +277,22 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
                 }
             }
         }
-        
-        if(toIgnore != null && toIgnore.Length > 0)
+
+        if(shouldIgnorePredicate == null)
         {
-            foreach(Transform entity in toIgnore)
-            {
-                if(foundEntity.transform == entity)
-                {
-                    return false;
-                }
-            }
+            return true;
         }
-        
-        return true;
+
+        return !shouldIgnorePredicate(foundEntity);
     }
 
-    public Vector2Int[] GetUnoccupiedNeighbours(Vector2Int pos)
+    public Vector2Int[] GetUnoccupiedNeighbours(Vector2Int pos, Predicate<GridEntity> shouldIgnorePredicate = null)
     {
         Vector2Int[] neighbours = GetNeighbours(pos);
         List<Vector2Int> ret = new List<Vector2Int>();
         foreach(Vector2Int neighbour in neighbours)
         {
-            if(IsEmptyPos(neighbour))
+            if(IsEmptyPos(neighbour, shouldIgnorePredicate))
             {
                 ret.Add(neighbour);
             }
@@ -307,6 +301,11 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
     }
 
     public Vector2Int[] GetNeighbours(Vector2Int pos)
+    {
+        return GetNeighbours(pos, null);
+    }
+
+    public Vector2Int[] GetNeighbours(Vector2Int pos, Predicate<GridEntity> shouldIgnorePredicate = null)
     {
         List<Vector2Int> retPos = new List<Vector2Int>();
         
@@ -324,7 +323,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
                     continue;
                 }
                 Vector2Int attemptPos = new Vector2Int(pos.x + x, pos.y + y);
-                if(IsEmptyPos(attemptPos))
+                if(IsEmptyPos(attemptPos, shouldIgnorePredicate))
                 {
                     retPos.Add(attemptPos);
                 }
