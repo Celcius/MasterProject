@@ -17,15 +17,28 @@ public class LedgeScript : PlayerCollideable
 
     Vector3Int myPos;
     Vector3Int posBelow;
+    HashSet<string> ignoreHash = new HashSet<string>();
 
     private void Start()
     {
         myPos = CameraMover.GridPosForWorldPos(transform.position);
+        if(tilesToIgnore != null)
+        {
+            foreach(TileBase tile in tilesToIgnore)
+            {
+                ignoreHash.Add(tile.name);
+            }
+        }
     }
 
     protected override void PlayerCollisionEnter(CharacterMovement movement)
     {
-        posBelow = roomController.FindEmptyPosInDir(myPos, searchDir, tilesToIgnore);
+        System.Predicate<TileBase> toIgnorePredicate = (TileBase tile) => 
+        {
+            return ignoreHash.Contains(tile.name);
+        };
+
+        posBelow = roomController.FindEmptyPosInDir(myPos, searchDir, toIgnorePredicate);
         if(myPos == posBelow)
         {
             Debug.LogError("Ledge without position below");
@@ -39,14 +52,6 @@ public class LedgeScript : PlayerCollideable
         }
 
         Vector3 pos = CameraMover.WorldPosForGridPos(posBelow, movement.transform.position.z);
-        if(searchDir.x == 0)
-        {
-            pos.x = movement.transform.position.x;
-        }
-        else if(searchDir.y == 0)
-        {
-            pos.y = movement.transform.position.y;
-        }
         
         movement.DropdownTo(pos);
     }

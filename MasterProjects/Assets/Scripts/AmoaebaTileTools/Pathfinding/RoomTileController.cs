@@ -7,6 +7,8 @@ using Sirenix.OdinInspector;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+using System;
+
 namespace AmoaebaUtils
 {
 public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
@@ -146,26 +148,18 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         return containsPos;
     }
 
-    public Vector3Int FindEmptyPosInDir(Vector3Int searchPos, Vector2Int dir, TileBase[] toIgnore = null)
+    public Vector3Int FindEmptyPosInDir(Vector3Int searchPos, Vector2Int dir, Predicate<TileBase> shouldIgnore = null)
     {
         Vector3Int searchBelow = searchPos;
         Tilemap map = referenceMap.Value;
-        HashSet<System.Type> ignoreHash = new HashSet<System.Type>();
-       
-        if(toIgnore != null)
-        {
-            foreach(TileBase tile in toIgnore)
-            {
-                ignoreHash.Add(tile.GetType());
-            }
-        }
 
         while(roomGridPosBounds.Contains(searchBelow))
         {
             searchBelow += (Vector3Int)dir;
             Vector3 worldPos = CameraMover.WorldPosForGridPos(searchBelow, 0);
             TileBase tile = GetTileForWorldPos(worldPos);
-            if(tile == null || ignoreHash.Contains(tile.GetType()))
+            
+            if(tile == null || shouldIgnore != null && shouldIgnore(tile))
             {
                 return searchBelow;
             }
