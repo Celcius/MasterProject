@@ -26,7 +26,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
 
     [SerializeField]
     private TileBase[] tilesToIgnore;
-    private HashSet<System.Type> tilesToIgnoreHash = new HashSet<System.Type>();
+    private HashSet<string> tilesToIgnoreHash = new HashSet<string>();
 
     private HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
 
@@ -46,7 +46,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         tilesToIgnoreHash.Clear();
         foreach(TileBase tileBase in tilesToIgnore)
         {
-            tilesToIgnoreHash.Add(tileBase.GetType());
+            tilesToIgnoreHash.Add(tileBase.name);
         }
 
         CamMoverVar.OnChange += OnCameraChanged;
@@ -116,8 +116,8 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         Vector3 worldPos = CameraMover.WorldPosForGridPos(attemptPos, 0);
 
         TileBase tile = GridUtils.GetTileForWorldPos(referenceMap.Value, worldPos);
-        
-        bool hasTile = (tile != null && !tilesToIgnoreHash.Contains(tile.GetType()));
+
+        bool hasTile = (tile != null && !tilesToIgnoreHash.Contains(tile.name));
 
         if(isReferenceMapWalls != hasTile)
         {

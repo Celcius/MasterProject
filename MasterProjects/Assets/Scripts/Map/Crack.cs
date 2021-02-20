@@ -86,20 +86,6 @@ public class Crack : PlayerCollideable
         crackRepresentation.gameObject.SetActive(!isHole);    
         
         this.isHole = isHole;    
-        
-        if(transform.position == Vector3.zero)
-        {
-            return;
-        }
-        Vector2Int gridPos = (Vector2Int)CameraMover.GridPosForWorldPos(transform.position);
-        if(isHole)
-        {
-            roomTileController.RemoveFloorPos(gridPos);
-        }
-        else
-        {
-            roomTileController.AddFloorPos(gridPos);
-        }
     }
 
     private void LateUpdate() 
@@ -182,9 +168,16 @@ public class Crack : PlayerCollideable
         if(isBoulder)
         {
             isBoulder.gameObject.SetActive(false);
-            this.gameObject.SetActive(false);
-              Vector2Int gridPos = (Vector2Int)CameraMover.GridPosForWorldPos(holeRepresentation.transform.position);
-            roomTileController.AddFloorPos(gridPos);
+            if(isHole)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                SetHoleState(true);
+            }
+            
+            Vector2Int gridPos = (Vector2Int)CameraMover.GridPosForWorldPos(holeRepresentation.transform.position);
         }
         else
         {
