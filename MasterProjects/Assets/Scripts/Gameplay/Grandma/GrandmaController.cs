@@ -5,11 +5,11 @@ using UnityEngine;
 using AmoaebaUtils;
 
 [RequireComponent(typeof(GrandmaPathFeeder))]
-public class GrandmaController : GridEntity
+public class GrandmaController : IGrandmaController
 {
     [SerializeField]
     private BoolVar isOnGrandmaVar;
-    public bool IsOnGrandma => isOnGrandmaVar.Value;
+    public override bool IsOnGrandma => isOnGrandmaVar.Value;
 
     [SerializeField]
     private CharacterStateVar characterStateVar;
@@ -32,7 +32,7 @@ public class GrandmaController : GridEntity
 
     [SerializeField]
     public SpriteRenderer representation;
-    public Vector3 RepresentationPos => representation.transform.position;
+    public override Vector3 RepresentationPos => representation.transform.position;
 
     [SerializeField]
     private BoolVar canWalk;
@@ -65,7 +65,7 @@ public class GrandmaController : GridEntity
     public Vector3 ReturnPos => CameraMover.WorldPosForGridPos(CameraMover.GridPosForWorldPos(returnPos), 0);
     private bool isReturning = false;
 
-    public bool CanGrab => !isReturning;
+    public override bool CanGrab => !isReturning;
     
     private Dictionary<GrandmaStateEnum, GrandmaState> states = new Dictionary<GrandmaStateEnum, GrandmaState>();
     private  GrandmaState currentState;
@@ -98,7 +98,15 @@ public class GrandmaController : GridEntity
         base.Start();
     }
 
-    public void ResetGrandma(bool isRespawn)
+    protected override void OnDestroy() 
+    {
+        if(currentState != null)
+        {
+            currentState.OnStateEnd(this);
+        }
+        base.OnDestroy();
+    }
+    public override void ResetGrandma(bool isRespawn)
     {
         SetState(GrandmaStateEnum.Idle);
         if(isRespawn)
@@ -143,7 +151,7 @@ public class GrandmaController : GridEntity
         }
     }
 
-    public void GrabCharacter(CharacterMovement character)
+    public override void GrabCharacter(CharacterMovement character)
     {
         physicalCollider.enabled = false;
         SetState(GrandmaStateEnum.Idle);
@@ -153,7 +161,7 @@ public class GrandmaController : GridEntity
         balloon.ShowText(grabStrings.GetRandomSelection());
     }
 
-    public void ReleaseCharacter(CharacterMovement character, bool throwChar)
+    public override void ReleaseCharacter(CharacterMovement character, bool throwChar)
     {
         character.transform.parent = null;
         character.transform.right = Vector2.right;
@@ -298,7 +306,7 @@ public class GrandmaController : GridEntity
         GridRegistry.Instance.ReorderRoomGridObject(this, currentRoom);
     }
 
-    public void CheckLeaveRoom(Vector3 goalPos, Action callback)
+    public override void CheckLeaveRoom(Vector3 goalPos, Action callback)
     {
         Vector3Int gridGoalPos = CameraMover.GridPosForWorldPos(goalPos);
         Vector3 clampedworldPos = CameraMover.WorldPosForGridPos(gridGoalPos, 0);

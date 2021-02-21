@@ -3,4 +3,4 @@ using System.Collections.Generic;
 using UnityEngine;
 using AmoaebaUtils;
 
-public class RegisterGrandmaScriptVar : RegisterComponentVar<GrandmaController, GrandmaScriptVar> {}
+public class RegisterGrandmaScriptVar : RegisterComponentVar<IGrandmaController, GrandmaScriptVar> {}

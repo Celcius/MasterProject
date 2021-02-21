@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Gameplay\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\UI\RandomSelectionTextBalloonString.cs" />
      <Compile Include="Assets\Scripts\Gameplay\RegisterGrandmaScriptVar.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaPathFeeder.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CallAnim.cs" />
      <Compile Include="Assets\Scripts\Map\GrandmaSpawnTile.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCry.cs" />
@@ -82,7 +83,9 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCall.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaPathFeeder.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\IGrandmaController.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\DeadGrandmaController.cs" />
+     <Compile Include="Assets\KillGrandmaScript.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
