@@ -99,8 +99,35 @@ public class GrandmaStateMoveToCryRandom : GrandmaState
             return;
         }
 
-        List<Vector2Int> sorted = new List<Vector2Int>(neighbours);
+        List<Vector2Int> sorted = new List<Vector2Int>();
+        foreach(Vector2Int neighbour in neighbours)
+        {
+            GridEntity[] entities = GridRegistry.Instance.GetEntitiesAtPos((Vector3Int)neighbour);
+            bool canStep = true;
+            if(entities != null)
+            {
+                foreach(GridEntity entity in entities)
+                {
+                    Crack crack = entity.GetComponent<Crack>();
+                    if(crack != null && crack.IsHole)
+                    {
+                        canStep = false;
+                    }
+                }
+            }
+            
+            if(canStep)
+            {
+                sorted.Add(neighbour);
+            }
+        }
         sorted.Remove(GranGridPos);
+
+        if(sorted.Count == 0)
+        {
+            nextRandomPos = controller.transform.position;
+            return;
+        }
 
         sorted.Sort(new CompareDist(characterRepresentation.Value.position));
         nextRandomPos = CameraMover.WorldPosForGridPos((Vector3Int)sorted[0], 0);
