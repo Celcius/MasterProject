@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaController.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\IGrandmaController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Pushable.cs" />
      <Compile Include="Assets\Scripts\Map\LedgeScript.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GameRoomHandler.cs" />
@@ -49,6 +50,7 @@
      <Compile Include="Assets\Scripts\Gameplay\GameConstants.cs" />
      <Compile Include="Assets\Scripts\Map\Crack.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaScriptVar.cs" />
+     <Compile Include="Assets\SwapGrandmaScript.cs" />
      <Compile Include="Assets\Scripts\Map\InvisibleTileSpawn.cs" />
      <Compile Include="Assets\Scripts\Map\TilemapDivisionTool.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerCollideable.cs" />
@@ -82,10 +84,9 @@
      <Compile Include="Assets\Scripts\Gameplay\Boulder.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateMoveToCall.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaStateReturn.cs" />
-     <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\Grandma\IGrandmaController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\DeadGrandmaController.cs" />
-     <Compile Include="Assets\KillGrandmaScript.cs" />
+     <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
+     <Compile Include="Assets\RoomJumper.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

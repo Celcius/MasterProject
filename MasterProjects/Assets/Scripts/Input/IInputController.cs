@@ -10,4 +10,7 @@ public abstract class IInputController : ScriptableObject
     public abstract bool IsCutDown();
     public abstract bool IsCryingRelease();
     public abstract Vector3 GetMovementAxis();
+
+    public abstract bool IsNextRoomDown();
+    public abstract bool IsPrevRoomDown();
 }

@@ -21,8 +21,10 @@ public class CameraMover : MonoBehaviour
     [SerializeField]
     private Grid grid;
 
-    public Vector2Int currentRoomPos;
-    public Vector2Int CurrentRoomPos => currentRoomPos;
+    [SerializeField]
+    private GridEntityArrVar moveWithRoomEntities;
+
+    public Vector2Int CurrentRoomPos => playerRoom;
 
     private IEnumerator cameraShake;
 
@@ -52,6 +54,8 @@ public class CameraMover : MonoBehaviour
     [SerializeField]
     private float shakeDampingSpeed = 0.1f;
     
+    public bool TrackingEntity = true;
+
     public Vector2 RefResolution 
     {
         get { return new Vector2(pixelCamera.refResolutionX, pixelCamera.refResolutionY);}
@@ -73,10 +77,6 @@ public class CameraMover : MonoBehaviour
         }
         
         moverSingleton = this;
-        
-        currentRoomPos = CameraMover.RoomPosForWorldPos(lookAtGridEntity.Value == null? 
-                                                        transform.position : 
-                                                        lookAtGridEntity.Value.transform.position);
     }
 
     private void OnEnable()
@@ -110,7 +110,7 @@ public class CameraMover : MonoBehaviour
             OnCameraMoveEnd?.Invoke(new Vector2Int(0,0), roomPos);
         }
 
-        if(LookAtGridEntity != null)
+        if(TrackingEntity && LookAtGridEntity != null)
         {        
             Vector2Int lookAtPos = LookAtGridEntity.RoomGridPos;
             LookAtTransformMoved(lookAtPos);
@@ -154,15 +154,18 @@ public class CameraMover : MonoBehaviour
             StopCoroutine(cameraShake);
         }
         cameraShake = null;
-        Vector2Int camRoom = GridUtils.RoomPosForWorldPos(transform.position, this.RoomSize, (Vector2)moverSingleton.CellSize);
+        Vector2Int camRoomPos = GridUtils.RoomPosForWorldPos(transform.position, this.RoomSize, (Vector2)moverSingleton.CellSize);
         if(instant)
         {
-            transform.position = GridUtils.WorldPosForRoomPos(camRoom, this.RoomSize, (Vector2)moverSingleton.CellSize, transform.position.z);    
+            transform.position = GridUtils.WorldPosForRoomPos(newCamRoom, this.RoomSize, (Vector2)moverSingleton.CellSize, transform.position.z);    
+            playerRoom =  newCamRoom;
+            OnCameraMoveEnd?.Invoke(camRoomPos, playerRoom);
+            ReorderRoomCamEntities(camRoomPos);
         }
         else
         {
             StartCoroutine(
-            MoveCameraTo(camRoom,
+            MoveCameraTo(camRoomPos,
                        newCamRoom,
                        () => {
                            playerRoom =  newCamRoom;
@@ -181,8 +184,8 @@ public class CameraMover : MonoBehaviour
         moving = true;
 
         OnCameraMoveStart?.Invoke(startRoomPos, endRoomPos);
-        GridRegistry.Instance.ReorderRoomGridObject(LookAtGridEntity, 
-                                                    startRoomPos);
+        ReorderRoomCamEntities(startRoomPos);
+
 
         Vector3 startPosition = GridUtils.WorldPosForRoomPos(startRoomPos, this.RoomSize, (Vector2)moverSingleton.CellSize, transform.position.z);
         Vector3 targetPosition = GridUtils.WorldPosForRoomPos(endRoomPos, this.RoomSize, (Vector2)moverSingleton.CellSize, transform.position.z);
@@ -204,6 +207,18 @@ public class CameraMover : MonoBehaviour
         if(onMoveEnd != null)
         {
             onMoveEnd();
+        }
+    }
+
+    private void ReorderRoomCamEntities(Vector2Int prevRoomPos)
+    {
+        foreach(GridEntity entity in moveWithRoomEntities.Value)
+        {
+            if(entity != null)
+            {
+                GridRegistry.Instance.ReorderRoomGridObject(entity, 
+                                                            prevRoomPos);
+            }
         }
     }
 

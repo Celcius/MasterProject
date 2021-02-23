@@ -1,0 +1,119 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RoomJumper : MonoBehaviour
+{
+    [SerializeField]
+    private Vector2Int[] rooms;
+
+    private int currentRoomIndex = -1;
+
+    [SerializeField]
+    private CameraMoverVar moverVar;
+
+    [SerializeField]
+    public bool canMoveRooms = true;
+
+    [SerializeField]
+    private IInputController inputManager;
+
+    [SerializeField]
+    private BoolVar isAcceptingInput;
+
+    private Dictionary<Vector2Int, int> roomIndexes = new Dictionary<Vector2Int, int>();
+
+    void Start()
+    {
+        roomIndexes.Clear();
+        for(int i = 0; i < rooms.Length; i++)
+        {
+            Vector2Int room = rooms[i];
+            roomIndexes[room] = i;
+        }
+        moverVar.Value.OnCameraMoveEnd += OnCameraMoved;
+        moverVar.OnChange += OnMoverVarChange;
+        OnMoverVarChange(null, moverVar.Value);
+    }
+
+    private void OnDestroy() 
+    {
+        moverVar.Value.OnCameraMoveEnd -= OnCameraMoved;
+        moverVar.OnChange -= OnMoverVarChange;    
+    }
+
+    private void OnMoverVarChange(CameraMover oldVar, CameraMover newVar)
+    {
+        if(newVar == null)
+        {
+            currentRoomIndex = -1;
+            return;
+        }
+
+        OnCameraMoved(Vector2Int.zero, newVar.CurrentRoomPos);
+    }
+
+    private void OnCameraMoved(Vector2Int oldRoomPos, Vector2Int newRoomPos)
+    {
+        currentRoomIndex = roomIndexes.ContainsKey(newRoomPos) ? roomIndexes[newRoomPos] : -1;
+    }
+
+    void Update()
+    {
+        if(currentRoomIndex < 0)
+        {
+            return;
+        }
+
+        if(inputManager.IsNextRoomDown())
+        {
+            MoveToRoom(currentRoomIndex+1);
+        }
+        else if(inputManager.IsPrevRoomDown())
+        {
+            MoveToRoom(currentRoomIndex-1);
+        }
+    }
+
+       private void MoveToRoom(int index)
+    {
+        if(!canMoveRooms || index == currentRoomIndex)
+        {
+            return;
+        }
+
+        moverVar.Value.TrackingEntity = false;
+
+        CharacterMovement movement = moverVar.Value.LookAtGridEntity.GetComponent<CharacterMovement>();
+        if(movement != null)
+        {
+            movement.DisableColliders();
+        }
+        isAcceptingInput.Value = false;
+
+        index = Mathf.Clamp(index, 0, rooms.Length);
+        
+        currentRoomIndex = index;
+        Vector2Int prevRoom = moverVar.Value.CurrentRoomPos;
+        Vector2Int room = rooms[index];
+
+        moverVar.Value.MoveCameraToRoom(room, true); 
+        Debug.Log("Jump to room " + index + " : " + room );
+        
+        Vector3 pos = moverVar.Value.transform.position;
+        Vector3 entityPos = moverVar.Value.LookAtGridEntity.transform.position;
+        pos.z = entityPos.z;
+        moverVar.Value.LookAtGridEntity.transform.position = pos;
+
+        RoomHandler roomHandler = moverVar.Value.GetComponent<RoomHandler>();
+        roomHandler.RespawnRoom();
+
+        moverVar.Value.TrackingEntity = true;
+
+        if(movement != null)
+        {
+            movement.EnableColliders();
+        }
+        isAcceptingInput.Value = true;
+    }
+}

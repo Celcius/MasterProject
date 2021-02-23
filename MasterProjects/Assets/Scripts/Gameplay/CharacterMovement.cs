@@ -376,12 +376,12 @@ public class CharacterMovement : MonoBehaviour
         SetCharacterState(CharacterState.Idle);
     }
 
-    private void DisableColliders()
+    public void DisableColliders()
     {
         col2D.enabled = false;
     }
 
-    private void EnableColliders()
+    public void EnableColliders()
     {
         col2D.enabled = true;
     }

@@ -57,8 +57,7 @@ public class RoomHandler : MonoBehaviour
 
     public virtual void RespawnRoom()
     {
-        Vector2Int pos = CameraMover.RoomPosForWorldPos(mover.LookAtGridEntity.transform.position);
-        OnRoomEnter(false, pos);
+        OnRoomEnter(false, mover.CurrentRoomPos);
         EnableCurrentRoom();
     }
 

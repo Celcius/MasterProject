@@ -36,8 +36,15 @@ public class GridRegistry : Singleton<GridRegistry>
         {
             gridObjects[roomPos] = new List<GridEntity>();
         }
-        gridObjects[roomPos].Add(entity);
-        allObjects.Add(entity);
+        if(!gridObjects[roomPos].Contains(entity))
+        {
+            gridObjects[roomPos].Add(entity);
+        }
+        
+        if(!allObjects.Contains(entity))
+        {
+            allObjects.Add(entity);
+        }
     }
 
     public GridEntity[] GetEntitiesAtPos(Vector3Int gridPos)

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693318880133434726}
-  - component: {fileID: 3016291692420037088}
   - component: {fileID: 76602823795137829}
   m_Layer: 0
   m_Name: MoveToCry
@@ -32,24 +31,6 @@ Transform:
   m_Father: {fileID: 8073622339177441079}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3016291692420037088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337360985965311844}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9982c51b1544a6f4f901dee99b143290, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enumState: 1
-  moveSpeed: 3
-  stopDistance: 0.5
-  characterRepresentation: {fileID: 11400000, guid: c7e25452e9f2403418b58acf1db67081, type: 2}
-  moveToCryStrings: {fileID: 11400000, guid: 567101ec78e4e6847a6ba67f59e8112a, type: 2}
-  cancelCryStrings: {fileID: 11400000, guid: e0c403b80bbfab44489297ee76e13495, type: 2}
 --- !u!114 &76602823795137829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enumState: 2
-  moveSpeed: 4
+  moveSpeed: 5.5
   characterRepresentationVar: {fileID: 11400000, guid: c7e25452e9f2403418b58acf1db67081, type: 2}
   moveToCallStrings: {fileID: 11400000, guid: 3f900b1a6e5f32745872de7b81666dcf, type: 2}
   cancelCallStrings: {fileID: 11400000, guid: de4cb39bc201c2e4e9c897a2b8292465, type: 2}
@@ -242,6 +223,7 @@ GameObject:
   - component: {fileID: 3980850368515856613}
   - component: {fileID: 4558548733758745861}
   - component: {fileID: 4664785345715783127}
+  - component: {fileID: 2620948765111431955}
   m_Layer: 0
   m_Name: Grandmother
   m_TagString: Grandmother
@@ -257,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4558548733758745887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 3, z: 0}
+  m_LocalPosition: {x: 3, y: 86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4558548733815903425}
@@ -350,6 +332,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &2620948765111431955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558548733758745887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee862cd14e4b294faac0c3bcef8e910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArrayVar: {fileID: 11400000, guid: a3dc152f9825770418e4fe6a5472a847, type: 2}
+  registerType: 1
 --- !u!1 &4558548733815903424
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enumState: 4
-  moveSpeed: 5
+  moveSpeed: 6
   characterRepresentationVar: {fileID: 11400000, guid: c7e25452e9f2403418b58acf1db67081, type: 2}
   moveToCallStrings: {fileID: 11400000, guid: 3f900b1a6e5f32745872de7b81666dcf, type: 2}
   cancelCallStrings: {fileID: 11400000, guid: de4cb39bc201c2e4e9c897a2b8292465, type: 2}

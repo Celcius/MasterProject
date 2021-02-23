@@ -17,9 +17,9 @@ public class GrandmaStateMoveToNextRoom : GrandmaStateMoveToCall
     }
 
 
-    protected override void OnFinishReached()
+    protected override void OnFinishReached(Vector2Int oldRoomPos)
     {
-        controller.OnReachedNewRoom();
+        controller.OnReachedNewRoom(oldRoomPos);
         isAcceptingInput.Value = true;
     }
 

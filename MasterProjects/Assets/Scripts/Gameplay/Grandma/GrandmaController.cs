@@ -81,7 +81,7 @@ public class GrandmaController : IGrandmaController
     protected override void Start()
     {
         grandmaPathFeeder = GetComponent<GrandmaPathFeeder>();
-
+        states.Clear();
         GrandmaState[] grandmaStates = GetComponentsInChildren<GrandmaState>(true);
         foreach(GrandmaState state in grandmaStates)
         {
@@ -111,7 +111,9 @@ public class GrandmaController : IGrandmaController
         SetState(GrandmaStateEnum.Idle);
         if(isRespawn)
         {
+            Vector2Int roomPos = CameraMover.RoomPosForWorldPos(transform.position);
             transform.position = respawnPosition.Value;
+            GridRegistry.Instance.ReorderRoomGridObject(this, roomPos);
         }
     }
 
@@ -331,10 +333,11 @@ public class GrandmaController : IGrandmaController
         }
     }
     
-    public void OnReachedNewRoom()
+    public void OnReachedNewRoom(Vector2Int oldRoomPos)
     {
         this.originalPosition = transform.position;
         onNewRoomCallback?.Invoke();
         onNewRoomCallback = null;   
+        GridRegistry.Instance.ReorderRoomGridObject(this, oldRoomPos);
     }
 }

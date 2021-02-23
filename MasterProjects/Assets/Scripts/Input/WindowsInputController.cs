@@ -7,6 +7,10 @@ public class WindowsInputController : IInputController
     private const KeyCode grabKey = KeyCode.Q;
     private const KeyCode cutKey = KeyCode.E;
     private const KeyCode cryKey = KeyCode.Escape;
+    private const KeyCode specialKey = KeyCode.LeftShift;
+    private const KeyCode nextRoomKey = KeyCode.RightArrow;
+    private const KeyCode prevRoomKey = KeyCode.LeftArrow;
+
 
     [SerializeField]
     private BoolVar isAcceptingInput;
@@ -70,5 +74,24 @@ public class WindowsInputController : IInputController
                            ver == 0? ver : Mathf.Sign(ver) * 1.0f,
                            0);
     }
+
+    public override bool IsPrevRoomDown()
+    {
+        if(!isAcceptingInput.Value)
+        {
+            return false;
+        }
+        return Input.GetKey(specialKey) && Input.GetKeyUp(prevRoomKey);
+    }
+
+    public override bool IsNextRoomDown()
+    {
+        if(!isAcceptingInput.Value)
+        {
+            return false;
+        }
+        return Input.GetKey(specialKey) && Input.GetKeyDown(nextRoomKey);
+    }
+
 
 }

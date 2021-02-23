@@ -106,13 +106,14 @@ public class GrandmaStateMoveToCall : GrandmaState
         StartCoroutine(walkRoutine);
     }
 
-    protected virtual void OnFinishReached()
+    protected virtual void OnFinishReached(Vector2Int oldRoomPos)
     {
 
     }
 
     private IEnumerator WalkRoutine(Vector2Int[] path)
     {   
+        Vector2Int currentRoomPos = CameraMover.RoomPosForWorldPos(transform.position);
         foreach(Vector2Int nextPos in path)
         {
             if(nextPos == path[0] || GranGridPos == nextPos)
@@ -155,7 +156,7 @@ public class GrandmaStateMoveToCall : GrandmaState
         }
 
         walkRoutine = null;
-        OnFinishReached();
+        OnFinishReached(currentRoomPos);
         controller.SetState(GrandmaStateEnum.Idle);
     }
 }

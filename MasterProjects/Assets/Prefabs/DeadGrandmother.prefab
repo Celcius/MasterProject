@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1021081772920121449}
   - component: {fileID: 1999212453144496124}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DeadGrandmother
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7821374927775915556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: 86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ba0e9fdbee24c4787fcbcad1296516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBlocking: 1
+  allowsStand: 1
 --- !u!114 &1999212453144496124
 MonoBehaviour:
   m_ObjectHideFlags: 0
