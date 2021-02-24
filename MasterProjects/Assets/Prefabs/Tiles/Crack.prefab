@@ -142,7 +142,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.85, y: 0.85}
+  m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
 --- !u!114 &6235753990202291176
 MonoBehaviour:
@@ -173,21 +173,21 @@ MonoBehaviour:
   holeRepresentation: {fileID: 9075748164530504911}
   crackRepresentation: {fileID: 7280829784212540953}
   roomTileController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
-  insideRadius: 0
+  insideRadius: 0.05
   holePullIntensity:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0.75
-      inSlope: 5.01619
-      outSlope: 5.01619
+      inSlope: 2.960344
+      outSlope: 2.960344
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.04966591
+      outWeight: 0.045199633
     - serializedVersion: 3
-      time: 0.5
+      time: 0.65
       value: 2
       inSlope: 0.42947024
       outSlope: Infinity
