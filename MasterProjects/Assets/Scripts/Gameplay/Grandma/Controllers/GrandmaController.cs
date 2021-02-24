@@ -59,6 +59,9 @@ public class GrandmaController : IGrandmaController
     [SerializeField]
     private RoomTileController roomController;
 
+    [SerializeField]
+    private float maxDropDistance = 0.5f;
+
     private GrandmaPathFeeder grandmaPathFeeder;
 
     private Vector3 returnPos;
@@ -183,22 +186,53 @@ public class GrandmaController : IGrandmaController
 
     private Vector3 GetEmptyAdjacentPos()
     {
-        Vector3 pos;
-        Vector2Int gridPos;
         Vector2 cellSize = CameraMover.Instance.CellSize;
 
         Predicate<GridEntity> ignoreself = (GridEntity entity) 
                 => { return entity.transform == transform; };
 
-        do
-        {
-            pos = transform.position 
-                  + (Vector3)GeometryUtils.PointInCircle(cellSize.x/2.0f, UnityEngine.Random.Range(0,360));
-            gridPos = (Vector2Int)CameraMover.GridPosForWorldPos(pos);
-        }
-        while(roomController.IsInCurrentRoom(gridPos) && !roomController.IsEmptyPos(gridPos, ignoreself));
+        Vector2Int[] positions = roomController.GetUnoccupiedNeighbours((Vector2Int)this.GridPos, ignoreself, false);
+        List<Vector2Int> availPos = new List<Vector2Int>();
+        List<Vector2Int> cracks = new List<Vector2Int>();
 
-        return pos;
+        foreach(Vector2Int gridpos in positions)
+        {
+            GridEntity[] entities =GridRegistry.Instance.GetEntitiesAtPos((Vector3Int)gridpos);
+            bool isValid = true;
+            foreach(GridEntity entity in entities)
+            {
+                Crack crack = entity.GetComponent<Crack>();
+                if(crack != null)
+                {
+                    isValid = false;
+                    if(!crack.IsHole)
+                    {
+                        cracks.Add(gridpos);
+                    }
+                    break;
+                }
+            }
+
+            if(isValid)
+            {
+                availPos.Add(gridpos);
+            }
+        }
+
+        Vector3 pos = RepresentationPos;
+        if(availPos.Count > 0)
+        {
+            int index = UnityEngine.Random.Range(0,availPos.Count);
+            pos = CameraMover.WorldPosForGridPos((Vector3Int)availPos[index], 0);
+        }
+        else if(cracks.Count > 0)
+        {
+            int index = UnityEngine.Random.Range(0,cracks.Count);
+            pos = CameraMover.WorldPosForGridPos((Vector3Int)cracks[index], 0);
+        }
+
+        Vector3 dir = (pos - RepresentationPos);
+        return RepresentationPos + dir * Mathf.Min(maxDropDistance, Vector2.Distance(pos, RepresentationPos));
     }
 
     public void SetMoveTarget(Vector3 position)

@@ -286,9 +286,9 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         return !shouldIgnorePredicate(foundEntity);
     }
 
-    public Vector2Int[] GetUnoccupiedNeighbours(Vector2Int pos, Predicate<GridEntity> shouldIgnorePredicate = null)
+    public Vector2Int[] GetUnoccupiedNeighbours(Vector2Int pos, Predicate<GridEntity> shouldIgnorePredicate = null, bool ignoreDiagonals = true)
     {
-        Vector2Int[] neighbours = GetNeighbours(pos);
+        Vector2Int[] neighbours = GetNeighbours(pos, shouldIgnorePredicate, ignoreDiagonals);
         List<Vector2Int> ret = new List<Vector2Int>();
         foreach(Vector2Int neighbour in neighbours)
         {
@@ -305,7 +305,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         return GetNeighbours(pos, null);
     }
 
-    public Vector2Int[] GetNeighbours(Vector2Int pos, Predicate<GridEntity> shouldIgnorePredicate = null)
+    public Vector2Int[] GetNeighbours(Vector2Int pos, Predicate<GridEntity> shouldIgnorePredicate = null, bool ignoreDiagonals = true)
     {
         List<Vector2Int> retPos = new List<Vector2Int>();
         
@@ -318,7 +318,7 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
         {
             for(int y = -1; y <= 1; y++)
             {
-                if(Mathf.Abs(x) == Mathf.Abs(y))
+                if(ignoreDiagonals && Mathf.Abs(x) == Mathf.Abs(y))
                 {
                     continue;
                 }

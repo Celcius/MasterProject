@@ -15,9 +15,28 @@ public class SwapGrandmaScript : PlayerCollideable
 
     [SerializeField]
     private bool SpawnOnResetPos = false;
+
+    private bool playerIsOn = false;
     
+    private void Start() 
+    {
+        
+    }
+
+    private void OnDestroy() 
+    {
+           
+    }
+
+    protected override void PlayerTriggerExit(CharacterMovement character) 
+    {
+        playerIsOn = false;
+    }
+
     protected override void PlayerTriggerEnter(CharacterMovement character) 
     {
+        playerIsOn = true;
+
         if(grandma.Value.GetType() == specialGrandmaController.GetType())
         {
             return;

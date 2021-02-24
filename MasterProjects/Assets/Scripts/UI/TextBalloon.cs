@@ -47,11 +47,15 @@ public class TextBalloon : MonoBehaviour
     private bool isShowing;
     public bool IsShowing => isShowing;
 
+    public string Text => checkedString;
+    private bool hasComponents = false;
+
+    public delegate void OnHide();
+    public event OnHide OnHideCallback;
+
     private void Start() 
     {
-        rectTransform = GetComponent<RectTransform>();
-        animationController = GetComponent<Animator>();
-        animateText = GetComponent<AnimateTextOnStringVarChange>();
+        GetComponents();
         isShowing = false;
 
         if(stringVar == null)
@@ -63,6 +67,14 @@ public class TextBalloon : MonoBehaviour
 
         stringVar.OnChange += OnStringChange;
         OnStringChange("", stringVar.Value);
+    }
+
+    private void GetComponents()
+    {
+        rectTransform = GetComponent<RectTransform>();
+        animationController = GetComponent<Animator>();
+        animateText = GetComponent<AnimateTextOnStringVarChange>();
+        hasComponents = true;
     }
 
     private void OnDestroy() 
@@ -93,17 +105,24 @@ public class TextBalloon : MonoBehaviour
         ShowBalloon();
     }
 
-    public void ShowText(TextBalloonString ballonString)
+    public void ShowText(TextBalloonString ballonString, bool instant = false)
     {
-        ShowText(ballonString.textString, GameConstants.BallonSpeedFromEnum(ballonString.speedEnum));
+        ShowText(ballonString.textString, GameConstants.BallonSpeedFromEnum(ballonString.speedEnum), instant);
     }
 
-    public void ShowText(string textToShow, float textSpeed)
+    public void ShowText(string textToShow, float textSpeed, bool instant = false)
     {
-        rectTransform.sizeDelta = minSize;
+        if(!instant)
+        {
+            rectTransform.sizeDelta = minSize;
 
-        currentBalloonSpeed.Value = textSpeed;
-        stringVar.Value = textToShow;
+            currentBalloonSpeed.Value = textSpeed;
+            stringVar.Value = textToShow;
+        }
+        else
+        {
+            StringChanged("", textToShow);
+        }
     }
 
     private void OnGUI() 
@@ -119,6 +138,10 @@ public class TextBalloon : MonoBehaviour
         if(oldVal.CompareTo(newVal) == 0)
         {
             return;
+        }
+        if(!hasComponents)
+        {
+            GetComponents();
         }
 
         float ratio = Mathf.Clamp01((float)(newVal.Length - minCharactersToIncrease)
@@ -152,6 +175,9 @@ public class TextBalloon : MonoBehaviour
             animationController.SetBool("IsVisible", false);
             animationController.SetTrigger("Hide");
             checkedString = "";
+            stringVar.Value = "";
+            isShowing = false;
+            OnHideCallback?.Invoke();
         }
     }
 
@@ -161,6 +187,7 @@ public class TextBalloon : MonoBehaviour
         {
             StopCoroutine(leaveRoutine);
         }
+
         leaveRoutine = null;
         animationController.SetBool("IsVisible", false);
         checkedString = "";
@@ -170,6 +197,7 @@ public class TextBalloon : MonoBehaviour
     {
         isShowing = false;
         stringVar.Value = "";
+        OnHideCallback?.Invoke();
     }
 
     private void ShowBalloon()

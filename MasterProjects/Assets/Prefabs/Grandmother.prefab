@@ -279,6 +279,7 @@ MonoBehaviour:
   failLeaveStrings: {fileID: 11400000, guid: 4fbc645942b6d2144986b5c30cf52f1c, type: 2}
   successLeaveStrings: {fileID: 11400000, guid: 9aadad09292a5114e8b869e997e5e910, type: 2}
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
+  maxDropDistance: 0.5
   respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
 --- !u!114 &3980850368515856613
 MonoBehaviour:
