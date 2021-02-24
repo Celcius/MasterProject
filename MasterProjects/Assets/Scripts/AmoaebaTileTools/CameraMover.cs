@@ -230,15 +230,19 @@ public class CameraMover : MonoBehaviour
 
     public void ShakeCamera(float intensity)
     {
+        ShakeCamera(intensity, intensity * shakeDuration, intensity * shakeDampingSpeed);
+    }
+    public void ShakeCamera(float intensity, float duration, float damping = 1.0f)
+    {
         if(moving)
         {
             return;
         }
 
         transform.position = GetTargetCameraPosition();
-        cameraShake = CameraShake(intensity * shakeDuration,
+        cameraShake = CameraShake(duration,
                                   intensity * shakeMagnitude,
-                                  intensity * shakeDampingSpeed);
+                                  damping);
         StartCoroutine(cameraShake);
     }
     private IEnumerator CameraShake(float time, float magnitude, float damping)

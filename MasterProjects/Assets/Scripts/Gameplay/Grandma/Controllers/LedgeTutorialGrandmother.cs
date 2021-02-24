@@ -36,6 +36,7 @@ public class LedgeTutorialGrandmother : AnimTutorialGrandmother
 
     public void ShowDropDownText()
     {
+        CameraMover.Instance.ShakeCamera(0.15f, 0.2f, 1.0f);
         balloon.ShowText(dropDownText1);
     }
 

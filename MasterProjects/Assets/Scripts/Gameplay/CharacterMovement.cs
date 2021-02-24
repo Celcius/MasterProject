@@ -410,6 +410,7 @@ public class CharacterMovement : MonoBehaviour
                     {
                         EnableColliders();
                         landParticles.Play();  
+                        CameraMover.Instance.ShakeCamera(0.2f, 0.2f, 1.0f);
                     });
     }
 
@@ -424,6 +425,7 @@ public class CharacterMovement : MonoBehaviour
                         {
                             landParticles.Play();
                         }
+                        CameraMover.Instance.ShakeCamera(0.15f, 0.2f, 1.0f);
                     });
     }
 
