@@ -43,4 +43,11 @@ public class LedgeTutorialGrandmother : AnimTutorialGrandmother
     {
         balloon.ShowText(dropDownText2);
     }
+
+    public override void OnAnimationEnded() 
+    {
+        GrandmaController grandma = CreateGrandmaReplacement();
+        grandma.Balloon.ShowText(dropDownText2);
+    }
+
 }

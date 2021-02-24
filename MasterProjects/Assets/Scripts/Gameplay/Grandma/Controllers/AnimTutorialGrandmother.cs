@@ -25,6 +25,7 @@ public class AnimTutorialGrandmother : IGrandmaController
 
     public override void ResetGrandma(bool isRespawn)
     {
+        animator = GetComponent<Animator>();
         animator.Rebind();
         animator.Update(0f);
     }
@@ -36,7 +37,6 @@ public class AnimTutorialGrandmother : IGrandmaController
 
     protected override void OnDestroy() 
     {
-
         balloon.OnHideCallback -= ReplaceGrandmother;
         base.OnDestroy();    
     }
@@ -59,10 +59,16 @@ public class AnimTutorialGrandmother : IGrandmaController
 
     }
 
-    private void ReplaceGrandmother()
+    protected void ReplaceGrandmother()
     {
         balloon.OnHideCallback -= ReplaceGrandmother;
+        CreateGrandmaReplacement();
+    }
+
+    protected GrandmaController CreateGrandmaReplacement()
+    {
         GrandmaController grandma = Instantiate<GrandmaController>(grandmaPrefab, transform.position, transform.rotation);
         Destroy(this.gameObject);
+        return grandma;
     }
 }

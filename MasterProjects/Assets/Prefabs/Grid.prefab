@@ -32,6 +32,7 @@ Transform:
   m_Children:
   - {fileID: 4400372365911518251}
   - {fileID: 6265461806139664174}
+  - {fileID: 561589168396615614}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -121,8 +122,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   specialGrandmaController: {fileID: 1021081772920121449, guid: 16e872293a536ad44b0646dc01e519c8, type: 3}
+  defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
   resetPos: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
   SpawnOnResetPos: 0
+  OncePerRoom: 0
+  roomPos: {x: 0, y: 0}
+  roomHandler: {fileID: 0}
 --- !u!60 &8260486053418734549
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -153,6 +158,84 @@ PolygonCollider2D:
       - {x: -0.5877852, y: -0.80901706}
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
+--- !u!1 &4502223393851373732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561589168396615614}
+  - component: {fileID: 7855327920962555331}
+  - component: {fileID: 3308201977523356519}
+  m_Layer: 0
+  m_Name: GrandmaLedge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &561589168396615614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4502223393851373732}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.72, y: 27.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1169744052616569237}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7855327920962555331
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4502223393851373732}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.7976856, y: 0.021152496}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19, y: 17}
+  m_EdgeRadius: 0
+--- !u!114 &3308201977523356519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4502223393851373732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4d82b38405e2c4a91212adad57abb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
+  specialGrandmaController: {fileID: 6291301375783213114, guid: 776d86da868dd0d48b0db149c34a2026, type: 3}
+  defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
+  resetPos: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
+  SpawnOnResetPos: 1
+  OncePerRoom: 1
+  roomPos: {x: 0, y: 0}
+  roomHandler: {fileID: 0}
 --- !u!1 &6933979505834432041
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,5 +308,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   specialGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
+  defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
   resetPos: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
   SpawnOnResetPos: 1
+  OncePerRoom: 0
+  roomPos: {x: 0, y: 0}
+  roomHandler: {fileID: 0}

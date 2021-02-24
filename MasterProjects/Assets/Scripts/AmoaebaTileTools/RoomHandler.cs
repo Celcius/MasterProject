@@ -6,6 +6,11 @@ using UnityEngine;
 public class RoomHandler : MonoBehaviour
 {
     private CameraMover mover;
+
+    public delegate void OnRoomChange(Vector2Int newRoom);
+    public event OnRoomChange onEnter;
+    public event OnRoomChange onLeave;
+
     
     protected virtual void Start()
     {
@@ -27,6 +32,7 @@ public class RoomHandler : MonoBehaviour
             }
         }
     }
+    
     protected virtual void EnableCurrentRoom()
     {
         Vector2Int room = CameraMover.RoomPosForWorldPos(mover.LookAtGridEntity.transform.position);
@@ -58,6 +64,7 @@ public class RoomHandler : MonoBehaviour
     public virtual void RespawnRoom()
     {
         OnRoomEnter(false, mover.CurrentRoomPos);
+        DisableAll();
         EnableCurrentRoom();
     }
 
@@ -87,6 +94,15 @@ public class RoomHandler : MonoBehaviour
                     behaviour.OnRoomLeave();
                 }
             }
+        }
+        
+        if(isEntering)
+        {
+            onEnter?.Invoke(roomPos);
+        }
+        else
+        {
+            onLeave?.Invoke(roomPos);
         }
     }
 }

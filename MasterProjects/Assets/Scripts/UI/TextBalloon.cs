@@ -112,6 +112,7 @@ public class TextBalloon : MonoBehaviour
 
     public void ShowText(string textToShow, float textSpeed, bool instant = false)
     {
+        GetComponents();
         if(!instant)
         {
             rectTransform.sizeDelta = minSize;

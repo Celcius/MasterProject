@@ -71,3 +71,4 @@ MonoBehaviour:
   canMoveRooms: 1
   inputManager: {fileID: 11400000, guid: a62c1bc6975118a46ab8a03840e85200, type: 2}
   isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}
+  grandmaText: {fileID: 11400000, guid: 187010a611234644b9674407f95e4293, type: 2}

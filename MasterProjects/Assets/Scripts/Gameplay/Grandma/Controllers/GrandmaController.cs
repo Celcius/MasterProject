@@ -80,9 +80,19 @@ public class GrandmaController : IGrandmaController
     private Action onNewRoomCallback;
 
     private Vector2Int currentRoom;
-
+    private bool hasSetup = false;
     protected override void Start()
     {
+        Setup();
+        base.Start();
+    }
+
+    private void Setup()
+    {
+        if(hasSetup)
+        {
+            return;
+        }
         grandmaPathFeeder = GetComponent<GrandmaPathFeeder>();
         states.Clear();
         GrandmaState[] grandmaStates = GetComponentsInChildren<GrandmaState>(true);
@@ -98,7 +108,7 @@ public class GrandmaController : IGrandmaController
 
         SetState(GrandmaStateEnum.Idle);
         canWalk.OnChange += CanWalkChange;
-        base.Start();
+        hasSetup = true;
     }
 
     protected override void OnDestroy() 
@@ -111,6 +121,7 @@ public class GrandmaController : IGrandmaController
     }
     public override void ResetGrandma(bool isRespawn)
     {
+        Setup();
         SetState(GrandmaStateEnum.Idle);
         if(isRespawn)
         {

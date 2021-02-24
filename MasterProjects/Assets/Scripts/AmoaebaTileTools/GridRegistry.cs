@@ -7,6 +7,7 @@ public class GridRegistry : Singleton<GridRegistry>
 {
     private Dictionary<Vector2Int, List<GridEntity>> gridObjects = new Dictionary<Vector2Int, List<GridEntity>>();
     private List<GridEntity> allObjects = new List<GridEntity>();
+    private Dictionary<GridEntity, Vector2Int> roomsPerEntity = new Dictionary<GridEntity, Vector2Int>();
     public List<GridEntity> AllGridObjects => allObjects;
 
     public List<T> GetRoomObjects<T>(Vector2Int roomVector3Int) where T : GridEntity
@@ -31,6 +32,11 @@ public class GridRegistry : Singleton<GridRegistry>
 
     public void AddRoomGridObject(GridEntity entity)
     {
+        if(roomsPerEntity.ContainsKey(entity))
+        {
+            RemoveGridObject(entity, roomsPerEntity[entity]);
+        }
+
         Vector2Int roomPos = entity.RoomGridPos;
         if(!gridObjects.ContainsKey(roomPos))
         {
@@ -45,6 +51,8 @@ public class GridRegistry : Singleton<GridRegistry>
         {
             allObjects.Add(entity);
         }
+
+        roomsPerEntity[entity] = roomPos;
     }
 
     public GridEntity[] GetEntitiesAtPos(Vector3Int gridPos)
@@ -70,7 +78,8 @@ public class GridRegistry : Singleton<GridRegistry>
 
     public void RemoveRoomGridObject(GridEntity entity)
     {
-        RemoveGridObject(entity, entity.RoomGridPos);
+        Vector2Int roomPos = roomsPerEntity.ContainsKey(entity)? roomsPerEntity[entity] : entity.RoomGridPos;
+        RemoveGridObject(entity, roomPos);
     }
 
     public void RemoveGridObject(GridEntity behaviour, Vector2Int oldRoomPos)
@@ -80,6 +89,7 @@ public class GridRegistry : Singleton<GridRegistry>
             gridObjects[oldRoomPos].Remove(behaviour);
         }
         allObjects.Remove(behaviour);
+        roomsPerEntity.Remove(behaviour);
     }
 
     public void ReorderRoomGridObject(GridEntity behaviour, Vector2Int oldRoomPos)

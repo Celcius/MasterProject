@@ -21,6 +21,9 @@ public class RoomJumper : MonoBehaviour
     [SerializeField]
     private BoolVar isAcceptingInput;
 
+    [SerializeField]
+    private StringVar grandmaText;
+
     private Dictionary<Vector2Int, int> roomIndexes = new Dictionary<Vector2Int, int>();
 
     void Start()
@@ -81,7 +84,8 @@ public class RoomJumper : MonoBehaviour
         {
             return;
         }
-
+        
+        grandmaText.Value = "";
         moverVar.Value.TrackingEntity = false;
 
         CharacterMovement movement = moverVar.Value.LookAtGridEntity.GetComponent<CharacterMovement>();
