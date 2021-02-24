@@ -52,6 +52,9 @@ public class TextBalloon : MonoBehaviour
 
     public delegate void OnHide();
     public event OnHide OnHideCallback;
+    public event OnHide OnWillHideCallback;
+
+    private bool canInterruptOngoing = true;
 
     private void Start() 
     {
@@ -93,7 +96,7 @@ public class TextBalloon : MonoBehaviour
         
         if(string.IsNullOrWhiteSpace(newVal))
         {
-            HideBalloon();
+            ForceHideBalloon();
             return;
         }
 
@@ -102,16 +105,23 @@ public class TextBalloon : MonoBehaviour
             return;
         }
 
+        checkedString = newVal;
+
         ShowBalloon();
     }
 
-    public void ShowText(TextBalloonString ballonString, bool instant = false)
+    public void ShowText(TextBalloonString ballonString, bool instant = false, bool canInterrupt = true)
     {
-        ShowText(ballonString.textString, GameConstants.BallonSpeedFromEnum(ballonString.speedEnum), instant);
+        ShowText(ballonString.textString, GameConstants.BallonSpeedFromEnum(ballonString.speedEnum), instant, canInterrupt);
     }
 
-    public void ShowText(string textToShow, float textSpeed, bool instant = false)
+    public void ShowText(string textToShow, float textSpeed, bool instant = false, bool canInterrupt = true)
     {
+        if(!this.canInterruptOngoing)
+        {
+            return;
+        }
+
         GetComponents();
         if(!instant)
         {
@@ -119,10 +129,12 @@ public class TextBalloon : MonoBehaviour
 
             currentBalloonSpeed.Value = textSpeed;
             stringVar.Value = textToShow;
+            this.canInterruptOngoing = canInterrupt;
         }
         else
         {
             StringChanged("", textToShow);
+            this.canInterruptOngoing = canInterrupt;
         }
     }
 
@@ -157,19 +169,19 @@ public class TextBalloon : MonoBehaviour
         checkedString = label.text;
     }
 
-    private IEnumerator StopAfterDelay()
+    private IEnumerator StopAfterDelay(int len)
     {
-        float timeToDelay = Mathf.Max(minTimeInScreen, remainTimePerLetter * checkedString.Length);
+        float timeToDelay = Mathf.Max(minTimeInScreen, remainTimePerLetter * len);
         yield return new WaitForSeconds(timeToDelay);
     
-        HideBalloon();
+        ForceHideBalloon();
     }
 
     public void HideBalloon(bool isInstant)
     {
         if(!isInstant)
         {
-            HideBalloon();
+            ForceHideBalloon();
         }
         else
         {
@@ -178,11 +190,12 @@ public class TextBalloon : MonoBehaviour
             checkedString = "";
             stringVar.Value = "";
             isShowing = false;
+            canInterruptOngoing = true;
             OnHideCallback?.Invoke();
         }
     }
 
-    private void HideBalloon()
+    private void ForceHideBalloon(bool callback = true)
     {
         if(leaveRoutine != null)
         {
@@ -192,6 +205,12 @@ public class TextBalloon : MonoBehaviour
         leaveRoutine = null;
         animationController.SetBool("IsVisible", false);
         checkedString = "";
+        canInterruptOngoing = true;
+
+        if(callback)
+        {
+            OnWillHideCallback?.Invoke();
+        }
     }
 
     public void BaloonLeft()
@@ -199,15 +218,17 @@ public class TextBalloon : MonoBehaviour
         isShowing = false;
         stringVar.Value = "";
         OnHideCallback?.Invoke();
+        canInterruptOngoing = true;
     }
 
     private void ShowBalloon()
     {
-        HideBalloon();
+        int stringlen = checkedString.Length;
+        ForceHideBalloon(false);
         isShowing = true;
         animationController.SetBool("IsVisible", true);
         
-        leaveRoutine = StopAfterDelay();
+        leaveRoutine = StopAfterDelay(stringlen);
         StartCoroutine(leaveRoutine);
     }
 }
