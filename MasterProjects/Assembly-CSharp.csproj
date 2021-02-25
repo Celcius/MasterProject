@@ -36,15 +36,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Events\BoulderCryTutorial.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\GrandmaController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\IGrandmaController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Pushable.cs" />
      <Compile Include="Assets\Scripts\Map\LedgeScript.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GameRoomHandler.cs" />
+     <Compile Include="Assets\Scripts\Map\RoomOrder.cs" />
      <Compile Include="Assets\Scripts\UI\CharacterRepresentation.cs" />
      <Compile Include="Assets\Scripts\Map\Cuteable.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterState.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloon.cs" />
+     <Compile Include="Assets\Scripts\UI\TutorialLabel.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterStateVar.cs" />
      <Compile Include="Assets\Scripts\Map\InvisibleEntitySpawnTile.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GameConstants.cs" />
@@ -60,6 +63,7 @@
      <Compile Include="Assets\Scripts\Map\SpawnTree.cs" />
      <Compile Include="Assets\Scripts\Input\WindowsInputController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateMoveToNextRoom.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\RoomChangeHandler.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateIdle.cs" />
      <Compile Include="Assets\Scripts\Map\LandingTile.cs" />
      <Compile Include="Assets\Scripts\Gameplay\TargetMover.cs" />
@@ -76,6 +80,7 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateMoveToCry.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\AnimTutorialGrandmother.cs" />
      <Compile Include="Assets\Scripts\Map\LedgeTile.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\SkillsAwarder.cs" />
      <Compile Include="Assets\Scripts\UI\RestartController.cs" />
      <Compile Include="Assets\Scripts\Map\TilemapRegister.cs" />
      <Compile Include="Assets\Scripts\UI\RegisterTextBalloonVar.cs" />
@@ -90,15 +95,14 @@
      <Compile Include="Assets\Scripts\Map\SpawnBoulder.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Boulder.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateMoveToCall.cs" />
+     <Compile Include="Assets\Scripts\Events\TutorialCollider.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeadGrandmaController.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\UI\TutorialLabel.cs" />
-     <Compile Include="Assets\Scripts\Map\RoomOrder.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\RoomChangeHandler.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\SkillsAwarder.cs" />
-     <Compile Include="Assets\Scripts\Events\TutorialCollider.cs" />
-     <Compile Include="Assets\Scripts\Events\BoulderCryTutorial.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\ChaseGrandmother.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\Hi5Grandmother.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\ThrowGrandmother.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeathGrandmother.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
