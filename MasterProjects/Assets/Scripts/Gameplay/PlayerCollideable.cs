@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class PlayerCollideable : MonoBehaviour
 {
-    protected bool IsCollisionPlayer(Collider2D other, out CharacterMovement character)
+    public static bool IsCollisionPlayer(Collider2D other, out CharacterMovement character)
     {
         if(other.tag == GameConstants.PLAYER_TAG)
         {

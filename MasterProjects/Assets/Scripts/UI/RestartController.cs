@@ -30,6 +30,9 @@ public class RestartController : MonoBehaviour
     [SerializeField]
     private float activateInputRatio = 0.5f;
 
+    [SerializeField]
+    private TutorialLabel[] labels;
+
     private bool waitOnInput = false;
 
     private void Start()
@@ -119,6 +122,10 @@ public class RestartController : MonoBehaviour
 
     private void RespawnRoom()
     {
+        foreach(TutorialLabel label in labels)
+        {
+            label.Hide();
+        }
         RoomHandler room = CameraMover.Instance.GetComponent<RoomHandler>();
         room.RespawnRoom();
     }

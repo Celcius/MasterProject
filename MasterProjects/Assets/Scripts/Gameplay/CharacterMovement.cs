@@ -93,12 +93,15 @@ public class CharacterMovement : MonoBehaviour
     
     private ParticleSystem.EmissionModule leafEmission;
 
+    [SerializeField]
+    private CharacterRepresentation representation;
     private void Start()
     {
        gridEntity = GetComponent<GridEntity>();
 
        body2D = GetComponent<Rigidbody2D>();
        col2D = GetComponent<Collider2D>();
+    
        roomController.AddEntityToIgnore(this.transform);
        ResetCharacter(false);
 
@@ -131,6 +134,11 @@ public class CharacterMovement : MonoBehaviour
             transform.position = respawnPosition.Value;
         }
         Show();
+        leafParticles.Clear();
+        leafParticles.Stop();
+        landParticles.Clear();
+        landParticles.Stop();
+        representation.OnRespawn();
     }
 
     void Update()

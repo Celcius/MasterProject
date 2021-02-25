@@ -5276,6 +5276,7 @@ MonoBehaviour:
   cutDuration: 0.3
   landParticles: {fileID: 7496027374517040654}
   leafParticles: {fileID: 8681472533342235696}
+  representation: {fileID: 3613890630266489466}
 --- !u!58 &1071111346617289370
 CircleCollider2D:
   m_ObjectHideFlags: 0

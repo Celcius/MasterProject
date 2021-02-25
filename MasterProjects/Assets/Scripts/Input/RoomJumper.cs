@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoomJumper : MonoBehaviour
 {
     [SerializeField]
-    private Vector2Int[] rooms;
+    private RoomOrder rooms;
 
     private int currentRoomIndex = -1;
 
@@ -24,16 +24,8 @@ public class RoomJumper : MonoBehaviour
     [SerializeField]
     private TextBalloonVar balloonVar;
 
-    private Dictionary<Vector2Int, int> roomIndexes = new Dictionary<Vector2Int, int>();
-
     void Start()
     {
-        roomIndexes.Clear();
-        for(int i = 0; i < rooms.Length; i++)
-        {
-            Vector2Int room = rooms[i];
-            roomIndexes[room] = i;
-        }
         moverVar.Value.OnCameraMoveEnd += OnCameraMoved;
         moverVar.OnChange += OnMoverVarChange;
         OnMoverVarChange(null, moverVar.Value);
@@ -58,7 +50,7 @@ public class RoomJumper : MonoBehaviour
 
     private void OnCameraMoved(Vector2Int oldRoomPos, Vector2Int newRoomPos)
     {
-        currentRoomIndex = roomIndexes.ContainsKey(newRoomPos) ? roomIndexes[newRoomPos] : -1;
+        currentRoomIndex = rooms.GetIndexOfRoom(newRoomPos);
     }
 
     void Update()
@@ -102,7 +94,7 @@ public class RoomJumper : MonoBehaviour
         
         currentRoomIndex = index;
         Vector2Int prevRoom = moverVar.Value.CurrentRoomPos;
-        Vector2Int room = rooms[index];
+        Vector2Int room = rooms.GetRoom(index);
 
         moverVar.Value.MoveCameraToRoom(room, true); 
         Debug.Log("Jump to room " + index + " : " + room );

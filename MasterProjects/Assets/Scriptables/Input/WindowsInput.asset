@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fb5b2664c3cdb479f001ed9076eab3, type: 3}
   m_Name: WindowsInput
   m_EditorClassIdentifier: 
+  canCut: {fileID: 11400000, guid: 73a25255c91c4b5459bf872b896d80f9, type: 2}
   isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}

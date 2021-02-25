@@ -29,6 +29,12 @@ public class CharacterRepresentation : MonoBehaviour
         facingDir.OnChange += OnDirChange;
     }
 
+    public void OnRespawn()
+    {
+        cryingParticles.Stop();
+        cryingParticles.Clear();
+    }
+
     private void OnStateChange(CharacterState oldVal, CharacterState newVal)
     {
         if(oldVal == newVal)

@@ -11,6 +11,8 @@ public class WindowsInputController : IInputController
     private const KeyCode nextRoomKey = KeyCode.RightArrow;
     private const KeyCode prevRoomKey = KeyCode.LeftArrow;
 
+    [SerializeField]
+    private BoolVar canCut;
 
     [SerializeField]
     private BoolVar isAcceptingInput;
@@ -34,7 +36,7 @@ public class WindowsInputController : IInputController
 
     public override bool IsCutDown()
     {
-        if(!isAcceptingInput.Value)
+        if(!isAcceptingInput.Value || !canCut.Value)
         {
             return false;
         }
