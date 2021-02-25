@@ -104,6 +104,8 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\ThrowGrandmother.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeathGrandmother.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GameCameraMover.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\EntityCollideable.cs" />
+     <Compile Include="Assets\Scripts\Events\GrannyTalkCollider.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

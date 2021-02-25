@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TalkCollider : PlayerCollideable
+public class TalkCollider : EntityCollideable<Component>
 {
     [SerializeField]
     private TextBalloonVar grannyBalloon;
@@ -34,12 +34,12 @@ public class TalkCollider : PlayerCollideable
     {
         grannyBalloon.Value.OnWillHideCallback -= ShowNext;
     }
-    protected override void PlayerTriggerStay(CharacterMovement character) 
+    protected override void PlayerTriggerStay(Component comp) 
     {
-        PlayerTriggerEnter(character);
+        PlayerTriggerEnter(comp);
     }
 
-    protected override void PlayerTriggerEnter(CharacterMovement character) 
+    protected override void PlayerTriggerEnter(Component comp) 
     {
         if(hasShown)
         {
@@ -65,11 +65,6 @@ public class TalkCollider : PlayerCollideable
 
     private void ShowText()
     {
-        if(!grannyBalloon.Value.IsLeavingOrHidden)
-        {
-            return;
-        }
-
         if(curString < strings.Length && grannyBalloon.Value != null)
         {
             grannyBalloon.Value.ShowText(strings[curString], false, false);

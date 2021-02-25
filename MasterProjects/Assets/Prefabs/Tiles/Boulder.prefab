@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1380572626942105979}
   m_Layer: 14
   m_Name: Boulder
-  m_TagString: Untagged
+  m_TagString: Boulder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking: 1
   allowsStand: 1
+  isRoomStatic: 1
 --- !u!114 &8542914634315726899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba4adeef234da24f981e9616f1bc3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   pushTime: 0.5
   controller: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   pushing: {fileID: 11400000, guid: 9063b6ec2f3cbae438a07bf1906fd0bb, type: 2}
