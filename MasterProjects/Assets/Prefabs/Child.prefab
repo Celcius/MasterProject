@@ -5199,7 +5199,6 @@ GameObject:
   - component: {fileID: 1071111346617289370}
   - component: {fileID: 6716408582655814483}
   - component: {fileID: 3895272161399563751}
-  - component: {fileID: 3265909154061674907}
   m_Layer: 12
   m_Name: Child
   m_TagString: Character
@@ -5277,6 +5276,7 @@ MonoBehaviour:
   landParticles: {fileID: 7496027374517040654}
   leafParticles: {fileID: 8681472533342235696}
   representation: {fileID: 3613890630266489466}
+  roomOrder: {fileID: 11400000, guid: f1f415f38d00c8c4a9a40457522171ec, type: 2}
 --- !u!58 &1071111346617289370
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5307,6 +5307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking: 0
   allowsStand: 1
+  isRoomStatic: 0
   targetVar: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
   representationAnchor: {fileID: 4084711936496854058}
 --- !u!114 &3895272161399563751
@@ -5322,20 +5323,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptVar: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
---- !u!114 &3265909154061674907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5451419466169418070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ee862cd14e4b294faac0c3bcef8e910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ArrayVar: {fileID: 11400000, guid: a3dc152f9825770418e4fe6a5472a847, type: 2}
-  registerType: 0
 --- !u!1 &5451419466350408577
 GameObject:
   m_ObjectHideFlags: 0

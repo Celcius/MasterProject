@@ -79,6 +79,9 @@ public class CharacterMovement : MonoBehaviour
 
     private bool canCall;
 
+    private bool isGrabbed = false;
+    public bool IsGrabbed => isGrabbed;
+
     [SerializeField]
     private Transform cutPrefab;
 
@@ -95,6 +98,10 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField]
     private CharacterRepresentation representation;
+
+    [SerializeField]
+    private RoomOrder roomOrder;
+
     private void Start()
     {
        gridEntity = GetComponent<GridEntity>();
@@ -261,7 +268,8 @@ public class CharacterMovement : MonoBehaviour
             }
             else if(!grandmaScriptVar.Value.IsOnGrandma 
                     && stateVar.Value != CharacterState.Calling
-                    && stateVar.Value != CharacterState.Throwing)
+                    && stateVar.Value != CharacterState.Throwing
+                    && stateVar.Value != CharacterState.Pushing)
             {
                 OnCallGrandmother();
             }
@@ -298,15 +306,25 @@ public class CharacterMovement : MonoBehaviour
             {
                 prevSafePos = GridPos;
             }
-       
 
-            if(IsOutOfRoom(goalPos + representationParent.localPosition))
+            Vector2Int nextRoomPos = CameraMover.RoomPosForWorldPos(goalPos + representationParent.localPosition);
+
+            if(curRoom != nextRoomPos)
             {
+                
+                int nextIndex = roomOrder.GetIndexOfRoom(nextRoomPos); 
+                int currentIndex = roomOrder.GetIndexOfRoom(curRoom); 
+                if(nextIndex <= currentIndex)
+                {
+                    grandmaScriptVar.Value.OnBacktracking();
+                    return;
+                }
+
                 grandmaScriptVar.Value.CheckLeaveRoom(goalPos + representationParent.localPosition, () => 
                 {
                     Vector3Int goalGridPos = CameraMover.GridPosForWorldPos(goalPos+ representationParent.localPosition);
-                    Vector3 nextRoomPos = CameraMover.WorldPosForGridPos(goalGridPos,0);
-                    body2D.MovePosition(nextRoomPos);
+                    Vector3 nextRoomWorldPos = CameraMover.WorldPosForGridPos(goalGridPos,0);
+                    body2D.MovePosition(nextRoomWorldPos);
                 });                    
             }
             else
@@ -324,14 +342,9 @@ public class CharacterMovement : MonoBehaviour
         }      
     }
 
-    public bool IsOutOfRoom(Vector3 pos)
-    {
-        Vector2Int nextRoomPos = CameraMover.RoomPosForWorldPos(pos);
-        return curRoom != nextRoomPos;
-    }
-
     private void OnGrab()
     {
+        isGrabbed = true;
         movingDir = movingDir = Vector2.down;
         grandmaScriptVar.Value.GrabCharacter(this);
         DisableColliders();
@@ -340,6 +353,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnRelease(bool isThrow)
     {
+        isGrabbed = false;
         canCall = false;
         canGrab = false;
         movingDir = movingDir = Vector2.down;
@@ -376,7 +390,11 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnCallGrandmother()
     {
-        SetCharacterState(CharacterState.Calling);
+        if(stateVar.Value != CharacterState.Calling)
+        {
+            SetCharacterState(CharacterState.Calling);
+        }
+        
     }
 
     private void OnCallCancel()

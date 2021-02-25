@@ -11,6 +11,9 @@ public class RoomHandler : MonoBehaviour
     public event OnRoomChange onEnter;
     public event OnRoomChange onLeave;
 
+    private Vector2Int currentRoom;
+    public Vector2Int CurrentRoom => currentRoom;
+
     
     protected virtual void Start()
     {
@@ -78,11 +81,32 @@ public class RoomHandler : MonoBehaviour
 
     protected virtual void OnRoomEnter(bool isEntering, Vector2Int roomPos)
     {
+        if(isEntering)
+        {
+            currentRoom = roomPos;
+        }
+        
         List<GridEntity> gridElements =  GridRegistry.Instance.GetRoomObjects<GridEntity>(roomPos);
+        BroadCastEnter(isEntering, gridElements);
+        BroadCastEnter(isEntering, GridRegistry.Instance.NonRoomObjects);
+
+        if(isEntering)
+        {
+            onEnter?.Invoke(roomPos);
+        }
+        else
+        {
+            onLeave?.Invoke(roomPos);
+        }
+    }
+
+    private void BroadCastEnter(bool isEntering, List<GridEntity> gridElements)
+    {
         if(gridElements != null)
         {
             foreach(GridEntity behaviour in gridElements)
             {
+
                 if(isEntering)
                 {
                     behaviour.OnRoomWillEnter();
@@ -94,15 +118,6 @@ public class RoomHandler : MonoBehaviour
                     behaviour.OnRoomLeave();
                 }
             }
-        }
-        
-        if(isEntering)
-        {
-            onEnter?.Invoke(roomPos);
-        }
-        else
-        {
-            onLeave?.Invoke(roomPos);
         }
     }
 }

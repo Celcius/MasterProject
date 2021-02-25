@@ -17,9 +17,21 @@ public class GridEntity : MonoBehaviour
     private bool allowsStand = true;
     public bool AllowsStand => allowsStand;
 
+    [SerializeField]
+    private bool isRoomStatic = true;
+    public bool IsRoomStatic => isRoomStatic;
+
     protected virtual void Start()
     {
-        GridRegistry.Instance.AddRoomGridObject(this);
+        if(IsRoomStatic)
+        {
+            GridRegistry.Instance.AddRoomGridObject(this);
+        }
+        else
+        {
+            GridRegistry.Instance.AddNonRoomGridObject(this);
+        }
+        
         originalPosition = transform.position;        
     }
 
@@ -27,7 +39,14 @@ public class GridEntity : MonoBehaviour
     {
         if(GridRegistry.Instance != null)
         {
-            GridRegistry.Instance.RemoveRoomGridObject(this);
+            if(IsRoomStatic)
+            {
+                GridRegistry.Instance.RemoveRoomGridObject(this);
+            }
+            else
+            {
+                GridRegistry.Instance.RemoveNonRoomGridObject(this);
+            }
         }
     }
 

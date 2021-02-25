@@ -18,4 +18,6 @@ public class DeadGrandmaController : IGrandmaController
 
     public override void GrabCharacter(CharacterMovement character) {}
     public override void ReleaseCharacter(CharacterMovement character, bool throwChar) {}
+
+    public override void OnBacktracking(){}
 }

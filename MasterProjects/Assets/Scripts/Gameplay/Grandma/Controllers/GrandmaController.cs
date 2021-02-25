@@ -55,6 +55,9 @@ public class GrandmaController : IGrandmaController
 
     [SerializeField]
     private RandomSelectionTextBalloonString successLeaveStrings;
+
+    [SerializeField]
+    private RandomSelectionTextBalloonString backtrackStrings;
  
     [SerializeField]
     private RoomTileController roomController;
@@ -371,7 +374,7 @@ public class GrandmaController : IGrandmaController
         }
         else
         {
-            if(!balloon.IsShowing)
+            if(balloon.IsLeavingOrHidden)
             {
                 balloon.ShowText(failLeaveStrings.GetRandomSelection());
             }
@@ -384,5 +387,13 @@ public class GrandmaController : IGrandmaController
         onNewRoomCallback?.Invoke();
         onNewRoomCallback = null;   
         GridRegistry.Instance.ReorderRoomGridObject(this, oldRoomPos);
+    }
+
+    public override void OnBacktracking()
+    {
+        if(balloon.IsLeavingOrHidden)
+        {
+            balloon.ShowText(backtrackStrings.GetRandomSelection());
+        }
     }
 }

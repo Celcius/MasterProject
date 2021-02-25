@@ -24,6 +24,9 @@ public class RoomJumper : MonoBehaviour
     [SerializeField]
     private TextBalloonVar balloonVar;
 
+    [SerializeField]
+    private GrandmaScriptVar grandmaScriptVar;
+
     void Start()
     {
         moverVar.Value.OnCameraMoveEnd += OnCameraMoved;
@@ -77,10 +80,6 @@ public class RoomJumper : MonoBehaviour
             return;
         }
 
-        if(balloonVar.Value != null)
-        {
-            balloonVar.Value.HideBalloon(true);
-        }
         moverVar.Value.TrackingEntity = false;
 
         CharacterMovement movement = moverVar.Value.LookAtGridEntity.GetComponent<CharacterMovement>();
@@ -106,12 +105,17 @@ public class RoomJumper : MonoBehaviour
 
         RoomHandler roomHandler = moverVar.Value.GetComponent<RoomHandler>();
         roomHandler.RespawnRoom();
+        grandmaScriptVar.Value.ResetGrandma(true);
 
         moverVar.Value.TrackingEntity = true;
 
         if(movement != null)
         {
             movement.EnableColliders();
+        }
+        if(balloonVar.Value != null)
+        {
+            balloonVar.Value.HideBalloon(true);
         }
         isAcceptingInput.Value = true;
     }

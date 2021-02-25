@@ -22,8 +22,10 @@ public class TalkCollider : PlayerCollideable
         roomHandler.onLeave += OnLeaveRoom;
     }
 
-    private void OnEnterRoom( Vector2Int newPos)
+    private void OnEnterRoom(Vector2Int newPos)
     {
+        grannyBalloon.Value.OnWillHideCallback -= ShowNext;
+
         curString = 0;
         hasShown = false;
     }
@@ -63,10 +65,20 @@ public class TalkCollider : PlayerCollideable
 
     private void ShowText()
     {
+        if(!grannyBalloon.Value.IsLeavingOrHidden)
+        {
+            return;
+        }
+
         if(curString < strings.Length && grannyBalloon.Value != null)
         {
             grannyBalloon.Value.ShowText(strings[curString], false, false);
         }
         ++curString;
+
+        if(curString >= strings.Length)
+        {
+            grannyBalloon.Value.OnWillHideCallback -= ShowNext;
+        }
     }
 }

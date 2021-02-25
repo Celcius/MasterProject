@@ -116,7 +116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4007621154695231748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9717cb305cf93aa4babfb37643289384, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b1d63ec3f18c314c88a53d0ab8e5d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPositions: []
@@ -146,7 +146,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   grid: {fileID: 0}
-  moveWithRoomEntities: {fileID: 11400000, guid: a3dc152f9825770418e4fe6a5472a847, type: 2}
   lookAtGridEntity: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
   pixelCamera: {fileID: 4007621154695231750}
   shakeDuration: 0.5

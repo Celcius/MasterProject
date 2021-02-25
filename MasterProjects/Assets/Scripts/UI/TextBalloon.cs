@@ -46,6 +46,9 @@ public class TextBalloon : MonoBehaviour
 
     private bool isShowing;
     public bool IsShowing => isShowing;
+    
+    public bool hiding = false;
+    public bool IsLeavingOrHidden => !IsShowing || hiding;
 
     public string Text => checkedString;
     private bool hasComponents = false;
@@ -121,12 +124,13 @@ public class TextBalloon : MonoBehaviour
         {
             return;
         }
-
+        
+        hiding = false;
         GetComponents();
         if(!instant)
         {
             rectTransform.sizeDelta = minSize;
-
+            isShowing = true;
             currentBalloonSpeed.Value = textSpeed;
             stringVar.Value = textToShow;
             this.canInterruptOngoing = canInterrupt;
@@ -185,11 +189,13 @@ public class TextBalloon : MonoBehaviour
         }
         else
         {
+            GetComponents();
             animationController.SetBool("IsVisible", false);
             animationController.SetTrigger("Hide");
             checkedString = "";
             stringVar.Value = "";
             isShowing = false;
+            hiding = false;
             canInterruptOngoing = true;
             OnHideCallback?.Invoke();
         }
@@ -206,7 +212,7 @@ public class TextBalloon : MonoBehaviour
         animationController.SetBool("IsVisible", false);
         checkedString = "";
         canInterruptOngoing = true;
-
+        hiding = true;
         if(callback)
         {
             OnWillHideCallback?.Invoke();
@@ -215,6 +221,7 @@ public class TextBalloon : MonoBehaviour
 
     public void BaloonLeft()
     {
+        hiding = false;
         isShowing = false;
         stringVar.Value = "";
         OnHideCallback?.Invoke();
@@ -225,6 +232,7 @@ public class TextBalloon : MonoBehaviour
     {
         int stringlen = checkedString.Length;
         ForceHideBalloon(false);
+        hiding = false;
         isShowing = true;
         animationController.SetBool("IsVisible", true);
         

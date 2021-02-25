@@ -19,8 +19,8 @@ public class AnimTutorialGrandmother : IGrandmaController
     private Animator animator;
     protected override void Start() 
     {
-        base.Start();
         animator = GetComponent<Animator>();
+
     }
 
     public override void ResetGrandma(bool isRespawn)
@@ -70,5 +70,10 @@ public class AnimTutorialGrandmother : IGrandmaController
         GrandmaController grandma = Instantiate<GrandmaController>(grandmaPrefab, transform.position, transform.rotation);
         Destroy(this.gameObject);
         return grandma;
+    }
+
+    public override void OnBacktracking()
+    {
+
     }
 }

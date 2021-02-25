@@ -14,4 +14,6 @@ public abstract class IGrandmaController : GridEntity
 
     public abstract void GrabCharacter(CharacterMovement character);
     public abstract void ReleaseCharacter(CharacterMovement character, bool throwChar);
+
+    public abstract void OnBacktracking();
 }

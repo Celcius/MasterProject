@@ -9,6 +9,8 @@ public class GridRegistry : Singleton<GridRegistry>
     private List<GridEntity> allObjects = new List<GridEntity>();
     private Dictionary<GridEntity, Vector2Int> roomsPerEntity = new Dictionary<GridEntity, Vector2Int>();
     public List<GridEntity> AllGridObjects => allObjects;
+    private List<GridEntity> nonRoomObjects = new List<GridEntity>();
+    public List<GridEntity> NonRoomObjects => nonRoomObjects;
 
     public List<T> GetRoomObjects<T>(Vector2Int roomVector3Int) where T : GridEntity
     {
@@ -30,8 +32,34 @@ public class GridRegistry : Singleton<GridRegistry>
         return ret;
     }
 
+    public void AddNonRoomGridObject(GridEntity entity)
+    {
+        if(!allObjects.Contains(entity))
+        {
+            allObjects.Add(entity);
+        }
+
+        if(!nonRoomObjects.Contains(entity))
+        {
+            nonRoomObjects.Add(entity);
+        }
+    }
+
+    public void RemoveNonRoomGridObject(GridEntity entity)
+    {
+        allObjects.Remove(entity);
+        nonRoomObjects.Remove(entity);
+    }
+
+
     public void AddRoomGridObject(GridEntity entity)
     {
+        if(!entity.IsRoomStatic)
+        {
+            AddNonRoomGridObject(entity);
+            return;
+        }
+
         if(roomsPerEntity.ContainsKey(entity))
         {
             RemoveGridObject(entity, roomsPerEntity[entity]);
@@ -78,12 +106,23 @@ public class GridRegistry : Singleton<GridRegistry>
 
     public void RemoveRoomGridObject(GridEntity entity)
     {
+        if(!entity.IsRoomStatic)
+        {
+            RemoveNonRoomGridObject(entity);
+            return;
+        }
+
         Vector2Int roomPos = roomsPerEntity.ContainsKey(entity)? roomsPerEntity[entity] : entity.RoomGridPos;
         RemoveGridObject(entity, roomPos);
     }
 
     public void RemoveGridObject(GridEntity behaviour, Vector2Int oldRoomPos)
     {
+        if(!behaviour.IsRoomStatic)
+        {
+            RemoveNonRoomGridObject(behaviour);
+            return;
+        }
         if(gridObjects.ContainsKey(oldRoomPos))
         {
             gridObjects[oldRoomPos].Remove(behaviour);
@@ -94,7 +133,10 @@ public class GridRegistry : Singleton<GridRegistry>
 
     public void ReorderRoomGridObject(GridEntity behaviour, Vector2Int oldRoomPos)
     {
-        RemoveGridObject(behaviour, oldRoomPos);
-        AddRoomGridObject(behaviour);
+        if(behaviour.IsRoomStatic)
+        {
+            RemoveGridObject(behaviour, oldRoomPos);
+            AddRoomGridObject(behaviour);    
+        }
     }
 }
