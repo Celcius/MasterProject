@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class KnifeGrandmother : AnimTutorialGrandmother
 {
-    [SerializeField]
-    private TextBalloonString narrativeText;
-
-    [SerializeField]
-    private TextBalloonString tutorialText;
-
-
-    [SerializeField]
-    private TextBalloonString tutorialText2;
 
     [SerializeField]
     private string tutorialLabel = "Press 'E' to cut...";
@@ -30,15 +21,6 @@ public class KnifeGrandmother : AnimTutorialGrandmother
 
     [SerializeField]
     private float moveSpeed = 5;
-    public void ShowNarrativeText()
-    {
-        balloon.ShowText(narrativeText);
-    }
-
-    public void ShowTutText()
-    {
-        balloon.ShowText(tutorialText);
-    }
 
     public override void OnAnimationEnded() 
     {
@@ -64,7 +46,7 @@ public class KnifeGrandmother : AnimTutorialGrandmother
         {
             canCut.Value = true;
             GrandmaController grandma = CreateGrandmaReplacement();
-            grandma.Balloon.ShowText(tutorialText2);
+            ShowNextText(grandma.Balloon);
             tutorialStringVar.Value = tutorialLabel;
         }
     }

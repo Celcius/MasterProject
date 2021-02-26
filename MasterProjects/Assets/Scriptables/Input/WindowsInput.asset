@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: WindowsInput
   m_EditorClassIdentifier: 
   canCut: {fileID: 11400000, guid: 73a25255c91c4b5459bf872b896d80f9, type: 2}
+  canCall: {fileID: 11400000, guid: 946468b0428f6f14fa04d2289eac6aa7, type: 2}
+  canCry: {fileID: 11400000, guid: 64946d1702ce3ae40a3cf6d2b18ffce6, type: 2}
   isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}

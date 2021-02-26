@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975149d80975c8347bca96119c7daeaf, type: 3}
+  m_Name: MoveToGrabCancelTut
+  m_EditorClassIdentifier: 
+  objectsToSelect:
+  - entity:
+      textString: What's wrong?
+      speedEnum: 2
+    weight: 3
+  - entity:
+      textString: Don't be scared!
+      speedEnum: 0
+    weight: 3
+  - entity:
+      textString: I'd never let you get hurt!
+      speedEnum: 2
+    weight: 2

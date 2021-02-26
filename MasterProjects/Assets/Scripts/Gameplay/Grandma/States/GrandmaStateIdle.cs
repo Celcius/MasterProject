@@ -7,6 +7,8 @@ public class GrandmaStateIdle : GrandmaState
 {
     [SerializeField]
     private Vector2Var targetPosVar;
+
+    public bool CanMoveToPlayer = true;
     protected override void StartBehaviour()
     {
         
@@ -20,13 +22,13 @@ public class GrandmaStateIdle : GrandmaState
     protected override void OnStateChange(CharacterState oldState, CharacterState newState) 
     {
         
-        if(newState == CharacterState.Calling)
+        if(newState == CharacterState.Calling && CanMoveToPlayer)
         {
             controller.SetState(GrandmaStateEnum.MoveToCall);
             return;
         }
 
-        if(newState == CharacterState.Crying)
+        if(newState == CharacterState.Crying && CanMoveToPlayer)
         {
             controller.SetState(GrandmaStateEnum.MoveToCry);
             return;

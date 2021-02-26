@@ -13,12 +13,18 @@ public class WindowsInputController : IInputController
 
     [SerializeField]
     private BoolVar canCut;
+    
+    [SerializeField]
+    private BoolVar canCall;
+
+    [SerializeField]
+    private BoolVar canCry;
 
     [SerializeField]
     private BoolVar isAcceptingInput;
     public override bool IsGrab()
     {
-        if(!isAcceptingInput.Value)
+        if(!isAcceptingInput.Value || !canCall.Value)
         {
             return false;
         }
@@ -27,7 +33,7 @@ public class WindowsInputController : IInputController
 
     public override bool IsGrabUp()
     {
-        if(!isAcceptingInput.Value)
+        if(!isAcceptingInput.Value || !canCall.Value)
         {
             return false;
         }
@@ -47,7 +53,7 @@ public class WindowsInputController : IInputController
 
     public override bool IsCryingDown()
     {
-        if(!isAcceptingInput.Value)
+        if(!isAcceptingInput.Value || !canCry.Value)
         {
             return false;
         }
@@ -56,7 +62,7 @@ public class WindowsInputController : IInputController
 
     public override bool IsCryingRelease()
     {
-        if(!isAcceptingInput.Value)
+        if(!isAcceptingInput.Value || !canCry.Value)
         {
             return false;
         }

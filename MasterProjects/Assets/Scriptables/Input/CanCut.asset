@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CanCut
   m_EditorClassIdentifier: 
   setupValue: 0
-  value: 1
+  value: 0

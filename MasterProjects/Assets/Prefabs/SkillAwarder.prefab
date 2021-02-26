@@ -47,4 +47,8 @@ MonoBehaviour:
   skills:
   - roomAwarded: {x: -1, y: 3}
     skillUse: {fileID: 11400000, guid: 73a25255c91c4b5459bf872b896d80f9, type: 2}
+  - roomAwarded: {x: -2, y: 1}
+    skillUse: {fileID: 11400000, guid: 946468b0428f6f14fa04d2289eac6aa7, type: 2}
+  - roomAwarded: {x: -1, y: 1}
+    skillUse: {fileID: 11400000, guid: 64946d1702ce3ae40a3cf6d2b18ffce6, type: 2}
   rooms: {fileID: 11400000, guid: f1f415f38d00c8c4a9a40457522171ec, type: 2}

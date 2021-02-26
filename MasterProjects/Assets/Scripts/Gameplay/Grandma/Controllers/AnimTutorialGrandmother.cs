@@ -9,18 +9,25 @@ public class AnimTutorialGrandmother : IGrandmaController
     public override bool CanGrab  => false;
     public override bool IsOnGrandma  => false;
 
+    private int textIndex = 0;
+
     [SerializeField]
     private GrandmaController grandmaPrefab;
 
     [SerializeField]
     protected TextBalloon balloon;
 
+    [SerializeField]
+    private TextBalloonString[] texts;
+
+    [SerializeField]
+    private RandomSelectionTextBalloonString backtrackStrings;
 
     private Animator animator;
     protected override void Start() 
     {
         animator = GetComponent<Animator>();
-
+        textIndex = 0;
     }
 
     public override void ResetGrandma(bool isRespawn)
@@ -28,6 +35,26 @@ public class AnimTutorialGrandmother : IGrandmaController
         animator = GetComponent<Animator>();
         animator.Rebind();
         animator.Update(0f);
+        textIndex = 0;
+    }
+    public virtual void ShowNextText()
+    {
+        ShowNextText(balloon);
+    }
+
+    public virtual void HideText()
+    {
+        balloon.HideBalloon(false);
+    }
+
+    public virtual void ShowNextText(TextBalloon balloonTarget)
+    {
+        if(texts == null || textIndex >= texts.Length)
+        {
+            return;
+        }
+        balloonTarget.ShowText(texts[textIndex]);
+        textIndex++;
     }
 
     public override void CheckLeaveRoom(Vector3 goalPos, System.Action callback)
@@ -74,6 +101,9 @@ public class AnimTutorialGrandmother : IGrandmaController
 
     public override void OnBacktracking()
     {
-
+        if(balloon.IsLeavingOrHidden && backtrackStrings != null)
+        {
+            balloon.ShowText(backtrackStrings.GetRandomSelection());
+        }
     }
 }

@@ -9,27 +9,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1904556616963552331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e5a67ec12ce144e9ef7a50537f289d, type: 3}
+  m_Script: {fileID: 11500000, guid: fb5bee2ed6665de438738bf1535c1e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isBlocking: 1
   allowsStand: 1
+  isRoomStatic: 1
   grandmaPrefab: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
   balloon: {fileID: 1904556618853528463}
-  narrativeText:
-    textString: The bush grew wild this year...
+  texts:
+  - textString: We're finally climbing the Serra...
+    speedEnum: 0
+  - textString: Nana did this at your age too!
     speedEnum: 2
-  tutorialText:
-    textString: Here, take this.
-    speedEnum: 2
-  tutorialText2:
-    textString: CAREFUL! Its very sharp!
+  - textString: Still so beautiful....
+    speedEnum: 0
+  - textString: HEYYY!!!
     speedEnum: 1
-  tutorialLabel: Press 'E' to cut
-  tutorialStringVar: {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}
-  player: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
-  canCut: {fileID: 11400000, guid: 73a25255c91c4b5459bf872b896d80f9, type: 2}
-  moveSpeed: 3
+  - textString: How about a game!!!
+    speedEnum: 1
+  - textString: I'll close my eyes and you'll call me!
+    speedEnum: 2
+  - textString: Ready!?
+    speedEnum: 1
+  - textString: GOOO!!
+    speedEnum: 1
+  backtrackStrings: {fileID: 0}
+  nextGrandma: {fileID: 4558548733758745860, guid: a268080aa0a336647abcad4229f21284, type: 3}
 --- !u!1001 &3835204248656581779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,12 +97,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3411258837305778392, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_Name
-      value: GrannyKnifeTutorial
+      value: GrannyThrowTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 7537704721399866278, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7e4d9919debbc2142b34bd941ec40f30, type: 2}
+      objectReference: {fileID: 9100000, guid: a0a5de0673e62e345b9e8fd516fbb46a, type: 2}
     m_RemovedComponents:
     - {fileID: 4082259820462934737, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 199a494a97501264d87d97fdae1657e1, type: 3}

@@ -53,6 +53,10 @@ public class TargetMover : MonoBehaviour
     private void OnStateChange(CharacterState oldVal, CharacterState newVal)
     {
         gameObject.SetActive(newVal == CharacterState.Throwing);
+        if(!gameObject.activeInHierarchy)
+        {
+            return;
+        }
         
         Vector2 resetPos = (Vector2)grandmaVar.Value.transform.position;
         transform.position = (Vector3) resetPos + Vector3.up * transform.position.z;

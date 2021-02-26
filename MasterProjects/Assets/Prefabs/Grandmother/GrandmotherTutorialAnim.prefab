@@ -33,9 +33,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking: 1
   allowsStand: 1
-  grandmaPrefab: {fileID: 4082259820462934737}
-  characterLeavingRoomStrings: {fileID: 0}
+  isRoomStatic: 1
+  grandmaPrefab: {fileID: 0}
   balloon: {fileID: 3411258837051418396}
+  texts: []
+  backtrackStrings: {fileID: 11400000, guid: 985f210099e32d2478d4332059b6b771, type: 2}
 --- !u!1001 &1158566659506228679
 PrefabInstance:
   m_ObjectHideFlags: 0

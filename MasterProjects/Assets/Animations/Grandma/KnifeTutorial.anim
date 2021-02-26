@@ -276,14 +276,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.15
-    functionName: ShowNarrativeText
+    functionName: ShowNextText
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 3.9333334
-    functionName: ShowTutText
+    functionName: ShowNextText
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
