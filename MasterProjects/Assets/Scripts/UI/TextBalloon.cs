@@ -20,7 +20,7 @@ public class TextBalloon : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI label;
 
-    private RectTransform rectTransform;
+    protected RectTransform rectTransform;
 
     [SerializeField]
     private float remainTimePerLetter;
@@ -59,7 +59,7 @@ public class TextBalloon : MonoBehaviour
 
     private bool canInterruptOngoing = true;
 
-    private void Start() 
+    protected virtual void Start() 
     {
         GetComponents();
         isShowing = false;
@@ -129,7 +129,7 @@ public class TextBalloon : MonoBehaviour
         GetComponents();
         if(!instant)
         {
-            rectTransform.sizeDelta = minSize;
+            UpdateRectSize(minSize);
             isShowing = true;
             currentBalloonSpeed.Value = textSpeed;
             stringVar.Value = textToShow;
@@ -142,7 +142,7 @@ public class TextBalloon : MonoBehaviour
         }
     }
 
-    private void OnGUI() 
+    protected virtual void OnGUI() 
     {     
         if(checkedString.CompareTo(label.text) != 0)
         {
@@ -165,10 +165,11 @@ public class TextBalloon : MonoBehaviour
                                  / (float)(charactersToMaxSize -minCharactersToIncrease));
 
         float height = newVal.Length > charactersToMaxSize? label.preferredHeight : minSize.y;
-
+        
         Vector2 lerpedSize = new Vector2(Mathf.Lerp(minSize.x, maxSize.x, ratio),
                                          Mathf.Clamp(height, minSize.y, maxSize.y));
-        rectTransform.sizeDelta = lerpedSize;
+
+        UpdateRectSize(lerpedSize);
 
         checkedString = label.text;
     }
@@ -238,5 +239,10 @@ public class TextBalloon : MonoBehaviour
         
         leaveRoutine = StopAfterDelay(stringlen);
         StartCoroutine(leaveRoutine);
+    }
+
+    protected virtual void UpdateRectSize(Vector2 size)
+    {
+        rectTransform.sizeDelta = size;
     }
 }

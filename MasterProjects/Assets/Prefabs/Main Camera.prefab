@@ -148,6 +148,7 @@ MonoBehaviour:
   grid: {fileID: 0}
   lookAtGridEntity: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
   pixelCamera: {fileID: 4007621154695231750}
+  cam: {fileID: 4007621154695231744}
   shakeDuration: 0.5
   shakeMagnitude: 0.5
   shakeDampingSpeed: 0.1

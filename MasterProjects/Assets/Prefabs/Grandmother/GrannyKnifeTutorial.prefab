@@ -26,7 +26,7 @@ MonoBehaviour:
     speedEnum: 1
   backtrackStrings: {fileID: 11400000, guid: 985f210099e32d2478d4332059b6b771, type: 2}
   tutorialLabel: Press 'E' to cut
-  tutorialStringVar: {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}
+  tutorialStringVar: {fileID: 11400000, guid: 3a006e3edaa49f84a82fd0f9220e8b13, type: 2}
   player: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
   canCut: {fileID: 11400000, guid: 73a25255c91c4b5459bf872b896d80f9, type: 2}
   moveSpeed: 3
@@ -93,6 +93,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrannyKnifeTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 3411258837953988260, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 3220521
+      objectReference: {fileID: 0}
     - target: {fileID: 7537704721399866278, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_Controller
       value: 
@@ -113,6 +117,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf307652347c3c24caf021e573112f71, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c5b72f202f568942a1b40df33d26055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

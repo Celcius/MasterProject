@@ -42,6 +42,9 @@ public class CameraMover : MonoBehaviour
     [SerializeField]
     private PixelPerfectCamera pixelCamera;
 
+    [SerializeField]
+    private Camera cam;
+
     private Vector2Int playerRoom;
 
     [SerializeField]
@@ -52,6 +55,19 @@ public class CameraMover : MonoBehaviour
     private float shakeDampingSpeed = 0.1f;
     
     public bool TrackingEntity = true;
+
+    public Bounds ViewportBounds 
+    {
+        get 
+        {
+            if(cam == null || pixelCamera == null)
+            {
+                return default(Bounds);
+            }
+
+           return UnityEngineUtils.CameraOrthographicViewportBounds(cam);
+        }
+    }
 
     public Vector2 RefResolution 
     {
