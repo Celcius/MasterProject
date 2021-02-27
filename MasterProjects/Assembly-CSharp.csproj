@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\UI\TutorialLabel.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterStateVar.cs" />
      <Compile Include="Assets\Scripts\Map\InvisibleEntitySpawnTile.cs" />
+     <Compile Include="Assets\Scripts\UI\CameraBoundTextBalloon.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeathGrandmother.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GameConstants.cs" />
      <Compile Include="Assets\Scripts\Map\Crack.cs" />
@@ -107,7 +108,7 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeadGrandmaController.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\UI\CameraBoundTextBalloon.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\GrannyHi5.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

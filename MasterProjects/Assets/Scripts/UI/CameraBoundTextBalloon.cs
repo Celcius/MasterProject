@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CameraBoundTextBalloon : TextBalloon
 {
-    private CameraMover mover;
+    private CameraMover mover = null;
     private Vector3 localPos;
 
     [SerializeField]
@@ -28,6 +28,7 @@ public class CameraBoundTextBalloon : TextBalloon
 
     float minHOffset;
     float maxHOffset;
+    bool hasStarted = false;
     protected override void Start() 
     {
         mover = CameraMover.Instance;
@@ -35,6 +36,7 @@ public class CameraBoundTextBalloon : TextBalloon
         localPos = rectTransform.localPosition;
         minHOffset = minAnchor.localPosition.x;
         maxHOffset = maxAnchor.localPosition.x;
+        hasStarted = true;
     }    
 
     private void LateUpdate() 
@@ -44,7 +46,10 @@ public class CameraBoundTextBalloon : TextBalloon
 
     private void ClampCameraPos(Vector2 size)
     {
-
+        if(!hasStarted)
+        {
+            return; 
+        }
         Vector2 minPos = (Vector2)localPos - size /2.0f;
         Vector2 maxPos = (Vector2)localPos + size /2.0f;
         

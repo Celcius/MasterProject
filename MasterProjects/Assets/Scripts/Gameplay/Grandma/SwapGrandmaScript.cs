@@ -75,6 +75,7 @@ public class SwapGrandmaScript : PlayerCollideable
         Destroy(grandma.Value.gameObject);
         IGrandmaController spawned = Instantiate<IGrandmaController>(specialGrandmaController);
         spawned.transform.position = pos;
+        grandma.Value = spawned;
         hasSpawnedOnce = true;
     }
 

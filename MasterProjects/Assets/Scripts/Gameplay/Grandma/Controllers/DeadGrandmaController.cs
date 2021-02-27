@@ -16,7 +16,7 @@ public class DeadGrandmaController : IGrandmaController
         callback?.Invoke();
     }
 
-    public override void GrabCharacter(CharacterMovement character) {}
+    public override bool GrabCharacter(CharacterMovement character) { return false; }
     public override void ReleaseCharacter(CharacterMovement character, bool throwChar) {}
 
     public override void OnBacktracking(){}

@@ -12,7 +12,7 @@ public abstract class IGrandmaController : GridEntity
 
     public abstract void CheckLeaveRoom(Vector3 goalPos, System.Action callback);
 
-    public abstract void GrabCharacter(CharacterMovement character);
+    public abstract bool GrabCharacter(CharacterMovement character);
     public abstract void ReleaseCharacter(CharacterMovement character, bool throwChar);
 
     public abstract void OnBacktracking();

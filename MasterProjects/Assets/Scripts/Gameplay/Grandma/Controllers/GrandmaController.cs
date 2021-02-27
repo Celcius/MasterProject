@@ -170,7 +170,7 @@ public class GrandmaController : IGrandmaController
         }
     }
 
-    public override void GrabCharacter(CharacterMovement character)
+    public override bool GrabCharacter(CharacterMovement character)
     {
         physicalCollider.enabled = false;
         SetState(GrandmaStateEnum.Idle);
@@ -178,6 +178,7 @@ public class GrandmaController : IGrandmaController
         character.transform.position = throwAnchor.position;
 
         balloon.ShowText(grabStrings.GetRandomSelection());
+        return true;
     }
 
     public override void ReleaseCharacter(CharacterMovement character, bool throwChar)
@@ -275,6 +276,37 @@ public class GrandmaController : IGrandmaController
         }
 
         return path;
+    }
+
+    public IEnumerator SimpleWalkRoutine(Vector2Int[] path, float speed, Action callback)
+    {
+        yield return SimpleWalkRoutine(path, speed, callback, transform);
+    }
+    
+    public IEnumerator SimpleWalkRoutine(Vector2Int[] path, float speed, Action callback, Transform transformToMove)
+    {   
+        if(path == null || path.Length == 0)
+        {
+            callback?.Invoke();
+            yield break;
+        }
+
+        foreach(Vector2Int point in path)
+        {
+            Vector3 worldPos = CameraMover.WorldPosForGridPos((Vector3Int)point, transformToMove.position.z);
+            Vector2 dir = (worldPos - transformToMove.position).normalized;
+            float dist = Vector2.Distance(worldPos, transformToMove.position);
+            
+            while(Time.deltaTime * speed <= dist)
+            {
+                yield return new WaitForEndOfFrame();
+                float delta = speed * Time.deltaTime;
+                transformToMove.position += (Vector3)dir * delta;
+                dist -= delta;
+            }
+            transformToMove.position = worldPos;
+        }
+        callback?.Invoke();
     }
 
     public void SetState(GrandmaStateEnum state)

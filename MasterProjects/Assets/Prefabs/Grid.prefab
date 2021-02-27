@@ -293,13 +293,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4d82b38405e2c4a91212adad57abb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
-  specialGrandmaController: {fileID: 7403956589826388123, guid: d1b927f4da938f443bfa9c82dc4a13e0, type: 3}
+  specialGrandmaController: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
   defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
   resetPos: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
-  SpawnOnResetPos: 1
+  SpawnOnResetPos: 0
   OncePerRoom: 1
-  roomPos: {x: 0, y: 2}
+  roomPos: {x: -1, y: 2}
   roomHandler: {fileID: 0}
 --- !u!1 &2867743506709551177
 GameObject:
@@ -418,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4d82b38405e2c4a91212adad57abb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   specialGrandmaController: {fileID: 1021081772920121449, guid: 16e872293a536ad44b0646dc01e519c8, type: 3}
   defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
@@ -595,6 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4d82b38405e2c4a91212adad57abb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   specialGrandmaController: {fileID: 6291301375783213114, guid: 776d86da868dd0d48b0db149c34a2026, type: 3}
   defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
@@ -673,6 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4d82b38405e2c4a91212adad57abb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   specialGrandmaController: {fileID: 7403956589826388123, guid: 31b43784c1b735347a3edc943125bbee, type: 3}
   defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
@@ -824,6 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4d82b38405e2c4a91212adad57abb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   specialGrandmaController: {fileID: 7403956589826388123, guid: a5509b219a157204c9ce68bbad7457f1, type: 3}
   defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
@@ -902,6 +907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4d82b38405e2c4a91212adad57abb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   specialGrandmaController: {fileID: 7403956589826388123, guid: 135cbff52cd2dd64e8059d93bb4bfa26, type: 3}
   defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
@@ -980,6 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4d82b38405e2c4a91212adad57abb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   specialGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
   defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
@@ -1131,6 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4d82b38405e2c4a91212adad57abb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   grandma: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
   specialGrandmaController: {fileID: 7403956589826388123, guid: 432fa0f4c33dfd24b9c3886104057726, type: 3}
   defaultGrandmaController: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}

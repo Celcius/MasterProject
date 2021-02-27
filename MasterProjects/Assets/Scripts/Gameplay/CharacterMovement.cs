@@ -344,11 +344,15 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnGrab()
     {
-        isGrabbed = true;
-        movingDir = movingDir = Vector2.down;
-        grandmaScriptVar.Value.GrabCharacter(this);
-        DisableColliders();
-        SetCharacterState(CharacterState.Throwing);
+        bool didGrab = grandmaScriptVar.Value.GrabCharacter(this);
+        if(didGrab)
+        {
+            isGrabbed = true;
+            movingDir = movingDir = Vector2.down;
+            
+            DisableColliders();
+            SetCharacterState(CharacterState.Throwing);
+        }
     }
 
     private void OnRelease(bool isThrow)

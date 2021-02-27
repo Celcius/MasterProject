@@ -68,7 +68,7 @@ public class AnimTutorialGrandmother : IGrandmaController
         base.OnDestroy();    
     }
 
-    public override void GrabCharacter(CharacterMovement character) {}
+    public override bool GrabCharacter(CharacterMovement character) { return false; }
 
     public override void ReleaseCharacter(CharacterMovement character, bool throwChar) {}
 

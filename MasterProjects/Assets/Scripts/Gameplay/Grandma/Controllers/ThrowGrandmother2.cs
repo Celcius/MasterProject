@@ -103,16 +103,17 @@ public class ThrowGrandmother2 : GrandmaController
     }
 
     [SerializeField]
-    public override void GrabCharacter(CharacterMovement character)
+    public override bool GrabCharacter(CharacterMovement character)
     {
         
         ShowTutString(1);
 
-        base.GrabCharacter(character);
+        bool didGrab = base.GrabCharacter(character);
         if(timesThrown < timesToThrow)
         {
             ShowBalloonStringByInteraction(onGrabTexts);
         }
+        return didGrab;
     }
 
     public override void OnBacktracking()
