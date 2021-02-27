@@ -180,9 +180,7 @@ public class GrannyHi5 : GrandmaController
         isAcceptingInput.Value = false;
         character.DisableColliders();
 
-        Vector2Int startGridPos = (Vector2Int)CameraMover.GridPosForWorldPos(character.transform.position);
-        Vector2Int charGridPos = (Vector2Int)CameraMover.GridPosForWorldPos(characterGoalPos);
-        Vector2Int[]path = GetPath(startGridPos, charGridPos, false);
+        Vector3[]path = new Vector3[] {character.transform.position, characterGoalPos};
 
         interactRoutine = SimpleWalkRoutine(path, speed, OnPlayerReach, character.transform);
         StartCoroutine(interactRoutine);

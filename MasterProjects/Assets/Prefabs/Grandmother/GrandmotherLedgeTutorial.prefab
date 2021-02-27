@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking: 1
   allowsStand: 1
-  isRoomStatic: 1
+  isRoomStatic: 0
   grandmaPrefab: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
   balloon: {fileID: 1904556618853528463}
   texts:
@@ -29,21 +29,6 @@ MonoBehaviour:
   - textString: My old shins...
     speedEnum: 0
   backtrackStrings: {fileID: 0}
-  narrativeText:
-    textString: Over here!
-    speedEnum: 2
-  tutorialText:
-    textString: Careful going down ledges!
-    speedEnum: 2
-  tutorialText2:
-    textString: VERY CAREFUL!!!
-    speedEnum: 1
-  dropDownText1:
-    textString: ACK!!!
-    speedEnum: 1
-  dropDownText2:
-    textString: My old shins...
-    speedEnum: 0
 --- !u!1001 &3835204248656581779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrandmotherLedgeTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 3411258837953988260, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 3220521
+      objectReference: {fileID: 0}
     - target: {fileID: 7537704721399866278, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_Controller
       value: 
@@ -127,6 +116,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf307652347c3c24caf021e573112f71, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c5b72f202f568942a1b40df33d26055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

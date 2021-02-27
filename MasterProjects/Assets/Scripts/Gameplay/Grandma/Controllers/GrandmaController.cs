@@ -18,7 +18,7 @@ public class GrandmaController : IGrandmaController
     private Collider2D physicalCollider;
 
     [SerializeField]
-    private GridEntityVar characterVar;
+    protected GridEntityVar characterVar;
 
     [SerializeField]
     private Vector2Var targetPosVar;
@@ -154,7 +154,7 @@ public class GrandmaController : IGrandmaController
                == CameraMover.GridPosForWorldPos(transform.position);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == GameConstants.PLAYER_TAG)
         {
@@ -162,7 +162,7 @@ public class GrandmaController : IGrandmaController
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) 
+    protected virtual void OnTriggerExit2D(Collider2D other) 
     {
         if(other.tag == GameConstants.PLAYER_TAG)
         {
@@ -199,6 +199,14 @@ public class GrandmaController : IGrandmaController
         physicalCollider.enabled = true;
     }
 
+    protected Vector2Int[] GetUnoccupiedAdjacent(bool ignoreDiagonals = false)
+    {
+        Predicate<GridEntity> ignoreself = (GridEntity entity) 
+        => { return entity.transform == transform; };
+
+        return roomController.GetUnoccupiedNeighbours((Vector2Int)this.GridPos, ignoreself, ignoreDiagonals);
+    }
+
     private Vector3 GetEmptyAdjacentPos()
     {
         Vector2 cellSize = CameraMover.Instance.CellSize;
@@ -206,7 +214,7 @@ public class GrandmaController : IGrandmaController
         Predicate<GridEntity> ignoreself = (GridEntity entity) 
                 => { return entity.transform == transform; };
 
-        Vector2Int[] positions = roomController.GetUnoccupiedNeighbours((Vector2Int)this.GridPos, ignoreself, false);
+        Vector2Int[] positions = GetUnoccupiedAdjacent();
         List<Vector2Int> availPos = new List<Vector2Int>();
         List<Vector2Int> cracks = new List<Vector2Int>();
 
@@ -280,10 +288,22 @@ public class GrandmaController : IGrandmaController
 
     public IEnumerator SimpleWalkRoutine(Vector2Int[] path, float speed, Action callback)
     {
-        yield return SimpleWalkRoutine(path, speed, callback, transform);
+        List<Vector3> worldPath = new List<Vector3>();
+        
+        foreach(Vector2Int pos in path)
+        {
+            Vector3 worldPos = CameraMover.WorldPosForGridPos((Vector3Int)pos, 0);
+            worldPath.Add(worldPos);
+        }
+        yield return SimpleWalkRoutine(worldPath.ToArray(), speed, callback, transform);
     }
     
-    public IEnumerator SimpleWalkRoutine(Vector2Int[] path, float speed, Action callback, Transform transformToMove)
+    public IEnumerator SimpleWalkRoutine(Vector3[] path, float speed, Action callback)
+    {
+        yield return SimpleWalkRoutine(path, speed, callback, transform);
+    }
+
+    public IEnumerator SimpleWalkRoutine(Vector3[] path, float speed, Action callback, Transform transformToMove)
     {   
         if(path == null || path.Length == 0)
         {
@@ -291,9 +311,8 @@ public class GrandmaController : IGrandmaController
             yield break;
         }
 
-        foreach(Vector2Int point in path)
+        foreach(Vector3 worldPos in path)
         {
-            Vector3 worldPos = CameraMover.WorldPosForGridPos((Vector3Int)point, transformToMove.position.z);
             Vector2 dir = (worldPos - transformToMove.position).normalized;
             float dist = Vector2.Distance(worldPos, transformToMove.position);
             
@@ -371,12 +390,14 @@ public class GrandmaController : IGrandmaController
     public override void OnRoomEnter()
     {
         base.OnRoomEnter();
+        Balloon.HideBalloon(true);
         ResetGrandma(false);
         currentRoom = CameraMover.RoomPosForGridPos(GridPos);
     }
 
     public override void OnRoomLeave() 
     {
+        Balloon.HideBalloon(true);
         Vector2Int newRoom = CameraMover.RoomPosForGridPos(characterVar.Value.GridPos);
         if(currentRoom == newRoom)
         {

@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateIdle.cs" />
      <Compile Include="Assets\Scripts\Map\LandingTile.cs" />
      <Compile Include="Assets\Scripts\Gameplay\TargetMover.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\GrannyHi5.cs" />
      <Compile Include="Assets\Scripts\Input\IInputController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\JumpController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\LedgeTutorialGrandmother.cs" />
@@ -108,7 +109,7 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeadGrandmaController.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\GrannyHi5.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\StartGrandmother.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

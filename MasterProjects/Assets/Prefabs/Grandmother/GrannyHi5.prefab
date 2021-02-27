@@ -4844,7 +4844,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1786817933
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9714,7 +9714,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1786817933
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9863,7 +9863,7 @@ MonoBehaviour:
     speedEnum: 2
   - textString: Which means...
     speedEnum: 0
-  - textString: HIGH FIVE TIME!!!
+  - textString: HIGH FIVE TIME!
     speedEnum: 1
   onArriveDuration:
   - 3

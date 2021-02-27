@@ -39,6 +39,8 @@ public class RestartController : MonoBehaviour
     {
         image = GetComponent<Image>();
         characterVar.OnChange += OnChange;
+        fadeRoutine = FadeIn(true, 0.5f);
+        StartCoroutine(fadeRoutine);
     }
 
     private void OnDestroy() 
@@ -96,15 +98,21 @@ public class RestartController : MonoBehaviour
         waitOnInput = true;
         isAcceptingInput.Value = false;
     }
-
-    private IEnumerator FadeIn()
+    
+    private IEnumerator FadeIn(bool restartAlpha = false, float timeDilation = 1.0f)
     {
         Color color = image.color;
+        if(restartAlpha)
+        {
+            color.a = 1.0f;
+            image.color = color;
+        }
         float ratio = color.a;
+        
         while(ratio >= 0)
         {
             yield return new WaitForEndOfFrame();
-            ratio = Mathf.Max(0, ratio - returnSpeed * Time.deltaTime);
+            ratio = Mathf.Max(0, ratio - returnSpeed * Time.deltaTime * timeDilation);
 
             if(waitOnInput && ratio <= activateInputRatio)
             {

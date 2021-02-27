@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking: 1
   allowsStand: 1
-  isRoomStatic: 1
+  isRoomStatic: 0
   grandmaPrefab: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
   balloon: {fileID: 1904556618853528463}
   texts:

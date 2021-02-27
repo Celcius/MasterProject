@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &934580905528233912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904556616963552331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a018f6a2918ad843ac995748e00255f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
 --- !u!114 &7403956589826388123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,8 +27,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking: 1
   allowsStand: 1
-  grandmaPrefab: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
+  isRoomStatic: 0
+  isOnGrandmaVar: {fileID: 11400000, guid: a01dcbdc5741dcd4a9adec501673eb2b, type: 2}
+  characterStateVar: {fileID: 11400000, guid: 1dcd4964f0725b84e91c7749553cc9ef, type: 2}
+  physicalCollider: {fileID: 435929905726128442}
+  characterVar: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
+  targetPosVar: {fileID: 11400000, guid: 6c3eb35a0815ff44bb6038f7c65aeb44, type: 2}
+  grandmaMoveTarget: {fileID: 11400000, guid: 818af81053fa77040ab4a76e110d0f1d, type: 2}
+  throwAnchor: {fileID: 1904556618401248586}
+  representation: {fileID: 1904556617423326615}
+  canWalk: {fileID: 11400000, guid: ff96b724749a7ad4f86740d8558d7418, type: 2}
   balloon: {fileID: 1904556618853528463}
+  grabStrings: {fileID: 0}
+  throwStrings: {fileID: 0}
+  cancelThrowStrings: {fileID: 0}
+  failLeaveStrings: {fileID: 11400000, guid: 629725061d20a7f489cd2f031c96a352, type: 2}
+  successLeaveStrings: {fileID: 0}
+  backtrackStrings: {fileID: 11400000, guid: 629725061d20a7f489cd2f031c96a352, type: 2}
+  roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
+  maxDropDistance: 0.5
+  respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
+  referencePositions: {fileID: 11400000, guid: 73ae8f5357ddc604890aafdacdefe186, type: 2}
+  leaveString: {fileID: 11400000, guid: 629725061d20a7f489cd2f031c96a352, type: 2}
+  startText:
+    textString: Tag!
+    speedEnum: 1
+  reachStartText:
+    textString: You're It!!!
+    speedEnum: 2
+  finishTexts:
+  - textString: 'Ok.. Ok.. '
+    speedEnum: 0
+  - textString: You caught me...
+    speedEnum: 0
+  - textString: Next we'll need to go through a cave.
+    speedEnum: 2
+  - textString: Let's go!
+    speedEnum: 2
+  moveStrings: {fileID: 11400000, guid: c238501ecede00046a371cebfe3329a0, type: 2}
+  finishTextDuration: 2.5
+  moveSpeed: 9
+  startMoveSpeed: 7.5
+  grandmaPrefab: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
 --- !u!1001 &3835204248656581779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79,16 +132,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrannyChase
       objectReference: {fileID: 0}
+    - target: {fileID: 3411258837953988260, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 3220521
+      objectReference: {fileID: 0}
+    - target: {fileID: 5812084106567911440, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5812084106567911440, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7537704721399866278, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 859e25ee1c7fa5c4fa2b7601625d0e39, type: 2}
     m_RemovedComponents:
     - {fileID: 4082259820462934737, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
+    - {fileID: 7537704721399866278, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
 --- !u!1 &1904556616963552331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3411258837305778392, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
+  m_PrefabInstance: {fileID: 3835204248656581779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1904556617423326615 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3411258837768706308, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
+  m_PrefabInstance: {fileID: 3835204248656581779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &435929905726128442 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3690095168804361641, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
+  m_PrefabInstance: {fileID: 3835204248656581779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1904556618401248586 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3411258836530651609, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
   m_PrefabInstance: {fileID: 3835204248656581779}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1904556618853528463 stripped
@@ -99,6 +180,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf307652347c3c24caf021e573112f71, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c5b72f202f568942a1b40df33d26055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
