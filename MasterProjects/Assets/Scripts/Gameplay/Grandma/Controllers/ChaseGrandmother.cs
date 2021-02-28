@@ -202,7 +202,7 @@ public class ChaseGrandmother : GrandmaController
 
     public override void CheckLeaveRoom(Vector3 goalPos, System.Action callback)
     {
-        if(hasStarted)
+        if(hasStarted && Balloon.IsLeavingOrHidden)
         {
             Balloon.ShowText(leaveString.GetRandomSelection());
         }

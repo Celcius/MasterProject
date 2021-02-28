@@ -8,7 +8,7 @@ using AmoaebaUtils;
 public class GrandmaController : IGrandmaController
 {
     [SerializeField]
-    private BoolVar isOnGrandmaVar;
+    protected BoolVar isOnGrandmaVar;
     public override bool IsOnGrandma => isOnGrandmaVar.Value;
 
     [SerializeField]
@@ -177,7 +177,11 @@ public class GrandmaController : IGrandmaController
         character.transform.parent = representation.transform;
         character.transform.position = throwAnchor.position;
 
-        balloon.ShowText(grabStrings.GetRandomSelection());
+        if(grabStrings != null)
+        {
+            balloon.ShowText(grabStrings.GetRandomSelection());
+        }
+        
         return true;
     }
 
@@ -188,13 +192,20 @@ public class GrandmaController : IGrandmaController
         if(throwChar)
         {
             character.JumpTo((Vector3)targetPosVar.Value + character.transform.position.z * Vector3.up);
-            balloon.ShowText(throwStrings.GetRandomSelection());
+            if(throwStrings != null)
+            {
+                balloon.ShowText(throwStrings.GetRandomSelection());
+            }
         }
         else
         {
             character.transform.position  = GetEmptyAdjacentPos();
 
-            balloon.ShowText(cancelThrowStrings.GetRandomSelection());
+            if(cancelThrowStrings != null)
+            {
+                balloon.ShowText(cancelThrowStrings.GetRandomSelection());
+            }
+
         }
         physicalCollider.enabled = true;
     }
@@ -421,13 +432,17 @@ public class GrandmaController : IGrandmaController
         if(gridGoalPos == GridPos || path != null && path.Length > 0)
         {
             SetMoveTarget(clampedworldPos);
-            balloon.ShowText(successLeaveStrings.GetRandomSelection());
+            if(successLeaveStrings != null)
+            {
+                balloon.ShowText(successLeaveStrings.GetRandomSelection());
+            }
+            
             onNewRoomCallback = callback;
             SetState(GrandmaStateEnum.MovingToNext);
         }
         else
         {
-            if(balloon.IsLeavingOrHidden)
+            if(balloon.IsLeavingOrHidden && failLeaveStrings != null)
             {
                 balloon.ShowText(failLeaveStrings.GetRandomSelection());
             }
@@ -444,7 +459,7 @@ public class GrandmaController : IGrandmaController
 
     public override void OnBacktracking()
     {
-        if(balloon.IsLeavingOrHidden)
+        if(balloon.IsLeavingOrHidden && backtrackStrings != null)
         {
             balloon.ShowText(backtrackStrings.GetRandomSelection());
         }

@@ -27,6 +27,9 @@ public class RoomJumper : MonoBehaviour
     [SerializeField]
     private GrandmaScriptVar grandmaScriptVar;
 
+    [SerializeField]
+    private TutorialLabel[] tutLabels;
+
     void Start()
     {
         moverVar.Value.OnCameraMoveEnd += OnCameraMoved;
@@ -116,6 +119,11 @@ public class RoomJumper : MonoBehaviour
         if(balloonVar.Value != null)
         {
             balloonVar.Value.HideBalloon(true);
+        }
+
+        foreach(TutorialLabel label in tutLabels)
+        {
+            label.Hide();
         }
         isAcceptingInput.Value = true;
     }

@@ -33,6 +33,8 @@ public class TargetMover : MonoBehaviour
     [SerializeField]
     private float range = 4;
 
+    public bool RemainActive = false;
+
     private void Start() 
     {
         foreach(TileBase tile in validTiles)
@@ -52,8 +54,8 @@ public class TargetMover : MonoBehaviour
 
     private void OnStateChange(CharacterState oldVal, CharacterState newVal)
     {
-        gameObject.SetActive(newVal == CharacterState.Throwing);
-        if(!gameObject.activeInHierarchy)
+        gameObject.SetActive(newVal == CharacterState.Throwing || RemainActive);
+        if(!gameObject.activeInHierarchy || oldVal == newVal)
         {
             return;
         }
@@ -80,6 +82,12 @@ public class TargetMover : MonoBehaviour
         }
 
         validThrow.Value = IsPositionValidThrow();
+    }
+
+    public void ManualUpdateTargetPosVar(Vector3 pos)
+    {
+        transform.position = pos;
+        targetPosVar.Value  = transform.position - CameraMover.Instance.CellSize/2.0f;
     }
 
 

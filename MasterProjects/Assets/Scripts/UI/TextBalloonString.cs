@@ -8,4 +8,6 @@ public struct TextBalloonString
 {
     public string textString;
     public GameConstants.BalloonSpeedEnum speedEnum;
+
+    public float duration;
 }

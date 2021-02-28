@@ -249,6 +249,10 @@ public class CameraMover : MonoBehaviour
         }
 
         transform.position = GetTargetCameraPosition();
+        if(cameraShake != null)
+        {
+            StopCoroutine(cameraShake);
+        }
         cameraShake = CameraShake(duration,
                                   intensity * shakeMagnitude,
                                   damping);

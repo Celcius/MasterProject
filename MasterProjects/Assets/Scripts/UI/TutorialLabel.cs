@@ -19,9 +19,7 @@ public class TutorialLabel : MonoBehaviour
     { 
         label = GetComponent<TextMeshProUGUI>();
         tutorialLabel.OnChange += LabelChanged;
-        Color c = label.color;
-        c.a = 0;
-        label.color = c;
+        Hide();
     }
 
     private void LabelChanged(string oldVal, string newVal)
@@ -93,5 +91,10 @@ public class TutorialLabel : MonoBehaviour
         c.a = 0.0f;
         label.color = c;
         tutorialLabel.Value = "";
+        if(currentRoutine != null)
+        {
+            StopCoroutine(currentRoutine);
+            currentRoutine = null;
+        }
     }
 }
