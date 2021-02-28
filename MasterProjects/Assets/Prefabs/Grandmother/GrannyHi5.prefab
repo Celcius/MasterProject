@@ -9855,9 +9855,11 @@ MonoBehaviour:
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   maxDropDistance: 0.5
   respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
+  grandmaPrefab: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
   onMoveText:
     textString: Hey look!
     speedEnum: 0
+  minTimeToShowOnMoveText: 2
   onArrive:
   - textString: We climbed 200m!
     speedEnum: 2

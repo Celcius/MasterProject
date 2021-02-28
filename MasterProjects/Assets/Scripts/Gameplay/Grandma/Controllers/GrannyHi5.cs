@@ -8,7 +8,13 @@ public class GrannyHi5 : GrandmaController
     public override bool CanGrab => !hasHi5;
 
     [SerializeField]
+    private GrandmaController grandmaPrefab;
+
+    [SerializeField]
     private TextBalloonString onMoveText;
+
+    [SerializeField]
+    private float minTimeToShowOnMoveText = 2.0f;
 
     [SerializeField]
     private TextBalloonString[] onArrive;
@@ -58,6 +64,9 @@ public class GrannyHi5 : GrandmaController
     [SerializeField]
     private TextBalloonString onHighFiveEnd;
 
+    private float frameAtStart;
+
+
     protected override void Start() 
     {
         base.Start();
@@ -79,13 +88,14 @@ public class GrannyHi5 : GrandmaController
         GrandmaStateIdle idle = (GrandmaStateIdle)GetStateForEnum(GrandmaStateEnum.Idle);
         idle.CanMoveToPlayer = false;
 
+        frameAtStart = Time.time;
+
         interactRoutine = StartRoutine();
         StartCoroutine(interactRoutine);
     }
 
     private IEnumerator StartRoutine()
     {
-
         Vector2Int[]path = null;
         
         do 
@@ -96,10 +106,11 @@ public class GrannyHi5 : GrandmaController
         while(path == null || path.Length <= 1);
 
         
-        Balloon.ShowText(onMoveText);
+        Balloon.ShowText(onMoveText, false);
         yield return SimpleWalkRoutine(path, speed, OnReachCallback);
         
     }
+
     private void OnReachCallback()
     {
         interactRoutine = TalkRoutine();
@@ -108,6 +119,11 @@ public class GrannyHi5 : GrandmaController
 
     private IEnumerator TalkRoutine()
     {
+        while(Time.time - frameAtStart < minTimeToShowOnMoveText)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        
         for(int i = 0; i < onArrive.Length; i++)
         {
             TextBalloonString arriveStr = onArrive[i];
@@ -203,7 +219,10 @@ public class GrannyHi5 : GrandmaController
         idle.CanMoveToPlayer = true;   
         hasHi5 = true;
         isAcceptingInput.Value = true;
-        Balloon.ShowText(onHighFiveEnd, false, false);
+
+        GrandmaController grandma = Instantiate<GrandmaController>(grandmaPrefab, transform.position, transform.rotation);
+        grandma.Balloon.ShowText(onHighFiveEnd, false, false);
+        Destroy(gameObject);
     }
 
     protected override void OnDestroy()

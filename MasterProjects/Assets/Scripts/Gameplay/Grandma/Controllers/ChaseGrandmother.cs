@@ -230,14 +230,13 @@ public class ChaseGrandmother : GrandmaController
     private IEnumerator EndRoutine()
     {
         Balloon.HideBalloon(true);
-        for(int i = 0; i < finishTexts.Length-1; i++)
+        for(int i = 0; i < finishTexts.Length; i++)
         {
             Balloon.ShowText(finishTexts[i]);
             yield return new WaitForSeconds(finishTextDuration);
         }
         
         GrandmaController grandma = Instantiate<GrandmaController>(grandmaPrefab, transform.position, transform.rotation);
-        grandma.Balloon.ShowText(finishTexts[finishTexts.Length-1]);
         Destroy(this.gameObject);
     }
 
