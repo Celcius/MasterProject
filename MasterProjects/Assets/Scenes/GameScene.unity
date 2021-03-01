@@ -124480,11 +124480,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5451419466169418068, guid: 5fc7dc8e658e5f7489e50a094e1ebb18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 125.1
+      value: -47
       objectReference: {fileID: 0}
     - target: {fileID: 5451419466169418068, guid: 5fc7dc8e658e5f7489e50a094e1ebb18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 95
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5451419466169418068, guid: 5fc7dc8e658e5f7489e50a094e1ebb18, type: 3}
       propertyPath: m_LocalPosition.z
@@ -124597,6 +124597,10 @@ PrefabInstance:
       propertyPath: roomHandler
       value: 
       objectReference: {fileID: 1475523288}
+    - target: {fileID: 111404870861037247, guid: 39d573e79aadd4246b84e1487b24f44a, type: 3}
+      propertyPath: SpawnOnResetPos
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 133577266664528701, guid: 39d573e79aadd4246b84e1487b24f44a, type: 3}
       propertyPath: roomHandler
       value: 

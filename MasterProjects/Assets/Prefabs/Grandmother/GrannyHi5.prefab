@@ -9859,14 +9859,18 @@ MonoBehaviour:
   onMoveText:
     textString: Hey look!
     speedEnum: 0
+    duration: 0
   minTimeToShowOnMoveText: 2
   onArrive:
   - textString: We climbed 200m!
     speedEnum: 2
+    duration: 0
   - textString: Which means...
     speedEnum: 0
+    duration: 0
   - textString: HIGH FIVE TIME!
     speedEnum: 1
+    duration: 0
   onArriveDuration:
   - 3
   - 3
@@ -9886,6 +9890,7 @@ MonoBehaviour:
   onHighFiveEnd:
     textString: Hope you're having fun too!
     speedEnum: 0
+    duration: 0
 --- !u!1 &8436258667710610737
 GameObject:
   m_ObjectHideFlags: 0

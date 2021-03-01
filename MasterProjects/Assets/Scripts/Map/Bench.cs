@@ -40,6 +40,7 @@ public class Bench : PlayerCollideable
 
     private void Start() 
     {
+        isPlayerInRange = false;
         roomHandler = CameraMover.Instance.GetComponent<RoomHandler>();
         roomHandler.onLeave += OnRoomLeave;
         hasStartedEnd = false;
@@ -82,7 +83,7 @@ public class Bench : PlayerCollideable
             return;
         }
 
-        if(input.IsGrab())
+        if(input.IsGrab() && isPlayerInRange)
         {
             hasStartedEnd = true;
             tutVar.Value = "";
