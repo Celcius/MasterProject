@@ -47,17 +47,17 @@ AudioMixerSnapshotController:
   m_SnapshotID: 6796f2542246a7d4db213b7c01ea0bdb
   m_FloatValues:
     5b6bceb217e499440a65f01a39940480: 7659
-    82d014d2214dea84d94ebe86aaacc0af: 0
+    82d014d2214dea84d94ebe86aaacc0af: -15.421314
     ece59a341693efb4eb6aace5e9ad07aa: 0
-    19f1ca941d1b9b8468c01c4bbea6f649: 0
-    e72a87c460214f04a942c89b73a2d7cf: -51.6
-    92ae49c52be6594498b3821879004868: 18.7
-    4f0b58095fcbfd743b21d6a52094be26: 1.6029948
-    9926086957419c84194aa54ec528b558: 0.506
+    19f1ca941d1b9b8468c01c4bbea6f649: 3.9
+    e72a87c460214f04a942c89b73a2d7cf: -33.500008
+    92ae49c52be6594498b3821879004868: 21.3
+    4f0b58095fcbfd743b21d6a52094be26: 1.32
+    9926086957419c84194aa54ec528b558: 0.217
     717c91f9a6104c24ba61b7221a2ab034: 5.35
     b1db34f9638469d42a8707897d7b131f: 22000
     bc9f48ddada75b84aa341d0783dee32a: -0
-    5dac5a6ff8ad57a47abef1b5478cc39d: 0.358
+    5dac5a6ff8ad57a47abef1b5478cc39d: 0.068
   m_TransitionOverrides: {}
 --- !u!244 &-7488863458527877424
 AudioMixerEffectController:
@@ -101,26 +101,6 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: -8820465657493849220}
   m_EnableWetMix: 0
   m_Bypass: 0
---- !u!245 &-1616919739319154604
-AudioMixerSnapshotController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Reverb
-  m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 32c06e5343a3afb43a00837bb37d47cd
-  m_FloatValues:
-    82d014d2214dea84d94ebe86aaacc0af: 0
-    ece59a341693efb4eb6aace5e9ad07aa: 0
-    19f1ca941d1b9b8468c01c4bbea6f649: 0
-    e72a87c460214f04a942c89b73a2d7cf: -51.6
-    92ae49c52be6594498b3821879004868: 18.7
-    4f0b58095fcbfd743b21d6a52094be26: 1.6029948
-    9926086957419c84194aa54ec528b558: 0.506
-    bc9f48ddada75b84aa341d0783dee32a: -0
-    5dac5a6ff8ad57a47abef1b5478cc39d: 0.358
-  m_TransitionOverrides: {}
 --- !u!243 &-258108852831976869
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -153,7 +133,6 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: -8460515311603461632}
-  - {fileID: -1616919739319154604}
   m_StartSnapshot: {fileID: -8460515311603461632}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1

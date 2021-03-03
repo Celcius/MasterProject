@@ -48,7 +48,7 @@ public class SoundHelper : SerializedMonoBehaviour
         return definition.audioId;
     }
 
-    protected AudioMixerGroup GroupForTag(MixerGroupTag tag)
+    public AudioMixerGroup GroupForTag(MixerGroupTag tag)
     {
         switch(tag)
         {

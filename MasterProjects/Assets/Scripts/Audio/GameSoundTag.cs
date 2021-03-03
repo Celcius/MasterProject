@@ -4,11 +4,6 @@ using UnityEngine;
 public enum GameSoundTag
 {
     NONE,
-    MUSIC_GOLDEN_TIME,
-    MUSIC_WITHDRAWL,
-    MUSIC_COPING,
-    MUSIC_END,
-    MUSIC_CHASE,
     SFX_CRYING,
     SFX_THROW,
     SFX_LAND_LEAF,

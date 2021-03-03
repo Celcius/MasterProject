@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4590047821058076776}
   - component: {fileID: 4590047821058076790}
   - component: {fileID: 6384442227764074186}
+  - component: {fileID: 8411527631737289011}
   m_Layer: 12
   m_Name: SoundHelper
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 14
+      Data: 9
     - Name: $v
       Entry: 7
       Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
@@ -123,7 +124,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 8
+      Data: 3
     - Name: $v
       Entry: 7
       Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
@@ -147,7 +148,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 7
+      Data: 2
     - Name: $v
       Entry: 7
       Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
@@ -171,7 +172,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 11
+      Data: 6
     - Name: $v
       Entry: 7
       Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
@@ -195,7 +196,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 12
+      Data: 7
     - Name: $v
       Entry: 7
       Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
@@ -219,7 +220,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 13
+      Data: 8
     - Name: $v
       Entry: 7
       Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
@@ -243,7 +244,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 16
+      Data: 11
     - Name: $v
       Entry: 7
       Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
@@ -267,7 +268,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 15
+      Data: 10
     - Name: $v
       Entry: 7
       Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
@@ -293,3 +294,499 @@ MonoBehaviour:
       Entry: 8
       Data: 
   soundSystem: {fileID: 11400000, guid: 3d44ba72bd847c64a969dd32117518fc, type: 2}
+--- !u!114 &8411527631737289011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4590047821058076789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a411f00ead22043b7f2cd0a84e185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8300000, guid: f3c4656f059700a4fa96ae10b430f705, type: 3}
+    - {fileID: 8300000, guid: 4d464df9fd858b240b7a17fac1ff6132, type: 3}
+    - {fileID: 8300000, guid: 65b4b64f6bce3ee439a8040a0afc844e, type: 3}
+    - {fileID: 8300000, guid: ac9acae5ad663cd4194259a762787549, type: 3}
+    - {fileID: 8300000, guid: 0edd28a74a807574ca131b1528fa8222, type: 3}
+    - {fileID: 8300000, guid: 2abb4c06e6761b7459de20936075af11, type: 3}
+    - {fileID: 8300000, guid: daad3707cc0f3b1419acc5b8a614a1cf, type: 3}
+    - {fileID: 8300000, guid: 3259cf63c765d4e42b1f3f5aab55b865, type: 3}
+    - {fileID: 8300000, guid: 38e4b90980e1c064a842ef462033dd82, type: 3}
+    - {fileID: 8300000, guid: b8aeb5d2f9975b94591270b93d63fb7f, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: musicPerRoom
+      Entry: 7
+      Data: 0|MusicPlayer+RoomMusicInfo[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 24
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 0
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 2
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 1
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 0
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 3
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 3
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 3
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 3
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 4
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 4
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 4
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 4
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 0
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
+    - Name: musicStyle
+      Entry: 3
+      Data: 0
+    - Name: shouldRestartStyle
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: clips
+      Entry: 7
+      Data: 1|System.Collections.Generic.Dictionary`2[[MusicPlayer+MusicStyle, Assembly-CSharp],[UnityEngine.AudioClip[],
+        UnityEngine.AudioModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 2|System.Collections.Generic.EnumEqualityComparer`1[[MusicPlayer+MusicStyle,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 3|UnityEngine.AudioClip[], UnityEngine.AudioModule
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 4|UnityEngine.AudioClip[], UnityEngine.AudioModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 5|UnityEngine.AudioClip[], UnityEngine.AudioModule
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 6|UnityEngine.AudioClip[], UnityEngine.AudioModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 7|UnityEngine.AudioClip[], UnityEngine.AudioModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  roomHandler: {fileID: 0}
+  roomOrder: {fileID: 11400000, guid: f1f415f38d00c8c4a9a40457522171ec, type: 2}
+  soundSystem: {fileID: 11400000, guid: 3d44ba72bd847c64a969dd32117518fc, type: 2}
+  soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}

@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
-public abstract class RoomChangeHandler : MonoBehaviour
+public abstract class RoomChangeHandler : SerializedMonoBehaviour
 {
     [SerializeField]
     private RoomHandler roomHandler;
