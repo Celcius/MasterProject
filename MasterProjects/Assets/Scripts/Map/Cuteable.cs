@@ -11,12 +11,23 @@ public class Cuteable : GridEntity
     [SerializeField]
     private RoomTileController controller;
 
+    [SerializeField]
+    private GameSoundTag soundTag;
+
+    [SerializeField]
+    private SoundHelperVar soundHelperVar;
+
     public void Cut()
     {
         if(cutInstance != null)
         {
            Instantiate(cutInstance, transform.position, Quaternion.identity); 
         }
+        if(soundTag != GameSoundTag.NONE)
+        {
+            soundHelperVar.Value.PlaySound(soundTag);
+        }
+        
         gameObject.SetActive(false);
     }
 }

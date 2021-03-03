@@ -11,6 +11,9 @@ public class Boulder : Pushable
     [SerializeField]
     private Sprite[] sprites;
     private int spriteIndex = 0;
+
+    [SerializeField]
+    private SoundHelperVar soundHelperVar;
     
     void Start()
     {
@@ -31,8 +34,11 @@ public class Boulder : Pushable
             return;
         }
 
+        bool didPush = false;
+
         if(Mathf.Abs(pushMainDir.x) > 0)
         {
+            didPush = true;
             float curRot = spriteRenderer.transform.rotation.eulerAngles.z;
             curRot += pushMainDir.x * -90.0f;
             spriteRenderer.transform.rotation = Quaternion.Euler(0,0, curRot);
@@ -40,8 +46,14 @@ public class Boulder : Pushable
 
         if(Mathf.Abs(pushMainDir.y) > 0)
         {
+            didPush = true;
             spriteIndex = MathUtils.NegMod((spriteIndex + pushMainDir.y), sprites.Length);
             spriteRenderer.sprite = sprites[spriteIndex];
+        }
+
+        if(didPush)
+        {
+            soundHelperVar.Value.PlaySound(GameSoundTag.SFX_PUSH_STONE);
         }
     }
 

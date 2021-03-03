@@ -78,9 +78,11 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\LedgeTutorialGrandmother.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Events\TalkCollider.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\EndChild.cs" />
      <Compile Include="Assets\Scripts\UI\RandomSelectionTextBalloonString.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\ChaseGrandmother.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\RegisterGrandmaScriptVar.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\FollowCameraRotation.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaPathFeeder.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CallAnim.cs" />
      <Compile Include="Assets\Scripts\Map\GrandmaSpawnTile.cs" />
@@ -93,6 +95,7 @@
      <Compile Include="Assets\Scripts\Map\TilemapRegister.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\Hi5Grandmother.cs" />
      <Compile Include="Assets\Scripts\UI\RegisterTextBalloonVar.cs" />
+     <Compile Include="Assets\Scripts\Map\Bench.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateMoveToCryRandom.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GameCameraMover.cs" />
      <Compile Include="Assets\Scripts\Gameplay\ChildGridEntity.cs" />
@@ -110,9 +113,10 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeadGrandmaController.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\Map\Bench.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\EndChild.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\FollowCameraRotation.cs" />
+     <Compile Include="Assets\Scripts\Audio\SoundHelper.cs" />
+     <Compile Include="Assets\Scripts\Audio\SoundHelperVar.cs" />
+     <Compile Include="Assets\Scripts\Audio\RegisterSoundHelperVar.cs" />
+     <Compile Include="Assets\Scripts\Audio\GameSoundTag.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

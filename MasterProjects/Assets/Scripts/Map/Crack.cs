@@ -48,6 +48,9 @@ public class Crack : PlayerCollideable
 
     private bool started = false;
 
+    [SerializeField]
+    private SoundHelperVar soundHelperVar;
+
     private void OnEnable() 
     {
         roomTileController.OnRoomProcessed += UpdateHoleState;
@@ -77,7 +80,10 @@ public class Crack : PlayerCollideable
         {
             return;
         }
+        
+        soundHelperVar.Value.PlaySound(GameSoundTag.SFX_CRACK_CRUMBLE);
         SetHoleState(true);
+        
         timeSinceStart = 0;
 
     }
@@ -155,6 +161,7 @@ public class Crack : PlayerCollideable
         {
             if(!isHole)
             {
+                soundHelperVar.Value.PlaySound(GameSoundTag.SFX_CRACK_CRUMBLE);
                 SetHoleState(true);
             }
         }
@@ -172,10 +179,13 @@ public class Crack : PlayerCollideable
             isBoulder.gameObject.SetActive(false);
             if(isHole)
             {
+                soundHelperVar.Value.StopSound(GameSoundTag.SFX_PUSH_STONE);
+                soundHelperVar.Value.PlaySound(GameSoundTag.SFX_CRACK_FILL);
                 this.gameObject.SetActive(false);
             }
             else
             {
+                soundHelperVar.Value.PlaySound(GameSoundTag.SFX_CRACK_CRUMBLE);
                 SetHoleState(true);
             }
             
@@ -189,6 +199,8 @@ public class Crack : PlayerCollideable
 
     private IEnumerator FallInHole(CharacterMovement character)
     {
+        soundHelperVar.Value.PlaySound(GameSoundTag.SFX_FALL_HOLE);
+
         isAcceptingInput.Value = false;
         float maxIntensity = holePullIntensity.Evaluate(1.0f);
         while(Vector2.Distance(character.ColliderBounds.center, holeCollider.bounds.center) >= maxIntensity *  Time.deltaTime)

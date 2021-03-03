@@ -75,6 +75,7 @@ MonoBehaviour:
   - {fileID: -3063294496382507922, guid: c918840dedcb24e439c4ce77c8ecf115, type: 3}
   - {fileID: 7903948901432371799, guid: c918840dedcb24e439c4ce77c8ecf115, type: 3}
   - {fileID: -54565000435948068, guid: c918840dedcb24e439c4ce77c8ecf115, type: 3}
+  soundHelperVar: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
 --- !u!50 &9004106752846318230
 Rigidbody2D:
   serializedVersion: 4

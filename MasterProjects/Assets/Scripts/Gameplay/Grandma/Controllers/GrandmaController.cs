@@ -65,6 +65,9 @@ public class GrandmaController : IGrandmaController
     [SerializeField]
     private float maxDropDistance = 0.5f;
 
+    [SerializeField]
+    private SoundHelperVar soundHelper;
+
     private GrandmaPathFeeder grandmaPathFeeder;
 
     private Vector3 returnPos;
@@ -191,6 +194,7 @@ public class GrandmaController : IGrandmaController
         character.transform.right = Vector2.right;
         if(throwChar)
         {
+            soundHelper.Value.PlaySound(GameSoundTag.SFX_THROW);
             character.JumpTo((Vector3)targetPosVar.Value + character.transform.position.z * Vector3.up);
             if(throwStrings != null)
             {

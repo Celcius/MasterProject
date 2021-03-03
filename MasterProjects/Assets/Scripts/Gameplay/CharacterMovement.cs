@@ -102,6 +102,9 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private RoomOrder roomOrder;
 
+     [SerializeField]
+     private SoundHelperVar soundHelper;
+
     private void Start()
     {
        gridEntity = GetComponent<GridEntity>();
@@ -209,6 +212,7 @@ public class CharacterMovement : MonoBehaviour
         Transform cut = Instantiate<Transform>(cutPrefab, 
                                                representationParent.transform.position,
                                                Quaternion.identity);
+        soundHelper.Value.PlaySound(GameSoundTag.SFX_CUT);
         cut.right = facingDir.Value;
         StartCoroutine(StopMoveForTime(cutDuration));
         return true;
@@ -443,6 +447,7 @@ public class CharacterMovement : MonoBehaviour
                     {
                         EnableColliders();
                         landParticles.Play();  
+                        soundHelper.Value.PlaySound(GameSoundTag.SFX_LAND_LEAF);
                         CameraMover.Instance.ShakeCamera(0.2f, 0.2f, 1.0f);
                     });
     }

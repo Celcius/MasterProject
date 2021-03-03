@@ -1,0 +1,295 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4590047821058076789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4590047821058076776}
+  - component: {fileID: 4590047821058076790}
+  - component: {fileID: 6384442227764074186}
+  m_Layer: 12
+  m_Name: SoundHelper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4590047821058076776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4590047821058076789}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.3, y: 86.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4590047821058076790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4590047821058076789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016643e38dcfa914ebe766e1d35e4064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScriptVar: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
+--- !u!114 &6384442227764074186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4590047821058076789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453a7b2573b584847ab77a407464f366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8300000, guid: 1e7e773e640745540aeeb7fcc1c464f3, type: 3}
+    - {fileID: 8300000, guid: 5d652669a37000e48bc9ce1799aa7358, type: 3}
+    - {fileID: 8300000, guid: 1732f6462c5b3d64b84ede29c03c94d2, type: 3}
+    - {fileID: 8300000, guid: e6269d2964a7f2e40819cfede7a14ab8, type: 3}
+    - {fileID: 8300000, guid: 638b6898479b9d54d87cabf78194c54f, type: 3}
+    - {fileID: 8300000, guid: 72493ea6746bd0b4c9c73899ddca0394, type: 3}
+    - {fileID: 8300000, guid: 142b473eb614a5d44bfbed0b01c902a3, type: 3}
+    - {fileID: 8300000, guid: e950870f266bf734bbade94deb1dd497, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: gameSoundsDict
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[GameSoundTag, Assembly-CSharp],[SoundHelper+GameSoundDefinition,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[GameSoundTag, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 14
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 0
+    - Name: audioId
+      Entry: 1
+      Data: FALLHOLE
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 1
+    - Name: audioId
+      Entry: 1
+      Data: LANDLEAF
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 2
+    - Name: audioId
+      Entry: 1
+      Data: THROW
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 11
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 3
+    - Name: audioId
+      Entry: 1
+      Data: ROCKPUSH
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 12
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 4
+    - Name: audioId
+      Entry: 1
+      Data: CRACKCRUMBLE
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 13
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 5
+    - Name: audioId
+      Entry: 1
+      Data: CRACKFILL
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 16
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 6
+    - Name: audioId
+      Entry: 1
+      Data: TREECUT
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 15
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 7
+    - Name: audioId
+      Entry: 1
+      Data: CUT
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  soundSystem: {fileID: 11400000, guid: 3d44ba72bd847c64a969dd32117518fc, type: 2}

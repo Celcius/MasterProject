@@ -9,6 +9,10 @@ public static class GameConstants
     public const string PUSHABLE_TAG = "Pushable";
     public const string TILEMAP_TAG = "Tilemap";
 
+    public const string AUDIO_GROUP_MAIN_SFX = "Main Effects";
+    public const string AUDIO_GROUP_MUSIC = "Music";
+    public const string AUDIO_GROUP_BG_SFX = "BG Effects";
+
     public enum BalloonSpeedEnum
     {
         Normal = 0,

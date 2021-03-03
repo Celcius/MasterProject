@@ -168,6 +168,7 @@
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterComponentVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SceneTransitionHandler.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\TransformMovement.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SoundSystem\AudioMixerSoundSystem.cs" />
      <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\AmoaebaUtils.asmdef" />
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

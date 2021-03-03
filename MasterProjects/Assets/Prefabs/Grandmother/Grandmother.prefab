@@ -295,6 +295,7 @@ MonoBehaviour:
   backtrackStrings: {fileID: 11400000, guid: 985f210099e32d2478d4332059b6b771, type: 2}
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   maxDropDistance: 0.5
+  soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
   respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
 --- !u!114 &3980850368515856613
 MonoBehaviour:
@@ -621,6 +622,10 @@ PrefabInstance:
     - target: {fileID: 5351744947141443641, guid: eb81e606c833dd248b0801f2c03fd32e, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351744947141443643, guid: eb81e606c833dd248b0801f2c03fd32e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 3220521
       objectReference: {fileID: 0}
     - target: {fileID: 5351744947844408059, guid: eb81e606c833dd248b0801f2c03fd32e, type: 3}
       propertyPath: m_Layer
