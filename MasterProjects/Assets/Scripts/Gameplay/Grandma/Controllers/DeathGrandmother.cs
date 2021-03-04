@@ -161,13 +161,14 @@ public class DeathGrandmother : GrandmaController
         isTargetOnPlace = true;
     }
     
-    public override void CheckLeaveRoom(Vector3 goalPos, System.Action callback)
+    public override bool CheckLeaveRoom(Vector3 goalPos, System.Action callback)
     {
         if(gameObject.activeInHierarchy && !isDead)
         {
-            return;
+            return false;
         }
         callback?.Invoke();
+        return false;
     }
 
     
@@ -180,6 +181,11 @@ public class DeathGrandmother : GrandmaController
     {
         isDead = true;
         Balloon.HideBalloon(false);
+    }
+
+    public override bool IsGrandmaDead()
+    {
+        return isDead;
     }
 }
  

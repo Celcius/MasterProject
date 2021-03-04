@@ -66,7 +66,7 @@ public class GrandmaController : IGrandmaController
     private float maxDropDistance = 0.5f;
 
     [SerializeField]
-    private SoundHelperVar soundHelper;
+    protected SoundHelperVar soundHelper;
 
     private GrandmaPathFeeder grandmaPathFeeder;
 
@@ -424,7 +424,7 @@ public class GrandmaController : IGrandmaController
         GridRegistry.Instance.ReorderRoomGridObject(this, currentRoom);
     }
 
-    public override void CheckLeaveRoom(Vector3 goalPos, Action callback)
+    public override bool CheckLeaveRoom(Vector3 goalPos, Action callback)
     {
         Vector3Int gridGoalPos = CameraMover.GridPosForWorldPos(goalPos);
         Vector3 clampedworldPos = CameraMover.WorldPosForGridPos(gridGoalPos, 0);
@@ -443,6 +443,7 @@ public class GrandmaController : IGrandmaController
             
             onNewRoomCallback = callback;
             SetState(GrandmaStateEnum.MovingToNext);
+            return true;
         }
         else
         {
@@ -451,6 +452,7 @@ public class GrandmaController : IGrandmaController
                 balloon.ShowText(failLeaveStrings.GetRandomSelection());
             }
         }
+        return false;
     }
     
     public void OnReachedNewRoom(Vector2Int oldRoomPos)

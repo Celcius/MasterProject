@@ -10,10 +10,15 @@ public abstract class IGrandmaController : GridEntity
 
     public abstract void ResetGrandma(bool isRespawn);
 
-    public abstract void CheckLeaveRoom(Vector3 goalPos, System.Action callback);
+    public abstract bool CheckLeaveRoom(Vector3 goalPos, System.Action callback);
 
     public abstract bool GrabCharacter(CharacterMovement character);
     public abstract void ReleaseCharacter(CharacterMovement character, bool throwChar);
 
     public abstract void OnBacktracking();
+
+    public virtual bool IsGrandmaDead()
+    {
+        return false;
+    }
 }

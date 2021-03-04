@@ -27,6 +27,7 @@ public class SoundHelper : SerializedMonoBehaviour
 
     [SerializeField]
     private AudioMixerSoundSystem soundSystem;
+    public AudioMixerSoundSystem SoundSystem => soundSystem;
 
     protected AudioMixerGroup MusicGroup => soundSystem.GetGroup(GameConstants.AUDIO_GROUP_MUSIC);
     protected AudioMixerGroup MainEffectsGroup => soundSystem.GetGroup(GameConstants.AUDIO_GROUP_MAIN_SFX);
@@ -35,6 +36,14 @@ public class SoundHelper : SerializedMonoBehaviour
     
     public Dictionary<GameSoundTag, GameSoundDefinition> gameSoundsDict;
 
+    public bool IsPlaying(GameSoundTag tag)
+    {
+        if(!gameSoundsDict.ContainsKey(tag))
+        {
+            return false;
+        }
+        return soundSystem.IsPlaying(gameSoundsDict[tag].audioId);
+    }
 
     public string PlaySound(GameSoundTag gameSoundId)
     {

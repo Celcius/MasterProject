@@ -38,6 +38,14 @@ public class Bench : PlayerCollideable
     private float elapsed = 0;
     private Keyframe lastFrame;
 
+    [SerializeField]
+    private AudioClip endClip;
+
+    [SerializeField]
+    private SoundSystem soundSystem;
+
+    private string endClipId = "ENDCLIP";
+
     private void Start() 
     {
         isPlayerInRange = false;
@@ -58,7 +66,10 @@ public class Bench : PlayerCollideable
     protected override void PlayerTriggerEnter(CharacterMovement entity) 
     {
         isPlayerInRange = true;
-        tutVar.Value = tutString;
+        if(!hasStartedEnd)
+        {
+            tutVar.Value = tutString;
+        }
     }
 
     protected override void PlayerTriggerExit(CharacterMovement entity) 
@@ -88,6 +99,8 @@ public class Bench : PlayerCollideable
             hasStartedEnd = true;
             tutVar.Value = "";
             isAcceptingInput.Value = false;
+            tutVar.Value = "";
+            soundSystem.PlaySound(endClip, endClipId, false, null);
             
             cachedPlayer = cameraLookat.Value;
 
@@ -108,5 +121,7 @@ public class Bench : PlayerCollideable
             cameraLookat.Value = cachedPlayer;
             isAcceptingInput.Value = true;
         }
+
+        soundSystem.StopSound(endClipId);
     }
 }

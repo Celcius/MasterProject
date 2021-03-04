@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomOrder : ScriptableObject
+public class RoomCollection : ScriptableObject
 {
     [SerializeField]
     private Vector2Int[] rooms;

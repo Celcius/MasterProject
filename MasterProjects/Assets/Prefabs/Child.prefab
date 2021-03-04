@@ -5278,6 +5278,7 @@ MonoBehaviour:
   representation: {fileID: 3613890630266489466}
   roomOrder: {fileID: 11400000, guid: f1f415f38d00c8c4a9a40457522171ec, type: 2}
   soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
+  roomsToPlay: {fileID: 11400000, guid: 1af1131e78ead314f803f64f9542e05f, type: 2}
 --- !u!58 &1071111346617289370
 CircleCollider2D:
   m_ObjectHideFlags: 0

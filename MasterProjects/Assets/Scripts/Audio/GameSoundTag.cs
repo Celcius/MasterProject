@@ -19,4 +19,6 @@ public enum GameSoundTag
     SFX_HI5_CLAP,
     SFX_ROOM_COMPLETE_JINGLE,
     SFX_ROOM_INCOMPLETE_JINGLE,
+    SFX_JUMP,
+    SFX_LAND,
 }

@@ -131,16 +131,16 @@ public class ThrowGrandmother2 : GrandmaController
         }
     }
 
-    public override void CheckLeaveRoom(Vector3 goalPos, System.Action callback)
+    public override bool CheckLeaveRoom(Vector3 goalPos, System.Action callback)
     {
         if(canLeave)
         {
             callback.Invoke();
-            return;
+            return false;
         }
         if(timesThrown >= timesToThrow)
         {
-            base.CheckLeaveRoom(goalPos, callback);
+            return base.CheckLeaveRoom(goalPos, callback);
         }
         else
         {
@@ -149,6 +149,7 @@ public class ThrowGrandmother2 : GrandmaController
                 Balloon.ShowText(backtrackEyesClosed.GetRandomSelection());
             }
         }
+        return false;
     }
         
     private void ShowBalloonStringByInteraction(TextBalloonString[] strings)

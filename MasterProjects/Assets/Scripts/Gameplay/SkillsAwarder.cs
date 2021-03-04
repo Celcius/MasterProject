@@ -15,7 +15,7 @@ public class SkillsAwarder : RoomChangeHandler
     private SkillAward[] skills;
     
     [SerializeField]
-    private RoomOrder rooms;
+    private RoomCollection rooms;
 
     public override void OnRoomEnter(Vector2Int pos)
     {

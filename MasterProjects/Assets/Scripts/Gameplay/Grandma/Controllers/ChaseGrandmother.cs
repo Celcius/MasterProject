@@ -200,13 +200,13 @@ public class ChaseGrandmother : GrandmaController
         return y.distToChar.CompareTo(x.distToChar);
     }
 
-    public override void CheckLeaveRoom(Vector3 goalPos, System.Action callback)
+    public override bool CheckLeaveRoom(Vector3 goalPos, System.Action callback)
     {
         if(hasStarted && Balloon.IsLeavingOrHidden)
         {
             Balloon.ShowText(leaveString.GetRandomSelection());
         }
-        
+        return false;
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)

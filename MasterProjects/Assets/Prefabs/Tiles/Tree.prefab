@@ -52,7 +52,7 @@ MonoBehaviour:
   isRoomStatic: 1
   cutInstance: {fileID: 9197651568614300920, guid: 211e29c4fa0f72945917e8e1d49f08fe, type: 3}
   controller: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
-  soundTag: 16
+  soundTag: 11
   soundHelperVar: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
 --- !u!61 &4051769527255197116
 BoxCollider2D:

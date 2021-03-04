@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoomJumper : MonoBehaviour
 {
     [SerializeField]
-    private RoomOrder rooms;
+    private RoomCollection rooms;
 
     private int currentRoomIndex = -1;
 

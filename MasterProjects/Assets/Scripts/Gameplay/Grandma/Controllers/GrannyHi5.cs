@@ -172,7 +172,7 @@ public class GrannyHi5 : GrandmaController
         base.OnBacktracking();
     }
 
-    public override void CheckLeaveRoom(Vector3 goalPos, System.Action callback)
+    public override bool CheckLeaveRoom(Vector3 goalPos, System.Action callback)
     {
         if(!hasHi5)
         {
@@ -180,13 +180,15 @@ public class GrannyHi5 : GrandmaController
             {
                 Balloon.ShowText(leaveAttemptStrings.GetRandomSelection());
             }
-            return;
+            return false;
         }
-        base.CheckLeaveRoom(goalPos, callback);
+        return base.CheckLeaveRoom(goalPos, callback);
     }
 
     private void PerformHi5(CharacterMovement character)
     {   
+        soundHelper.Value.SoundSystem.TransitionToSnapshot("Hi5SnapShot", 0.25f);
+        soundHelper.Value.PlaySound(GameSoundTag.SFX_HI5_CLAP);
         Balloon.HideBalloon(false);
         cachedParent = character.transform.parent;
         character.transform.parent = animCharacterAnchor;
@@ -210,6 +212,7 @@ public class GrannyHi5 : GrandmaController
 
     public void HighFiveEnd()
     {
+        soundHelper.Value.SoundSystem.TransitionToSnapshot("Default", 1.0f);
         highFiveChar.EnableColliders();
         highFiveChar.transform.parent = cachedParent;
         highFiveChar = null;

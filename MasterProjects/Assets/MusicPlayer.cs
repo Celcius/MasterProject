@@ -26,7 +26,7 @@ public class MusicPlayer : RoomChangeHandler
     private RoomMusicInfo[] musicPerRoom;
 
     [SerializeField]
-    private RoomOrder roomOrder;
+    private RoomCollection roomOrder;
 
     [SerializeField]
     private AudioMixerSoundSystem soundSystem;

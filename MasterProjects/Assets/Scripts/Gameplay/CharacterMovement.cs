@@ -100,10 +100,13 @@ public class CharacterMovement : MonoBehaviour
     private CharacterRepresentation representation;
 
     [SerializeField]
-    private RoomOrder roomOrder;
+    private RoomCollection roomOrder;
 
-     [SerializeField]
-     private SoundHelperVar soundHelper;
+    [SerializeField]
+    private SoundHelperVar soundHelper;
+
+    [SerializeField]
+    private RoomCollection roomsToPlay;
 
     private void Start()
     {
@@ -315,21 +318,7 @@ public class CharacterMovement : MonoBehaviour
 
             if(curRoom != nextRoomPos)
             {
-                
-                int nextIndex = roomOrder.GetIndexOfRoom(nextRoomPos); 
-                int currentIndex = roomOrder.GetIndexOfRoom(curRoom); 
-                if(nextIndex <= currentIndex)
-                {
-                    grandmaScriptVar.Value.OnBacktracking();
-                    return;
-                }
-
-                grandmaScriptVar.Value.CheckLeaveRoom(goalPos + representationParent.localPosition, () => 
-                {
-                    Vector3Int goalGridPos = CameraMover.GridPosForWorldPos(goalPos+ representationParent.localPosition);
-                    Vector3 nextRoomWorldPos = CameraMover.WorldPosForGridPos(goalGridPos,0);
-                    body2D.MovePosition(nextRoomWorldPos);
-                });                    
+                ChangeRoom(goalPos, nextRoomPos);
             }
             else
             {
@@ -344,6 +333,58 @@ public class CharacterMovement : MonoBehaviour
             movingDir = Vector2.zero;
             SetCharacterState(input.IsGrab() && canCall? CharacterState.Calling : CharacterState.Idle);
         }      
+    }
+
+    private void ChangeRoom(Vector3 goalPos, Vector2Int nextRoomPos)
+    {
+                
+        int nextIndex = roomOrder.GetIndexOfRoom(nextRoomPos); 
+        int currentIndex = roomOrder.GetIndexOfRoom(curRoom); 
+        Vector2Int currentRoom = curRoom;
+        if(nextIndex <= currentIndex)
+        {
+            grandmaScriptVar.Value.OnBacktracking();
+            if(!soundHelper.Value.IsPlaying(GameSoundTag.SFX_ROOM_INCOMPLETE_JINGLE))
+            {
+                PlayFailureJingle();
+            }
+            
+            return;
+        }
+
+        bool isGrandmaMoving = grandmaScriptVar.Value.CheckLeaveRoom(goalPos + representationParent.localPosition, () => 
+        {
+            Vector3Int goalGridPos = CameraMover.GridPosForWorldPos(goalPos+ representationParent.localPosition);
+            Vector3 nextRoomWorldPos = CameraMover.WorldPosForGridPos(goalGridPos,0);
+            body2D.MovePosition(nextRoomWorldPos);
+        });       
+        
+        if(roomsToPlay.ContainsRoom(currentRoom))
+        {
+            if((isGrandmaMoving || grandmaScriptVar.Value.IsGrandmaDead()) && !soundHelper.Value.IsPlaying(GameSoundTag.SFX_ROOM_COMPLETE_JINGLE))
+            {
+                PlaySuccessJingle();
+            } 
+            else if(!soundHelper.Value.IsPlaying(GameSoundTag.SFX_ROOM_INCOMPLETE_JINGLE))
+            {
+                PlayFailureJingle();
+            }
+        }
+
+    }
+
+    private void PlaySuccessJingle()
+    {
+        soundHelper.Value.StopSound(GameSoundTag.SFX_ROOM_INCOMPLETE_JINGLE);
+        soundHelper.Value.StopSound(GameSoundTag.SFX_ROOM_COMPLETE_JINGLE);
+        soundHelper.Value.PlaySound(GameSoundTag.SFX_ROOM_COMPLETE_JINGLE);
+    }
+
+    private void PlayFailureJingle()
+    {
+        soundHelper.Value.StopSound(GameSoundTag.SFX_ROOM_INCOMPLETE_JINGLE);
+        soundHelper.Value.StopSound(GameSoundTag.SFX_ROOM_COMPLETE_JINGLE);
+        soundHelper.Value.PlaySound(GameSoundTag.SFX_ROOM_INCOMPLETE_JINGLE);
     }
 
     public void OnGrab(bool changeState = true)
@@ -454,10 +495,12 @@ public class CharacterMovement : MonoBehaviour
 
     public void DropdownTo(Vector3 pos)
     {
+        soundHelper.Value.PlaySound(GameSoundTag.SFX_JUMP);
         PerformJump(dropdownJumpController, 
                     pos,
                     ()=> 
                     {
+                        soundHelper.Value.PlaySound(GameSoundTag.SFX_LAND);
                         TileBase tile = roomController.GetTileForWorldPos(pos);
                         if(IsLandingTile(tile))
                         {

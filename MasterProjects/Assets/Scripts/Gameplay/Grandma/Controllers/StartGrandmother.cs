@@ -19,10 +19,11 @@ public class StartGrandmother : AnimTutorialGrandmother
     {
 
     }
-    public override void CheckLeaveRoom(Vector3 goalPos, System.Action callback)
+    public override bool CheckLeaveRoom(Vector3 goalPos, System.Action callback)
     { 
         balloon.HideBalloon(true);
         callback.Invoke();
+        return false;
     }
 
 

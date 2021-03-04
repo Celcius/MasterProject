@@ -10,14 +10,20 @@ public class DeadGrandmaController : IGrandmaController
 
     public override void ResetGrandma(bool isRespawn) {}
 
-    public override void CheckLeaveRoom(Vector3 goalPos, System.Action callback) 
+    public override bool CheckLeaveRoom(Vector3 goalPos, System.Action callback) 
     {
         this.transform.position = goalPos;
         callback?.Invoke();
+        return false;
     }
 
     public override bool GrabCharacter(CharacterMovement character) { return false; }
     public override void ReleaseCharacter(CharacterMovement character, bool throwChar) {}
 
     public override void OnBacktracking(){}
+
+    public override bool IsGrandmaDead()
+    {
+        return true;
+    }
 }

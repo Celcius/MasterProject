@@ -139,6 +139,7 @@
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\PhysicsAnimationCurve.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\DisableOnBoolVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\StructUtils.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SoundSystem\AudioMixerSoundSystem.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\LayerMaskVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ApplyForceToBody2DOnCollision.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\InstantiateOnCollision.cs" />
@@ -168,7 +169,6 @@
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterComponentVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SceneTransitionHandler.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\TransformMovement.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SoundSystem\AudioMixerSoundSystem.cs" />
      <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\AmoaebaUtils.asmdef" />
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/OneDrive/Ivo Capelo/Projects/MasterProject/MasterProjects/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

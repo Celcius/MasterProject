@@ -57,9 +57,9 @@ public class AnimTutorialGrandmother : IGrandmaController
         textIndex++;
     }
 
-    public override void CheckLeaveRoom(Vector3 goalPos, System.Action callback)
+    public override bool CheckLeaveRoom(Vector3 goalPos, System.Action callback)
     { 
-
+        return false;
     }
 
     protected override void OnDestroy() 

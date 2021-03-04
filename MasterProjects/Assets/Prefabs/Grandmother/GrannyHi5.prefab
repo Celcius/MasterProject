@@ -9740,6 +9740,36 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &3610257703400361804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8972252586459325465}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8972252586459325465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610257703400361804}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.258706, y: 15.682098, z: -37.098824}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6392499814304529074}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6035590820626779901
 GameObject:
   m_ObjectHideFlags: 0
@@ -9854,6 +9884,7 @@ MonoBehaviour:
   backtrackStrings: {fileID: 11400000, guid: 985f210099e32d2478d4332059b6b771, type: 2}
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   maxDropDistance: 0.5
+  soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
   respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
   grandmaPrefab: {fileID: 4558548733758745860, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
   onMoveText:
