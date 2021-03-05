@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using AmoaebaUtils;
 
 public class CameraBoundTextBalloon : TextBalloon
 {
@@ -25,6 +26,20 @@ public class CameraBoundTextBalloon : TextBalloon
 
     [SerializeField]
     private Image[] quadrant4Images;
+
+    [SerializeField]
+    private AudioClip[] voiceAudio;
+    
+    
+    [SerializeField]
+    private AudioClip[] punctuationAudio;
+    
+
+    [SerializeField]
+    private SoundSystem soundSystem;
+    private const string voiceID = "VOICEID";
+    private const string punctuationID = "PUNCTUATIONID";
+
 
     float minHOffset;
     float maxHOffset;
@@ -102,6 +117,43 @@ public class CameraBoundTextBalloon : TextBalloon
         }
         
         ClampCameraPos(size);
+    }
+
+    protected override void StringChanged(string oldVal, string newVal)
+    {
+       base.StringChanged(oldVal, newVal);
+
+       if(string.IsNullOrEmpty(newVal))
+       {
+           return;
+       }
+       
+       int lastIndex = newVal.Length-1;
+       char last = newVal[lastIndex];
+       if(char.IsWhiteSpace(last) || (IsVowel(last) && lastIndex > 0 && !IsVowel(newVal[lastIndex-1])))
+       {
+           return;
+       }
+            
+        bool isPlayingVoice = soundSystem.IsPlaying(voiceID);
+        bool isPlayingPunctuation = soundSystem.IsPlaying(punctuationID);
+
+        if(char.IsPunctuation(last) && !isPlayingPunctuation)
+        {
+            soundSystem.StopSound(voiceID);
+            soundSystem.PlaySound(punctuationAudio[Random.Range(0, punctuationAudio.Length)]);
+        }
+
+        if (char.IsLetter(last) && !isPlayingVoice)
+        {
+            soundSystem.StopSound(punctuationID);
+            soundSystem.PlaySound(voiceAudio[Random.Range(0, voiceAudio.Length)]);
+        }
+    }
+
+    public bool IsVowel(char c)
+    {
+        return "aeiouAEIOU".IndexOf(c) >= 0;
     }
 }
 

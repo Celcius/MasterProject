@@ -36,6 +36,14 @@ public class SoundHelper : SerializedMonoBehaviour
     
     public Dictionary<GameSoundTag, GameSoundDefinition> gameSoundsDict;
 
+    private MusicPlayer musicPlayer;
+    public MusicPlayer MusicPlayer => musicPlayer;
+
+    private void Start() 
+    {
+        musicPlayer = GetComponent<MusicPlayer>();        
+    }
+
     public bool IsPlaying(GameSoundTag tag)
     {
         if(!gameSoundsDict.ContainsKey(tag))

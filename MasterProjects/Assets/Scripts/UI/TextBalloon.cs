@@ -150,7 +150,7 @@ public class TextBalloon : MonoBehaviour
         }
     }
 
-    private void StringChanged(string oldVal, string newVal)
+    protected virtual void StringChanged(string oldVal, string newVal)
     {
         if(oldVal.CompareTo(newVal) == 0)
         {
