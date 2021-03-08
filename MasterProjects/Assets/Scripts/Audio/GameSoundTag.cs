@@ -4,7 +4,7 @@ using UnityEngine;
 public enum GameSoundTag
 {
     NONE,
-    SFX_CRYING,
+    SFX_DRIP,
     SFX_THROW,
     SFX_LAND_LEAF,
     SFX_WALK_GRASS,
@@ -22,4 +22,5 @@ public enum GameSoundTag
     SFX_JUMP,
     SFX_LAND,
     SFX_CALL,
+    SFX_CRYING,
 }
