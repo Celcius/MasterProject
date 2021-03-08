@@ -21,4 +21,5 @@ public enum GameSoundTag
     SFX_ROOM_INCOMPLETE_JINGLE,
     SFX_JUMP,
     SFX_LAND,
+    SFX_CALL,
 }

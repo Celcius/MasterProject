@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using AmoaebaUtils;
 
@@ -39,6 +40,9 @@ public class CameraBoundTextBalloon : TextBalloon
     private SoundSystem soundSystem;
     private const string voiceID = "VOICEID";
     private const string punctuationID = "PUNCTUATIONID";
+
+    [SerializeField]
+    private AudioMixerGroup voiceGroup;
 
 
     float minHOffset;
@@ -141,13 +145,19 @@ public class CameraBoundTextBalloon : TextBalloon
         if(char.IsPunctuation(last) && !isPlayingPunctuation)
         {
             soundSystem.StopSound(voiceID);
-            soundSystem.PlaySound(punctuationAudio[Random.Range(0, punctuationAudio.Length)]);
+            soundSystem.PlaySound(punctuationAudio[Random.Range(0, punctuationAudio.Length)],
+                                  voiceID,
+                                  true,
+                                  voiceGroup);
         }
 
         if (char.IsLetter(last) && !isPlayingVoice)
         {
             soundSystem.StopSound(punctuationID);
-            soundSystem.PlaySound(voiceAudio[Random.Range(0, voiceAudio.Length)]);
+            soundSystem.PlaySound(voiceAudio[Random.Range(0, voiceAudio.Length)],
+                                  punctuationID,
+                                  true,
+                                  voiceGroup);
         }
     }
 

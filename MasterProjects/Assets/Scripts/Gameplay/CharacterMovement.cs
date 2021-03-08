@@ -445,6 +445,7 @@ public class CharacterMovement : MonoBehaviour
         if(stateVar.Value != CharacterState.Calling)
         {
             SetCharacterState(CharacterState.Calling);
+            soundHelper.Value.PlaySound(GameSoundTag.SFX_CALL);
         }
         
     }

@@ -375,7 +375,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281410601
+    rgba: 3220521
   m_fontColor: {r: 0.16078432, g: 0.14117648, b: 0.19215688, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -653,6 +653,10 @@ MonoBehaviour:
   - {fileID: 7746295142488157826}
   quadrant4Images:
   - {fileID: 2942453568726729123}
+  voiceAudio: []
+  punctuationAudio: []
+  soundSystem: {fileID: 0}
+  voiceGroup: {fileID: -8599208355268717875, guid: 5b2f60bb9db298c42a772fac096fefd4, type: 2}
 --- !u!114 &5351744948044554628
 MonoBehaviour:
   m_ObjectHideFlags: 0
