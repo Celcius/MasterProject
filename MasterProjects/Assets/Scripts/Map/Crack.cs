@@ -173,6 +173,10 @@ public class Crack : PlayerCollideable
 
     protected override void OnTriggerEnter2D(Collider2D other) 
     {
+        if(Time.time <= 1.0f)
+        {
+            return;
+        }
         Boulder isBoulder = other.GetComponent<Boulder>();
         if(isBoulder)
         {
