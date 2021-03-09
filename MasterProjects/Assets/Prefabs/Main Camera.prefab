@@ -153,6 +153,7 @@ MonoBehaviour:
   shakeMagnitude: 0.5
   shakeDampingSpeed: 0.1
   TrackingEntity: 1
+  soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
 --- !u!114 &4007621154695231757
 MonoBehaviour:
   m_ObjectHideFlags: 0

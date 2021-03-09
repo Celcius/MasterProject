@@ -6,6 +6,9 @@ public class GameCameraMover : CameraMover
 {
     CharacterMovement movement;
 
+    [SerializeField]
+    private SoundHelperVar soundHelper;
+
     protected override void Start() 
     {
         base.Start();
@@ -27,5 +30,37 @@ public class GameCameraMover : CameraMover
     public override bool CanMove(Vector2Int newPlayerPos)
     {
         return movement == null || !movement.IsGrabbed;
+    }
+
+    protected override IEnumerator CameraShake(float time, float magnitude, float damping)
+    {
+        Vector3 initialPosition = GetTargetCameraPosition();
+        float duration = time;
+        while(duration >= 0)
+        {
+            if(magnitude >= 0.8f)
+            {
+                soundHelper.Value.StopSound(GameSoundTag.SFX_QUAKE);
+                if(!soundHelper.Value.IsPlaying(GameSoundTag.SFX_LARGE_QUAKE))
+                {
+                    soundHelper.Value.PlaySound(GameSoundTag.SFX_LARGE_QUAKE,false);
+                }    
+            } 
+            else 
+            {
+                soundHelper.Value.StopSound(GameSoundTag.SFX_LARGE_QUAKE);
+                if(!soundHelper.Value.IsPlaying(GameSoundTag.SFX_QUAKE))
+                {
+                    soundHelper.Value.PlaySound(GameSoundTag.SFX_QUAKE, true);
+                }
+            }
+           
+            transform.localPosition = initialPosition + UnityEngine.Random.insideUnitSphere * magnitude;
+        
+            duration -= Time.deltaTime * damping;
+            yield return new WaitForEndOfFrame();
+        }
+        soundHelper.Value.StopSound(GameSoundTag.SFX_QUAKE);
+        transform.position = GetTargetCameraPosition();
     }
 }

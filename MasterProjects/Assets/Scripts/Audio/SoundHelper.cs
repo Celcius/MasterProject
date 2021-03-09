@@ -53,7 +53,7 @@ public class SoundHelper : SerializedMonoBehaviour
         return soundSystem.IsPlaying(gameSoundsDict[tag].audioId);
     }
 
-    public string PlaySound(GameSoundTag gameSoundId)
+    public string PlaySound(GameSoundTag gameSoundId, bool loop = false)
     {
         if(!gameSoundsDict.ContainsKey(gameSoundId))
         {

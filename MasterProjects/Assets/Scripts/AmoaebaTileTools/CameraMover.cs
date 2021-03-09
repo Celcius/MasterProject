@@ -241,6 +241,7 @@ public class CameraMover : MonoBehaviour
     {
         ShakeCamera(intensity, intensity * shakeDuration, intensity * shakeDampingSpeed);
     }
+    
     public void ShakeCamera(float intensity, float duration, float damping = 1.0f)
     {
         if(moving)
@@ -258,7 +259,8 @@ public class CameraMover : MonoBehaviour
                                   damping);
         StartCoroutine(cameraShake);
     }
-    private IEnumerator CameraShake(float time, float magnitude, float damping)
+
+    protected virtual IEnumerator CameraShake(float time, float magnitude, float damping)
     {
         Vector3 initialPosition = GetTargetCameraPosition();
         float duration = time;

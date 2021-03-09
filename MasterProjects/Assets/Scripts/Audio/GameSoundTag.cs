@@ -23,4 +23,7 @@ public enum GameSoundTag
     SFX_LAND,
     SFX_CALL,
     SFX_CRYING,
+    SFX_QUAKE,
+    SFX_LARGE_QUAKE
+
 }

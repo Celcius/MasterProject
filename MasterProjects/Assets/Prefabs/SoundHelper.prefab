@@ -75,9 +75,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: cb8b6f422e5d7274aa0fc991b02d9630, type: 3}
     - {fileID: 8300000, guid: 70e5619edd704d9469bf4fd72c3457f7, type: 3}
     - {fileID: 8300000, guid: 02b654a7e729c3241928b988e41b23cc, type: 3}
-    - {fileID: 8300000, guid: 1d51188e11ea76b47a8596107271f9db, type: 3}
+    - {fileID: 8300000, guid: f8f98047e6700904084480529c855c5e, type: 3}
     - {fileID: 8300000, guid: 7c3c5a05ac9ed19478ab48a756dce320, type: 3}
-    - {fileID: 8300000, guid: 1a448bacca38eae4599724e6d1b91c05, type: 3}
+    - {fileID: 8300000, guid: 391ae4f9f1bea0c40a20cf05d6fbf647, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -420,7 +420,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 21
     - Name: $v
       Entry: 7
       Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
@@ -429,10 +429,10 @@ MonoBehaviour:
       Data: 13
     - Name: audioId
       Entry: 1
-      Data: DRIP
+      Data: QuakeLarge
     - Name: groupTag
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -468,7 +468,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 19
+      Data: 20
     - Name: $v
       Entry: 7
       Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
@@ -477,10 +477,10 @@ MonoBehaviour:
       Data: 15
     - Name: audioId
       Entry: 1
-      Data: CRYING
+      Data: Quake
     - Name: groupTag
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
