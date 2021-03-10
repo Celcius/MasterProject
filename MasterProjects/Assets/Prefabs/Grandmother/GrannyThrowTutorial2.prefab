@@ -295,33 +295,44 @@ MonoBehaviour:
   backtrackStrings: {fileID: 11400000, guid: 985f210099e32d2478d4332059b6b771, type: 2}
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   maxDropDistance: 0.5
+  soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
   respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
   onGrabTexts:
   - textString: Now, where to land!?
     speedEnum: 2
+    duration: 0
   - textString: CAUGHT YA!
     speedEnum: 2
+    duration: 0
   onReleaseTexts:
   - textString: WEEEEE!!!!!
     speedEnum: 1
+    duration: 0
   - textString: HYAAA!!!
     speedEnum: 1
+    duration: 0
   cancelThrowTexts:
   - textString: Don't be scared!
     speedEnum: 2
+    duration: 0
   - textString: Wasn't it fun the first time?
     speedEnum: 2
+    duration: 0
   leaveText:
     textString: Ok! Let's keep going!
     speedEnum: 2
+    duration: 0
   cutText:
     textString: Here!
     speedEnum: 1
+    duration: 0
   againText:
   - textString: One more!?
     speedEnum: 0
+    duration: 0
   - textString: Last one!?
     speedEnum: 0
+    duration: 0
   backtrackEyesClosed: {fileID: 11400000, guid: 3a462512b25701849bc7a80eecaf553b, type: 2}
   timesToThrow: 3
   goalPos:
@@ -781,7 +792,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4558548733492882134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf307652347c3c24caf021e573112f71, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c5b72f202f568942a1b40df33d26055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &4558548733492882135 stripped

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19e6a2f51a0956348be0f7242159a8c5, type: 3}
-  m_Name: CrackTree
+  m_Name: CrackShroom
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 8795366620419746748, guid: c3375d23f94f97f499d45706840947c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -31,6 +31,6 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 1731859170649933927, guid: 532e8aaf9ad646d4aa831f279a742470, type: 3}
+  m_InstancedGameObject: {fileID: 1731859170649933927, guid: 0c898b49ff017524f94826bdd5c7098a, type: 3}
   m_Flags: 2
   m_ColliderType: 0

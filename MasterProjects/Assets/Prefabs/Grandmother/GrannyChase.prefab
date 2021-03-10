@@ -46,20 +46,25 @@ MonoBehaviour:
   backtrackStrings: {fileID: 11400000, guid: 629725061d20a7f489cd2f031c96a352, type: 2}
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   maxDropDistance: 0.5
+  soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
   respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
   referencePositions: {fileID: 11400000, guid: 73ae8f5357ddc604890aafdacdefe186, type: 2}
   leaveString: {fileID: 11400000, guid: 629725061d20a7f489cd2f031c96a352, type: 2}
   startText:
     textString: Tag!
     speedEnum: 1
+    duration: 0
   reachStartText:
     textString: You're It!!!
     speedEnum: 2
+    duration: 0
   finishTexts:
   - textString: 'Ok.. Ok.. '
     speedEnum: 0
+    duration: 0
   - textString: You caught me...
     speedEnum: 0
+    duration: 0
   moveStrings: {fileID: 11400000, guid: c238501ecede00046a371cebfe3329a0, type: 2}
   finishTextDuration: 2.5
   moveSpeed: 9
