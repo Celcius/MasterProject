@@ -23,7 +23,7 @@ public class CameraMover : MonoBehaviour
 
     public Vector2Int CurrentRoomPos => playerRoom;
 
-    private IEnumerator cameraShake;
+    protected IEnumerator cameraShake;
 
     private static CameraMover moverSingleton;
     public static CameraMover Instance => moverSingleton;
@@ -48,11 +48,11 @@ public class CameraMover : MonoBehaviour
     private Vector2Int playerRoom;
 
     [SerializeField]
-    private float shakeDuration = 0.5f;
+    protected float shakeDuration = 0.5f;
     [SerializeField]
-    private float shakeMagnitude = 0.5f;
+    protected float shakeMagnitude = 0.5f;
     [SerializeField]
-    private float shakeDampingSpeed = 0.1f;
+    protected float shakeDampingSpeed = 0.1f;
     
     public bool TrackingEntity = true;
 
@@ -81,6 +81,7 @@ public class CameraMover : MonoBehaviour
             (int)(pixelCamera.refResolutionY / pixelCamera.assetsPPU));
 
     private bool moving = false;
+    public bool Moving => moving;
     private bool isFirstUpdate = true;
     private void Awake()
     {   
@@ -237,12 +238,12 @@ public class CameraMover : MonoBehaviour
         return GridUtils.WorldPosForRoomPos(targetRoom, this.RoomSize,(Vector2)moverSingleton.CellSize, transform.position.z);
     }
 
-    public void ShakeCamera(float intensity)
+    public virtual void ShakeCamera(float intensity)
     {
         ShakeCamera(intensity, intensity * shakeDuration, intensity * shakeDampingSpeed);
     }
     
-    public void ShakeCamera(float intensity, float duration, float damping = 1.0f)
+    public virtual void ShakeCamera(float intensity, float duration, float damping = 1.0f)
     {
         if(moving)
         {

@@ -181,3 +181,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerEntity: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
   grandmaEntity: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
+  balloonVar: {fileID: 11400000, guid: 9ad32733f67d9e446bee83d221f1c8e5, type: 2}
+  tutLabels: []

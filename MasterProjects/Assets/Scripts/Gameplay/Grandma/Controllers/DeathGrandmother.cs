@@ -87,7 +87,8 @@ public class DeathGrandmother : GrandmaController
     {
         yield return new WaitForSeconds(0.5f);
         CharacterMovement character = characterVar.Value.GetComponent<CharacterMovement>();
-        CameraMover.Instance.ShakeCamera(smallShakeIntensity, smallShakeDuration);
+        GameCameraMover cam = ((GameCameraMover)CameraMover.Instance);
+        cam.ShakeCamera(smallShakeIntensity, smallShakeDuration, 1.0f, true);
         
         Vector2Int[] path = GetPath(quakePos, true);
         yield return SimpleWalkRoutine(path, moveSpeed, null);
