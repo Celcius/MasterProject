@@ -150,16 +150,34 @@ public class RoomTileController : ScriptableObject, AStarMapFeeder<Vector2Int>
 
     public Vector3Int FindEmptyPosInDir(Vector3Int searchPos, Vector2Int dir, Predicate<TileBase> shouldIgnore = null)
     {
+        Predicate<Vector3Int> stopOnTile = (Vector3Int pos) => 
+        {
+            Vector3 worldPos = CameraMover.WorldPosForGridPos(pos, 0);
+            TileBase tile = GetTileForWorldPos(worldPos);
+            
+            return tile == null || shouldIgnore != null && shouldIgnore(tile);
+        };
+
+        Predicate<Vector3Int> cancelOnPos = (Vector3Int pos) => { return false; };
+
+       return SearchInDir(searchPos, dir, stopOnTile, cancelOnPos);
+    }
+
+    public Vector3Int SearchInDir(Vector3Int searchPos, Vector2Int dir, Predicate<Vector3Int> shouldReturn, Predicate<Vector3Int> cancelAtPos)
+    {
         Vector3Int searchBelow = searchPos;
         Tilemap map = referenceMap.Value;
 
         while(roomGridPosBounds.Contains(searchBelow))
         {
             searchBelow += (Vector3Int)dir;
-            Vector3 worldPos = CameraMover.WorldPosForGridPos(searchBelow, 0);
-            TileBase tile = GetTileForWorldPos(worldPos);
-            
-            if(tile == null || shouldIgnore != null && shouldIgnore(tile))
+
+            if(cancelAtPos(searchBelow))
+            {
+                return searchPos;
+            }
+
+            if(shouldReturn(searchBelow))
             {
                 return searchBelow;
             }

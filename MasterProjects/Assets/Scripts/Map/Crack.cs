@@ -181,17 +181,18 @@ public class Crack : PlayerCollideable
         if(isBoulder)
         {
             isBoulder.gameObject.SetActive(false);
-            if(isHole)
-            {
-                soundHelperVar.Value.StopSound(GameSoundTag.SFX_PUSH_STONE);
-                soundHelperVar.Value.PlaySound(GameSoundTag.SFX_CRACK_FILL);
-                this.gameObject.SetActive(false);
-            }
+            // Uncomment for only hole is filled behaviour
+            //if(isHole)
+            //{
+            soundHelperVar.Value.StopSound(GameSoundTag.SFX_PUSH_STONE);
+            soundHelperVar.Value.PlaySound(GameSoundTag.SFX_CRACK_FILL);
+            this.gameObject.SetActive(false);
+            /*}
             else
             {
                 soundHelperVar.Value.PlaySound(GameSoundTag.SFX_CRACK_CRUMBLE);
                 SetHoleState(true);
-            }
+            }*/
             
             Vector2Int gridPos = (Vector2Int)CameraMover.GridPosForWorldPos(holeRepresentation.transform.position);
         }

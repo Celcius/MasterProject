@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AmoaebaUtils;
@@ -13,35 +14,58 @@ public class LedgeScript : PlayerCollideable
     private Vector2Int searchDir = new Vector2Int(0,-1);
 
     [SerializeField]
-    private TileBase[] tilesToIgnore;
+    private TileBase[] validDropTiles;
+
+    [SerializeField]
+    private TileBase[] acceptedTiles;
 
     Vector3Int myPos;
     Vector3Int posBelow;
-    HashSet<string> ignoreHash = new HashSet<string>();
+    HashSet<string> acceptedHash = new HashSet<string>();
+    HashSet<string> validDropHash = new HashSet<string>();
 
     private void Start()
     {
         myPos = CameraMover.GridPosForWorldPos(transform.position);
-        if(tilesToIgnore != null)
+        if(acceptedTiles != null)
         {
-            foreach(TileBase tile in tilesToIgnore)
+            foreach(TileBase tile in acceptedTiles)
             {
-                ignoreHash.Add(tile.name);
+                acceptedHash.Add(tile.name);
+            }
+        }
+
+        if(validDropTiles != null)
+        {
+            foreach(TileBase tile in validDropTiles)
+            {
+                validDropHash.Add(tile.name);
             }
         }
     }
 
     protected override void PlayerCollisionEnter(CharacterMovement movement)
     {
-        System.Predicate<TileBase> toIgnorePredicate = (TileBase tile) => 
+        Predicate<Vector3Int> shouldReturn = (Vector3Int checkPos) => 
         {
-            return ignoreHash.Contains(tile.name);
+            Vector3 worldPos = CameraMover.WorldPosForGridPos(checkPos, 0);
+            TileBase tile = roomController.GetTileForWorldPos(worldPos);
+            
+            return tile == null || acceptedHash.Contains(tile.name);
         };
 
-        posBelow = roomController.FindEmptyPosInDir(myPos, searchDir, toIgnorePredicate);
+        Predicate<Vector3Int> cancelAtPos = (Vector3Int checkPos) => 
+        {
+            Vector3 worldPos = CameraMover.WorldPosForGridPos(checkPos, 0);
+            TileBase tile = roomController.GetTileForWorldPos(worldPos);
+            
+            return tile != null && !validDropHash.Contains(tile.name);
+        };
+
+        posBelow = roomController.SearchInDir(myPos, searchDir, shouldReturn, cancelAtPos);
         if(myPos == posBelow)
         {
-            Debug.LogError("Ledge without position below");
+//            Debug.LogError("Ledge without position below");
             return;
         }
 

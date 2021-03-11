@@ -64,6 +64,9 @@ public class GrannyHi5 : GrandmaController
     [SerializeField]
     private TextBalloonString onHighFiveEnd;
 
+    [SerializeField]
+    private TextBalloonString goalBlockedText;
+
     private float frameAtStart;
 
 
@@ -97,11 +100,20 @@ public class GrannyHi5 : GrandmaController
     private IEnumerator StartRoutine()
     {
         Vector2Int[]path = null;
-        
+
+        bool shownBlockedText = false;
         do 
         {
             yield return new WaitForEndOfFrame();
             path = GetPath(goalPos, true);
+
+            if(!shownBlockedText 
+               && !string.IsNullOrEmpty(goalBlockedText.textString) 
+               && (path  == null || path.Length <= 1))
+            {
+                Balloon.ShowText(goalBlockedText, false);
+                shownBlockedText = true;
+            }
         }
         while(path == null || path.Length <= 1);
 

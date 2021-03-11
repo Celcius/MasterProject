@@ -45,10 +45,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e82c80780f901479326e5112103693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   searchDir: {x: 0, y: -1}
-  tilesToIgnore:
+  validDropTiles:
+  - {fileID: 11400000, guid: 01731bb290ac3e94996435c131619ed6, type: 2}
+  - {fileID: 11400000, guid: 76077d5aad26ca44a89983866eac1b08, type: 2}
+  - {fileID: 11400000, guid: f7266f87384197b41982c3e31f83eda2, type: 2}
+  - {fileID: 11400000, guid: c6e1290cfbda357439eb5c9d94644f34, type: 2}
+  - {fileID: 11400000, guid: a8ebd8aee09286f4aa188a7e5ef5842b, type: 2}
+  - {fileID: 11400000, guid: 23d76fc8ee985764391af576828b07a5, type: 2}
+  - {fileID: 11400000, guid: 797ccc4d6490d434e8d3ec748c763c00, type: 2}
+  - {fileID: 11400000, guid: b2e9217c0c9d0d340910cb49ff60a5f0, type: 2}
+  - {fileID: 11400000, guid: e6e929301eadb6840ae950c7c6f67a3d, type: 2}
+  - {fileID: 11400000, guid: 5b0ace6d99e58ca40b8b5337e40688f3, type: 2}
+  - {fileID: 11400000, guid: 04c3f4fd15a11c6489d2baeb9f32d366, type: 2}
+  - {fileID: 11400000, guid: b156bcde88196ed4a8afcc1acd7febe6, type: 2}
+  - {fileID: 11400000, guid: 83ca76ca1cb292540a81af9e71bf2481, type: 2}
+  - {fileID: 11400000, guid: a48ee533c1fb0c442955a0144a323012, type: 2}
+  - {fileID: 11400000, guid: 89c6b42a798a0b045a9e89b2b1b76673, type: 2}
+  - {fileID: 11400000, guid: 633580f529d9eb24d9e08d96a14e1519, type: 2}
+  - {fileID: 11400000, guid: cb016e4f132aef14fa9f16f8555f4a43, type: 2}
+  - {fileID: 11400000, guid: ccb0b1afbfa7d544ca42c89842ddfd45, type: 2}
+  acceptedTiles:
   - {fileID: 11400000, guid: e116e62de45a5e64e9ed44fadaac1933, type: 2}
+  - {fileID: 11400000, guid: 3cdab9db5671d1e48a26ce529b1e13cb, type: 2}
 --- !u!61 &7206771065483251993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60,7 +81,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.5}
   m_SpriteTilingProperty:
@@ -89,3 +110,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking: 0
   allowsStand: 1
+  isRoomStatic: 1

@@ -100,7 +100,13 @@ public class CharacterMovement : MonoBehaviour
     private CharacterRepresentation representation;
 
     [SerializeField]
+    private Material[] particlesMaterial;
+
+    [SerializeField]
     private RoomCollection roomOrder;
+    
+    [SerializeField]
+    private RoomCollection defaultParticleRooms;
 
     [SerializeField]
     private SoundHelperVar soundHelper;
@@ -135,6 +141,10 @@ public class CharacterMovement : MonoBehaviour
     {
         isAcceptingInput.Value = true;
         curRoom = newPos;
+
+        Material chosen = defaultParticleRooms.ContainsRoom(newPos)? particlesMaterial[0] : particlesMaterial [1];
+        leafParticles.GetComponent<Renderer>().material = chosen;
+        landParticles.GetComponent<Renderer>().material = chosen;
     }
 
     public void ResetCharacter(bool isRespawn)
