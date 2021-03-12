@@ -25,7 +25,7 @@ public class Pushable : PlayerCollideable
         canBePushed = true;
     }
 
-    protected override void PlayerCollisionEnter(CharacterMovement character)
+    protected override void EntityCollisionEnter(CharacterMovement character)
     {
         pushMainDir = GeometryUtils.NormalizedMaxValueVector(character.MovingDir);
 
@@ -38,12 +38,12 @@ public class Pushable : PlayerCollideable
         RestartPush();
     }
 
-    protected override void PlayerCollisionExit(CharacterMovement character) 
+    protected override void EntityCollisionExit(CharacterMovement character) 
     {
         StopPush();
     }
 
-    protected override void PlayerCollisionStay(CharacterMovement character) 
+    protected override void EntityCollisionStay(CharacterMovement character) 
     {
         Vector2Int newDir = pushMainDir = GeometryUtils.NormalizedMaxValueVector(character.MovingDir);
         

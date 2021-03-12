@@ -43,12 +43,12 @@ public class SwapGrandmaScript : PlayerCollideable
         roomHandler.onLeave -= OnRoomLeave;
     }
 
-    protected override void PlayerTriggerExit(CharacterMovement character) 
+    protected override void EntityTriggerExit(CharacterMovement character) 
     {
         playerIsOn = false;
     }
 
-    protected override void PlayerTriggerEnter(CharacterMovement character) 
+    protected override void EntityTriggerEnter(CharacterMovement character) 
     {
         playerIsOn = true;
 

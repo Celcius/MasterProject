@@ -44,7 +44,7 @@ public class LedgeScript : PlayerCollideable
         }
     }
 
-    protected override void PlayerCollisionEnter(CharacterMovement movement)
+    protected override void EntityCollisionEnter(CharacterMovement movement)
     {
         Predicate<Vector3Int> shouldReturn = (Vector3Int checkPos) => 
         {

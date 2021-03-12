@@ -68,13 +68,13 @@ public class Crack : PlayerCollideable
         SetHoleState(isHole);
     }
 
-    protected override void PlayerTriggerEnter(CharacterMovement character)
+    protected override void EntityTriggerEnter(CharacterMovement character)
     {
         timeSinceStart = 0;
         characterBody = character.GetComponent<Rigidbody2D>();
     }
 
-    protected override void PlayerTriggerExit(CharacterMovement character) 
+    protected override void EntityTriggerExit(CharacterMovement character) 
     {
         if(isHole)
         {
@@ -105,7 +105,7 @@ public class Crack : PlayerCollideable
         }
     }
 
-    protected override void PlayerTriggerStay(CharacterMovement character)
+    protected override void EntityTriggerStay(CharacterMovement character)
     {
         if(!isHole || isFalling)
         {

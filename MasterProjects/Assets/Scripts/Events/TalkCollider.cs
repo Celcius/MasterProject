@@ -34,12 +34,12 @@ public class TalkCollider : EntityCollideable<Component>
     {
         grannyBalloon.Value.OnWillHideCallback -= ShowNext;
     }
-    protected override void PlayerTriggerStay(Component comp) 
+    protected override void EntityTriggerStay(Component comp) 
     {
-        PlayerTriggerEnter(comp);
+        EntityTriggerEnter(comp);
     }
 
-    protected override void PlayerTriggerEnter(Component comp) 
+    protected override void EntityTriggerEnter(Component comp) 
     {
         if(hasShown)
         {

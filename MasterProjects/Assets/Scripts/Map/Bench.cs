@@ -63,7 +63,7 @@ public class Bench : PlayerCollideable
         roomHandler.onLeave -= OnRoomLeave;
     }
 
-    protected override void PlayerTriggerEnter(CharacterMovement entity) 
+    protected override void EntityTriggerEnter(CharacterMovement entity) 
     {
         isPlayerInRange = true;
         if(!hasStartedEnd)
@@ -72,7 +72,7 @@ public class Bench : PlayerCollideable
         }
     }
 
-    protected override void PlayerTriggerExit(CharacterMovement entity) 
+    protected override void EntityTriggerExit(CharacterMovement entity) 
     {
         isPlayerInRange = false;
         tutVar.Value = "";

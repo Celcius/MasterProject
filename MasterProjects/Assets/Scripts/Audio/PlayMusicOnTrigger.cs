@@ -33,7 +33,7 @@ public class PlayMusicOnTrigger : EntityCollideable<Boulder>
         hasShot = false;
     }
 
-    protected override void PlayerTriggerEnter(Boulder entity) 
+    protected override void EntityTriggerEnter(Boulder entity) 
     {
         if(shootOnce && hasShot)
         {

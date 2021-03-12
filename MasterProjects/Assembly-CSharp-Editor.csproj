@@ -36,8 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Packages\2d-techdemos\Assets\Tilemap\Destructible\Scripts\Editor\DestructibleEditor.cs" />
-     <Compile Include="Assets\Packages\2d-techdemos\Assets\Tilemap\Editor\PreviewUtil.cs" />
+     <Compile Include="Assets\ShaderForge\Editor\InternalResources\Inspectors\ShaderForgeInspector.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -742,6 +741,10 @@
       <Project>{4ea81400-df35-1f3e-062f-600a4a9c3fc4}</Project>
       <Name>GoogleExporter</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
+      <Project>{d0a5305c-e36c-305e-c379-992bdf6d5712}</Project>
+      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
       <Project>{5b005099-c24f-9f7b-f932-a2404df47ed8}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
@@ -789,6 +792,10 @@
     <ProjectReference Include="ScriptableObjectUtilsEditor.csproj">
       <Project>{a5ab7832-d0d8-18cf-4c32-51ae329d6390}</Project>
       <Name>ScriptableObjectUtilsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{a1465f24-80f5-13c6-4cb9-351f007b39bb}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
     </ProjectReference>
     <ProjectReference Include="ActionCommands.csproj">
       <Project>{fe912172-c8a7-98aa-6b06-f744d493fb9e}</Project>

@@ -31,7 +31,7 @@ public abstract class EntityCollideable<T> : MonoBehaviour where T : Component
         T entity;
         if(IsCollisionEntity(other.collider, out entity))
         {
-           PlayerCollisionEnter(entity);
+           EntityCollisionEnter(entity);
         }
     }
 
@@ -40,7 +40,7 @@ public abstract class EntityCollideable<T> : MonoBehaviour where T : Component
         T entity;
         if(IsCollisionEntity(other.collider, out entity))
         {
-            PlayerCollisionExit(entity);
+            EntityCollisionExit(entity);
         }
     }
 
@@ -49,7 +49,7 @@ public abstract class EntityCollideable<T> : MonoBehaviour where T : Component
         T entity;
         if(IsCollisionEntity(other.collider, out entity))
         {
-           PlayerCollisionStay(entity);
+           EntityCollisionStay(entity);
         }
     }
     
@@ -58,7 +58,7 @@ public abstract class EntityCollideable<T> : MonoBehaviour where T : Component
         T entity;
         if(IsCollisionEntity(other, out entity))
         {
-           PlayerTriggerEnter(entity);
+           EntityTriggerEnter(entity);
         }
     }
 
@@ -67,7 +67,7 @@ public abstract class EntityCollideable<T> : MonoBehaviour where T : Component
         T entity;
         if(IsCollisionEntity(other, out entity))
         {
-            PlayerTriggerExit(entity);
+            EntityTriggerExit(entity);
         }
     }
 
@@ -76,15 +76,15 @@ public abstract class EntityCollideable<T> : MonoBehaviour where T : Component
         T entity;
         if(IsCollisionEntity(other, out entity))
         {
-           PlayerTriggerStay(entity);
+           EntityTriggerStay(entity);
         }
     }
 
-    protected virtual void PlayerCollisionEnter(T entity) {}
-    protected virtual void PlayerCollisionExit(T entity) {}
-    protected virtual void PlayerCollisionStay(T entity) {}
+    protected virtual void EntityCollisionEnter(T entity) {}
+    protected virtual void EntityCollisionExit(T entity) {}
+    protected virtual void EntityCollisionStay(T entity) {}
 
-    protected virtual void PlayerTriggerEnter(T entity) {}
-    protected virtual void PlayerTriggerExit(T entity) {}
-    protected virtual void PlayerTriggerStay(T entity) {}
+    protected virtual void EntityTriggerEnter(T entity) {}
+    protected virtual void EntityTriggerExit(T entity) {}
+    protected virtual void EntityTriggerStay(T entity) {}
 }
