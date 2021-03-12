@@ -13,7 +13,8 @@ public class SoundHelper : SerializedMonoBehaviour
     {
         MUSIC,
         MAIN_SFX,
-        BG_SFX
+        BG_SFX,
+        QUAKE_SFX
     }
 
     [SerializeField]
@@ -32,6 +33,7 @@ public class SoundHelper : SerializedMonoBehaviour
     protected AudioMixerGroup MusicGroup => soundSystem.GetGroup(GameConstants.AUDIO_GROUP_MUSIC);
     protected AudioMixerGroup MainEffectsGroup => soundSystem.GetGroup(GameConstants.AUDIO_GROUP_MAIN_SFX);
     protected AudioMixerGroup BGEffectsGroup => soundSystem.GetGroup(GameConstants.AUDIO_GROUP_BG_SFX);
+    protected AudioMixerGroup QuakeGroup => soundSystem.GetGroup(GameConstants.AUDIO_GROUP_QUAKE_SFX);
 
     
     public Dictionary<GameSoundTag, GameSoundDefinition> gameSoundsDict;
@@ -77,6 +79,9 @@ public class SoundHelper : SerializedMonoBehaviour
 
             case MixerGroupTag.BG_SFX:
                 return BGEffectsGroup;
+                
+            case MixerGroupTag.QUAKE_SFX:
+                return QuakeGroup;
         }
         return MainEffectsGroup;
     }
@@ -90,5 +95,10 @@ public class SoundHelper : SerializedMonoBehaviour
         GameSoundDefinition definition =  gameSoundsDict[gameSoundTag];
 
         soundSystem.StopSound(definition.audioId);
+    }
+
+    public void SetMixerFloat(string idName, float val)
+    {
+        soundSystem.MainMixer.SetFloat(idName, val);
     }
 }

@@ -12,6 +12,7 @@ public static class GameConstants
     public const string AUDIO_GROUP_MAIN_SFX = "Main Effects";
     public const string AUDIO_GROUP_MUSIC = "Music";
     public const string AUDIO_GROUP_BG_SFX = "BG Effects";
+    public const string AUDIO_GROUP_QUAKE_SFX = "Quake Effects";
 
     public enum BalloonSpeedEnum
     {

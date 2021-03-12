@@ -463,10 +463,10 @@ MonoBehaviour:
   preThrowDeathStrings:
   - textString: Oh no!
     speedEnum: 2
-    duration: 2
+    duration: 4
   - textString: This isn't good!
     speedEnum: 2
-    duration: 2
+    duration: 4
   grabThrowDeathStrings:
   - textString: I'm sorry...
     speedEnum: 0
@@ -477,16 +477,91 @@ MonoBehaviour:
   postThrowDeathStrings:
   - textString: I love you Kiddo!
     speedEnum: 4
-    duration: 3
+    duration: 2
   moveSpeed: 7
   isInputActive: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}
   targetTransform: {fileID: 5993156015752478624}
-  targetMoveSpeed: 2
+  targetMoveSpeed: 2.5
   deadGrandma: {fileID: 1021081772920121449, guid: 16e872293a536ad44b0646dc01e519c8, type: 3}
-  bigShakeIntensity: 1
-  bigShakeDuration: 1
-  smallShakeIntensity: 0.1
-  smallShakeDuration: 1000
+  bigShakeIntensity: 1.1
+  bigShakeDamping:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 15.124681
+      outSlope: 15.124681
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.055494346
+    - serializedVersion: 3
+      time: 0.001
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.35
+      value: 1
+      inSlope: -0
+      outSlope: -0.21983899
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.07926675
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.4613347
+      outSlope: -2.4613347
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04854771
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  bigShakeDuration: 5
+  smallShakeIntensity: 0.15
+  smallShakeDamping:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 12.765964
+      outSlope: 12.765964
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.06072105
+    - serializedVersion: 3
+      time: 0.01
+      value: 1
+      inSlope: 0.5303254
+      outSlope: 0
+      tangentMode: 65
+      weightedMode: 0
+      inWeight: 0.6756287
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  smallShakeDuration: 100
   animator: {fileID: 0}
 --- !u!1 &4548169437776672296
 GameObject:
@@ -1047,7 +1122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3411258837953988260, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 3220521
+      value: 4294955758
       objectReference: {fileID: 0}
     - target: {fileID: 7537704721399866278, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_Enabled

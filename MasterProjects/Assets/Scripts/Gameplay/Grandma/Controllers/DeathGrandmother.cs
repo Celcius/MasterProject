@@ -46,10 +46,17 @@ public class DeathGrandmother : GrandmaController
     private float bigShakeIntensity;
 
     [SerializeField]
+    private AnimationCurve bigShakeDamping;
+
+
+    [SerializeField]
     private float bigShakeDuration;
 
     [SerializeField]
     private float smallShakeIntensity;
+    
+    [SerializeField]
+    private AnimationCurve smallShakeDamping;
 
     [SerializeField]
     private float smallShakeDuration;
@@ -88,7 +95,7 @@ public class DeathGrandmother : GrandmaController
         yield return new WaitForSeconds(0.5f);
         CharacterMovement character = characterVar.Value.GetComponent<CharacterMovement>();
         GameCameraMover cam = ((GameCameraMover)CameraMover.Instance);
-        cam.ShakeCamera(smallShakeIntensity, smallShakeDuration, 1.0f, true);
+        cam.ShakeCamera(smallShakeIntensity, smallShakeDuration, smallShakeDamping, true);
         
         Vector2Int[] path = GetPath(quakePos, true);
         yield return SimpleWalkRoutine(path, moveSpeed, null);
@@ -125,7 +132,8 @@ public class DeathGrandmother : GrandmaController
         yield return ShowStringsSequentially(postThrowDeathStrings);
         Balloon.HideBalloon(false);
         yield return new WaitForSeconds(2.0f);
-        CameraMover.Instance.ShakeCamera(bigShakeDuration, bigShakeDuration);
+
+        cam.ShakeCamera(bigShakeIntensity, bigShakeDuration, bigShakeDamping, true);
         animator.enabled = true;
     }
 

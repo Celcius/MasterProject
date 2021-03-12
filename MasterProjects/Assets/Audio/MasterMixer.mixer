@@ -162,13 +162,15 @@ AudioMixerController:
   - {fileID: -4240726521401303207}
   - {fileID: -8460515311603461632}
   - {fileID: 810297120300023171}
-  m_StartSnapshot: {fileID: -4240726521401303207}
+  m_StartSnapshot: {fileID: -8460515311603461632}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 0244593ec76d6c44e8694a54b557af8b
     name: MainAttenuation
+  - guid: 834c611a014b8744a9434c1bad837e1f
+    name: QuakeVolume
   m_AudioMixerGroupViews:
   - guids:
     - 87469ad6f7670d14789692d9cf7b3a21
@@ -176,9 +178,10 @@ AudioMixerController:
     - 349b278d1a2f62a47b15dd9d115b0970
     - 4e43b8520e989524b8f981ead5c2a47f
     - 953d03c41c1f24f4ead790e2aea0bd59
+    - e6a6e43d95d4f924b9d80e92166b437c
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: -4240726521401303207}
+  m_TargetSnapshot: {fileID: -8460515311603461632}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -193,6 +196,7 @@ AudioMixerGroupController:
   - {fileID: 6827401918110383509}
   - {fileID: 3085836583392431739}
   - {fileID: -8599208355268717875}
+  - {fileID: 9198867765976450085}
   m_Volume: 0244593ec76d6c44e8694a54b557af8b
   m_Pitch: c94d084ddd7477e4785be7c021a2ea26
   m_Send: 00000000000000000000000000000000
@@ -361,6 +365,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &4366633209087545858
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: f7b1f08297d556446882ce40cd028f44
+  m_EffectName: Attenuation
+  m_MixLevel: bdc35b365b7058e43af8b50ae3e12d36
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &6827401918110383509
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -441,3 +459,22 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &9198867765976450085
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Quake Effects
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: e6a6e43d95d4f924b9d80e92166b437c
+  m_Children: []
+  m_Volume: 834c611a014b8744a9434c1bad837e1f
+  m_Pitch: 6ff2ea29f0b2bcc4892037a975a5ab1f
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 4366633209087545858}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0

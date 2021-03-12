@@ -242,8 +242,15 @@ public class CameraMover : MonoBehaviour
     {
         ShakeCamera(intensity, intensity * shakeDuration, intensity * shakeDampingSpeed);
     }
-    
     public virtual void ShakeCamera(float intensity, float duration, float damping = 1.0f)
+    {
+        AnimationCurve dampingCurve = new AnimationCurve();
+        dampingCurve.AddKey(0, damping);
+        dampingCurve.AddKey(1.0f, damping);
+        ShakeCamera(intensity, duration, dampingCurve);
+    }
+
+    public virtual void ShakeCamera(float intensity, float duration, AnimationCurve damping)
     {
         if(moving)
         {
@@ -261,15 +268,18 @@ public class CameraMover : MonoBehaviour
         StartCoroutine(cameraShake);
     }
 
-    protected virtual IEnumerator CameraShake(float time, float magnitude, float damping)
+    protected virtual IEnumerator CameraShake(float time, float magnitude, AnimationCurve damping)
     {
         Vector3 initialPosition = GetTargetCameraPosition();
         float duration = time;
         while(duration >= 0)
         {
-            transform.localPosition = initialPosition + UnityEngine.Random.insideUnitSphere * magnitude;
-        
-            duration -= Time.deltaTime * damping;
+            float ratio = Mathf.Clamp01((time-duration) / time);
+            float dampingVal = damping.Evaluate(ratio);
+
+            transform.localPosition = initialPosition + UnityEngine.Random.insideUnitSphere * magnitude* dampingVal;
+            
+            duration -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
         

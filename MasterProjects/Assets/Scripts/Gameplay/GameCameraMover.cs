@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class GameCameraMover : CameraMover
 {
@@ -11,6 +12,12 @@ public class GameCameraMover : CameraMover
 
     [SerializeField]
     private float magnitudeSoundThreshold = 0.8f;
+
+    [SerializeField]
+    private string quakeVolume = "QuakeVolume";
+
+    [SerializeField]
+    private AnimationCurve quakeVolumeRange;
 
     protected override void Start() 
     {
@@ -37,10 +44,13 @@ public class GameCameraMover : CameraMover
 
     public override void ShakeCamera(float intensity, float duration, float damping = 1.0f)
     {
-        ShakeCamera(intensity, duration, damping, false);
+        AnimationCurve dampingCurve = new AnimationCurve();
+        dampingCurve.AddKey(0, damping);
+        dampingCurve.AddKey(1.0f, damping);
+        ShakeCamera(intensity, duration, dampingCurve, false);
     }
 
-    public void ShakeCamera(float intensity, float duration, float damping, bool playSound = false)
+    public void ShakeCamera(float intensity, float duration, AnimationCurve damping, bool playSound = false)
     {
         if(Moving)
         {
@@ -59,7 +69,7 @@ public class GameCameraMover : CameraMover
         StartCoroutine(cameraShake);
     }
 
-    protected IEnumerator CameraShakeSound(float time, float magnitude, float damping, bool playSound)
+    protected IEnumerator CameraShakeSound(float time, float magnitude, AnimationCurve damping, bool playSound)
     {
         Vector3 initialPosition = GetTargetCameraPosition();
         float duration = time;
@@ -69,10 +79,12 @@ public class GameCameraMover : CameraMover
             {
                 PlayQuakeSound(magnitude);
             }
-
-            transform.localPosition = initialPosition + UnityEngine.Random.insideUnitSphere * magnitude;
+            float ratio = Mathf.Clamp01((time-duration) / time);
+            float dampingVal = damping.Evaluate(ratio);
+            soundHelper.Value.SetMixerFloat(quakeVolume, quakeVolumeRange.Evaluate(dampingVal));
+            transform.localPosition = initialPosition + UnityEngine.Random.insideUnitSphere * magnitude * dampingVal;
         
-            duration -= Time.deltaTime * damping;
+            duration -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
         soundHelper.Value.StopSound(GameSoundTag.SFX_QUAKE);

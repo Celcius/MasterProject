@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4007621154695231746}
   - component: {fileID: 4007621154695231757}
   - component: {fileID: 8332511192900756494}
+  - component: {fileID: 1057083066301922790}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -154,6 +155,32 @@ MonoBehaviour:
   shakeDampingSpeed: 0.1
   TrackingEntity: 1
   soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
+  magnitudeSoundThreshold: 0.8
+  quakeVolume: QuakeVolume
+  quakeVolumeRange:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -80
+      inSlope: 80
+      outSlope: 9.835814
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.15534209
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 184.41135
+      outSlope: 184.41135
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.055227697
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &4007621154695231757
 MonoBehaviour:
   m_ObjectHideFlags: 0
