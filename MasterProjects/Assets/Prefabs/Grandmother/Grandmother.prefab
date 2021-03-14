@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking: 1
   allowsStand: 1
-  isRoomStatic: 0
+  isRoomStatic: 1
   isOnGrandmaVar: {fileID: 11400000, guid: a01dcbdc5741dcd4a9adec501673eb2b, type: 2}
   characterStateVar: {fileID: 11400000, guid: 1dcd4964f0725b84e91c7749553cc9ef, type: 2}
   physicalCollider: {fileID: 2531537820921813102}

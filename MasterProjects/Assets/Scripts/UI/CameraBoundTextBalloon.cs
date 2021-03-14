@@ -134,7 +134,7 @@ public class CameraBoundTextBalloon : TextBalloon
        
        int lastIndex = newVal.Length-1;
        char last = newVal[lastIndex];
-       if(char.IsWhiteSpace(last) || (IsVowel(last) && lastIndex > 0 && !IsVowel(newVal[lastIndex-1])))
+       if(char.IsWhiteSpace(last) || (IsVowel(last) && lastIndex > 0 && !IsVowel(newVal[lastIndex-1]) && Random.Range(0,10) < 5))
        {
            return;
        }
@@ -142,14 +142,14 @@ public class CameraBoundTextBalloon : TextBalloon
         bool isPlayingVoice = soundSystem.IsPlaying(voiceID);
         bool isPlayingPunctuation = soundSystem.IsPlaying(punctuationID);
 
-        if(char.IsPunctuation(last) && !isPlayingPunctuation)
+   /*     if(char.IsPunctuation(last) && !isPlayingPunctuation && !isPlayingVoice)
         {
             soundSystem.StopSound(voiceID);
             soundSystem.PlaySound(punctuationAudio[Random.Range(0, punctuationAudio.Length)],
                                   voiceID,
                                   true,
                                   voiceGroup);
-        }
+        }*/
 
         if (char.IsLetter(last) && !isPlayingVoice)
         {

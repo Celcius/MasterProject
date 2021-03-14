@@ -203,7 +203,7 @@ public class GrandmaController : IGrandmaController
         }
         else
         {
-            character.transform.position  = GetEmptyAdjacentPos();
+            character.transform.position  = GetEmptyAdjacentPos(true);
 
             if(cancelThrowStrings != null)
             {
@@ -222,7 +222,7 @@ public class GrandmaController : IGrandmaController
         return roomController.GetUnoccupiedNeighbours((Vector2Int)this.GridPos, ignoreself, ignoreDiagonals);
     }
 
-    private Vector3 GetEmptyAdjacentPos()
+    private Vector3 GetEmptyAdjacentPos(bool inRoom = false)
     {
         Vector2 cellSize = CameraMover.Instance.CellSize;
 
@@ -235,6 +235,11 @@ public class GrandmaController : IGrandmaController
 
         foreach(Vector2Int gridpos in positions)
         {
+            if(inRoom && CameraMover.RoomPosForGridPos((Vector3Int)gridpos) != this.RoomGridPos)
+            {
+                continue;
+            }
+            
             GridEntity[] entities =GridRegistry.Instance.GetEntitiesAtPos((Vector3Int)gridpos);
             bool isValid = true;
             foreach(GridEntity entity in entities)
