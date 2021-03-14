@@ -5284,6 +5284,7 @@ MonoBehaviour:
   roomController: {fileID: 11400000, guid: a369f72c9a473cb4f9a03efbf063114d, type: 2}
   throwJumpController: {fileID: 4056756040765128613}
   dropdownJumpController: {fileID: 66450020523383272}
+  lookAtCamEntity: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
   representationParent: {fileID: 4084711936496854058}
   respawnPosition: {fileID: 11400000, guid: 37057af1616b67a439df59dcf0248af1, type: 2}
   isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}

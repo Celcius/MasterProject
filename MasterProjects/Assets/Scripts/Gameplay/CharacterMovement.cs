@@ -56,6 +56,9 @@ public class CharacterMovement : MonoBehaviour
     private JumpController dropdownJumpController;
 
     private GridEntity gridEntity;
+    [SerializeField]
+    private GridEntityVar lookAtCamEntity;
+
     public Vector2Int GridPos 
     {
         get 
@@ -402,6 +405,7 @@ public class CharacterMovement : MonoBehaviour
         bool didGrab = grandmaScriptVar.Value.GrabCharacter(this);
         if(didGrab)
         {
+            lookAtCamEntity.Value = grandmaScriptVar.Value;
             isGrabbed = true;
             movingDir = movingDir = Vector2.down;
             
@@ -423,6 +427,7 @@ public class CharacterMovement : MonoBehaviour
 
         if(!isThrow)
         {
+            lookAtCamEntity.Value = gridEntity;
             EnableColliders();
         }
         
@@ -498,6 +503,7 @@ public class CharacterMovement : MonoBehaviour
                     pos,
                     ()=> 
                     {
+                        lookAtCamEntity.Value = gridEntity;
                         EnableColliders();
                         landParticles.Play();  
                         soundHelper.Value.PlaySound(GameSoundTag.SFX_LAND_LEAF);
