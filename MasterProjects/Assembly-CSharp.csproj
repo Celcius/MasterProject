@@ -81,6 +81,7 @@
      <Compile Include="Assets\Scripts\Input\IInputController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\JumpController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\LedgeTutorialGrandmother.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\ChangeDarknessOnBoulderCollision.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Events\TalkCollider.cs" />
      <Compile Include="Assets\Scripts\Gameplay\EndChild.cs" />
@@ -96,6 +97,7 @@
      <Compile Include="Assets\Scripts\Map\LedgeTile.cs" />
      <Compile Include="Assets\Scripts\Events\GrannyTalkCollider.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SkillsAwarder.cs" />
+     <Compile Include="Assets\Scripts\UI\DarknessController.cs" />
      <Compile Include="Assets\Scripts\UI\RestartController.cs" />
      <Compile Include="Assets\Scripts\Map\TilemapRegister.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\Hi5Grandmother.cs" />
@@ -120,8 +122,6 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeadGrandmaController.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\UI\DarknessController.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\ChangeDarknessOnBoulderCollision.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

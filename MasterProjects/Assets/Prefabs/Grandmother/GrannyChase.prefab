@@ -67,7 +67,7 @@ MonoBehaviour:
     duration: 0
   moveStrings: {fileID: 11400000, guid: c238501ecede00046a371cebfe3329a0, type: 2}
   finishTextDuration: 2.5
-  moveSpeed: 9
+  moveSpeed: 10
   startMoveSpeed: 7.5
   grandmaPrefab: {fileID: 6693552814874788205, guid: 78000e46e8ca5b346ace96ca834e6e1c, type: 3}
 --- !u!1001 &3835204248656581779
@@ -135,7 +135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3411258837953988260, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 3220521
+      value: 4294955758
       objectReference: {fileID: 0}
     - target: {fileID: 5812084106567911440, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_Size.x

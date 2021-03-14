@@ -63,7 +63,7 @@ public class SoundHelper : SerializedMonoBehaviour
         }
         GameSoundDefinition definition =  gameSoundsDict[gameSoundId];
 
-        soundSystem.PlaySound(definition.audioClip, definition.audioId, true, GroupForTag(definition.groupTag));
+        soundSystem.PlaySound(definition.audioClip, definition.audioId, true, GroupForTag(definition.groupTag), null, loop);
         return definition.audioId;
     }
 

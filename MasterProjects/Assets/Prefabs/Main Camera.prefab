@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4007621154695231746}
   - component: {fileID: 4007621154695231757}
   - component: {fileID: 8332511192900756494}
-  - component: {fileID: 1057083066301922790}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -155,7 +154,7 @@ MonoBehaviour:
   shakeDampingSpeed: 0.1
   TrackingEntity: 1
   soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
-  magnitudeSoundThreshold: 0.8
+  magnitudeSoundThreshold: 0.4
   quakeVolume: QuakeVolume
   quakeVolumeRange:
     serializedVersion: 2

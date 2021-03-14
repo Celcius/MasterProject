@@ -75,7 +75,7 @@ public class GameCameraMover : CameraMover
         float duration = time;
         while(duration >= 0)
         {
-            if(playSound)
+            if(playSound) 
             {
                 PlayQuakeSound(magnitude);
             }
@@ -95,6 +95,10 @@ public class GameCameraMover : CameraMover
     {
         if(magnitude >= magnitudeSoundThreshold)
         {
+            if(soundHelper.Value.IsPlaying(GameSoundTag.SFX_LARGE_QUAKE))
+            {
+                return;
+            }
             soundHelper.Value.StopSound(GameSoundTag.SFX_QUAKE);
             if(!soundHelper.Value.IsPlaying(GameSoundTag.SFX_LARGE_QUAKE))
             {
@@ -103,6 +107,10 @@ public class GameCameraMover : CameraMover
         } 
         else 
         {
+            if(soundHelper.Value.IsPlaying(GameSoundTag.SFX_QUAKE))
+            {
+                return;
+            }
             soundHelper.Value.StopSound(GameSoundTag.SFX_LARGE_QUAKE);
             if(!soundHelper.Value.IsPlaying(GameSoundTag.SFX_QUAKE))
             {

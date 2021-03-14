@@ -79,6 +79,7 @@ public class MusicPlayer : RoomChangeHandler
         soundSystem.StopSound(MUSIC_ID);
         if(style == MusicStyle.Silence)
         {
+            currentMusicStyle = MusicStyle.Silence;
             return;
         }
 
@@ -89,7 +90,7 @@ public class MusicPlayer : RoomChangeHandler
 
     private void NextPlay(string MusicId)
     {
-        if(MusicId == MUSIC_ID)
+        if(MusicId == MUSIC_ID && !soundSystem.IsPlaying(MUSIC_ID))
         {
             soundSystem.PlaySound(GetNextClipForStyle(currentMusicStyle),
                     MUSIC_ID,
