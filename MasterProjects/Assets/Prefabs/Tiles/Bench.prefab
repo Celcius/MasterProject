@@ -224,6 +224,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   endClip: {fileID: 8300000, guid: b8aeb5d2f9975b94591270b93d63fb7f, type: 3}
   soundSystem: {fileID: 11400000, guid: 3d44ba72bd847c64a969dd32117518fc, type: 2}
+  canCallWithSound: {fileID: 11400000, guid: a6b56b26a8aeb7f42a3c64e264934887, type: 2}
 --- !u!114 &2703041699457951146
 MonoBehaviour:
   m_ObjectHideFlags: 0

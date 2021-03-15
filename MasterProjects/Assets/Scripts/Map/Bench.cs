@@ -44,6 +44,9 @@ public class Bench : PlayerCollideable
     [SerializeField]
     private SoundSystem soundSystem;
 
+    [SerializeField]
+    private BoolVar canCallWithSound;
+
     private string endClipId = "ENDCLIP";
 
     private void Start() 
@@ -70,12 +73,14 @@ public class Bench : PlayerCollideable
         {
             tutVar.Value = tutString;
         }
+        canCallWithSound.Value = false;
     }
 
     protected override void EntityTriggerExit(CharacterMovement entity) 
     {
         isPlayerInRange = false;
         tutVar.Value = "";
+        canCallWithSound.Value = true;
     }
 
     private void LateUpdate() 

@@ -117,6 +117,9 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private RoomCollection roomsToPlay;
 
+    [SerializeField]
+    private BoolVar canPlayWithSound;
+
     private void Start()
     {
        gridEntity = GetComponent<GridEntity>();
@@ -461,7 +464,10 @@ public class CharacterMovement : MonoBehaviour
         if(stateVar.Value != CharacterState.Calling)
         {
             SetCharacterState(CharacterState.Calling);
-            soundHelper.Value.PlaySound(GameSoundTag.SFX_CALL);
+            if(canPlayWithSound.Value)
+            {
+                soundHelper.Value.PlaySound(GameSoundTag.SFX_CALL);
+            }
         }
         
     }

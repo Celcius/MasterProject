@@ -5300,6 +5300,7 @@ MonoBehaviour:
   defaultParticleRooms: {fileID: 11400000, guid: 29a156fb633f5cc429cb48094296fbbd, type: 2}
   soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
   roomsToPlay: {fileID: 11400000, guid: 1af1131e78ead314f803f64f9542e05f, type: 2}
+  canPlayWithSound: {fileID: 11400000, guid: a6b56b26a8aeb7f42a3c64e264934887, type: 2}
 --- !u!58 &1071111346617289370
 CircleCollider2D:
   m_ObjectHideFlags: 0
