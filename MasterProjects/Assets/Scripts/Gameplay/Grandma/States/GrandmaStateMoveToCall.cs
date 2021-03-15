@@ -31,10 +31,19 @@ public class GrandmaStateMoveToCall : GrandmaState
 
     protected bool updateToCharacter = true;
 
-
     protected override void OnStateChange(CharacterState oldState, CharacterState newState) 
     {
-        if(newState != CharacterState.Calling)
+        if(newState == CharacterState.Idle
+           || newState == CharacterState.Walking
+           || newState == CharacterState.Pushing)
+        {
+            return;
+        } 
+        else if(newState == CharacterState.Crying)
+        {
+            controller.SetState(GrandmaStateEnum.MoveToCry);
+        } 
+        else if(newState != CharacterState.Calling)
         {
             controller.SetState(GrandmaStateEnum.Idle);
         }
