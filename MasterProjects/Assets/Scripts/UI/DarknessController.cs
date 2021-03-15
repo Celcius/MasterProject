@@ -37,6 +37,8 @@ public class DarknessController : RoomChangeHandler
     
     private Camera cam;
 
+    private GridEntity childEntity;
+
     private float startSpeed = 0.5f;
     protected override void Start() 
     {
@@ -50,7 +52,16 @@ public class DarknessController : RoomChangeHandler
 
     void FixedUpdate()
     {
-        SetPosition(playerEntity.Value.transform.position);
+        if(childEntity == null && playerEntity.Value == null)
+        {
+            return;
+        }
+        else if(childEntity == null)
+        {
+            childEntity = playerEntity.Value;
+        }
+
+        SetPosition(childEntity.transform.position);
         if(curRadius != goalRadius)
         {
             float dist = goalRadius - curRadius;
