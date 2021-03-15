@@ -111,6 +111,7 @@ public class MusicPlayer : RoomChangeHandler
         
         AudioClip clip = styleClips[index];
         index = (index+1) % styleClips.Length;
+        musicStyleIndex[style] = index;
         return clip;
     }
 

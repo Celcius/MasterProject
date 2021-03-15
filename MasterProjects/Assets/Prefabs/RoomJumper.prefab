@@ -43,32 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f000a0da860ef143b678f5f8948452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rooms:
-  - {x: -2, y: 1}
-  - {x: -1, y: 1}
-  - {x: 0, y: 1}
-  - {x: 0, y: 2}
-  - {x: -1, y: 2}
-  - {x: -1, y: 3}
-  - {x: -2, y: 3}
-  - {x: -3, y: 3}
-  - {x: -3, y: 4}
-  - {x: -2, y: 4}
-  - {x: -1, y: 4}
-  - {x: 0, y: 4}
-  - {x: 1, y: 4}
-  - {x: 2, y: 4}
-  - {x: 2, y: 3}
-  - {x: 3, y: 3}
-  - {x: 3, y: 2}
-  - {x: 4, y: 2}
-  - {x: 4, y: 3}
-  - {x: 4, y: 4}
-  - {x: 5, y: 4}
-  - {x: 5, y: 5}
-  - {x: 6, y: 5}
+  rooms: {fileID: 0}
   moverVar: {fileID: 11400000, guid: 1b103e906b3f0824fa3f9450fac8fa4d, type: 2}
   canMoveRooms: 1
   inputManager: {fileID: 11400000, guid: a62c1bc6975118a46ab8a03840e85200, type: 2}
   isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}
   balloonVar: {fileID: 11400000, guid: 9ad32733f67d9e446bee83d221f1c8e5, type: 2}
+  grandmaScriptVar: {fileID: 0}
+  tutLabels: []
+  soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}

@@ -30,6 +30,9 @@ public class RoomJumper : MonoBehaviour
     [SerializeField]
     private TutorialLabel[] tutLabels;
 
+    [SerializeField]
+    private SoundHelperVar soundHelper;
+
     void Start()
     {
         moverVar.Value.OnCameraMoveEnd += OnCameraMoved;
@@ -84,6 +87,9 @@ public class RoomJumper : MonoBehaviour
         }
 
         moverVar.Value.TrackingEntity = false;
+
+        soundHelper.Value.StopSound(GameSoundTag.SFX_QUAKE);
+        soundHelper.Value.StopSound(GameSoundTag.SFX_LARGE_QUAKE);
 
         CharacterMovement movement = moverVar.Value.LookAtGridEntity.GetComponent<CharacterMovement>();
         if(movement != null)
