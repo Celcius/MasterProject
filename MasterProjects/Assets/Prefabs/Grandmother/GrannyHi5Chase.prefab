@@ -20,6 +20,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
+      propertyPath: tutorialStringVar
+      value: 
+      objectReference: {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}
+    - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: characterGoalPos.x
       value: -50
       objectReference: {fileID: 0}

@@ -367,6 +367,7 @@ public class CharacterMovement : MonoBehaviour
             
             return;
         }
+        isAcceptingInput.Value = false;
 
         bool isGrandmaMoving = grandmaScriptVar.Value.CheckLeaveRoom(goalPos + representationParent.localPosition, () => 
         {

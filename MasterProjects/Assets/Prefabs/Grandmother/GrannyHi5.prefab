@@ -9910,7 +9910,7 @@ MonoBehaviour:
   goalPos: {x: -16, y: 50, z: 0}
   characterGoalPos: {x: -15, y: 50, z: 0}
   speed: 6
-  tutorialStringVar: {fileID: 11400000, guid: 949d0432e813acf4bb328809d52f8d6e, type: 2}
+  tutorialStringVar: {fileID: 11400000, guid: 3a006e3edaa49f84a82fd0f9220e8b13, type: 2}
   tutorialString: Press 'Q' to interact
   isAcceptingInput: {fileID: 11400000, guid: 069e18b20675f8f43bd51749aebef88b, type: 2}
   animator: {fileID: 2750233593618061708}
@@ -9920,6 +9920,10 @@ MonoBehaviour:
   - {fileID: 1779587080422383769}
   onHighFiveEnd:
     textString: Hope you're having fun too!
+    speedEnum: 0
+    duration: 0
+  goalBlockedText:
+    textString: 
     speedEnum: 0
     duration: 0
 --- !u!1 &8436258667710610737
@@ -10069,7 +10073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4558548734133275491, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 3220521
+      value: 4294955758
       objectReference: {fileID: 0}
     - target: {fileID: 4664785345715783127, guid: 0b6efaefab0e32d43945d7ea0ba09635, type: 3}
       propertyPath: m_Size.x
