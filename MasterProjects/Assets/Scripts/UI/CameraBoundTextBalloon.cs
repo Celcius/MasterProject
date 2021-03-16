@@ -44,6 +44,10 @@ public class CameraBoundTextBalloon : TextBalloon
     [SerializeField]
     private AudioMixerGroup voiceGroup;
 
+    private IEnumerator playVoiceRoutine = null;
+    private string currentTargetString = "";
+    private string playingString = "";
+    private int playedIndex = 0;
 
     float minHOffset;
     float maxHOffset;
@@ -57,6 +61,11 @@ public class CameraBoundTextBalloon : TextBalloon
         maxHOffset = maxAnchor.localPosition.x;
         hasStarted = true;
     }    
+
+    private void OnDisable() 
+    {
+        StopVoiceRoutine();    
+    }
 
     private void LateUpdate() 
     {
@@ -129,36 +138,98 @@ public class CameraBoundTextBalloon : TextBalloon
 
        if(string.IsNullOrEmpty(newVal))
        {
+           StopVoiceRoutine();
+           
            return;
-       }
-       
-       int lastIndex = newVal.Length-1;
-       char last = newVal[lastIndex];
-       if(char.IsWhiteSpace(last) || (IsVowel(last) && lastIndex > 0 && !IsVowel(newVal[lastIndex-1]) && Random.Range(0,10) < 5))
+       }   
+    
+       currentTargetString = newVal;
+
+       int minLen =  Mathf.Min(playingString.Length, currentTargetString.Length);
+       bool isSubStr = currentTargetString.Substring(0, minLen) == playingString;
+        
+       if(!isSubStr || currentTargetString.Length == 0)
        {
-           return;
+           StopVoiceRoutine();
+           playedIndex = 0;
        }
+       playingString = currentTargetString;
+
+       if(playVoiceRoutine == null && currentTargetString.Length > 0)
+       {
+           playVoiceRoutine = PlayVoiceRoutine();
+           StartCoroutine(playVoiceRoutine);
+       }
+    }
+
+    private IEnumerator PlayVoiceRoutine()
+    {
+        while(playedIndex < currentTargetString.Length)
+        {
+            bool isPlayingVoice = false;
+
+            do 
+            {
+                isPlayingVoice = soundSystem.IsPlaying(voiceID);
+                yield return new WaitForEndOfFrame();
+            }
+            while(isPlayingVoice);
+
+            bool shouldPlay = !(char.IsWhiteSpace(currentTargetString[playedIndex]) || SkipLetter(playedIndex));
             
-        bool isPlayingVoice = soundSystem.IsPlaying(voiceID);
-        bool isPlayingPunctuation = soundSystem.IsPlaying(punctuationID);
+                /*  
+                       bool isPlayingPunctuation = soundSystem.IsPlaying(punctuationID);
 
-   /*     if(char.IsPunctuation(last) && !isPlayingPunctuation && !isPlayingVoice)
-        {
-            soundSystem.StopSound(voiceID);
-            soundSystem.PlaySound(punctuationAudio[Random.Range(0, punctuationAudio.Length)],
-                                  voiceID,
-                                  true,
-                                  voiceGroup);
-        }*/
+    if(char.IsPunctuation(last) && !isPlayingPunctuation && !isPlayingVoice)
+                {
+                    soundSystem.StopSound(voiceID);
+                    soundSystem.PlaySound(punctuationAudio[Random.Range(0, punctuationAudio.Length)],
+                                        voiceID,
+                                        true,
+                                        voiceGroup);
+                }*/
 
-        if (char.IsLetter(last) && !isPlayingVoice)
-        {
-            soundSystem.StopSound(punctuationID);
-            soundSystem.PlaySound(voiceAudio[Random.Range(0, voiceAudio.Length)],
-                                  punctuationID,
-                                  true,
-                                  voiceGroup);
+            if(shouldPlay && ! isPlayingVoice)
+            {
+                PlayAudio();   
+            } 
+            yield return new WaitForEndOfFrame();
+            ++playedIndex;
         }
+
+        playVoiceRoutine = null;
+    }
+
+    private void PlayAudio()
+    {
+        soundSystem.StopSound(voiceID);
+        soundSystem.PlaySound(voiceAudio[Random.Range(0, voiceAudio.Length)],
+                                voiceID,
+                                true,
+                                voiceGroup);
+    }
+
+    private bool SkipLetter(int i)
+    {
+        return i %2 != 0;
+        /*if(i == 0)
+        {
+            return false;
+        }
+
+        int prevIndex = i-1;
+        char last = currentTargetString[i];
+
+        return IsVowel(last) && !IsVowel(currentTargetString[prevIndex]);*/
+    }
+
+    private void StopVoiceRoutine()
+    {
+        if(playVoiceRoutine != null)
+        {
+            StopCoroutine(playVoiceRoutine);
+        }
+        playVoiceRoutine = null;
     }
 
     public bool IsVowel(char c)

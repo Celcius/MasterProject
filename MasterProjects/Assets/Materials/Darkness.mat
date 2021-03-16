@@ -81,8 +81,8 @@ Material:
     - _circleSizePercent: 25
     - _innerRadius: 1
     - _opacity: 0
-    - _xOffset: 0.30769485
-    - _yOffset: 0.23718552
+    - _xOffset: 0.6971424
+    - _yOffset: 0.8623978
     m_Colors:
     - _: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _BgColor: {r: 0, g: 0, b: 0, a: 0}
