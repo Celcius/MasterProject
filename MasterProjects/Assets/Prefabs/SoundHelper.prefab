@@ -79,6 +79,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 6cad81f10c45e5b45972379f783858bf, type: 3}
     - {fileID: 8300000, guid: 1a448bacca38eae4599724e6d1b91c05, type: 3}
     - {fileID: 8300000, guid: 1d51188e11ea76b47a8596107271f9db, type: 3}
+    - {fileID: 8300000, guid: 8ce15f8b01f958546af2bfd62aac4d9c, type: 3}
+    - {fileID: 8300000, guid: 27a3f6c2f879c5241b58c12df95facca, type: 3}
+    - {fileID: 8300000, guid: 38b4775d479e42c4f92b5f7d80c8acab, type: 3}
+    - {fileID: 8300000, guid: d78b8f214a3c4d14ba7effa8607c3717, type: 3}
+    - {fileID: 8300000, guid: 609a7102eb8fd0c41ab690736f2b5ff7, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -103,7 +108,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 18
+      Data: 23
     - Name: 
       Entry: 7
       Data: 
@@ -527,6 +532,126 @@ MonoBehaviour:
     - Name: audioId
       Entry: 1
       Data: DRIP
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 17
+    - Name: audioId
+      Entry: 1
+      Data: BIRD_WING
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 23
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 18
+    - Name: audioId
+      Entry: 1
+      Data: Gull
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 24
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 19
+    - Name: audioId
+      Entry: 1
+      Data: Gull
+    - Name: groupTag
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 25
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 20
+    - Name: audioId
+      Entry: 1
+      Data: Gull
+    - Name: groupTag
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 26
+    - Name: $v
+      Entry: 7
+      Data: SoundHelper+GameSoundDefinition, Assembly-CSharp
+    - Name: audioClip
+      Entry: 10
+      Data: 21
+    - Name: audioId
+      Entry: 1
+      Data: Gull
     - Name: groupTag
       Entry: 3
       Data: 1
