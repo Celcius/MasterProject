@@ -1635,9 +1635,9 @@ PrefabInstance:
     - target: {fileID: 2066172457185579477, guid: 5e4e43dc70ec1a9428eee96294c08688, type: 3}
       propertyPath: m_text
       value: "- Parents -\nFernando Capelo\nHelena Capelo\n\n- Cats -\nFiro\nTommy
-        \n\n- Friends -\nLiliana Rocha\nLogan Urgenti-Wilkinson\nPau ???\nTiago Abril\nSusana
-        Santos\n\n- Teesside Staff -\nStephen Reeson\nSatish Shewhorak\n\n- Inorganic
-        -\n9S717G111065ZJ1000106\ne9f0611a\nXAJ40015434841\nTS1 3BQ 2.04\n\n\n\n\n"
+        \n\n- Friends -\nLiliana Rocha\nLogan Urgenti-Wilkinson\nPau Sempere Castillo\nTiago
+        Abril\nSusana Santos\n\n- Teesside Staff -\nStephen Reeson\nSatish Shewhorak\n\n-
+        Inorganic -\n9S717G111065ZJ1000106\ne9f0611a\nXAJ40015434841\nTS1 3BQ 2.04\n\n\n\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6906174865557408975, guid: 5e4e43dc70ec1a9428eee96294c08688, type: 3}
       propertyPath: m_Name
@@ -2263,7 +2263,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Cesaltina Capelo
 
-        (19?? - 20??)
+        (1926 - 2016)
 
 '
       objectReference: {fileID: 0}
