@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SeaMaterial
-  m_Shader: {fileID: 10765, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: SunMaterial
+  m_Shader: {fileID: 4800000, guid: 04e6b68600c029e49bc4c7e005ddedd1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,13 +39,9 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MainBump:
-        m_Texture: {fileID: 2800000, guid: f2c742969513afc45bfee8b144f51768, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 3, y: 10}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -61,7 +57,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _ColorMask: 15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -72,27 +67,19 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Shininess: 0.268
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
     - _UVSec: 0
-    - _UseUIAlphaClip: 0
     - _ZWrite: 1
-    - _border: 0.014
-    - _innerRadius: 0.519
+    - _border: 0.061
+    - _innerRadius: 0.4
     - _opacity: 1
     - _xOffset: 0.5
     - _yOffset: 0.5
     m_Colors:
-    - _Color: {r: 0.24296905, g: 0.34548125, b: 0.5660378, a: 0.62352943}
+    - _Color: {r: 0.3882353, g: 0.60784316, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Specular: {r: 0.7735849, g: 0.59462357, b: 0.20069422, a: 0}
-    - _innerColor: {r: 1, g: 0.6489396, b: 0, a: 1}
-    - _outerColor: {r: 1, g: 0.3974151, b: 0, a: 1}
+    - _innerColor: {r: 1, g: 0.84552795, b: 0, a: 1}
+    - _outerColor: {r: 1, g: 0.16509432, b: 0.32982436, a: 0.9490196}
   m_BuildTextureStacks: []

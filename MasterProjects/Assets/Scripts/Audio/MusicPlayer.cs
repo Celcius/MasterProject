@@ -41,6 +41,7 @@ public class MusicPlayer : RoomChangeHandler
     [SerializeField]
     private SoundHelperVar soundHelper;
 
+    private bool hasPlayedStyle = false;
     protected override void Start()
     {
         base.Start();
@@ -85,13 +86,20 @@ public class MusicPlayer : RoomChangeHandler
 
         musicStyleIndex[style] = 0;
         currentMusicStyle = style;
+        hasPlayedStyle = false;
         NextPlay(MUSIC_ID);
     }
 
     private void NextPlay(string MusicId)
     {
+        if(hasPlayedStyle && currentMusicStyle == MusicStyle.Saudade)
+        {
+            return;
+        }
+        
         if(MusicId == MUSIC_ID && !soundSystem.IsPlaying(MUSIC_ID))
         {
+            hasPlayedStyle = true;
             soundSystem.PlaySound(GetNextClipForStyle(currentMusicStyle),
                     MUSIC_ID,
                     false,

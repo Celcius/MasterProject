@@ -49,7 +49,6 @@ public class DarknessController : RoomChangeHandler
         SetRadius(1.0f);
     }
 
-
     void FixedUpdate()
     {
         if(childEntity == null && playerEntity.Value == null)
@@ -76,7 +75,11 @@ public class DarknessController : RoomChangeHandler
             }
         }
     }
-
+    public void SetChild(GridEntity newChild)
+    {
+        childEntity = newChild;
+    }
+    
     public override void OnRoomEnter(Vector2Int pos)
     {
         fadeSpeed = startSpeed;

@@ -123,6 +123,8 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeadGrandmaController.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Bird.cs" />
+     <Compile Include="Assets\ApplyMaterialOffset.cs" />
+     <Compile Include="Assets\CreditsController.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

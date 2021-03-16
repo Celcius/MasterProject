@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SeaMaterial
+  m_Name: SeaMaterial2
   m_Shader: {fileID: 10765, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -45,8 +45,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 3, y: 10}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 3, y: 5}
+        m_Offset: {x: 4.55, y: -2.28}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -90,7 +90,7 @@ Material:
     - _xOffset: 0.5
     - _yOffset: 0.5
     m_Colors:
-    - _Color: {r: 0.24296905, g: 0.34548125, b: 0.5660378, a: 0.62352943}
+    - _Color: {r: 0.023718417, g: 0.14083906, b: 0.38679248, a: 0.4117647}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Specular: {r: 0.7735849, g: 0.59462357, b: 0.20069422, a: 0}
     - _innerColor: {r: 1, g: 0.6489396, b: 0, a: 1}

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking: 0
   allowsStand: 1
+  isRoomStatic: 1
   var: {fileID: 11400000, guid: 37057af1616b67a439df59dcf0248af1, type: 2}
   setGridPos: 0
 --- !u!114 &6846080829336869709
@@ -55,7 +56,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5531276594536143261}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5cbfcb3664ba2b498e699fc64e5a0a6, type: 3}
   m_Name: 

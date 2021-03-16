@@ -47,7 +47,11 @@ public class Bench : PlayerCollideable
     [SerializeField]
     private BoolVar canCallWithSound;
 
+    [SerializeField]
+    private GridEntity lookAtEndChild;
+
     private string endClipId = "ENDCLIP";
+    private bool hasStartedCredits = false;
 
     private void Start() 
     {
@@ -59,6 +63,7 @@ public class Bench : PlayerCollideable
         camTransform = CameraMover.Instance.transform;
 
         lastFrame = camRotation.keys[camRotation.keys.Length-1];
+        hasStartedCredits = false;
     }
 
     private void OnDestroy() 
@@ -95,6 +100,11 @@ public class Bench : PlayerCollideable
             else
             {
                 camTransform.rotation = Quaternion.Euler(lastFrame.value,0,0);
+                if(!hasStartedCredits)
+                {
+                    CreditsController.Instance.StartMoveCredits(lookAtEndChild);                    
+                    hasStartedCredits = true;
+                }
             }   
             return;
         }
