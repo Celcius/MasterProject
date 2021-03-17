@@ -67,6 +67,12 @@ public class GrannyHi5 : GrandmaController
     [SerializeField]
     private TextBalloonString goalBlockedText;
 
+    [SerializeField]
+    private StringVar heightIndicatorVar;
+
+    [SerializeField]
+    private string heightString;
+
     private float frameAtStart;
 
 
@@ -138,10 +144,14 @@ public class GrannyHi5 : GrandmaController
         
         for(int i = 0; i < onArrive.Length; i++)
         {
+            if(i == 0)
+            {
+                heightIndicatorVar.Value = heightString;
+            }
+
             TextBalloonString arriveStr = onArrive[i];
             Balloon.ShowText(arriveStr);
             yield return new WaitForSeconds(onArriveDuration[i]);
-
         }
 
         canHi5 = true;

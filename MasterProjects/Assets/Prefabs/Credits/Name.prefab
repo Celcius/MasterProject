@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 623677238753756436}
   - component: {fileID: 1074504226525839958}
   - component: {fileID: 2066172457185579477}
-  - component: {fileID: 6687917456510005654}
   m_Layer: 5
-  m_Name: Ivo Capelo
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,18 +134,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6687917456510005654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6906174865557408975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3595589239d3b9145afcad03c62b6ab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tutorialLabel: {fileID: 11400000, guid: 3a006e3edaa49f84a82fd0f9220e8b13, type: 2}
-  fadeInTime: 2
-  timeInScreen: 5

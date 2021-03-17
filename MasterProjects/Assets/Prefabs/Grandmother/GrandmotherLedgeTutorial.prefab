@@ -37,6 +37,7 @@ MonoBehaviour:
     speedEnum: 2
     duration: 0
   backtrackStrings: {fileID: 0}
+  soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
 --- !u!1001 &3835204248656581779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,7 +103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3411258837953988260, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 3220521
+      value: 4294955758
       objectReference: {fileID: 0}
     - target: {fileID: 7537704721399866278, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_Controller

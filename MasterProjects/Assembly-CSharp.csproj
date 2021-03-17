@@ -50,7 +50,6 @@
      <Compile Include="Assets\Scripts\Map\Cuteable.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterState.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloon.cs" />
-     <Compile Include="Assets\Scripts\UI\TutorialLabel.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterStateVar.cs" />
      <Compile Include="Assets\Scripts\Map\InvisibleEntitySpawnTile.cs" />
      <Compile Include="Assets\Scripts\UI\CameraBoundTextBalloon.cs" />
@@ -68,6 +67,7 @@
      <Compile Include="Assets\Scripts\Gameplay\PlayerCollideable.cs" />
      <Compile Include="Assets\Scripts\Audio\SoundHelper.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaState.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Bird.cs" />
      <Compile Include="Assets\Scripts\Map\SpawnCrack.cs" />
      <Compile Include="Assets\Scripts\Map\SpawnTree.cs" />
      <Compile Include="Assets\Scripts\Input\WindowsInputController.cs" />
@@ -82,7 +82,9 @@
      <Compile Include="Assets\Scripts\Gameplay\JumpController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\LedgeTutorialGrandmother.cs" />
      <Compile Include="Assets\Scripts\Gameplay\ChangeDarknessOnBoulderCollision.cs" />
+     <Compile Include="Assets\CreditsController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CharacterMovement.cs" />
+     <Compile Include="Assets\ApplyMaterialOffset.cs" />
      <Compile Include="Assets\Scripts\Events\TalkCollider.cs" />
      <Compile Include="Assets\Scripts\Gameplay\EndChild.cs" />
      <Compile Include="Assets\Scripts\UI\RandomSelectionTextBalloonString.cs" />
@@ -122,9 +124,8 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeadGrandmaController.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\Bird.cs" />
-     <Compile Include="Assets\ApplyMaterialOffset.cs" />
-     <Compile Include="Assets\CreditsController.cs" />
+     <Compile Include="Assets\HeightScript.cs" />
+     <Compile Include="Assets\MenuScript.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -132,6 +133,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\Fonts\Great_Vibes\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />

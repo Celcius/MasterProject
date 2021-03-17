@@ -221,6 +221,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ba955012222a947bd0a7d2f23c4482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   roomHandler: {fileID: 0}
   tutorialString: Hold 'Esc' to restart
   tutorialVar: {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}
@@ -373,6 +382,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ba955012222a947bd0a7d2f23c4482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   roomHandler: {fileID: 0}
   tutorialString: Hold 'Esc' to restart
   tutorialVar: {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}
@@ -446,9 +464,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d83331fcc7f64b438ebcded8fe5178f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   roomHandler: {fileID: 0}
-  tutorialString: Hold 'Esc' to restart
-  tutorialVar: {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}
+  tutorialString: If stuck, Hold 'Esc' to Restart
+  tutorialVar: {fileID: 11400000, guid: 949d0432e813acf4bb328809d52f8d6e, type: 2}
 --- !u!1 &3463886650560688031
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +625,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ba955012222a947bd0a7d2f23c4482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   roomHandler: {fileID: 0}
   tutorialString: Hold 'Esc' to restart
   tutorialVar: {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}
@@ -829,6 +865,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ba955012222a947bd0a7d2f23c4482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   roomHandler: {fileID: 0}
   tutorialString: Hold 'Esc' to restart
   tutorialVar: {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}
@@ -1139,6 +1184,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ba955012222a947bd0a7d2f23c4482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   roomHandler: {fileID: 0}
   tutorialString: Hold 'Esc' to restart
   tutorialVar: {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}

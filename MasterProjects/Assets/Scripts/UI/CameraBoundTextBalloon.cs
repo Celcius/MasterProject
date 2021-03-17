@@ -211,7 +211,7 @@ public class CameraBoundTextBalloon : TextBalloon
 
     private bool SkipLetter(int i)
     {
-        return i %2 != 0;
+        return i %3 != 0;
         /*if(i == 0)
         {
             return false;

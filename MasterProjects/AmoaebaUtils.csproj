@@ -61,6 +61,7 @@
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\ScriptableObjectUtility.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterTransformArrVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\UpdateTextOnTimeVarChange.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\FadeLabelFromStringVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\IntVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimationUtils\CurveAnim.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\GeometryUtils.cs" />
@@ -118,6 +119,7 @@
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\AnimationUtils\FadeInFadeOutAnim.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\AnimatorVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\PhysicsAnimationCurve.cs" />
+     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\Shaders\ShaderInstanceUtils.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\DisableOnBoolVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\StructUtils.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SoundSystem\AudioMixerSoundSystem.cs" />
@@ -150,7 +152,6 @@
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\ScriptableObjectUtils\ScriptVar\RegisterComponentVar.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\Core\SceneTransitionHandler.cs" />
      <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\TransformMovement.cs" />
-     <Compile Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\Shaders\ShaderInstanceUtils.cs" />
      <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\AmoaebaUtils.asmdef" />
      <None Include="Assets\Packages\AmoaebaUtils\AmoaebaUtils\GameplayUtils\Shaders\DarknessShader.shader" />
     <Reference Include="UnityEngine">

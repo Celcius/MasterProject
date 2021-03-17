@@ -16,6 +16,10 @@ PrefabInstance:
       value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
+      propertyPath: heightString
+      value: 225m
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: isRoomStatic
       value: 0
       objectReference: {fileID: 0}
@@ -33,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: onArrive.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: onMoveText.textString
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: onArriveDuration.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: onArriveDuration.Array.data[0]
@@ -61,22 +65,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: onArriveDuration.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
+      propertyPath: onArriveDuration.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
+      propertyPath: onArrive.Array.data[1].duration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
+      propertyPath: onArrive.Array.data[2].duration
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: onArrive.Array.data[0].speedEnum
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: onArrive.Array.data[1].speedEnum
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: onArrive.Array.data[0].textString
-      value: Yup, 300m!
+      value: Yup, 225m!
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: onArrive.Array.data[1].textString
+      value: Less than half to go!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
+      propertyPath: onArrive.Array.data[2].textString
       value: You know what that means!?
       objectReference: {fileID: 0}
     - target: {fileID: 6392499814304529070, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}

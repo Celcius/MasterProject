@@ -20,6 +20,7 @@ MonoBehaviour:
   texts:
   - textString: C'mon, this way!
     speedEnum: 2
+    duration: 0
   backtrackStrings: {fileID: 0}
   tutorialLabel: '''W'' ''A'' ''S'' ''D'' to move'
   tutorialStringVar: {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}
@@ -88,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3411258837953988260, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 3220521
+      value: 4294955758
       objectReference: {fileID: 0}
     - target: {fileID: 7537704721399866278, guid: 199a494a97501264d87d97fdae1657e1, type: 3}
       propertyPath: m_Controller

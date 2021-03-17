@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AmoaebaUtils;
 
 public class RoomJumper : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class RoomJumper : MonoBehaviour
     private GrandmaScriptVar grandmaScriptVar;
 
     [SerializeField]
-    private TutorialLabel[] tutLabels;
+    private FadeLabelFromStringVar[] tutLabels;
 
     [SerializeField]
     private SoundHelperVar soundHelper;
@@ -127,7 +128,7 @@ public class RoomJumper : MonoBehaviour
             balloonVar.Value.HideBalloon(true);
         }
 
-        foreach(TutorialLabel label in tutLabels)
+        foreach(FadeLabelFromStringVar label in tutLabels)
         {
             label.Hide();
         }

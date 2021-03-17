@@ -9893,22 +9893,31 @@ MonoBehaviour:
     duration: 0
   minTimeToShowOnMoveText: 2
   onArrive:
-  - textString: We climbed 200m!
+  - textString: We climbed 100m!
     speedEnum: 2
-    duration: 0
+    duration: 2
+  - textString: Of about 400!? I think...
+    speedEnum: 1
+    duration: 2
+  - textString: About a quarter... huh?
+    speedEnum: 0
+    duration: 2
   - textString: Which means...
     speedEnum: 0
-    duration: 0
+    duration: 2
   - textString: HIGH FIVE TIME!
     speedEnum: 1
-    duration: 0
+    duration: 2
   onArriveDuration:
+  - 2
+  - 3
+  - 4
   - 3
   - 3
   - 2
   leaveAttemptStrings: {fileID: 11400000, guid: 4f6f32f6519ee0f459af353a4131792d, type: 2}
-  goalPos: {x: -16, y: 50, z: 0}
-  characterGoalPos: {x: -15, y: 50, z: 0}
+  goalPos: {x: -16, y: 49, z: 0}
+  characterGoalPos: {x: -15, y: 49, z: 0}
   speed: 6
   tutorialStringVar: {fileID: 11400000, guid: 3a006e3edaa49f84a82fd0f9220e8b13, type: 2}
   tutorialString: Press 'Q' to interact
@@ -9926,6 +9935,8 @@ MonoBehaviour:
     textString: 
     speedEnum: 0
     duration: 0
+  heightIndicatorVar: {fileID: 11400000, guid: ebfe80e5cfd1e104a8da734f95fe4af0, type: 2}
+  heightString: 100m
 --- !u!1 &8436258667710610737
 GameObject:
   m_ObjectHideFlags: 0

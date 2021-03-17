@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AmoaebaUtils;
 
 public class GameRoomHandler : RoomHandler
 {
@@ -17,7 +18,7 @@ public class GameRoomHandler : RoomHandler
 
 
     [SerializeField]
-    private TutorialLabel[] tutLabels;
+    private FadeLabelFromStringVar[] tutLabels;
 
     protected override void Start() 
     {
@@ -28,7 +29,7 @@ public class GameRoomHandler : RoomHandler
 
     private void OnMoveStart(Vector2Int oldRoom, Vector2Int newRoom)
     {
-        foreach(TutorialLabel label in tutLabels)
+        foreach(FadeLabelFromStringVar label in tutLabels)
         {
             label.Hide();
         }

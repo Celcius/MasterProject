@@ -31,7 +31,7 @@ public class RestartController : MonoBehaviour
     private float activateInputRatio = 0.5f;
 
     [SerializeField]
-    private TutorialLabel[] labels;
+    private FadeLabelFromStringVar[] labels;
 
     private bool waitOnInput = false;
 
@@ -130,7 +130,7 @@ public class RestartController : MonoBehaviour
 
     private void RespawnRoom()
     {
-        foreach(TutorialLabel label in labels)
+        foreach(FadeLabelFromStringVar label in labels)
         {
             label.Hide();
         }
