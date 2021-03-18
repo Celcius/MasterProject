@@ -31,14 +31,6 @@ public class Bench : PlayerCollideable
     GridEntity cachedPlayer = null;
 
     [SerializeField]
-    private AnimationCurve camRotation;
-
-    private Transform camTransform;
-
-    private float elapsed = 0;
-    private Keyframe lastFrame;
-
-    [SerializeField]
     private AudioClip endClip;
 
     [SerializeField]
@@ -51,19 +43,11 @@ public class Bench : PlayerCollideable
     private GridEntity lookAtEndChild;
 
     private string endClipId = "ENDCLIP";
-    private bool hasStartedCredits = false;
-
     private void Start() 
     {
         isPlayerInRange = false;
         roomHandler = CameraMover.Instance.GetComponent<RoomHandler>();
         roomHandler.onLeave += OnRoomLeave;
-        hasStartedEnd = false;
-        elapsed = 0;
-        camTransform = CameraMover.Instance.transform;
-
-        lastFrame = camRotation.keys[camRotation.keys.Length-1];
-        hasStartedCredits = false;
     }
 
     private void OnDestroy() 
@@ -90,32 +74,12 @@ public class Bench : PlayerCollideable
 
     private void LateUpdate() 
     {
-        if(hasStartedEnd)
-        {
-            if(elapsed < lastFrame.time)
-            {
-                camTransform.rotation = Quaternion.Euler(camRotation.Evaluate(elapsed),0,0);
-                elapsed += Time.deltaTime;
-            }
-            else
-            {
-                camTransform.rotation = Quaternion.Euler(lastFrame.value,0,0);
-                if(!hasStartedCredits)
-                {
-                    CreditsController.Instance.StartMoveCredits(lookAtEndChild);                    
-                    hasStartedCredits = true;
-                }
-            }   
-            return;
-        }
 
         if(input.IsGrab() && isPlayerInRange)
         {
             hasStartedEnd = true;
             tutVar.Value = "";
-            isAcceptingInput.Value = false;
-            tutVar.Value = "";
-            soundSystem.PlaySound(endClip, endClipId, false, null);
+            CreditsController.Instance.StartCamRot(lookAtEndChild);
             
             cachedPlayer = cameraLookat.Value;
 
@@ -123,8 +87,10 @@ public class Bench : PlayerCollideable
                                                 cachedPlayer.transform.position, 
                                                 cachedPlayer.transform.rotation);
             cameraLookat.Value = benchPlayer;
-
+            soundSystem.PlaySound(endClip, endClipId, false, null);
             cachedPlayer.gameObject.SetActive(false);
+            
+            
         }
     }
 

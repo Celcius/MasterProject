@@ -388,6 +388,11 @@ public class CharacterMovement : MonoBehaviour
             }
         }
 
+        if(!isGrandmaMoving && ! grandmaScriptVar.Value.IsGrandmaDead())
+        {
+            isAcceptingInput.Value = true;
+        }
+
     }
 
     private void PlaySuccessJingle()

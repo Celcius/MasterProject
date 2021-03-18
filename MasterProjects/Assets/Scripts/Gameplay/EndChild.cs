@@ -39,4 +39,9 @@ public class EndChild : MonoBehaviour
         transform.position = endPos;
         animator.enabled = true;
     }
+
+    public void FinishedAnim()
+    {
+        CreditsController.Instance.SwapGrid();
+    }
 }

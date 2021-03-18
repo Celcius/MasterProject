@@ -30,6 +30,31 @@ public class CreditsController : Singleton<CreditsController>
 
     [SerializeField]
     private DarknessController darknessController;
+
+    [SerializeField]
+    private Transform grid;
+
+    [SerializeField]
+    private Transform[] endImages;
+
+    
+    [SerializeField]
+    private AnimationCurve camRotation;
+
+    private Transform camTransform;
+
+    private float elapsed = 0;
+    private Keyframe lastFrame;
+    
+    private bool hasStartedCredits = false;
+
+    private GridEntity lookAtEndChild;
+
+    
+    [SerializeField]
+    private BoolVar isAcceptingInput;
+    private bool hasStartedEnd = false;
+
     void Start()
     {
         startPos = creditsTransform.anchoredPosition;
@@ -44,6 +69,13 @@ public class CreditsController : Singleton<CreditsController>
         Color c = finLabel.color;
         c.a = 0;
         finLabel.color = c;
+
+        hasStartedEnd = false;
+        elapsed = 0;
+        camTransform = CameraMover.Instance.transform;
+
+        lastFrame = camRotation.keys[camRotation.keys.Length-1];
+        hasStartedCredits = false;
     }
 
     public void StartMoveCredits(GridEntity lookAtChild)
@@ -105,5 +137,42 @@ public class CreditsController : Singleton<CreditsController>
       //  darknessController.FadeTo(-10.0f, 1.0f/finalFadeDuration);
     } 
 
-    
+    public void SwapGrid()
+    {
+        foreach(Transform endImage in endImages)
+        {
+            endImage.gameObject.SetActive(true);
+        }
+        
+        grid.gameObject.SetActive(false);
+    }
+
+     private void LateUpdate() 
+    {
+        if(hasStartedEnd)
+        {
+            if(elapsed < lastFrame.time)
+            {
+                camTransform.rotation = Quaternion.Euler(camRotation.Evaluate(elapsed),0,0);
+                elapsed += Time.deltaTime;
+            }
+            else
+            {
+                camTransform.rotation = Quaternion.Euler(lastFrame.value,0,0);
+                if(!hasStartedCredits)
+                {
+                    CreditsController.Instance.StartMoveCredits(lookAtEndChild);                    
+                    hasStartedCredits = true;
+                }
+            }   
+            return;
+        }
+    }
+    public void StartCamRot(GridEntity lookAt)
+    {
+        lookAtEndChild = lookAt;
+        hasStartedEnd = true;
+
+        isAcceptingInput.Value = false;
+    }
 }
