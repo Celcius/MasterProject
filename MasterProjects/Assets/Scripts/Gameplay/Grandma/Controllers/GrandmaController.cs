@@ -440,6 +440,7 @@ public class GrandmaController : IGrandmaController
 
         if(gridGoalPos == GridPos || path != null && path.Length > 0)
         {
+            SetState(GrandmaStateEnum.Idle);
             SetMoveTarget(clampedworldPos);
             if(successLeaveStrings != null)
             {

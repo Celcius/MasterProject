@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2124d08e75a996408d1b2e73939989e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 3950}
+  endPos: {x: 0, y: 4030}
   timeToMove: 150
   creditsTransform: {fileID: 7868794887442733641}
   finLabel: {fileID: 5876597077174447185}
@@ -192,7 +192,7 @@ MonoBehaviour:
   finalFadeDuration: 5
   darknessController: {fileID: 0}
   grid: {fileID: 0}
-  endImage: {fileID: 0}
+  endImages: []
   camRotation:
     serializedVersion: 2
     m_Curve:
@@ -1308,9 +1308,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2066172457185579477, guid: 5e4e43dc70ec1a9428eee96294c08688, type: 3}
       propertyPath: m_text
-      value: 'Porto Largo
+      value: '- Porto Largo -
 
-        by Alexandre Bateiras
+        By Alexandre Bateiras
 
 
 '
@@ -1529,7 +1529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646159007242605455, guid: 8cd82c7be508a234894627b721fcd772, type: 3}
       propertyPath: m_text
-      value: Credit Song
+      value: Credits Music
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cd82c7be508a234894627b721fcd772, type: 3}
@@ -1632,7 +1632,7 @@ PrefabInstance:
     - target: {fileID: 2066172457185579477, guid: 5e4e43dc70ec1a9428eee96294c08688, type: 3}
       propertyPath: m_text
       value: "- Parents -\nFernando Capelo\nHelena Capelo\n\n- Cats -\nFiro\nTommy
-        \n\n- Friends -\nHugo Antunes\nIvo Ventura\nLiliana Rocha\nLogan Urgenti-Wilkinson\nPau
+        \n\n- Corona Friends -\nHugo Antunes\nIvo Ventura\nLiliana Rocha\nLogan Urgenti-Wilkinson\nPau
         Sempere Castillo\nTiago Abril\nSusana Santos\n\n- Teesside Staff -\nStephen
         Reeson\nSatish Shewhorak\n\n- Inorganic -\n9S717G111065ZJ1000106\ne9f0611a\nXAJ40015434841\nTS1
         3BQ 2.04\n\n\n\n\n"
