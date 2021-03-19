@@ -2369,7 +2369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2066172457185579477, guid: 5e4e43dc70ec1a9428eee96294c08688, type: 3}
       propertyPath: m_text
-      value: 'Daniel Colins
+      value: 'Daniel Collins
 
         Mathew Bray
 
