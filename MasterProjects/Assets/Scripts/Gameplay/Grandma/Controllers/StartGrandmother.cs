@@ -8,13 +8,6 @@ public class StartGrandmother : AnimTutorialGrandmother
     [SerializeField]
     private string tutorialLabel = "W A S D to move";
 
-    [SerializeField]
-    private StringVar tutorialStringVar;
-
-    public void ShowTutorialString()
-    {
-        tutorialStringVar.Value = tutorialLabel;
-    }
     public override void OnAnimationEnded() 
     {
 
