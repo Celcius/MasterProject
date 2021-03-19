@@ -125,3 +125,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   characterEntity: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
   rend: {fileID: 440571225143451956}
+  soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
+  musicRatio: 0.25
+  remembranceSnapshot: {fileID: 5349730924843455469, guid: 5b2f60bb9db298c42a772fac096fefd4, type: 2}
+  defaultSnapshot: {fileID: -8460515311603461632, guid: 5b2f60bb9db298c42a772fac096fefd4, type: 2}

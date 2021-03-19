@@ -14,7 +14,9 @@ public class MusicPlayer : RoomChangeHandler
         Chase,
         Coping,
         Saudade,
-        End
+        End,
+        Saudade2,
+        Remembrance,
     }
     private struct RoomMusicInfo
     {
@@ -77,6 +79,11 @@ public class MusicPlayer : RoomChangeHandler
 
     public void PlayStyle(MusicStyle style)
     {
+        if(currentMusicStyle == style)
+        {
+            return;
+        }
+
         soundSystem.StopSound(MUSIC_ID);
         if(style == MusicStyle.Silence)
         {
@@ -94,6 +101,7 @@ public class MusicPlayer : RoomChangeHandler
     {
         if(hasPlayedStyle && currentMusicStyle == MusicStyle.Saudade)
         {
+            PlayStyle(MusicStyle.Saudade2);
             return;
         }
         
