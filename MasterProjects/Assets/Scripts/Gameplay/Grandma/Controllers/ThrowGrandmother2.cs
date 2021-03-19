@@ -56,6 +56,7 @@ public class ThrowGrandmother2 : GrandmaController
     {
         base.Start();
         ResetGrandma(false);
+        ShowTutString(0);
     }
     public override void ResetGrandma(bool isRespawn)
     {
@@ -68,7 +69,6 @@ public class ThrowGrandmother2 : GrandmaController
         base.ResetGrandma(isRespawn);
         timesThrown = 0;
         canLeave = false;
-        ShowTutString(0);
         canCall.Value = true;
     }
 

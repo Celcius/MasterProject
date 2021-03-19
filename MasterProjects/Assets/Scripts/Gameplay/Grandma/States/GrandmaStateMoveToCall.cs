@@ -108,6 +108,7 @@ public class GrandmaStateMoveToCall : GrandmaState
         if(path == null || path.Length == 0)
         {
             controller.Balloon.ShowText(cantReachStrings.GetRandomSelection());
+            controller.SetState(GrandmaStateEnum.Idle);
             return;
         }
 

@@ -456,7 +456,11 @@ public class CharacterMovement : MonoBehaviour
     }
     private void OnCry()
     {
-        soundHelper.Value.PlaySound(GameSoundTag.SFX_CRYING);
+        if(!soundHelper.Value.IsPlaying(GameSoundTag.SFX_CRYING))
+        {
+            soundHelper.Value.PlaySound(GameSoundTag.SFX_CRYING);
+        }
+        
         SetCharacterState(CharacterState.Crying);
     }
 
