@@ -47,7 +47,7 @@ AudioMixerSnapshotController:
   m_SnapshotID: 6796f2542246a7d4db213b7c01ea0bdb
   m_FloatValues:
     5b6bceb217e499440a65f01a39940480: 7659
-    82d014d2214dea84d94ebe86aaacc0af: -19.928473
+    82d014d2214dea84d94ebe86aaacc0af: -24.900742
     ece59a341693efb4eb6aace5e9ad07aa: 0
     19f1ca941d1b9b8468c01c4bbea6f649: 3.9
     e72a87c460214f04a942c89b73a2d7cf: 0
@@ -163,6 +163,7 @@ AudioMixerController:
   - {fileID: -8460515311603461632}
   - {fileID: 810297120300023171}
   - {fileID: 5349730924843455469}
+  - {fileID: 1695991551541933281}
   m_StartSnapshot: {fileID: -8460515311603461632}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -182,7 +183,7 @@ AudioMixerController:
     - e6a6e43d95d4f924b9d80e92166b437c
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 5349730924843455469}
+  m_TargetSnapshot: {fileID: -8460515311603461632}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -230,6 +231,30 @@ AudioMixerSnapshotController:
   m_Name: Hi5SnapShot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 68049ecf4396ff44c994cbc93fb3018b
+  m_FloatValues:
+    5b6bceb217e499440a65f01a39940480: 7659
+    82d014d2214dea84d94ebe86aaacc0af: -80
+    ece59a341693efb4eb6aace5e9ad07aa: 0
+    19f1ca941d1b9b8468c01c4bbea6f649: 3.9
+    e72a87c460214f04a942c89b73a2d7cf: -62.39998
+    92ae49c52be6594498b3821879004868: 21.3
+    4f0b58095fcbfd743b21d6a52094be26: 1.32
+    f2fb6719fb6beef4bb37f0c96d56f079: 228
+    9926086957419c84194aa54ec528b558: 0.217
+    717c91f9a6104c24ba61b7221a2ab034: 5.35
+    b1db34f9638469d42a8707897d7b131f: 22000
+    bc9f48ddada75b84aa341d0783dee32a: -0
+    5dac5a6ff8ad57a47abef1b5478cc39d: 0.068
+  m_TransitionOverrides: {}
+--- !u!245 &1695991551541933281
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EatSnapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: b7251886954014441be0694f4b5ed6b3
   m_FloatValues:
     5b6bceb217e499440a65f01a39940480: 7659
     82d014d2214dea84d94ebe86aaacc0af: -80

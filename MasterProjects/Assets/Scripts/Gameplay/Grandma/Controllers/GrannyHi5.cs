@@ -8,7 +8,7 @@ public class GrannyHi5 : GrandmaController
     public override bool CanGrab => !hasHi5;
 
     [SerializeField]
-    private GrandmaController grandmaPrefab;
+    private IGrandmaController grandmaPrefab;
 
     [SerializeField]
     private TextBalloonString onMoveText;
@@ -247,8 +247,13 @@ public class GrannyHi5 : GrandmaController
         hasHi5 = true;
         isAcceptingInput.Value = true;
 
-        GrandmaController grandma = Instantiate<GrandmaController>(grandmaPrefab, transform.position, transform.rotation);
-        grandma.Balloon.ShowText(onHighFiveEnd, false, false);
+        IGrandmaController grandma = Instantiate<IGrandmaController>(grandmaPrefab, transform.position, transform.rotation);
+        TextBalloon balloon = grandma.GetBalloon();
+        if(balloon != null)
+        {
+            balloon.ShowText(onHighFiveEnd, false, false);
+        }
+        
         Destroy(gameObject);
     }
 

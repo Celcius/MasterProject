@@ -9,7 +9,7 @@ public class AnimTutorialGrandmother : IGrandmaController
     public override bool CanGrab  => false;
     public override bool IsOnGrandma  => false;
 
-    private int textIndex = 0;
+    protected int textIndex = 0;
 
     [SerializeField]
     private GrandmaController grandmaPrefab;
@@ -18,7 +18,7 @@ public class AnimTutorialGrandmother : IGrandmaController
     protected TextBalloon balloon;
 
     [SerializeField]
-    private TextBalloonString[] texts;
+    protected TextBalloonString[] texts;
 
     [SerializeField]
     private RandomSelectionTextBalloonString backtrackStrings;
@@ -105,5 +105,10 @@ public class AnimTutorialGrandmother : IGrandmaController
         {
             balloon.ShowText(backtrackStrings.GetRandomSelection());
         }
+    }
+
+    public override TextBalloon GetBalloon()
+    {
+        return balloon;
     }
 }

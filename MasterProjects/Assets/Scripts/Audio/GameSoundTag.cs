@@ -30,5 +30,6 @@ public enum GameSoundTag
     SFX_BIRD_GULL2,
     SFX_BIRD_GULL3,
     SFX_BIRD_GULL4,
+    SFX_EAT_SCENE
 
 }

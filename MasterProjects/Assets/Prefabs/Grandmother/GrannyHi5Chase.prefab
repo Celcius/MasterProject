@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
+      propertyPath: speed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: goalPos.x
       value: -51
       objectReference: {fileID: 0}
@@ -23,6 +27,10 @@ PrefabInstance:
       propertyPath: isRoomStatic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
+      propertyPath: grandmaPrefab
+      value: 
+      objectReference: {fileID: 5599081672369763298, guid: b6e97def6a685d94bb19102ad06ac802, type: 3}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: tutorialStringVar
       value: 
@@ -44,12 +52,16 @@ PrefabInstance:
       value: Let's see...
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
+      propertyPath: onHighFiveEnd.speedEnum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: goalBlockedText.duration
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: onHighFiveEnd.textString
-      value: Into the cave, let's go!
+      value: Uff, I'm spent...
       objectReference: {fileID: 0}
     - target: {fileID: 2618665797098077110, guid: 5a9595cbaafcc684da5b129cf3934e3c, type: 3}
       propertyPath: goalBlockedText.textString

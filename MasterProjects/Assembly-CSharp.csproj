@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Gameplay\PlayerCollideable.cs" />
      <Compile Include="Assets\Scripts\Audio\SoundHelper.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaState.cs" />
+     <Compile Include="Assets\Scripts\Events\QuakeCollider.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Bird.cs" />
      <Compile Include="Assets\Scripts\Map\SpawnCrack.cs" />
      <Compile Include="Assets\Scripts\Map\SpawnTree.cs" />
@@ -88,9 +89,11 @@
      <Compile Include="Assets\Scripts\Events\ApplyMaterialOffset.cs" />
      <Compile Include="Assets\Scripts\Events\TalkCollider.cs" />
      <Compile Include="Assets\Scripts\Gameplay\EndChild.cs" />
+     <Compile Include="Assets\Scripts\Events\BoulderActivateGhost.cs" />
      <Compile Include="Assets\Scripts\UI\RandomSelectionTextBalloonString.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\ChaseGrandmother.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\RegisterGrandmaScriptVar.cs" />
+     <Compile Include="Assets\Scripts\Events\GhostByDistance.cs" />
      <Compile Include="Assets\Scripts\Gameplay\FollowCameraRotation.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\GrandmaPathFeeder.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CallAnim.cs" />
@@ -117,6 +120,7 @@
      <Compile Include="Assets\Scripts\Input\Cut.cs" />
      <Compile Include="Assets\Scripts\Audio\TearsSoundPlayer.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\ThrowGrandmother.cs" />
+     <Compile Include="Assets\Scripts\Events\ChildStart.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\KnifeGrandmother.cs" />
      <Compile Include="Assets\Scripts\Map\SpawnBoulder.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Boulder.cs" />
@@ -126,10 +130,7 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeadGrandmaController.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\Scripts\Events\GhostByDistance.cs" />
-     <Compile Include="Assets\Scripts\Events\BoulderActivateGhost.cs" />
-     <Compile Include="Assets\Scripts\Events\ChildStart.cs" />
-     <Compile Include="Assets\Scripts\Events\QuakeCollider.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\CookiesGrandmother.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

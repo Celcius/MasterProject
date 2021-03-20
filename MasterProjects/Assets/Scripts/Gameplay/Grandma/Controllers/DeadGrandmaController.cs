@@ -26,4 +26,9 @@ public class DeadGrandmaController : IGrandmaController
     {
         return true;
     }
+
+    public override TextBalloon GetBalloon()
+    {
+        return null;
+    }
 }

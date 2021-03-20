@@ -476,4 +476,9 @@ public class GrandmaController : IGrandmaController
             balloon.ShowText(backtrackStrings.GetRandomSelection());
         }
     }
+
+    public override TextBalloon GetBalloon()
+    {
+        return balloon;
+    }
 }

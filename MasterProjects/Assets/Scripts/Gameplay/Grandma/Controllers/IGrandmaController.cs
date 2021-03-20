@@ -21,4 +21,6 @@ public abstract class IGrandmaController : GridEntity
     {
         return false;
     }
+
+    public abstract TextBalloon GetBalloon();
 }
