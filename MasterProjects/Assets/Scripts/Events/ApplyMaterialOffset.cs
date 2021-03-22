@@ -17,12 +17,12 @@ public class ApplyMaterialOffset : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         foreach(Material mat in materials)
         {
-            Vector2 offset = mat.GetTextureOffset("_MainTex");
-            mat.SetTextureOffset("_MainTex", offset + offsetSpeed * Time.deltaTime);
+            Vector2 offset = mat.mainTextureOffset;
+            mat.mainTextureOffset =  offset + offsetSpeed * Time.deltaTime;
         }
     }
 }

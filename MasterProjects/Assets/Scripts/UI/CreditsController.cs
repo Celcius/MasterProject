@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using AmoaebaUtils;
 
 public class CreditsController : Singleton<CreditsController>
 {
@@ -41,6 +42,12 @@ public class CreditsController : Singleton<CreditsController>
     [SerializeField]
     private AnimationCurve camRotation;
 
+    [SerializeField]
+    private Material sunMaterial;
+
+    [SerializeField]
+    private AnimationCurve sunRotation;
+
     private Transform camTransform;
 
     private float elapsed = 0;
@@ -57,6 +64,7 @@ public class CreditsController : Singleton<CreditsController>
 
     void Start()
     {
+        SetSunOffset(0.0f);
         startPos = creditsTransform.anchoredPosition;
         moveRoutine = null;
         TextMeshProUGUI[] labels = GetComponentsInChildren<TextMeshProUGUI>();
@@ -154,10 +162,12 @@ public class CreditsController : Singleton<CreditsController>
             if(elapsed < lastFrame.time)
             {
                 camTransform.rotation = Quaternion.Euler(camRotation.Evaluate(elapsed),0,0);
+                SetSunOffset(elapsed);
                 elapsed += Time.deltaTime;
             }
             else
             {
+                SetSunOffset(sunRotation.keys[sunRotation.keys.Length-1].time);
                 camTransform.rotation = Quaternion.Euler(lastFrame.value,0,0);
                 if(!hasStartedCredits)
                 {
@@ -174,5 +184,10 @@ public class CreditsController : Singleton<CreditsController>
         hasStartedEnd = true;
 
         isAcceptingInput.Value = false;
+    }
+
+    private void SetSunOffset(float elapsed)
+    {
+        ShaderInstanceUtils.SetDarknessPosY(sunMaterial, sunRotation.Evaluate(elapsed));
     }
 }

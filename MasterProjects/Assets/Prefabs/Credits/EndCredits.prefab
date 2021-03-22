@@ -235,6 +235,40 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  sunMaterial: {fileID: 2100000, guid: 2db293e384398b041a06098d705c6f7f, type: 2}
+  sunRotation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 65
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.75
+      value: 1.5
+      inSlope: -0
+      outSlope: 0
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 19.974934
+      value: 0.5
+      inSlope: -0.024048429
+      outSlope: -0.024048429
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07577638
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   isAcceptingInput: {fileID: 0}
 --- !u!1 &3721311684779793281
 GameObject:
