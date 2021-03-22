@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.U2D;
 using System;
 using AmoaebaUtils;
+using UnityEngine.Experimental.Rendering;
 
-
-[RequireComponent(typeof(PixelPerfectCamera))]
 public class CameraMover : MonoBehaviour
 {
     [SerializeField]
@@ -39,8 +38,13 @@ public class CameraMover : MonoBehaviour
     public Action<Vector2Int, Vector2Int> OnCameraMoveStart;
     
     public Action<Vector2Int, Vector2Int> OnCameraMoveEnd;
+    
     [SerializeField]
-    private PixelPerfectCamera pixelCamera;
+    private Vector2 refResolution;
+
+    [SerializeField]
+    private float assetsPPU;
+    
 
     [SerializeField]
     private Camera cam;
@@ -60,7 +64,7 @@ public class CameraMover : MonoBehaviour
     {
         get 
         {
-            if(cam == null || pixelCamera == null)
+            if(cam == null)
             {
                 return default(Bounds);
             }
@@ -71,14 +75,14 @@ public class CameraMover : MonoBehaviour
 
     public Vector2 RefResolution 
     {
-        get { return new Vector2(pixelCamera.refResolutionX, pixelCamera.refResolutionY);}
+        get { return refResolution;}
     }
 
-    public float PixelsPerUnit => pixelCamera.assetsPPU;
+    public float PixelsPerUnit => assetsPPU;
 
     public Vector2 RoomSize => new Vector2(
-            (int)(pixelCamera.refResolutionX / pixelCamera.assetsPPU),
-            (int)(pixelCamera.refResolutionY / pixelCamera.assetsPPU));
+            (int)(refResolution.x / assetsPPU),
+            (int)(refResolution.y / assetsPPU));
 
     private bool moving = false;
     public bool Moving => moving;
