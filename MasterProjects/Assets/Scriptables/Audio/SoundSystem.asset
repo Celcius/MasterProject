@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc7069b63653a84b9328dc96e4fbebb, type: 3}
   m_Name: SoundSystem
   m_EditorClassIdentifier: 
-  mainVolume: 1
+  mainVolume: 0
   maxConcurrentSounds: 12
   mainMixer: {fileID: 24100000, guid: 5b2f60bb9db298c42a772fac096fefd4, type: 2}
   mainAttenuation: MainAttenuation
