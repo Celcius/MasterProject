@@ -131,6 +131,7 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeadGrandmaController.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
+     <Compile Include="Assets\TriggerAnimation.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
