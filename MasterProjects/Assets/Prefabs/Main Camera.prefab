@@ -87,7 +87,7 @@ MonoBehaviour:
   lookAtGridEntity: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
   refResolution: {x: 160, y: 144}
   assetsPPU: 8
-  cam: {fileID: 0}
+  cam: {fileID: 3178077233016210397}
   shakeDuration: 0.5
   shakeMagnitude: 0.5
   shakeDampingSpeed: 0.1
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 9
+  m_AssetsPPU: 8
   m_RefResolutionX: 160
   m_RefResolutionY: 144
   m_UpscaleRT: 0
