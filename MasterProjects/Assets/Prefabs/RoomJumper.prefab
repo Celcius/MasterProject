@@ -52,3 +52,4 @@ MonoBehaviour:
   grandmaScriptVar: {fileID: 0}
   tutLabels: []
   soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
+  characterState: {fileID: 11400000, guid: 1dcd4964f0725b84e91c7749553cc9ef, type: 2}

@@ -178,10 +178,7 @@ public class CameraMover : MonoBehaviour
 
     public void MoveCameraToRoom(Vector2Int newCamRoom, bool instant = false)
     {
-        if(cameraShake != null)
-        {
-            StopCoroutine(cameraShake);
-        }
+        StopShake();
         cameraShake = null;
         Vector2Int camRoomPos = GridUtils.RoomPosForWorldPos(transform.position, this.RoomSize, (Vector2)moverSingleton.CellSize);
         if(instant)
@@ -262,14 +259,19 @@ public class CameraMover : MonoBehaviour
         }
 
         transform.position = GetTargetCameraPosition();
-        if(cameraShake != null)
-        {
-            StopCoroutine(cameraShake);
-        }
+        StopShake();
         cameraShake = CameraShake(duration,
                                   intensity * shakeMagnitude,
                                   damping);
         StartCoroutine(cameraShake);
+    }
+
+    protected virtual void StopShake()
+    {
+        if(cameraShake != null)
+        {
+            StopCoroutine(cameraShake);
+        }
     }
 
     protected virtual IEnumerator CameraShake(float time, float magnitude, AnimationCurve damping)

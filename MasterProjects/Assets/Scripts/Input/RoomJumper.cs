@@ -34,6 +34,9 @@ public class RoomJumper : MonoBehaviour
     [SerializeField]
     private SoundHelperVar soundHelper;
 
+    [SerializeField]
+    private CharacterStateVar characterState;
+
     void Start()
     {
         moverVar.Value.OnCameraMoveEnd += OnCameraMoved;
@@ -65,7 +68,7 @@ public class RoomJumper : MonoBehaviour
 
     void Update()
     {
-        if(currentRoomIndex < 0)
+        if(currentRoomIndex < 0 || characterState.Value == CharacterState.Throwing)
         {
             return;
         }

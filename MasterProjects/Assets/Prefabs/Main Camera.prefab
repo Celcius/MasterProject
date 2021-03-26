@@ -119,6 +119,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  shakeSnapshot: {fileID: 7169578291613179642, guid: 5b2f60bb9db298c42a772fac096fefd4, type: 2}
+  normalSnapshot: {fileID: -8460515311603461632, guid: 5b2f60bb9db298c42a772fac096fefd4, type: 2}
 --- !u!114 &4007621154695231757
 MonoBehaviour:
   m_ObjectHideFlags: 0

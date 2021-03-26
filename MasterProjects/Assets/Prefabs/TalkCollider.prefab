@@ -44,9 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2589706800390ac4a88c98b2a0696d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTag: Character
   grannyBalloon: {fileID: 11400000, guid: 9ad32733f67d9e446bee83d221f1c8e5, type: 2}
   strings: []
   roomHandler: {fileID: 0}
+  grandmaVar: {fileID: 11400000, guid: 05300a0c13bc3d148ba3fed26df9b528, type: 2}
+  stopGrandmother: 0
 --- !u!61 &7333840090000108963
 BoxCollider2D:
   m_ObjectHideFlags: 0

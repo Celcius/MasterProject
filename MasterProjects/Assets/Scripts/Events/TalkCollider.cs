@@ -13,8 +13,14 @@ public class TalkCollider : EntityCollideable<Component>
     [SerializeField]
     private RoomHandler roomHandler;
 
+    [SerializeField]
+    private GrandmaScriptVar grandmaVar;
+
     private int curString = 0;
     private bool hasShown = false;
+
+    [SerializeField]
+    private bool stopGrandmother = false;
 
     private void Start() 
     {
@@ -49,6 +55,15 @@ public class TalkCollider : EntityCollideable<Component>
         ShowText();
         grannyBalloon.Value.OnWillHideCallback += ShowNext;
         hasShown = true;
+
+        if(stopGrandmother)
+        {
+            GrandmaController controller = grandmaVar.Value.GetComponent<GrandmaController>();
+            if(controller != null)
+            {
+                controller.SetState(GrandmaStateEnum.Idle);
+            }
+        }
     }
 
     private void OnDestroy() 

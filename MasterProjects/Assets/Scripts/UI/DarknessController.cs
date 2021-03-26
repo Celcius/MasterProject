@@ -98,6 +98,23 @@ public class DarknessController : RoomChangeHandler
         }
     }
 
+    public void GoToHalfDarkRadius()
+    {
+        goalRadius = halfDarkRadius;
+    }
+
+    public void GoToFullDarkRadius()
+    {
+        goalRadius = fullDarkRadius;
+    }
+
+    public void GoToNoDarkRadius()
+    {
+        goalRadius = 1.0f;
+    }
+
+
+
     public override void OnRoomLeave(Vector2Int pos) {}
 
     private void SetRadius(float radius)

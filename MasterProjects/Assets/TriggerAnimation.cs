@@ -15,6 +15,9 @@ public class TriggerAnimation : RoomChangeHandler
 
     private bool hasTriggered = false;
 
+    [SerializeField]
+    private string collideString = GameConstants.PLAYER_TAG;
+
     
     public override void OnRoomEnter(Vector2Int pos)
     {
@@ -32,7 +35,7 @@ public class TriggerAnimation : RoomChangeHandler
 
     private void OnTriggerStay2D(Collider2D other) 
     {
-        if(!hasTriggered && other.tag == GameConstants.PLAYER_TAG)
+        if(!hasTriggered && other.tag == collideString)
         {
             hasTriggered = true;
             animator.SetTrigger(animTrigger);

@@ -19,6 +19,12 @@ public class GameCameraMover : CameraMover
     [SerializeField]
     private AnimationCurve quakeVolumeRange;
 
+    [SerializeField]
+    private AudioMixerSnapshot shakeSnapshot;
+
+    [SerializeField]
+    private AudioMixerSnapshot normalSnapshot;
+
     protected override void Start() 
     {
         base.Start();
@@ -58,15 +64,20 @@ public class GameCameraMover : CameraMover
         }
 
         transform.position = GetTargetCameraPosition();
-        if(cameraShake != null)
-        {
-            StopCoroutine(cameraShake);
-        }
+        StopShake();
         cameraShake = CameraShakeSound(duration,
                                   intensity * shakeMagnitude,
                                   damping,
                                   playSound);
+        shakeSnapshot.TransitionTo(3.0f);
         StartCoroutine(cameraShake);
+    }
+
+
+    protected override void StopShake()
+    {
+        base.StopShake();
+        normalSnapshot.TransitionTo(3.0f);
     }
 
     protected IEnumerator CameraShakeSound(float time, float magnitude, AnimationCurve damping, bool playSound)
@@ -89,6 +100,7 @@ public class GameCameraMover : CameraMover
         }
         soundHelper.Value.StopSound(GameSoundTag.SFX_QUAKE);
         transform.position = GetTargetCameraPosition();
+        normalSnapshot.TransitionTo(3.0f);
     }
 
     private void PlayQuakeSound(float magnitude)

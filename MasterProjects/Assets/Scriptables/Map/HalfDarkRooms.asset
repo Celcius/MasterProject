@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: HalfDarkRooms
   m_EditorClassIdentifier: 
   rooms:
-  - {x: -2, y: 4}
   - {x: -1, y: 4}
   - {x: 0, y: 4}
   - {x: 1, y: 4}
