@@ -37,6 +37,8 @@ public class RoomJumper : MonoBehaviour
     [SerializeField]
     private CharacterStateVar characterState;
 
+    [SerializeField]
+    private GridEntityVar child;
     void Start()
     {
         moverVar.Value.OnCameraMoveEnd += OnCameraMoved;
@@ -73,6 +75,11 @@ public class RoomJumper : MonoBehaviour
             return;
         }
 
+        if(!child.Value.gameObject.activeInHierarchy)
+        {
+            return;
+        }
+
         if(inputManager.IsNextRoomDown())
         {
             MoveToRoom(currentRoomIndex+1);
@@ -89,7 +96,7 @@ public class RoomJumper : MonoBehaviour
         {
             return;
         }
-
+        
         moverVar.Value.TrackingEntity = false;
 
         soundHelper.Value.StopSound(GameSoundTag.SFX_QUAKE);

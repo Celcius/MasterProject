@@ -17,6 +17,7 @@ public class MusicPlayer : RoomChangeHandler
         End,
         Saudade2,
         Remembrance,
+        Crisis
     }
     private struct RoomMusicInfo
     {

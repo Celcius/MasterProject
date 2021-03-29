@@ -190,43 +190,12 @@ MonoBehaviour:
   tutVar: {fileID: 11400000, guid: 949d0432e813acf4bb328809d52f8d6e, type: 2}
   tutString: Press Q to interact
   input: {fileID: 11400000, guid: a62c1bc6975118a46ab8a03840e85200, type: 2}
-  camRotation:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 5.7125034
-      value: -4.480416
-      inSlope: -1.4340079
-      outSlope: -1.4340079
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 19.974934
-      value: -44.17
-      inSlope: -0.29766652
-      outSlope: -0.29766652
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.09107733
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   endClip: {fileID: 8300000, guid: b8aeb5d2f9975b94591270b93d63fb7f, type: 3}
   soundSystem: {fileID: 11400000, guid: 3d44ba72bd847c64a969dd32117518fc, type: 2}
   canCallWithSound: {fileID: 11400000, guid: a6b56b26a8aeb7f42a3c64e264934887, type: 2}
   lookAtEndChild: {fileID: 3430982070912090759}
+  normalSnapshot: {fileID: -8460515311603461632, guid: 5b2f60bb9db298c42a772fac096fefd4, type: 2}
+  endSnapshot: {fileID: 7169578291613179642, guid: 5b2f60bb9db298c42a772fac096fefd4, type: 2}
 --- !u!114 &2703041699457951146
 MonoBehaviour:
   m_ObjectHideFlags: 0

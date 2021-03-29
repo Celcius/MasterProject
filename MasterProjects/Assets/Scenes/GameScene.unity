@@ -10330,10 +10330,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6384442227764074186, guid: 4121a2fd97f11824c9e9028c5a4755e9, type: 3}
     - target: {fileID: 8411527631737289011, guid: 4121a2fd97f11824c9e9028c5a4755e9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8411527631737289011, guid: 4121a2fd97f11824c9e9028c5a4755e9, type: 3}
       propertyPath: roomHandler
       value: 
       objectReference: {fileID: 1475523288}
@@ -10341,26 +10337,6 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 8411527631737289011, guid: 4121a2fd97f11824c9e9028c5a4755e9, type: 3}
-    - target: {fileID: 8411527631737289011, guid: 4121a2fd97f11824c9e9028c5a4755e9, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8411527631737289011, guid: 4121a2fd97f11824c9e9028c5a4755e9, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[0]
-      value: '"path":"clips.{1es}","length":3'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8411527631737289011, guid: 4121a2fd97f11824c9e9028c5a4755e9, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[1]
-      value: '"path":"clips.{1es}.[0]","value":$eref:0'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8411527631737289011, guid: 4121a2fd97f11824c9e9028c5a4755e9, type: 3}
-      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8411527631737289011, guid: 4121a2fd97f11824c9e9028c5a4755e9, type: 3}
-      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: f3c4656f059700a4fa96ae10b430f705, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4121a2fd97f11824c9e9028c5a4755e9, type: 3}
 --- !u!1 &1526316663
@@ -124576,6 +124552,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   smallShakeDuration: 2
+  musicPlayer: {fileID: 1744988042}
+  musicWaitTime: 3
 --- !u!1 &2127930394
 GameObject:
   m_ObjectHideFlags: 0

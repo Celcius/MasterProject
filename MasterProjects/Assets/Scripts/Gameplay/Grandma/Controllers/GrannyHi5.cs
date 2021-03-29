@@ -211,7 +211,7 @@ public class GrannyHi5 : GrandmaController
     {   
         soundHelper.Value.MusicPlayer.PlayStyle(MusicPlayer.MusicStyle.GoldenTime);
         soundHelper.Value.SoundSystem.TransitionToSnapshot("Hi5SnapShot", 0.25f);
-        soundHelper.Value.PlaySound(GameSoundTag.SFX_HI5_CLAP);
+;
         Balloon.HideBalloon(false);
         cachedParent = character.transform.parent;
         character.transform.parent = animCharacterAnchor;
@@ -229,6 +229,7 @@ public class GrannyHi5 : GrandmaController
 
     private void OnPlayerReach()
     {
+        soundHelper.Value.PlaySound(GameSoundTag.SFX_HI5_CLAP);
         highFiveChar.transform.parent = animCharacterAnchor;
         animator.SetTrigger("HighFive");
     }

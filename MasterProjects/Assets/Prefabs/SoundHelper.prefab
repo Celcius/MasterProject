@@ -713,15 +713,18 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 4d464df9fd858b240b7a17fac1ff6132, type: 3}
     - {fileID: 8300000, guid: ac9acae5ad663cd4194259a762787549, type: 3}
     - {fileID: 8300000, guid: 0edd28a74a807574ca131b1528fa8222, type: 3}
-    - {fileID: 8300000, guid: 2abb4c06e6761b7459de20936075af11, type: 3}
-    - {fileID: 8300000, guid: daad3707cc0f3b1419acc5b8a614a1cf, type: 3}
-    - {fileID: 8300000, guid: 3259cf63c765d4e42b1f3f5aab55b865, type: 3}
+    - {fileID: 8300000, guid: 8cf86fff8c2f56641bd93108087a0b75, type: 3}
+    - {fileID: 8300000, guid: 9e6bf67906c08704faea3527bfacf76d, type: 3}
+    - {fileID: 8300000, guid: 019a3ca308571634c9beeee4230febe7, type: 3}
     - {fileID: 8300000, guid: 38e4b90980e1c064a842ef462033dd82, type: 3}
     - {fileID: 8300000, guid: a0a63bc81c43b414e82ec7f002be6c2e, type: 3}
     - {fileID: 8300000, guid: af83a1473587886429cc5045570b188c, type: 3}
     - {fileID: 8300000, guid: bb15320c63ef85d48a30452132fbc673, type: 3}
     - {fileID: 8300000, guid: cbc601ef061b611438609b1daeebeb9f, type: 3}
     - {fileID: 8300000, guid: 236fa02f12337674da584a0f280b218d, type: 3}
+    - {fileID: 8300000, guid: 96ba48f9179d1a2438e36263ca8d7962, type: 3}
+    - {fileID: 8300000, guid: f1facdbf546e97e408b31c8e7d3a7496, type: 3}
+    - {fileID: 8300000, guid: 2d95a62753680144faa5fe044da765e3, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -870,7 +873,7 @@ MonoBehaviour:
       Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
     - Name: musicStyle
       Entry: 3
-      Data: 1
+      Data: 8
     - Name: shouldRestartStyle
       Entry: 5
       Data: false
@@ -882,7 +885,7 @@ MonoBehaviour:
       Data: MusicPlayer+RoomMusicInfo, Assembly-CSharp
     - Name: musicStyle
       Entry: 3
-      Data: 1
+      Data: 8
     - Name: shouldRestartStyle
       Entry: 5
       Data: false
@@ -909,7 +912,7 @@ MonoBehaviour:
       Data: 3
     - Name: shouldRestartStyle
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -1046,7 +1049,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 8
+      Data: 9
     - Name: 
       Entry: 7
       Data: 
@@ -1245,6 +1248,36 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 12
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: 11|UnityEngine.AudioClip[], UnityEngine.AudioModule
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 10
+      Data: 15
     - Name: 
       Entry: 13
       Data: 

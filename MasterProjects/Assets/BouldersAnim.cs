@@ -17,12 +17,24 @@ public class BouldersAnim : MonoBehaviour
     [SerializeField]
     private float smallShakeDuration;
 
+    [SerializeField]
+    private MusicPlayer musicPlayer;
+
+    [SerializeField]
+    private float musicWaitTime = 3.0f;
 
     public void BouldersFalling()
     {
         GameCameraMover cam = ((GameCameraMover)CameraMover.Instance);
         cam.ShakeCamera(smallShakeIntensity, smallShakeDuration, smallShakeDamping, true);
+        StartCoroutine(PlayMusicAfter(smallShakeDuration));
+        musicPlayer.PlayStyle(MusicPlayer.MusicStyle.Silence);
+    }
 
+    private IEnumerator PlayMusicAfter(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime*musicWaitTime);
+        musicPlayer.PlayStyle(MusicPlayer.MusicStyle.Crisis);
     }
 
     public void GoToDark()

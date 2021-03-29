@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AmoaebaUtils;
-
+using UnityEngine.Audio;
+using System;
 public class Bench : PlayerCollideable
 {
     [SerializeField]
@@ -41,6 +42,12 @@ public class Bench : PlayerCollideable
 
     [SerializeField]
     private GridEntity lookAtEndChild;
+
+    [SerializeField]
+    private AudioMixerSnapshot normalSnapshot;
+
+    [SerializeField]
+    private AudioMixerSnapshot endSnapshot;
 
     private string endClipId = "ENDCLIP";
     private void Start() 
@@ -87,7 +94,13 @@ public class Bench : PlayerCollideable
                                                 cachedPlayer.transform.position, 
                                                 cachedPlayer.transform.rotation);
             cameraLookat.Value = benchPlayer;
-            soundSystem.PlaySound(endClip, endClipId, false, null);
+
+            Action<string> endAction = (string id) => {
+                normalSnapshot.TransitionTo(2.0f);
+            };
+
+            soundSystem.PlaySound(endClip, endClipId, false, null, endAction);
+            endSnapshot.TransitionTo(2.0f);
             cachedPlayer.gameObject.SetActive(false);
             
             
@@ -102,7 +115,7 @@ public class Bench : PlayerCollideable
             cameraLookat.Value = cachedPlayer;
             isAcceptingInput.Value = true;
         }
-
+        normalSnapshot.TransitionTo(0.0f);
         soundSystem.StopSound(endClipId);
     }
 }
