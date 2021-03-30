@@ -40,6 +40,7 @@
      <Compile Include="Assets\Scripts\Events\BoulderCryTutorial.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\GrandmaController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\IGrandmaController.cs" />
+     <Compile Include="Assets\BouldersAnim.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Pushable.cs" />
      <Compile Include="Assets\Scripts\Map\LedgeScript.cs" />
      <Compile Include="Assets\Scripts\Audio\MusicPlayer.cs" />
@@ -116,6 +117,7 @@
      <Compile Include="Assets\Scripts\Input\RoomJumper.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PushableArrVar.cs" />
      <Compile Include="Assets\Scripts\Audio\SoundHelperVar.cs" />
+     <Compile Include="Assets\TriggerAnimation.cs" />
      <Compile Include="Assets\Scripts\Map\InvisiblePosSetterGridEntity.cs" />
      <Compile Include="Assets\Scripts\Map\LandingRuleTile.cs" />
      <Compile Include="Assets\Scripts\Input\Cut.cs" />
@@ -131,8 +133,7 @@
      <Compile Include="Assets\Scripts\Gameplay\Grandma\States\GrandmaStateReturn.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\DeadGrandmaController.cs" />
      <Compile Include="Assets\Scripts\UI\TextBalloonString.cs" />
-     <Compile Include="Assets\TriggerAnimation.cs" />
-     <Compile Include="Assets\BouldersAnim.cs" />
+     <Compile Include="Assets\FadeLabelAndImagesFromString.cs" />
      <None Include="Assets\Fonts\VT323\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
