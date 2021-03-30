@@ -5272,7 +5272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c541443832a5c484a86fa36ac6ce4865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 5
   cameraVar: {fileID: 11400000, guid: 1b103e906b3f0824fa3f9450fac8fa4d, type: 2}
   throwTarget: {fileID: 11400000, guid: 818af81053fa77040ab4a76e110d0f1d, type: 2}
   validThrow: {fileID: 11400000, guid: c29d76e9474ff7342ae113595d49a6e2, type: 2}
