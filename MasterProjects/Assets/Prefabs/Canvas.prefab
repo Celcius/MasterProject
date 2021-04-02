@@ -347,6 +347,8 @@ MonoBehaviour:
   - {fileID: 8479945963021445708}
   - {fileID: 1616299639109913248}
   - {fileID: 8628995326127489841}
+  characterEntityVar: {fileID: 11400000, guid: 6c3ca2b7c4972b746880e8ec12c79735, type: 2}
+  roomAnalytics: {fileID: 0}
 --- !u!1 &2548143906718575610
 GameObject:
   m_ObjectHideFlags: 0

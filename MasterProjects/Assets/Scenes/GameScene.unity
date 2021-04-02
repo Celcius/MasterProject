@@ -6651,6 +6651,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArrayVar: {fileID: 11400000, guid: 73ae8f5357ddc604890aafdacdefe186, type: 2}
   registerType: 0
+--- !u!1 &675274924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 675274926}
+  - component: {fileID: 675274925}
+  m_Layer: 0
+  m_Name: Analytics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &675274925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675274924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c831fb7d254b74b44ab8adb740148bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTime: 
+  roomOrder: {fileID: 11400000, guid: f1f415f38d00c8c4a9a40457522171ec, type: 2}
+  roomHandler: {fileID: 1475523288}
+--- !u!4 &675274926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675274924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 318.68784, y: 556.1498, z: -29.383747}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699984489
 GameObject:
   m_ObjectHideFlags: 0
@@ -124230,6 +124276,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5451419466169418067, guid: 5fc7dc8e658e5f7489e50a094e1ebb18, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5451419466169418068, guid: 5fc7dc8e658e5f7489e50a094e1ebb18, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -125283,6 +125333,10 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 2247710039849522288, guid: addb930730357c04b9279e8cf6634515, type: 3}
+    - target: {fileID: 2548143905721226941, guid: addb930730357c04b9279e8cf6634515, type: 3}
+      propertyPath: roomAnalytics
+      value: 
+      objectReference: {fileID: 675274925}
     - target: {fileID: 2548143906718575588, guid: addb930730357c04b9279e8cf6634515, type: 3}
       propertyPath: m_UiScaleMode
       value: 0

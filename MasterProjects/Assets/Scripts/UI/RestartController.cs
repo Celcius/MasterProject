@@ -33,6 +33,12 @@ public class RestartController : MonoBehaviour
     [SerializeField]
     private FadeLabelFromStringVar[] labels;
 
+    [SerializeField]
+    private GridEntityVar characterEntityVar;
+
+    [SerializeField]
+    private RoomAnalytics roomAnalytics;
+
     private bool waitOnInput = false;
 
     private void Start()
@@ -130,6 +136,7 @@ public class RestartController : MonoBehaviour
 
     private void RespawnRoom()
     {
+        roomAnalytics.RetryRoom(characterEntityVar.Value.RoomGridPos);
         foreach(FadeLabelFromStringVar label in labels)
         {
             label.Hide();

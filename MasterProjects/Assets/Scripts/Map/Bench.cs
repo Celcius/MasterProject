@@ -84,6 +84,7 @@ public class Bench : PlayerCollideable
 
         if(input.IsGrab() && isPlayerInRange)
         {
+            RoomAnalytics.Instance.OnRoomLeave(CameraMover.RoomPosForWorldPos(transform.position));
             hasStartedEnd = true;
             tutVar.Value = "";
             CreditsController.Instance.StartCamRot(lookAtEndChild);
