@@ -8138,6 +8138,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 181109801517017664, guid: e871f8dd42b3f784da849590c94b7dcb, type: 3}
+      propertyPath: m_text
+      value: "- Parents -\nFernando Capelo\nHelena Capelo\n\n- Cats -\nFiro\nTommy
+        \n\n- Corona Friends -\nHugo Antunes\nIvo Ventura\nLiliana Rocha\nLogan Urgenti-Wilkinson\nPau
+        Sempere Castillo\nTiago Abril\nSusana Santos\n\n- Teesside Staff -\nHelen
+        Simm\nStephen Reeson\nSatish Shewhorak\n\n- Inorganic -\n9S717G111065ZJ1000106\ne9f0611a\nXAJ40015434841\nTS1
+        3BQ 2.04\n\n\n\n\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 444035754287266840, guid: e871f8dd42b3f784da849590c94b7dcb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8697,6 +8705,19 @@ PrefabInstance:
     - target: {fileID: 5302010494879730681, guid: e871f8dd42b3f784da849590c94b7dcb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878990293352674269, guid: e871f8dd42b3f784da849590c94b7dcb, type: 3}
+      propertyPath: m_text
+      value: 'Daniel Collins
+
+        Mathew Bray
+
+        Michael Vallely
+
+        Sivakorn
+        K.
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 6746319364190314296, guid: e871f8dd42b3f784da849590c94b7dcb, type: 3}
       propertyPath: m_text
@@ -124276,10 +124297,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5451419466169418067, guid: 5fc7dc8e658e5f7489e50a094e1ebb18, type: 3}
-      propertyPath: moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5451419466169418068, guid: 5fc7dc8e658e5f7489e50a094e1ebb18, type: 3}
       propertyPath: m_RootOrder
       value: 4
