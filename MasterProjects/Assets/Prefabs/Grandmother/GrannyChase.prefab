@@ -67,7 +67,7 @@ MonoBehaviour:
     duration: 0
   moveStrings: {fileID: 11400000, guid: c238501ecede00046a371cebfe3329a0, type: 2}
   finishTextDuration: 2.5
-  moveSpeed: 10
+  moveSpeed: 11
   startMoveSpeed: 7.5
   grandmaPrefab: {fileID: 6693552814874788205, guid: 78000e46e8ca5b346ace96ca834e6e1c, type: 3}
 --- !u!1001 &3835204248656581779

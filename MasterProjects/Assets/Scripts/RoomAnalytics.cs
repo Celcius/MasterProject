@@ -155,14 +155,30 @@ public class RoomAnalytics : Singleton<RoomAnalytics>
             totalDuration += duration;
             totalRetries += retries;
 
-            toWrite += $"Room {i} Duration:\n{duration}\n" ;
-            toWrite += $"Room {i} Retries: \n{retries}\n" ;
-            toWrite += "---------------------------\n";
+            toWrite += $"{duration}\n" ;
         }
-        toWrite += "<<<<<<<<<<<<<<<\n";
+        
+        toWrite += "---------\n";
 
-        toWrite += $"Total Duration:\n{totalDuration}\n";
-        toWrite += $"Total Retries:\n{totalRetries}\n";
+        for(int i = 0; i < maxIndex; i++)
+        {
+            float duration = 0;
+            float retries = 0;
+
+            if(roomTimers.ContainsKey(i))
+            {
+                duration = roomTimers[i].accumulatedTime;
+                retries = roomTimers[i].retryCount;
+            }
+
+            totalDuration += duration;
+            totalRetries += retries;
+
+            toWrite += $"{retries}\n" ;
+        }
+
+        toWrite += $"Total:\n{totalDuration}\n";
+        toWrite += $"Total:{totalRetries}\n";
 
 
      /*   if (!File.Exists(path))
@@ -176,7 +192,5 @@ public class RoomAnalytics : Singleton<RoomAnalytics>
         writer.Close();
         Debug.Log (toWrite);
     }
-
-    
 }
 

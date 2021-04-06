@@ -170,7 +170,7 @@ public class CharacterMovement : MonoBehaviour
         representation.OnRespawn();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         leafEmission.enabled = false;
         if(!canCall && input.IsGrabUp())
