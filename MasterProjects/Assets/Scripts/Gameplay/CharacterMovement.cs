@@ -120,6 +120,12 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private BoolVar canPlayWithSound;
 
+    private bool isGrabUp = false;
+    private bool isCutDown = false;
+    private bool isCryingDown = false;
+    private bool isCryingRelease = false;
+    private bool isGrab = false;
+
     private void Start()
     {
        gridEntity = GetComponent<GridEntity>();
@@ -173,39 +179,64 @@ public class CharacterMovement : MonoBehaviour
     void FixedUpdate()
     {
         leafEmission.enabled = false;
-        if(!canCall && input.IsGrabUp())
-        {
-            canCall = true;
-        }
 
         if(CheckThrowing())
         {
+            ResetInput();
             return;
         }
 
         if(CheckCut())
         {
+            ResetInput();
             return;
         }
 
         if(CheckCrying())
         {
+            ResetInput();
             return;
         }
 
         if(CheckGrab())
         {
+            ResetInput();
             return;
         }
     
         HandleMove();
+
+        ResetInput();
+
     }
 
+    private void ResetInput()
+    {
+        isGrabUp = false;
+        isCutDown = false;
+        isCryingDown = false;
+        isCryingRelease = false;
+        isGrab = false;
+    }
+
+    private void Update() 
+    {
+        isGrabUp |= input.IsGrabUp();
+        isCutDown |= input.IsCutDown();
+        isCryingDown |= input.IsCryingDown();
+        isCryingRelease |= input.IsCryingRelease();
+        isGrab |= input.IsGrab();
+
+        if(!canCall && isGrabUp)
+        {
+            canCall = true;
+        }
+    }
     private bool CheckThrowing()
     {
         if(stateVar.Value == CharacterState.Throwing)
         {
-            if(!input.IsGrabUp())
+            if(!isGrabUp)
             {
                 return true;
             }
@@ -222,7 +253,7 @@ public class CharacterMovement : MonoBehaviour
 
     private bool CheckCut()
     {
-        if(!input.IsCutDown())
+        if(!isCutDown)
         {
             return false;
         }
@@ -250,14 +281,14 @@ public class CharacterMovement : MonoBehaviour
     {
         if(stateVar.Value == CharacterState.Crying)
         {
-            if(input.IsCryingRelease())
+            if(isCryingRelease)
             {
                 OnCryCancel();
             }
             return true;
         }
 
-        if(input.IsCryingDown())
+        if(isCryingDown)
         {
             OnCry();
             return true;
@@ -275,11 +306,11 @@ public class CharacterMovement : MonoBehaviour
         */
         if(!canGrab)
         {
-            canGrab |= input.IsGrabUp();
+            canGrab |= isGrabUp;
         }
 
 
-        if(canGrab && input.IsGrab())
+        if(canGrab && isGrab)
         {
             if(grandmaScriptVar.Value.IsOnGrandma && grandmaScriptVar.Value.CanGrab)
             {
@@ -321,7 +352,7 @@ public class CharacterMovement : MonoBehaviour
             bool isEmpty = roomController.IsEmptyPos((Vector2Int)toCheckPos, ignoreGrandma);
 
             SetCharacterState(!isEmpty? CharacterState.Pushing : 
-                                  input.IsGrab() && (canGrab && canCall)? CharacterState.Calling
+                                  isGrab && (canGrab && canCall)? CharacterState.Calling
                                   : CharacterState.Walking);
             
 
@@ -347,7 +378,7 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             movingDir = Vector2.zero;
-            SetCharacterState(input.IsGrab() && canCall? CharacterState.Calling : CharacterState.Idle);
+            SetCharacterState(isGrab && canCall? CharacterState.Calling : CharacterState.Idle);
         }      
     }
 
@@ -471,6 +502,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnCallGrandmother()
     {
+
         if(stateVar.Value != CharacterState.Calling)
         {
             SetCharacterState(CharacterState.Calling);
@@ -478,6 +510,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 soundHelper.Value.PlaySound(GameSoundTag.SFX_CALL);
             }
+            
         }
         
     }
