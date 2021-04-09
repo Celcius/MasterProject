@@ -126,6 +126,9 @@ public class RoomAnalytics : Singleton<RoomAnalytics>
     
     public void PrintRooms()
     {
+#if UNITY_EDITOR
+    return;
+#endif
         string path = Application.dataPath;
         if(!path.EndsWith("/"))
         {

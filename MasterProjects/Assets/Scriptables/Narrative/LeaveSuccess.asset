@@ -16,20 +16,25 @@ MonoBehaviour:
   - entity:
       textString: I'm Coming!!
       speedEnum: 0
+      duration: 0
     weight: 3
   - entity:
       textString: Hold yer horses!
       speedEnum: 0
+      duration: 0
     weight: 1
   - entity:
       textString: Great Job!
       speedEnum: 0
+      duration: 0
     weight: 3
   - entity:
       textString: There ya go!
       speedEnum: 0
+      duration: 0
     weight: 2
   - entity:
-      textString: Nice!
+      textString: Wonderful!
       speedEnum: 0
+      duration: 0
     weight: 2
