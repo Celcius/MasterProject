@@ -37,11 +37,11 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\StartGrandmother.cs" />
-     <Compile Include="Assets\FadeLabelAndImagesFromString.cs" />
+     <Compile Include="Assets\Scripts\UI\FadeLabelAndImagesFromString.cs" />
      <Compile Include="Assets\Scripts\Events\BoulderCryTutorial.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\GrandmaController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Grandma\Controllers\IGrandmaController.cs" />
-     <Compile Include="Assets\BouldersAnim.cs" />
+     <Compile Include="Assets\Scripts\Events\BouldersAnim.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Pushable.cs" />
      <Compile Include="Assets\Scripts\Map\LedgeScript.cs" />
      <Compile Include="Assets\Scripts\Audio\MusicPlayer.cs" />
@@ -119,7 +119,7 @@
      <Compile Include="Assets\Scripts\Gameplay\PushableArrVar.cs" />
      <Compile Include="Assets\Scripts\Audio\SoundHelperVar.cs" />
      <Compile Include="Assets\Scripts\RoomAnalytics.cs" />
-     <Compile Include="Assets\TriggerAnimation.cs" />
+     <Compile Include="Assets\Scripts\Events\TriggerAnimation.cs" />
      <Compile Include="Assets\Scripts\Map\InvisiblePosSetterGridEntity.cs" />
      <Compile Include="Assets\Scripts\Map\LandingRuleTile.cs" />
      <Compile Include="Assets\Scripts\Input\Cut.cs" />

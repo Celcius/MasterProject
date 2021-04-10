@@ -99,13 +99,7 @@ public class MusicPlayer : RoomChangeHandler
     }
 
     private void NextPlay(string MusicId)
-    {
-        if(hasPlayedStyle && currentMusicStyle == MusicStyle.Saudade)
-        {
-            PlayStyle(MusicStyle.Saudade2);
-            return;
-        }
-        
+    {   
         if(MusicId == MUSIC_ID && !soundSystem.IsPlaying(MUSIC_ID))
         {
             hasPlayedStyle = true;

@@ -124124,6 +124124,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 287410331}
     m_Modifications:
+    - target: {fileID: 274236450163739701, guid: b6e97def6a685d94bb19102ad06ac802, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 640
+      objectReference: {fileID: 0}
+    - target: {fileID: 274236450163739701, guid: b6e97def6a685d94bb19102ad06ac802, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 576
+      objectReference: {fileID: 0}
     - target: {fileID: 981354106649419330, guid: b6e97def6a685d94bb19102ad06ac802, type: 3}
       propertyPath: texts.Array.data[0].speedEnum
       value: 0
@@ -125909,7 +125917,15 @@ PrefabInstance:
       objectReference: {fileID: 675274925}
     - target: {fileID: 2548143906718575588, guid: addb930730357c04b9279e8cf6634515, type: 3}
       propertyPath: m_UiScaleMode
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548143906718575588, guid: addb930730357c04b9279e8cf6634515, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 640
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548143906718575588, guid: addb930730357c04b9279e8cf6634515, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 576
       objectReference: {fileID: 0}
     - target: {fileID: 2548143906718575589, guid: addb930730357c04b9279e8cf6634515, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -126267,10 +126283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 640, y: 576}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
