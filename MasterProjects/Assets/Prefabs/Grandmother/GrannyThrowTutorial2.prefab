@@ -298,7 +298,7 @@ MonoBehaviour:
   soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
   respawnPosition: {fileID: 11400000, guid: 8649ed4836fdae0488f1d246d7029a65, type: 2}
   onGrabTexts:
-  - textString: Now, where to land!?
+  - textString: Pick a comfy landing spot!
     speedEnum: 2
     duration: 0
   - textString: CAUGHT YA!
@@ -345,8 +345,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c3a999ce398e4b849ae60e9e7fef12c8, type: 2}
   - {fileID: 11400000, guid: 949d0432e813acf4bb328809d52f8d6e, type: 2}
   tutorialStrings:
-  - Hold 'Q' to Call
-  - Press 'Q' to Throw
+  - Hold 'Q' to Call\nuntil Hoisted
+  - Aim & Press 'Q' to Throw
   canCall: {fileID: 11400000, guid: 946468b0428f6f14fa04d2289eac6aa7, type: 2}
 --- !u!114 &3980850368515856613
 MonoBehaviour:

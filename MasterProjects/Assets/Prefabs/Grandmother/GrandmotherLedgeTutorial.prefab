@@ -33,7 +33,7 @@ MonoBehaviour:
   - textString: My old shins...
     speedEnum: 0
     duration: 0
-  - textString: Ok, let's go!
+  - textString: Let's go but I won't be leaping!
     speedEnum: 2
     duration: 0
   backtrackStrings: {fileID: 0}

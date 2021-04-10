@@ -247,7 +247,9 @@ public class ThrowGrandmother2 : GrandmaController
         index = Mathf.Clamp(index, 0, tutorialStringVars.Length-1);
         int nextIndex = (index+1) % tutorialStringVars.Length;
         tutorialStringVars[nextIndex].Value = "";
-        tutorialStringVars[index].Value = tutorialStrings[index];
+        string toShow = tutorialStrings[index];
+        toShow = toShow.Replace("\\n","\n");
+        tutorialStringVars[index].Value = toShow;
     }
 
     private void HideTutStrings()
