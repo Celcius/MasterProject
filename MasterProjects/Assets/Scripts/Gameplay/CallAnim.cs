@@ -5,34 +5,22 @@ using UnityEngine;
 public class CallAnim : MonoBehaviour
 {
     [SerializeField]
-    private CharacterStateVar characterStateVar;
+    private BoolVar callingVar;
 
     private void Start() 
     {
-        characterStateVar.OnChange += OnChange;
+        callingVar.OnChange += OnChange;
         gameObject.SetActive(false);
     }
 
     private void OnDestroy() 
     {
-        characterStateVar.OnChange -= OnChange;
+        callingVar.OnChange -= OnChange;
     }
 
-    private void OnChange(CharacterState oldState, CharacterState newState)
+    private void OnChange(bool oldState, bool newState)
     {
-        if(oldState == newState || (oldState != CharacterState.Calling && newState != CharacterState.Calling))
-        {
-            return;
-        }
-        if(oldState == CharacterState.Calling)
-        {
-            gameObject.SetActive(false);
-        }
-
-        if(newState == CharacterState.Calling)
-        {
-            gameObject.SetActive(true);
-        }
+        gameObject.SetActive(newState);
     }
 
 }

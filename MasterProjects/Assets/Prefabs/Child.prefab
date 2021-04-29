@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35592aaa9124444da55e84b2a8cb7d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterStateVar: {fileID: 11400000, guid: 1dcd4964f0725b84e91c7749553cc9ef, type: 2}
+  callingVar: {fileID: 11400000, guid: 3fbc2cf98730d7a4c8ae4a36ced36b06, type: 2}
 --- !u!114 &2933425088726585391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5301,6 +5301,7 @@ MonoBehaviour:
   soundHelper: {fileID: 11400000, guid: 46a9de86f5b37004ebd3408a78d76aaa, type: 2}
   roomsToPlay: {fileID: 11400000, guid: 1af1131e78ead314f803f64f9542e05f, type: 2}
   canPlayWithSound: {fileID: 11400000, guid: a6b56b26a8aeb7f42a3c64e264934887, type: 2}
+  isCalling: {fileID: 11400000, guid: 3fbc2cf98730d7a4c8ae4a36ced36b06, type: 2}
 --- !u!58 &1071111346617289370
 CircleCollider2D:
   m_ObjectHideFlags: 0

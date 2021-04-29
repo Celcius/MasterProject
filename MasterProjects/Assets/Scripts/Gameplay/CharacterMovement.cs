@@ -126,6 +126,9 @@ public class CharacterMovement : MonoBehaviour
     private bool isCryingRelease = false;
     private bool isGrab = false;
 
+    [SerializeField]
+    private BoolVar isCalling;
+
     private void Start()
     {
        gridEntity = GetComponent<GridEntity>();
@@ -140,6 +143,7 @@ public class CharacterMovement : MonoBehaviour
        CameraMover.Instance.OnCameraMoveEnd += OnCamEnd;
        leafEmission = leafParticles.emission;
        leafEmission.enabled = false;
+       isCalling.Value = false;
        
        landParticles.Stop();
     }
@@ -231,6 +235,12 @@ public class CharacterMovement : MonoBehaviour
         {
             canCall = true;
         }
+
+        if(!isGrab)
+        {
+            isCalling.Value = false;
+        }
+
     }
     private bool CheckThrowing()
     {
@@ -287,7 +297,7 @@ public class CharacterMovement : MonoBehaviour
             }
             return true;
         }
-
+        
         if(isCryingDown)
         {
             OnCry();
@@ -304,6 +314,7 @@ public class CharacterMovement : MonoBehaviour
             OnCallCancel();
         }
         */
+
         if(!canGrab)
         {
             canGrab |= isGrabUp;
@@ -323,8 +334,10 @@ public class CharacterMovement : MonoBehaviour
             else if(!grandmaScriptVar.Value.IsOnGrandma 
                     && stateVar.Value != CharacterState.Calling
                     && stateVar.Value != CharacterState.Throwing
-                    && stateVar.Value != CharacterState.Pushing)
+                    && stateVar.Value != CharacterState.Pushing
+                    && !isCalling.Value)
             {
+                Debug.Log("hasCalled" + isGrabUp);
                 OnCallGrandmother();
             }
         }
@@ -445,6 +458,7 @@ public class CharacterMovement : MonoBehaviour
         bool didGrab = grandmaScriptVar.Value.GrabCharacter(this);
         if(didGrab)
         {
+            isCalling.Value = false;
             lookAtCamEntity.Value = grandmaScriptVar.Value;
             isGrabbed = true;
             movingDir = movingDir = Vector2.down;
@@ -503,13 +517,14 @@ public class CharacterMovement : MonoBehaviour
     private void OnCallGrandmother()
     {
 
-        if(stateVar.Value != CharacterState.Calling)
+        if(stateVar.Value != CharacterState.Calling && !isCalling.Value)
         {
             SetCharacterState(CharacterState.Calling);
             if(canPlayWithSound.Value)
             {
                 soundHelper.Value.PlaySound(GameSoundTag.SFX_CALL);
             }
+            isCalling.Value = true;
             
         }
         
